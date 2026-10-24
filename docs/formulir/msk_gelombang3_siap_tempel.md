@@ -1,5 +1,7 @@
 # MSK gelombang 3 — siap tempel
 
+> **Diganti (2026-10-24, D-102):** formulir ini belum dikerjakan dan mendahului standar waktu D-99 (memuat kasus mini sulit/sangat sulit dan kasus komprehensif sedang). Pakai `msk_gelombang4_siap_tempel.md`. Nomor batch dan ID di sini tetap dianggap terpakai.
+
 Formulir gelombang 3 (konteks ekonomi tiga tahun terakhir, 2023-2026), disusun 2026-10-22 untuk Prompt B v4.2.
 Melanjutkan gelombang 2 yang berakhir di MSK-B24 (MSK-MCQ-080, MSK-ESA-030, MSK-KAS-016). Isi: 40 PG, 15 esai, 5 kasus mini, 6 kasus komprehensif (66 soal, 13 batch).
 

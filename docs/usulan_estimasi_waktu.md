@@ -1,7 +1,8 @@
 # Usulan: standar waktu pengerjaan per tingkat kesulitan dan paket Level 1-4
 
 Status: DISETUJUI pemilik 2026-10-24 (D-99), Simulasi pilihan B. Tahap 1 (aturan)
-dan tahap 2 (aplikasi, D-100) sudah diterapkan; tahap 3 belum.
+dan tahap 2 (aplikasi, D-100) sudah diterapkan. Tahap 3: rencana stok, formulir
+gelombang 4, dan Prompt B v4.4/D v1.1 sudah disusun (D-102); pembuatan soal belum.
 
 ## 1. Masalah
 

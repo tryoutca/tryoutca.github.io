@@ -64,3 +64,10 @@ data), jadi bentuk keluarannya harus lengkap di dalam prompt itu sendiri.
 |---|---|---|---|---|
 | B-14 | Penyusun | Aturan wajib, bagian baru "Standar waktu dan tingkat kesulitan", pemeriksaan formulir, langkah 3 | `estimatedMinutes` = standar per tipe dan tingkat; kriteria tingkat (batas kata dan langkah); ukuran kasus mengikuti tingkat; C2 hanya PG mudah | Tidak ada field baru. `estimatedMinutes` tetap number > 0 di skema; kesesuaian dengan standar diperiksa lint aplikasi (peringatan, D-99), bukan skema |
 | C-6 | Reviewer | Langkah 6, bagian baru tabel standar, Tingkat temuan | timeEstimate dinilai terhadap standar; pelanggaran batas = mayor, angka berbeda = minor | Tidak ada. Enum dimension dan reviewVersion "4.1" tetap |
+
+## Prompt B v4.4 dan Prompt D v1.1 (2026-10-24, disetujui pemilik)
+
+| No | Prompt | Bagian | Perubahan | Dampak pada kontrak |
+|---|---|---|---|---|
+| B-15 | Penyusun | Peran, Sumber, Aturan wajib, pemeriksaan formulir, "Standar waktu dan tingkat kesulitan", langkah 3 | C2 untuk PG dan esai mudah, kasus minimal C3; soal emas patokan gaya bukan panjang; campuran teori dan analisis, konteks terkini dan tantangan ke depan sebagai skenario; cara menghitung kata sama dengan `measureWords` (`js/core/time-standard.js`); panduan soal mudah dan sangat sulit | Tidak ada. `cognitiveLevel` C2 sudah ada di enum skema; jumlah kriteria rubrik per tingkat (3 untuk esai mudah, 4-6 untuk sangat sulit) masih dalam batas 3-6 CONTRACT |
+| K-1 | Kalibrasi | Sumber, pemeriksaan formulir, Aturan cacat, Aturan bentuk soal, bagian baru standar waktu, langkah 3 | Standar waktu dan batas kata sama dengan Prompt B; ukuran kasus sesuai tingkat; cacat tidak boleh pada panjang/`estimatedMinutes`/ukuran kasus/level kognitif | Tidak ada. Lint standar waktu tetap tidak memeriksa soal CALIBRATION (D-100); kesesuaian dijaga prompt |

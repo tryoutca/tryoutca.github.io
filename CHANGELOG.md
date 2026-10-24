@@ -3,6 +3,45 @@
 Catatan perubahan prompt (`prompts/*.md`) dan kontrak data. Setiap
 perubahan prompt dirujuk ke docs/PROMPT_ALIGNMENT.md.
 
+## 2026-10-24 — Prompt B v4.4 dan Prompt D v1.1: soal mudah dan sangat sulit, kalibrasi sesuai standar waktu
+Disetujui pemilik 2026-10-24. Kontrak data tidak berubah: tidak ada field baru,
+`schemaVersion` tetap "4.1", format output kedua prompt sama. Prompt C tetap
+v4.3. Rujukan: D-102, PROMPT_ALIGNMENT B-15 dan K-1.
+
+### prompts/prompt_penyusun_soal.md (Prompt B)
+- Judul v4.3 → v4.4.
+- Peran: soal pemahaman teori dan penerapan (C2-C6); ujian CA sebagai standar
+  minimal akuntan kredibel yang menguasai teori akademik umum dan mampu
+  menjawab tantangan saat ini dan ke depan (arahan pemilik).
+- Sumber: soal emas menjadi patokan gaya dan kedalaman, bukan panjang.
+- Aturan wajib baru: campuran soal teori dan analisis; konteks terkini;
+  tantangan ke depan boleh diuji bila dinyatakan sebagai skenario atau asumsi.
+- cognitiveLevel: C2 boleh untuk PG mudah dan esai mudah (sebelumnya hanya
+  PG mudah); kasus minimal C3.
+- Pemeriksaan formulir: level kognitif formulir yang tidak sesuai kriteria
+  tingkat.
+- Bagian standar waktu: cara menghitung kata (sama dengan lint aplikasi),
+  panduan soal mudah (pemahaman, bukan hafalan; esai 3 kriteria; kasus mini
+  mudah C3), dan panduan soal sangat sulit (sumber kesulitan, arti minimal 3
+  langkah, arti C5/C6, esai 4-6 kriteria).
+- Langkah periksa diri merujuk cara menghitung kata.
+
+### prompts/prompt_kalibrasi_soal.md (Prompt D)
+- Judul v1.0 → v1.1.
+- Sumber: panjang soal dan `estimatedMinutes` mengikuti standar waktu, agar
+  soal kalibrasi tidak dapat dibedakan dari soal biasa setingkat.
+- Bagian baru "Standar waktu dan tingkat kesulitan" (tabel menit, batas kata,
+  cara menghitung kata), sama dengan Prompt B.
+- Pemeriksaan formulir: ukuran kasus harus sesuai tingkat kesulitan.
+- Aturan cacat: cacat tidak boleh pada panjang, `estimatedMinutes`, ukuran
+  kasus, atau level kognitif.
+- Aturan bentuk soal: cognitiveLevel dan `estimatedMinutes` sesuai standar.
+- Langkah periksa diri: hitung kata dan cocokkan `estimatedMinutes`.
+
+### Yang perlu dilakukan pemilik
+- Ganti instruksi Project Claude penyusun dengan Prompt B v4.4 dan instruksi
+  Project "Penyusun Kalibrasi" dengan Prompt D v1.1.
+
 ## 2026-10-24 — Prompt B v4.3 dan Prompt C v4.3: standar waktu per tingkat kesulitan
 Disetujui pemilik (usulan `docs/usulan_estimasi_waktu.md`). Kontrak data
 tidak berubah: tidak ada field baru, `schemaVersion` tetap "4.1", dan format

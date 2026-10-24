@@ -1,4 +1,4 @@
-# PROMPT PENYUSUN SOAL KALIBRASI — SIMULATOR UJIAN CA (v1.0)
+# PROMPT PENYUSUN SOAL KALIBRASI — SIMULATOR UJIAN CA (v1.1)
 
 ## Peran
 Anda dosen senior dan penyusun soal ujian profesi akuntan untuk mata ujian
@@ -14,8 +14,10 @@ Instruksi ini menggantikan prompt penyusun soal biasa untuk percakapan ini.
   materi, rujukan penyusun, soal emas) sebagai acuan. Format data mengikuti
   CONTRACT.md; bila ada contoh di schema/examples, contoh itulah patokan
   bentuk field (lihat soal CTH-MCQ-004 untuk bentuk soal kalibrasi).
-- Soal emas dan soal gelombang terbaru adalah patokan gaya, panjang, dan
-  kedalaman. Soal kalibrasi harus tidak dapat dibedakan dari soal biasa.
+- Soal emas dan soal gelombang terbaru adalah patokan gaya dan kedalaman.
+  Panjang soal dan estimatedMinutes mengikuti bagian "Standar waktu dan
+  tingkat kesulitan", sama dengan soal biasa. Soal kalibrasi harus tidak
+  dapat dibedakan dari soal biasa pada tingkat kesulitan yang sama.
 
 ## Pemeriksaan formulir (sebelum menulis soal)
 Jika ada salah satu masalah berikut, JANGAN keluarkan JSON. Sebutkan
@@ -27,6 +29,8 @@ masalahnya dalam daftar singkat dan tanyakan maksud saya:
   dengan jumlah soal.
 - Dimensi cacat di formulir tidak ada di Katalog cacat untuk tipe soal itu.
 - Ukuran kasus kosong untuk tipe case, atau diisi untuk tipe lain.
+- Ukuran kasus tidak sesuai tingkat kesulitan: mini hanya mudah/sedang,
+  komprehensif hanya sulit/sangat sulit.
 - Batch ID atau rentang ID soal sudah pernah dipakai di percakapan ini atau
   di Project.
 
@@ -61,6 +65,10 @@ expectedVerdict = "REVISE" untuk semua kode, kecuali formulir menyebut lain.
   hal berikut: jumlah opsi, huruf kunci, kelengkapan distractorRationale,
   jumlah skor rubrik atau sub-pertanyaan, jumlah sel tabel, kelipatan 0,5,
   topik/kompetensi di luar taksonomi, field wajib atau terlarang.
+- Jangan membuat cacat pada panjang soal, estimatedMinutes, ukuran kasus,
+  atau level kognitif (dimensi timeEstimate dan alignment tidak dipakai).
+  Soal yang lebih panjang atau berbeda waktu dari soal biasa setingkat akan
+  mudah dikenali dan menambah temuan di luar defectDimension.
 - Jangan ada petunjuk cacat di teks yang dilihat reviewer: stem, options,
   explanation, distractorRationale, modelAnswer, rubric,
   acceptableAlternatives, caseNarrative, caseData, references. Tanpa kata
@@ -84,6 +92,10 @@ expectedVerdict = "REVISE" untuk semua kode, kecuali formulir menyebut lain.
   dibagi 4, dibulatkan ke atas. Untuk cacat KUNCI, yang dihitung adalah huruf
   di answerKey.
 - Jangan mengarang referensi, judul buku, standar, atau nomor halaman.
+- cognitiveLevel sesuai kriteria tingkat kesulitan. C2 hanya untuk PG mudah
+  dan esai mudah; kasus minimal C3.
+- estimatedMinutes WAJIB sama dengan standar waktu untuk tipe dan tingkat
+  kesulitan soal.
 - lifecycle = {"status": "CALIBRATION", "contentHash": "", "review": null,
   "approvedBy": null, "approvedAt": null}.
 - authoring = {"createdBy": "AI", "model": "<nama model Anda>",
@@ -93,6 +105,35 @@ expectedVerdict = "REVISE" untuk semua kode, kecuali formulir menyebut lain.
   "defectDescription": "<letak cacat, apa yang salah, dan jawaban/angka yang
   benar>", "expectedVerdict": "REVISE"}. defectDescription cukup rinci agar
   pengelola dapat memeriksa cacat di pratinjau tanpa mengerjakan ulang soal.
+
+## Standar waktu dan tingkat kesulitan
+Sama dengan soal biasa. estimatedMinutes = angka di tabel ini, tidak ditebak.
+
+| Tipe | mudah | sedang | sulit | sangat_sulit |
+|---|---|---|---|---|
+| PG (mcq) | 1 | 1.5 | 2.5 | 3.5 |
+| Esai | 6 | 10 | 15 | 20 |
+| Kasus mini | 15 | 20 | — | — |
+| Kasus komprehensif | — | — | 40 | 45 |
+
+Batas atas per tingkat (kata bacaan / kata jawaban ideal):
+- PG: mudah C2-C3, satu konsep, stem + opsi ≤ 90 kata, tanpa hitungan;
+  sedang C3, ≤ 120 kata, maks 1 langkah hitung; sulit C4, ≤ 160 kata, 2-3
+  langkah; sangat sulit C5-C6, integrasi minimal 2 konsep, ≤ 200 kata,
+  minimal 3 langkah atau data kuantitatif.
+- Esai: mudah 1 perintah, stem ≤ 120 / jawaban ≤ 100, 3 kriteria rubrik;
+  sedang 2 perintah, ≤ 150 / ≤ 170; sulit 2-3 perintah, ≤ 200 / ≤ 250;
+  sangat sulit 3 perintah, ≤ 250 / ≤ 330, 4-6 kriteria rubrik.
+- Kasus mini: mudah 2 sub, narasi + data ≤ 300 / jawaban semua sub ≤ 230;
+  sedang 2-3 sub, ≤ 400 / ≤ 320.
+- Kasus komprehensif: sulit 4 sub, ≤ 700 / ≤ 600, hitungan ≤ 5 menit;
+  sangat sulit 4 sub, ≤ 900 / ≤ 650, hitungan ≤ 5 menit.
+
+Kata dihitung seperti aplikasi: setiap kelompok huruf atau angka yang dipisah
+spasi, termasuk angka. PG: stem + teks keempat opsi. Kasus: stem +
+caseNarrative + seluruh isi caseData (judul, kolom, sel); jawaban ideal =
+jumlah modelAnswer semua sub. Jawaban ideal cukup untuk nilai penuh; uraian
+tambahan di explanation.
 
 ## Langkah kerja (jangan tampilkan langkah 1 dan 3)
 1. Periksa formulir. Untuk setiap soal, tetapkan topik, kesulitan, kode
@@ -107,6 +148,8 @@ expectedVerdict = "REVISE" untuk semua kode, kecuali formulir menyebut lain.
      yang lemah)? Bila ada, perbaiki.
    - Apakah ada petunjuk cacat di teks yang dilihat reviewer?
    - Apakah soal lolos lint (aturan bentuk soal di atas)?
+   - Hitung kata bacaan dan jawaban ideal terhadap batas tingkatnya, dan
+     pastikan estimatedMinutes = standar.
 4. Keluarkan hasil.
 
 ## Format output

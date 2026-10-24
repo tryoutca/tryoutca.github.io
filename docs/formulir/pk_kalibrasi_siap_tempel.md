@@ -1,5 +1,7 @@
 # PK kalibrasi — siap tempel
 
+> **Catatan (2026-10-24, D-102):** soal dari formulir ini sudah dibuat, tetapi mendahului standar waktu D-99. Revisi dan soal kalibrasi tingkat mudah/sangat sulit ada di `pk_kalibrasi2_siap_tempel.md` (Prompt D v1.1). Baris "Panjang stem dan opsi setara soal gelombang 3" tidak berlaku lagi.
+
 Formulir soal kalibrasi Pelaporan Korporat untuk Prompt D v1.0 (`prompts/prompt_kalibrasi_soal.md`), disusun 2026-10-23.
 Isi: 6 PG, 4 esai, 1 kasus mini, 1 kasus komprehensif (12 soal, 4 batch). Nomor 900-an dan batch B90-B93 dipakai agar tidak bentrok dengan soal biasa.
 
