@@ -10,10 +10,12 @@ export function disclaimer() {
   return h('p', { class: 'disclaimer', text: DISCLAIMER });
 }
 
-// options: { title, back: true | false, menu: true | false }
+// options: { title, back: true | false | 'landing', menu: true | false }
+// back: true kembali ke beranda; 'landing' kembali ke halaman awal (D-103).
 export function header(app, { title, back = true, menu = false }) {
+  const toLanding = back === 'landing';
   return h('header', { class: 'app-header' },
-    back ? h('button', { type: 'button', class: 'btn btn-icon', 'aria-label': 'Kembali ke beranda', onclick: () => app.show('home') }, '‹') : null,
+    back ? h('button', { type: 'button', class: 'btn btn-icon', 'aria-label': toLanding ? 'Kembali ke halaman awal' : 'Kembali ke beranda', onclick: () => app.show(toLanding ? 'landing' : 'home') }, '‹') : null,
     h('h1', { text: title }),
     sebBadge(),
     menu ? secondaryMenu(app) : null);

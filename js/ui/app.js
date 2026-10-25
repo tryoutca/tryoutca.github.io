@@ -7,6 +7,7 @@ import { formatErrors, loadActiveSession, releaseActive, saveSession } from '../
 import { createSession, recoverOnOpen, submit } from '../core/session.js';
 import { createRng, randomSeed } from '../core/random.js';
 import { orderItems } from '../core/blueprint.js';
+import { renderLanding } from './landing.js';
 import { renderHome } from './home.js';
 import { renderCustom } from './custom.js';
 import { renderExam } from './exam-room.js';
@@ -19,6 +20,7 @@ import { saveFile } from '../export/download.js';
 import { registerServiceWorker, updateDecision } from '../platform/pwa.js';
 
 const SCREENS = {
+  landing: renderLanding,
   home: renderHome,
   custom: renderCustom,
   exam: renderExam,
@@ -50,7 +52,8 @@ export class App {
     this.pwa = registerServiceWorker({ onWaiting: () => { this.updateWaiting = true; this.syncPlatform(); } });
     await this.reloadPacks();
     const expired = this.recoverSessions();
-    this.show('home');
+    // Halaman awal lebih dulu, lalu peserta memilih mata ujian (D-103).
+    this.show('landing');
     if (expired) {
       await alertDialog('Waktu ujian sudah habis', [
         'Aplikasi ditutup saat ujian berjalan dan tenggat waktu sudah lewat.',

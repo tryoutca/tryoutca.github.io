@@ -387,6 +387,59 @@ html.exam-focus, html.exam-focus body { overscroll-behavior: none; }
 .calc-key.eq { grid-column: 1 / -1; background: var(--accent); color: var(--accent-text); border-color: var(--accent); font-weight: 700; }
 @media print { .calc-fab, .calc-panel { display: none !important; } }
 
+/* Halaman awal (D-103): sederhana, satu kolom di ponsel, kartu berjajar di layar lebar. */
+.landing { max-width: 880px; }
+.landing-top { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.landing-brand { flex: 1; font-weight: 700; color: var(--accent); letter-spacing: .02em; }
+.landing-hero {
+  text-align: center; padding: 40px 20px 32px; margin: 8px 0 24px; border-radius: 16px;
+  background: linear-gradient(180deg, var(--accent-soft), var(--surface));
+  border: 1px solid var(--border);
+}
+.landing-eyebrow {
+  display: inline-block; margin: 0 0 12px; padding: 4px 12px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--border); color: var(--muted); font-size: .85rem; font-weight: 600;
+}
+.landing-hero h1 { font-size: clamp(1.6rem, 4.5vw, 2.3rem); line-height: 1.2; margin: 0 auto 12px; max-width: 22ch; }
+.landing-lead { font-size: 1.08rem; color: var(--muted); max-width: 52ch; margin: 0 auto 20px; }
+.landing-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.landing-cta { font-size: 1.05rem; padding: 10px 24px; min-height: 50px; }
+.landing-facts {
+  list-style: none; padding: 0; margin: 24px 0 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px;
+  color: var(--muted); font-size: .95rem;
+}
+.landing-facts strong { color: var(--text); font-size: 1.15rem; }
+.landing-section { margin: 32px 0; }
+.landing-section > h2 { font-size: 1.35rem; margin: 0 0 8px; }
+.landing-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin: 12px 0; }
+.landing-grid .card { margin: 0; }
+.landing-tile h3, .landing-subject h3 { margin: 0 0 6px; font-size: 1.05rem; }
+.landing-tile p { margin: 0; color: var(--muted); }
+.landing-subject { display: flex; flex-direction: column; gap: 2px; }
+.landing-subject p:last-of-type { margin-bottom: 12px; }
+.landing-subject .btn { margin-top: auto; align-self: flex-start; }
+.landing-steps { list-style: none; counter-reset: step; padding: 0; margin: 12px 0; display: grid; gap: 12px; }
+.landing-steps li {
+  counter-increment: step; position: relative; padding: 12px 12px 12px 56px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+}
+.landing-steps li::before {
+  content: counter(step); position: absolute; left: 12px; top: 12px; width: 32px; height: 32px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--accent); color: var(--accent-text); font-weight: 700;
+}
+.landing-steps strong { display: block; }
+.landing-steps span { color: var(--muted); }
+.landing-final { text-align: center; padding: 24px 16px; border-radius: 16px; background: var(--surface-2); }
+.landing-final h2 { margin-top: 0; }
+.landing-resume { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; justify-content: space-between; }
+.landing-resume p { margin: 0; }
+@media (max-width: 480px) {
+  .landing-hero { padding: 28px 16px 24px; }
+  .landing-actions .btn { flex: 1 1 100%; }
+}
+/* Kalkulator mengambang tidak diperlukan di halaman awal. */
+body:has(.landing) .calc-fab { display: none; }
+
 </style>
 <style media="print">
 /* Cetak / PDF (SPEC 11): laporan saja, tanpa tombol dan menu; warna terang. */
@@ -5568,10 +5621,12 @@ function disclaimer() {
   return h('p', { class: 'disclaimer', text: DISCLAIMER });
 }
 
-// options: { title, back: true | false, menu: true | false }
+// options: { title, back: true | false | 'landing', menu: true | false }
+// back: true kembali ke beranda; 'landing' kembali ke halaman awal (D-103).
 function header(app, { title, back = true, menu = false }) {
+  const toLanding = back === 'landing';
   return h('header', { class: 'app-header' },
-    back ? h('button', { type: 'button', class: 'btn btn-icon', 'aria-label': 'Kembali ke beranda', onclick: () => app.show('home') }, '‹') : null,
+    back ? h('button', { type: 'button', class: 'btn btn-icon', 'aria-label': toLanding ? 'Kembali ke halaman awal' : 'Kembali ke beranda', onclick: () => app.show(toLanding ? 'landing' : 'home') }, '‹') : null,
     h('h1', { text: title }),
     sebBadge(),
     menu ? secondaryMenu(app) : null);
@@ -5616,6 +5671,125 @@ function secondaryMenu(app) {
     }
   }
   return h('div', { class: 'menu-wrap' }, toggle, menu);
+}
+
+});
+
+__define("js/ui/landing.js", function (__exports, __require) {
+'use strict';
+Object.defineProperties(__exports, {
+  "subjectSummary": { enumerable: true, get: () => subjectSummary },
+  "landingPacks": { enumerable: true, get: () => landingPacks },
+  "renderLanding": { enumerable: true, get: () => renderLanding }
+});
+// Halaman awal (D-103): pengantar singkat sebelum peserta memilih mata ujian.
+// Isi mata ujian dihitung dari pack (jumlah topik, soal tayang, paket), tanpa
+// teks khusus satu mata ujian (SPEC 4). Pack demo hanya tampil bila tidak ada
+// pack lain.
+
+const { h } = __require("js/ui/dom.js");
+const { disclaimer } = __require("js/ui/layout.js");
+const { loadActiveSession } = __require("js/core/session-store.js");
+const { sebBadge } = __require("js/platform/seb.js");
+
+const LEVEL = 'Tingkat Lanjutan (Advanced Level)';
+
+// Ringkasan satu pack untuk kartu mata ujian dan angka di bagian atas.
+function subjectSummary(pack) {
+  const live = pack.questions.filter((q) => q.lifecycle.status === 'LIVE').length;
+  const longest = pack.packages.reduce((max, p) => Math.max(max, p.durationMinutes), 0);
+  return { subjectId: pack.subjectId, name: pack.subjectName, topics: pack.topics.length, live, packages: pack.packages.length, longest };
+}
+
+// Pack yang ditawarkan di halaman awal: semua kecuali demo, kecuali demo satu-satunya.
+function landingPacks(packs) {
+  const real = packs.filter(({ pack }) => pack.subjectId !== 'demo');
+  return (real.length ? real : packs).map(({ pack }) => pack);
+}
+
+function renderLanding(app) {
+  const packs = landingPacks(app.packs);
+  const summaries = packs.map(subjectSummary);
+  const totalLive = summaries.reduce((n, s) => n + s.live, 0);
+  const active = app.packs.map(({ pack }) => pack).find((p) => {
+    const a = loadActiveSession(app.store, p.subjectId);
+    return a && a.ok;
+  });
+
+  const open = (subjectId) => {
+    app.selectSubject(subjectId);
+    app.show('home');
+  };
+  const scrollTo = (id) => el.querySelector(`#${id}`)?.scrollIntoView({ block: 'start' });
+
+  const el = h('div', { class: 'screen landing' },
+    h('div', { class: 'landing-top' },
+      h('span', { class: 'landing-brand', text: 'Tryout CA Indonesia' }),
+      sebBadge(),
+      h('button', { type: 'button', class: 'btn btn-link', onclick: () => app.show('guide') }, 'Panduan')),
+
+    active ? h('div', { class: 'card resume-card landing-resume' },
+      h('p', { text: `Ada ujian ${active.subjectName} yang belum selesai.` }),
+      h('button', { type: 'button', class: 'btn btn-primary', onclick: () => open(active.subjectId) }, 'Lanjutkan ujian')) : null,
+
+    h('section', { class: 'landing-hero' },
+      h('p', { class: 'landing-eyebrow', text: LEVEL }),
+      h('h1', { text: 'Latihan Ujian Chartered Accountant, selangkah demi selangkah' }),
+      h('p', { class: 'landing-lead', text: 'Kerjakan soal pilihan ganda, esai, dan kasus dengan batas waktu seperti ujian sungguhan, lalu lihat nilai dan pembahasannya.' }),
+      h('div', { class: 'landing-actions' },
+        h('button', { type: 'button', class: 'btn btn-primary landing-cta', onclick: () => scrollTo('mata-ujian') }, 'Mulai Latihan'),
+        h('button', { type: 'button', class: 'btn', onclick: () => scrollTo('ujian-ca') }, 'Kenali Ujian CA')),
+      h('ul', { class: 'landing-facts' },
+        h('li', {}, h('strong', { text: String(summaries.length) }), ' mata ujian'),
+        h('li', {}, h('strong', { text: String(totalLive) }), ' soal latihan'),
+        h('li', {}, h('strong', { text: 'Gratis' }), ' tanpa akun'))),
+
+    h('section', { class: 'landing-section', id: 'ujian-ca' },
+      h('h2', { text: 'Sekilas tentang Ujian CA' }),
+      h('p', { text: 'Chartered Accountant (CA) Indonesia adalah sebutan profesional bagi akuntan yang diberikan oleh Ikatan Akuntan Indonesia (IAI). Salah satu syarat untuk meraihnya adalah lulus Ujian CA.' }),
+      h('p', { text: `Ujian CA disusun berjenjang. Mata ujian ${LEVEL} menuntut Anda menerapkan standar dan menganalisis keadaan perusahaan secara utuh, bukan sekadar menghafal.` }),
+      h('div', { class: 'landing-grid' },
+        tile('Pilihan ganda', 'Menguji pemahaman konsep dan penerapannya dengan cepat dan tepat.'),
+        tile('Esai', 'Menjelaskan perlakuan, perhitungan, dan alasannya secara runtut.'),
+        tile('Kasus', 'Menganalisis keadaan perusahaan dan memberi rekomendasi yang beralasan.')),
+      h('p', { class: 'hint' }, 'Jadwal, syarat, dan ketentuan resmi ujian dapat dilihat di ',
+        h('a', { href: 'https://iaiglobal.or.id', target: '_blank', rel: 'noopener' }, 'situs IAI'), '.')),
+
+    h('section', { class: 'landing-section', id: 'mata-ujian' },
+      h('h2', { text: 'Pilih mata ujian' }),
+      h('p', { class: 'hint', text: `Saat ini tersedia mata ujian ${LEVEL}. Mata ujian lain menyusul.` }),
+      summaries.length
+        ? h('div', { class: 'landing-grid' }, summaries.map((s) => h('div', { class: 'card landing-subject' },
+          h('h3', { text: s.name }),
+          h('p', { class: 'hint', text: `${s.topics} topik · ${s.live} soal · ${s.packages} paket` }),
+          h('p', { class: 'hint', text: `Paket terlama ${s.longest} menit` }),
+          h('button', { type: 'button', class: 'btn btn-primary', onclick: () => open(s.subjectId) }, 'Pilih'))))
+        : h('div', { class: 'card' },
+          h('p', { text: 'Belum ada mata ujian. Impor berkas mata ujian lewat Pengaturan.' }),
+          h('button', { type: 'button', class: 'btn', onclick: () => app.show('settings') }, 'Buka Pengaturan'))),
+
+    h('section', { class: 'landing-section' },
+      h('h2', { text: 'Cara berlatih' }),
+      h('ol', { class: 'landing-steps' },
+        step('Pilih mata ujian dan paket', 'Mulai dari paket yang mudah, naik bertahap, lalu coba Simulasi Ujian dengan waktu penuh.'),
+        step('Kerjakan dengan batas waktu', 'Jawaban tersimpan otomatis di perangkat Anda, juga saat internet terputus.'),
+        step('Lihat nilai dan pembahasan', 'Pilihan ganda langsung dinilai. Esai dan kasus dinilai dengan bantuan AI pilihan Anda, memakai rubrik yang sudah disiapkan.'))),
+
+    h('section', { class: 'landing-section landing-final' },
+      h('h2', { text: 'Siap mencoba?' }),
+      h('button', { type: 'button', class: 'btn btn-primary landing-cta', onclick: () => scrollTo('mata-ujian') }, 'Pilih mata ujian')),
+
+    disclaimer());
+
+  return { el };
+}
+
+function tile(title, text) {
+  return h('div', { class: 'card landing-tile' }, h('h3', { text: title }), h('p', { text }));
+}
+
+function step(title, text) {
+  return h('li', {}, h('strong', { text: title }), h('span', { text }));
 }
 
 });
@@ -5694,7 +5868,7 @@ const { installCard, isIOS, isStandalone, shouldShowInstallPrompt } = __require(
 const CUSTOM = '__custom__';
 
 function renderHome(app) {
-  const el = h('div', { class: 'screen' }, header(app, { title: 'Simulator Ujian CA', back: false, menu: true }));
+  const el = h('div', { class: 'screen' }, header(app, { title: 'Simulator Ujian CA', back: 'landing', menu: true }));
 
   for (const notice of app.notices) el.append(h('p', { class: 'notice', text: notice }));
 
@@ -10699,6 +10873,7 @@ const { formatErrors, loadActiveSession, releaseActive, saveSession } = __requir
 const { createSession, recoverOnOpen, submit } = __require("js/core/session.js");
 const { createRng, randomSeed } = __require("js/core/random.js");
 const { orderItems } = __require("js/core/blueprint.js");
+const { renderLanding } = __require("js/ui/landing.js");
 const { renderHome } = __require("js/ui/home.js");
 const { renderCustom } = __require("js/ui/custom.js");
 const { renderExam } = __require("js/ui/exam-room.js");
@@ -10711,6 +10886,7 @@ const { saveFile } = __require("js/export/download.js");
 const { registerServiceWorker, updateDecision } = __require("js/platform/pwa.js");
 
 const SCREENS = {
+  landing: renderLanding,
   home: renderHome,
   custom: renderCustom,
   exam: renderExam,
@@ -10742,7 +10918,8 @@ class App {
     this.pwa = registerServiceWorker({ onWaiting: () => { this.updateWaiting = true; this.syncPlatform(); } });
     await this.reloadPacks();
     const expired = this.recoverSessions();
-    this.show('home');
+    // Halaman awal lebih dulu, lalu peserta memilih mata ujian (D-103).
+    this.show('landing');
     if (expired) {
       await alertDialog('Waktu ujian sudah habis', [
         'Aplikasi ditutup saat ujian berjalan dan tenggat waktu sudah lewat.',

@@ -7,6 +7,8 @@ import { reportBlocks } from '../../js/export/report-blocks.js';
 import { buildReport } from '../../js/core/report.js';
 import { applyGradingResult, validateGradingResult } from '../../js/core/grading-io.js';
 import { T0, sampleResult, submittedDemo } from '../fixtures/demo-graded.js';
+import { landingPacks, renderLanding, subjectSummary } from '../../js/ui/landing.js';
+import { Store, memoryBackend } from '../../js/core/storage.js';
 
 const XSS = '<script>window.__xss = 1</script><img src=x onerror="window.__xss = 2">';
 
@@ -119,6 +121,51 @@ export default {
               assert.equal(el.querySelector('td.num').textContent, '820');
             }
           }
+        } finally {
+          box.remove();
+        }
+      },
+    },
+    {
+      name: 'halaman awal: ringkasan mata ujian dari pack, demo disembunyikan bila ada pack lain (D-103)',
+      run: async () => {
+        const demo = await loadJson('packs/demo/pack.json');
+        const pk = await loadJson('packs/pk/pack.json');
+        const s = subjectSummary(pk);
+        assert.equal(s.topics, pk.topics.length);
+        assert.equal(s.live, pk.questions.filter((q) => q.lifecycle.status === 'LIVE').length);
+        assert.equal(s.packages, pk.packages.length);
+        assert.equal(s.longest, Math.max(...pk.packages.map((p) => p.durationMinutes)));
+        const entries = [{ pack: demo }, { pack: pk }];
+        assert.deepEqual(landingPacks(entries).map((p) => p.subjectId), ['pk']);
+        assert.deepEqual(landingPacks([{ pack: demo }]).map((p) => p.subjectId), ['demo'], 'demo tampil bila satu-satunya');
+      },
+    },
+    {
+      browserOnly: true,
+      name: 'halaman awal: pengantar Ujian CA, kartu mata ujian, Pilih membuka beranda mata ujian itu (D-103)',
+      run: async () => {
+        const msk = await loadJson('packs/msk/pack.json');
+        const pk = await loadJson('packs/pk/pack.json');
+        const calls = [];
+        const app = {
+          packs: [{ pack: msk }, { pack: pk }],
+          store: new Store(memoryBackend()),
+          selectSubject: (id) => calls.push(['select', id]),
+          show: (name) => calls.push(['show', name]),
+        };
+        const box = sandbox();
+        try {
+          const { el } = renderLanding(app);
+          box.append(el);
+          const text = el.textContent;
+          assert.ok(text.includes('Sekilas tentang Ujian CA') && text.includes('Tingkat Lanjutan (Advanced Level)'));
+          assert.ok(text.includes(msk.subjectName) && text.includes(pk.subjectName));
+          assert.ok(!text.includes('belum selesai'), 'tanpa sesi aktif tidak ada kartu lanjutkan');
+          const picks = [...el.querySelectorAll('.landing-subject button')];
+          assert.equal(picks.length, 2);
+          picks[1].click();
+          assert.deepEqual(calls, [['select', pk.subjectId], ['show', 'home']]);
         } finally {
           box.remove();
         }

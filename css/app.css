@@ -376,3 +376,56 @@ html.exam-focus, html.exam-focus body { overscroll-behavior: none; }
 .calc-key.op { background: var(--accent-soft); color: var(--accent); font-weight: 700; }
 .calc-key.eq { grid-column: 1 / -1; background: var(--accent); color: var(--accent-text); border-color: var(--accent); font-weight: 700; }
 @media print { .calc-fab, .calc-panel { display: none !important; } }
+
+/* Halaman awal (D-103): sederhana, satu kolom di ponsel, kartu berjajar di layar lebar. */
+.landing { max-width: 880px; }
+.landing-top { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.landing-brand { flex: 1; font-weight: 700; color: var(--accent); letter-spacing: .02em; }
+.landing-hero {
+  text-align: center; padding: 40px 20px 32px; margin: 8px 0 24px; border-radius: 16px;
+  background: linear-gradient(180deg, var(--accent-soft), var(--surface));
+  border: 1px solid var(--border);
+}
+.landing-eyebrow {
+  display: inline-block; margin: 0 0 12px; padding: 4px 12px; border-radius: 999px;
+  background: var(--surface); border: 1px solid var(--border); color: var(--muted); font-size: .85rem; font-weight: 600;
+}
+.landing-hero h1 { font-size: clamp(1.6rem, 4.5vw, 2.3rem); line-height: 1.2; margin: 0 auto 12px; max-width: 22ch; }
+.landing-lead { font-size: 1.08rem; color: var(--muted); max-width: 52ch; margin: 0 auto 20px; }
+.landing-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.landing-cta { font-size: 1.05rem; padding: 10px 24px; min-height: 50px; }
+.landing-facts {
+  list-style: none; padding: 0; margin: 24px 0 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px;
+  color: var(--muted); font-size: .95rem;
+}
+.landing-facts strong { color: var(--text); font-size: 1.15rem; }
+.landing-section { margin: 32px 0; }
+.landing-section > h2 { font-size: 1.35rem; margin: 0 0 8px; }
+.landing-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin: 12px 0; }
+.landing-grid .card { margin: 0; }
+.landing-tile h3, .landing-subject h3 { margin: 0 0 6px; font-size: 1.05rem; }
+.landing-tile p { margin: 0; color: var(--muted); }
+.landing-subject { display: flex; flex-direction: column; gap: 2px; }
+.landing-subject p:last-of-type { margin-bottom: 12px; }
+.landing-subject .btn { margin-top: auto; align-self: flex-start; }
+.landing-steps { list-style: none; counter-reset: step; padding: 0; margin: 12px 0; display: grid; gap: 12px; }
+.landing-steps li {
+  counter-increment: step; position: relative; padding: 12px 12px 12px 56px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+}
+.landing-steps li::before {
+  content: counter(step); position: absolute; left: 12px; top: 12px; width: 32px; height: 32px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--accent); color: var(--accent-text); font-weight: 700;
+}
+.landing-steps strong { display: block; }
+.landing-steps span { color: var(--muted); }
+.landing-final { text-align: center; padding: 24px 16px; border-radius: 16px; background: var(--surface-2); }
+.landing-final h2 { margin-top: 0; }
+.landing-resume { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; justify-content: space-between; }
+.landing-resume p { margin: 0; }
+@media (max-width: 480px) {
+  .landing-hero { padding: 28px 16px 24px; }
+  .landing-actions .btn { flex: 1 1 100%; }
+}
+/* Kalkulator mengambang tidak diperlukan di halaman awal. */
+body:has(.landing) .calc-fab { display: none; }

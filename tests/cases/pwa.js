@@ -230,7 +230,7 @@ export default {
     },
     {
       browserOnly: true,
-      name: 'versi satu berkas berjalan: beranda tampil dengan pack tertanam (iframe)',
+      name: 'versi satu berkas berjalan: halaman awal lalu beranda tampil dengan pack tertanam (iframe)',
       run: async () => {
         const html = await loadText('dist/simulator-offline.html');
         const frame = document.createElement('iframe');
@@ -239,11 +239,19 @@ export default {
         document.body.append(frame);
         try {
           let text = '';
+          const doc = () => frame.contentDocument;
+          for (let i = 0; i < 40 && !text.includes('Pilih mata ujian'); i++) {
+            await new Promise((r) => setTimeout(r, 100));
+            text = doc() && doc().body ? doc().body.innerText : '';
+          }
+          assert.ok(text.includes('Sekilas tentang Ujian CA'), `halaman awal tidak tampil: ${text.slice(0, 200)}`);
+          // Pilih mata ujian pertama, lalu beranda paket tampil (D-103).
+          doc().querySelector('.landing-subject button').click();
           for (let i = 0; i < 40 && !text.includes('MULAI'); i++) {
             await new Promise((r) => setTimeout(r, 100));
-            text = frame.contentDocument && frame.contentDocument.body ? frame.contentDocument.body.innerText : '';
+            text = doc().body.innerText;
           }
-          assert.ok(text.includes('MULAI') && text.includes('Training 1 (Demo)'), `beranda tidak tampil: ${text.slice(0, 200)}`);
+          assert.ok(text.includes('MULAI'), `beranda tidak tampil: ${text.slice(0, 200)}`);
         } finally {
           frame.remove();
         }

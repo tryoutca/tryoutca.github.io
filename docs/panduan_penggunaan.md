@@ -37,6 +37,10 @@ Alamat aplikasi: **https://tryoutca.github.io/**
 
 ## 2. Mengerjakan ujian
 
+Aplikasi dibuka di **halaman awal** yang berisi pengantar singkat Ujian CA.
+Ketuk **Mulai Latihan**, lalu **Pilih** pada mata ujian yang diinginkan. Tombol
+**‹** di kiri atas beranda kembali ke halaman awal.
+
 1. Di beranda pilih paket: **Level 1** (soal mudah, 45 menit), **Level 2**
    (sedang, 65 menit), **Level 3** (sulit, 110 menit), **Level 4** (sangat
    sulit, 140 menit), **Simulasi Ujian** (campuran, 180 menit, tanpa jeda), atau

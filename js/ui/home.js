@@ -12,7 +12,7 @@ import { installCard, isIOS, isStandalone, shouldShowInstallPrompt } from '../pl
 const CUSTOM = '__custom__';
 
 export function renderHome(app) {
-  const el = h('div', { class: 'screen' }, header(app, { title: 'Simulator Ujian CA', back: false, menu: true }));
+  const el = h('div', { class: 'screen' }, header(app, { title: 'Simulator Ujian CA', back: 'landing', menu: true }));
 
   for (const notice of app.notices) el.append(h('p', { class: 'notice', text: notice }));
 
