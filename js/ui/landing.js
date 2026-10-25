@@ -40,7 +40,7 @@ export function renderLanding(app) {
 
   const el = h('div', { class: 'screen landing' },
     h('div', { class: 'landing-top' },
-      h('span', { class: 'landing-brand', text: 'Tryout CA Indonesia' }),
+      h('span', { class: 'landing-brand' }, h('img', { src: brandIcon(), alt: '' }), 'Tryout CA Indonesia'),
       sebBadge(),
       h('button', { type: 'button', class: 'btn btn-link', onclick: () => app.show('guide') }, 'Panduan')),
 
@@ -98,6 +98,12 @@ export function renderLanding(app) {
     disclaimer());
 
   return { el };
+}
+
+// Ikon dari favicon dokumen: berkas ikon di situs, data URI di versi satu berkas.
+function brandIcon() {
+  const link = document.querySelector('link[rel="icon"]');
+  return link ? link.href : 'icons/icon.svg';
 }
 
 function tile(title, text) {

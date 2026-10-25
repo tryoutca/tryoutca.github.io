@@ -389,8 +389,13 @@ html.exam-focus, html.exam-focus body { overscroll-behavior: none; }
 
 /* Halaman awal (D-103): sederhana, satu kolom di ponsel, kartu berjajar di layar lebar. */
 .landing { max-width: 880px; }
-.landing-top { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
-.landing-brand { flex: 1; font-weight: 700; color: var(--accent); letter-spacing: .02em; }
+.landing-top { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.landing-brand {
+  flex: 1; display: flex; align-items: center; gap: 10px;
+  font-size: clamp(1.3rem, 2.6vw, 1.7rem); font-weight: 800; color: var(--accent); letter-spacing: .01em; line-height: 1.2;
+}
+.landing-brand img { width: 1.6em; height: 1.6em; border-radius: 8px; flex: none; }
+.landing-top .btn-link { font-size: 1.05rem; }
 .landing-hero {
   text-align: center; padding: 40px 20px 32px; margin: 8px 0 24px; border-radius: 16px;
   background: linear-gradient(180deg, var(--accent-soft), var(--surface));
@@ -5724,7 +5729,7 @@ function renderLanding(app) {
 
   const el = h('div', { class: 'screen landing' },
     h('div', { class: 'landing-top' },
-      h('span', { class: 'landing-brand', text: 'Tryout CA Indonesia' }),
+      h('span', { class: 'landing-brand' }, h('img', { src: brandIcon(), alt: '' }), 'Tryout CA Indonesia'),
       sebBadge(),
       h('button', { type: 'button', class: 'btn btn-link', onclick: () => app.show('guide') }, 'Panduan')),
 
@@ -5782,6 +5787,12 @@ function renderLanding(app) {
     disclaimer());
 
   return { el };
+}
+
+// Ikon dari favicon dokumen: berkas ikon di situs, data URI di versi satu berkas.
+function brandIcon() {
+  const link = document.querySelector('link[rel="icon"]');
+  return link ? link.href : 'icons/icon.svg';
 }
 
 function tile(title, text) {
