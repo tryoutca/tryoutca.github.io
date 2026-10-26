@@ -434,3 +434,8 @@ html.exam-focus, html.exam-focus body { overscroll-behavior: none; }
 }
 /* Kalkulator mengambang tidak diperlukan di halaman awal. */
 body:has(.landing) .calc-fab { display: none; }
+/* Pesan bantuan bila aplikasi gagal atau terlalu lama terbuka (D-105). */
+.boot-help { border-left: 4px solid var(--warn); }
+.boot-help h2 { margin-top: 0; }
+.boot-help ol { padding-left: 1.3rem; }
+.boot-info { overflow-wrap: anywhere; font-size: .8rem; }

@@ -242,3 +242,9 @@ Status: **DISETUJUI** (oleh pemilik), **USULAN** (menunggu persetujuan),
 | ID | Keputusan | Alasan | Status |
 |---|---|---|---|
 | D-104 | `og:title` dan `<title>` di `index.html` menjadi **"Tryout dan Simulator Ujian CA Indonesia"** saja, tanpa "latihan soal MSK dan Pelaporan Korporat". `description`/`og:description` tidak berubah. | Permintaan pemilik 2026-10-25 untuk keterangan tautan saat dibagikan (mis. WhatsApp). | DISETUJUI (2026-10-25) |
+
+## Pesan bantuan saat aplikasi gagal terbuka
+
+| ID | Keputusan | Alasan | Status |
+|---|---|---|---|
+| D-105 | `js/boot-help.js` (skrip klasik, sintaks lama, dimuat di `index.html` sebelum `js/main.js`, ikut cache service worker) menampilkan kartu **"Aplikasi belum juga terbuka"** di layar memuat (`#boot`) bila: (1) layar memuat masih tampil setelah 15 detik, (2) ada berkas skrip yang gagal dimuat (langsung), atau (3) browser tidak mendukung modul ("Browser ini belum dapat membuka aplikasi"). Isinya langkah sederhana: muat ulang, buka langsung di Chrome/Edge/Safari terbaru (bukan dari dalam aplikasi lain, bukan incognito), perbarui browser/sistem, coba jaringan lain; tombol **Muat ulang**; dan baris kecil "Info untuk pengelola" (alasan, maks. 3 pesan error, user agent) agar tangkapan layar peserta bisa didiagnosis. Kode aplikasi tidak diubah: saat layar pertama tampil, `#boot` beserta kartu terhapus. Versi satu berkas tidak memakai skrip ini (semua kode tertanam, tanpa jaringan). | Laporan peserta 2026-10-26 "tidak bisa dibuka" tanpa rincian, padahal situs normal saat diperiksa; sebelumnya kegagalan memuat hanya meninggalkan tulisan "Memuat aplikasi…" tanpa petunjuk. | TEKNIS |

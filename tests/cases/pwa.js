@@ -257,5 +257,54 @@ export default {
         }
       },
     },
+    {
+      name: 'pesan bantuan memuat: index.html memuat js/boot-help.js sebelum aplikasi, tanpa sintaks baru, ikut di cache (D-105)',
+      run: async () => {
+        const html = await loadText('index.html');
+        const help = html.indexOf('<script src="js/boot-help.js"></script>');
+        const main = html.indexOf('<script type="module" src="js/main.js"></script>');
+        assert.ok(help > 0 && help < main, 'boot-help.js harus dimuat sebelum js/main.js');
+        assert.ok(html.includes('id="boot"') && html.includes('id="boot-loading"'), 'penanda layar memuat ada');
+        const src = await loadText('js/boot-help.js');
+        // Komentar dan isi string diabaikan agar teks Indonesia tidak dianggap sintaks.
+        const code = src.replace(/\/\/.*$/gm, '').replace(/'(?:[^'\\]|\\.)*'/g, "''");
+        for (const [re, what] of [[/=>/, 'fungsi panah'], [/\b(let|const|class)\s/, 'let/const/class'], [/`/, 'template string'], [/\?\.|\?\?/, '?. atau ??'], [/^\s*(import|export)\s/m, 'modul']]) {
+          assert.ok(!re.test(code), `boot-help.js memakai ${what}; harus berjalan di browser lama`);
+        }
+        const sw = await loadText('service-worker.js');
+        assert.ok(sw.includes('"js/boot-help.js"'), 'boot-help.js ikut di cache offline');
+      },
+    },
+    {
+      browserOnly: true,
+      name: 'pesan bantuan memuat: tampil bila terlalu lama atau berkas gagal, tidak tampil bila aplikasi sudah terbuka (D-105)',
+      run: async () => {
+        const src = await loadText('js/boot-help.js');
+        const page = (extra) => `<!doctype html><body><main id="app"><section id="boot"><p id="boot-loading">Memuat aplikasi…</p></section></main>`
+          + `<script>window.CASIM_BOOT_WAIT_MS = 300;</script><script>${src}</script>${extra}</body>`;
+        async function run(extra, after) {
+          const frame = document.createElement('iframe');
+          frame.style.cssText = 'position:absolute;left:-9999px;width:400px;height:400px';
+          frame.srcdoc = page(extra);
+          document.body.append(frame);
+          try {
+            await new Promise((r) => frame.addEventListener('load', r, { once: true }));
+            if (after) after(frame.contentDocument);
+            await new Promise((r) => setTimeout(r, 600));
+            const card = frame.contentDocument.querySelector('.boot-help');
+            return { card, loadingHidden: frame.contentDocument.getElementById('boot-loading')?.hidden };
+          } finally {
+            frame.remove();
+          }
+        }
+        const slow = await run('');
+        assert.ok(slow.card && slow.card.textContent.includes('Aplikasi belum juga terbuka') && slow.card.textContent.includes('Muat ulang'));
+        assert.ok(slow.card.textContent.includes('lebih dari') && slow.loadingHidden === true);
+        const failed = await run('<script src="tidak-ada-berkas-ini.js"></script>');
+        assert.ok(failed.card && failed.card.textContent.includes('berkas gagal dimuat'), failed.card && failed.card.textContent);
+        const opened = await run('', (doc) => doc.getElementById('boot').remove());
+        assert.equal(opened.card, null, 'aplikasi sudah terbuka: pesan tidak tampil');
+      },
+    },
   ],
 };

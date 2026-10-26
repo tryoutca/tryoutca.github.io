@@ -39,7 +39,7 @@ export async function moduleGraph(load, entry = 'js/main.js') {
 }
 
 const SHELL = [
-  'index.html', 'manifest.webmanifest', 'css/app.css', 'css/print.css',
+  'index.html', 'js/boot-help.js', 'manifest.webmanifest', 'css/app.css', 'css/print.css',
   'icons/icon.svg', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png',
   'packs/index.json', 'packs/index.js',
 ];
