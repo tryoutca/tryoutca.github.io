@@ -3,6 +3,26 @@
 Catatan perubahan prompt (`prompts/*.md`) dan kontrak data. Setiap
 perubahan prompt dirujuk ke docs/PROMPT_ALIGNMENT.md.
 
+## 2026-10-29 — Prompt D v1.2: soal kalibrasi mengikuti variasi soal dan porsi teori
+Disetujui pemilik 2026-10-29. Menyelaraskan Prompt D dengan Prompt B v4.5
+dan Prompt C v4.4 agar soal kalibrasi tidak dapat dikenali dari pola cerita
+lama. Kontrak data tidak berubah. Rujukan: D-113, PROMPT_ALIGNMENT K-2.
+
+### prompts/prompt_kalibrasi_soal.md (Prompt D)
+- Judul v1.1 → v1.2.
+- Sumber: soal kalibrasi tidak dapat dibedakan juga dalam bentuk dan cara
+  bercerita.
+- Pemeriksaan formulir: bentuk teori untuk cacat PERIODE, LUAR, atau DATA.
+- Aturan cacat: tidak boleh cacat pada bentuk dan variasi soal (originality
+  tidak dipakai); RUBRIK boleh berupa rubrik yang hanya menerima satu
+  kerangka.
+- Aturan bentuk soal: "perusahaan fiktif" → "entitas fiktif"; notes memuat
+  label bentuk setelah ringkasan cacat.
+- Bagian baru "Variasi soal": ringkasan aturan Prompt B v4.5 (porsi teori,
+  ragam teori, pembuka, entitas, perintah, alur kasus, rubrik) dan kode
+  cacat yang cocok untuk soal teori.
+- Langkah kerja 1 dan 3: rencanakan dan periksa bentuk serta pembuka.
+
 ## 2026-10-29 — Prompt B v4.5 dan Prompt C v4.4: variasi soal cerita, porsi dan kedalaman soal teori
 Disetujui pemilik 2026-10-29. Latar: masukan pemilik bahwa pola soal cerita
 seragam (45 dari 52 soal MSK dibuka "PT X (fiktif) adalah ...") serta soal

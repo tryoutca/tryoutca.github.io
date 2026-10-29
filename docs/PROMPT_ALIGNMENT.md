@@ -78,3 +78,9 @@ data), jadi bentuk keluarannya harus lengkap di dalam prompt itu sendiri.
 |---|---|---|---|---|
 | B-16 | Penyusun | Sumber, pemeriksaan formulir, Aturan wajib (`authoring`), bagian baru "Variasi soal dan porsi teori", langkah 1 dan 3, Format output, Revisi | Porsi teori maks 40% PG dan esai, satu sub teori per kasus; ragam soal teori; variasi pembuka, entitas, nama, perintah, dan urutan sub kasus; label bentuk di baris pertama `authoring.notes` | Tidak ada field baru. Label bentuk ditulis di `authoring.notes` (string bebas); belum diperiksa validator atau lint |
 | C-7 | Reviewer | Langkah baru 9 dan 10, Tingkat temuan, contoh `batchNotes` | Kedalaman soal teori (alignment), jawaban tertebak (stemClarity), rubrik satu kerangka (rubricQuality), pola cerita berulang (originality) | Tidak ada. Enum dimension dan reviewVersion "4.1" tetap; paket review tetap tanpa `authoring`, jadi bentuk soal ditentukan reviewer dari isi |
+
+## Prompt D v1.2 (2026-10-29, disetujui pemilik)
+
+| No | Prompt | Bagian | Perubahan | Dampak pada kontrak |
+|---|---|---|---|---|
+| K-2 | Kalibrasi | Sumber, pemeriksaan formulir, Aturan cacat, Aturan bentuk soal (`authoring.notes`), bagian baru "Variasi soal", langkah 1 dan 3 | Variasi soal dan porsi teori sama dengan Prompt B v4.5; kode cacat yang cocok untuk soal teori; cacat tidak boleh pada bentuk atau variasi | Tidak ada. Label bentuk di `authoring.notes` (string bebas); `calibration.defectDimension` tetap memakai enum yang ada |
