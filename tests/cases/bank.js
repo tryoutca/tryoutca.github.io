@@ -202,6 +202,36 @@ export default {
       },
     },
     {
+      name: 'kalibrasi dipilih dari tingkat kesulitan mayoritas batch, lalu tipe sama (D-106)',
+      run: async () => {
+        const { pack, bank } = await freshBank();
+        const withLevel = (q, difficulty) => Object.assign(q, { difficulty });
+        await importItems(bank, pack, [
+          withLevel(draftFrom(pack, 'mcq', 1), 'mudah'), withLevel(draftFrom(pack, 'mcq', 2), 'mudah'),
+          withLevel(draftFrom(pack, 'mcq', 3), 'sulit'), withLevel(draftFrom(pack, 'mcq', 4), 'sangat_sulit'),
+        ], 'DEMO-B01');
+        await importItems(bank, pack, [
+          withLevel(draftFrom(pack, 'mcq', 90, { calibration: KEY_DEFECT }), 'sedang'),
+          withLevel(draftFrom(pack, 'mcq', 91, { calibration: KEY_DEFECT }), 'mudah'),
+          withLevel(draftFrom(pack, 'mcq', 92, { calibration: KEY_DEFECT }), 'mudah'),
+          withLevel(draftFrom(pack, 'essay', 90, { calibration: KEY_DEFECT }), 'sangat_sulit'),
+        ], 'DEMO-B02');
+        const pick = async (ids, seed) => {
+          const pkg = await buildReviewPackage(bank, ids, { includeCalibration: true, rng: createRng(seed), now: T });
+          const pending = bank.pendingReviews.find((p) => p.batchId === pkg.batchId);
+          return pending.keyMap[pending.calibrationKey].questionId;
+        };
+        const picked = new Set();
+        for (let seed = 1; seed <= 12; seed++) picked.add(await pick(['DEMO-MCQ-101', 'DEMO-MCQ-102', 'DEMO-MCQ-103'], seed));
+        assert.deepEqual([...picked].sort(), ['DEMO-MCQ-191', 'DEMO-MCQ-192'], 'mayoritas mudah: hanya kalibrasi PG mudah, keduanya dapat terpilih');
+        // Tidak ada kalibrasi PG sangat sulit: jatuh ke PG tingkat apa pun, bukan esai sangat sulit.
+        const fallback = new Set();
+        for (let seed = 1; seed <= 12; seed++) fallback.add(await pick(['DEMO-MCQ-104'], seed));
+        assert.ok(!fallback.has('DEMO-ESA-190'), 'tipe sama lebih utama daripada tingkat sama');
+        assert.ok(fallback.has('DEMO-MCQ-190'), 'kalibrasi PG sedang ikut menjadi cadangan');
+      },
+    },
+    {
       id: 'TS-19',
       name: 'kalibrasi di-APPROVE reviewer: seluruh hasil batch ditolak',
       run: async () => {

@@ -45,6 +45,15 @@ export function checkReviewSelection(bank, ids) {
   return errors;
 }
 
+// Tingkat kesulitan terbanyak di batch; bila seri, tingkat yang lebih dulu muncul.
+function majorityDifficulty(qs) {
+  const counts = new Map();
+  for (const q of qs) counts.set(q.difficulty, (counts.get(q.difficulty) || 0) + 1);
+  let best = null;
+  for (const [d, n] of counts) if (best === null || n > counts.get(best)) best = d;
+  return best;
+}
+
 // Paket review (review-export.schema.json) + catatan pemetaan yang disimpan di bank.
 // options: { includeCalibration, rng, now }
 export async function buildReviewPackage(bank, ids, { includeCalibration = false, rng = Math.random, now = Date.now() } = {}) {
@@ -55,8 +64,11 @@ export async function buildReviewPackage(bank, ids, { includeCalibration = false
   if (includeCalibration) {
     const pool = bank.pack.questions.filter((q) => q.lifecycle.status === 'CALIBRATION');
     if (!pool.length) throw new BankError('Belum ada soal kalibrasi. Impor batch kalibrasi lebih dulu.');
+    // D-106: utamakan tipe sama dengan tingkat kesulitan mayoritas batch, lalu tipe sama, lalu semua.
     const sameGroup = pool.filter((q) => GROUPS[q.type] === GROUPS[qs[0].type]);
-    const from = sameGroup.length ? sameGroup : pool;
+    const level = majorityDifficulty(qs);
+    const sameLevel = sameGroup.filter((q) => q.difficulty === level);
+    const from = sameLevel.length ? sameLevel : sameGroup.length ? sameGroup : pool;
     calibration = from[Math.floor(rng() * from.length)];
   }
   const all = shuffle(calibration ? [...qs, calibration] : qs, rng);
