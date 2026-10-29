@@ -71,3 +71,10 @@ data), jadi bentuk keluarannya harus lengkap di dalam prompt itu sendiri.
 |---|---|---|---|---|
 | B-15 | Penyusun | Peran, Sumber, Aturan wajib, pemeriksaan formulir, "Standar waktu dan tingkat kesulitan", langkah 3 | C2 untuk PG dan esai mudah, kasus minimal C3; soal emas patokan gaya bukan panjang; campuran teori dan analisis, konteks terkini dan tantangan ke depan sebagai skenario; cara menghitung kata sama dengan `measureWords` (`js/core/time-standard.js`); panduan soal mudah dan sangat sulit | Tidak ada. `cognitiveLevel` C2 sudah ada di enum skema; jumlah kriteria rubrik per tingkat (3 untuk esai mudah, 4-6 untuk sangat sulit) masih dalam batas 3-6 CONTRACT |
 | K-1 | Kalibrasi | Sumber, pemeriksaan formulir, Aturan cacat, Aturan bentuk soal, bagian baru standar waktu, langkah 3 | Standar waktu dan batas kata sama dengan Prompt B; ukuran kasus sesuai tingkat; cacat tidak boleh pada panjang/`estimatedMinutes`/ukuran kasus/level kognitif | Tidak ada. Lint standar waktu tetap tidak memeriksa soal CALIBRATION (D-100); kesesuaian dijaga prompt |
+
+## Prompt B v4.5 dan Prompt C v4.4 (2026-10-29, disetujui pemilik)
+
+| No | Prompt | Bagian | Perubahan | Dampak pada kontrak |
+|---|---|---|---|---|
+| B-16 | Penyusun | Sumber, pemeriksaan formulir, Aturan wajib (`authoring`), bagian baru "Variasi soal dan porsi teori", langkah 1 dan 3, Format output, Revisi | Porsi teori maks 40% PG dan esai, satu sub teori per kasus; ragam soal teori; variasi pembuka, entitas, nama, perintah, dan urutan sub kasus; label bentuk di baris pertama `authoring.notes` | Tidak ada field baru. Label bentuk ditulis di `authoring.notes` (string bebas); belum diperiksa validator atau lint |
+| C-7 | Reviewer | Langkah baru 9 dan 10, Tingkat temuan, contoh `batchNotes` | Kedalaman soal teori (alignment), jawaban tertebak (stemClarity), rubrik satu kerangka (rubricQuality), pola cerita berulang (originality) | Tidak ada. Enum dimension dan reviewVersion "4.1" tetap; paket review tetap tanpa `authoring`, jadi bentuk soal ditentukan reviewer dari isi |

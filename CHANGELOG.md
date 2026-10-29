@@ -3,6 +3,43 @@
 Catatan perubahan prompt (`prompts/*.md`) dan kontrak data. Setiap
 perubahan prompt dirujuk ke docs/PROMPT_ALIGNMENT.md.
 
+## 2026-10-29 — Prompt B v4.5 dan Prompt C v4.4: variasi soal cerita, porsi dan kedalaman soal teori
+Disetujui pemilik 2026-10-29. Latar: masukan pemilik bahwa pola soal cerita
+seragam (45 dari 52 soal MSK dibuka "PT X (fiktif) adalah ...") serta soal
+teori kurang jumlah dan kedalamannya (hanya 4 soal MSK tanpa entitas).
+Kontrak data tidak berubah: tidak ada field baru, `schemaVersion` tetap
+"4.1", enum dimensi reviewer tetap. Prompt D tetap v1.1. Rujukan: D-112,
+PROMPT_ALIGNMENT B-16 dan C-7.
+
+### prompts/prompt_penyusun_soal.md (Prompt B)
+- Judul v4.4 → v4.5.
+- Sumber: contoh soal ujian lama adalah sumber gaya, bukan cetakan.
+- Pemeriksaan formulir: formulir yang meminta teori lebih dari 40% atau
+  lebih dari satu sub teori per kasus.
+- Aturan wajib: "perusahaan fiktif" → "entitas fiktif"; baris pertama
+  `authoring.notes` wajib label bentuk (teori/analisis, ragam teori,
+  pembuka, jenis entitas, sub teori kasus).
+- Bagian baru "Variasi soal dan porsi teori": porsi teori maks 40% PG dan
+  esai, mendekati batas; satu sub teori per kasus; delapan ragam soal teori
+  (maks dua per ragam per batch); delapan pembuka cerita (maks 3 per
+  pembuka, profil maks 2); larangan kalimat pertama "<Nama> (fiktif) adalah";
+  variasi jenis entitas, nama, dan perintah; urutan sub kasus tidak selalu
+  alat baku; rubrik menerima kerangka lain yang sah.
+- Langkah kerja 1 dan 3: rencanakan dan periksa sebaran bentuk.
+- Format output: satu baris Catatan penyusun merangkum sebaran bentuk.
+- Revisi: label bentuk di baris pertama notes dipertahankan.
+
+### prompts/prompt_reviewer_soal.md (Prompt C)
+- Judul v4.3 → v4.4.
+- Langkah 9 baru "Bentuk dan kedalaman": teori hafalan = mayor (alignment);
+  jawaban analisis tertebak dari kata kunci = minor (stemClarity); rubrik
+  hanya satu kerangka = mayor (rubricQuality).
+- Langkah 10 baru "Variasi lintas soal": pembuka berpola sama lebih dari 3
+  soal dan urutan sub kasus baku = minor (originality); batchNotes memuat
+  porsi teori, pembuka, entitas, dan pola perintah.
+- Langkah lama 9 menjadi 11; Tingkat temuan dan contoh batchNotes
+  disesuaikan.
+
 ## 2026-10-24 — Prompt B v4.4 dan Prompt D v1.1: soal mudah dan sangat sulit, kalibrasi sesuai standar waktu
 Disetujui pemilik 2026-10-24. Kontrak data tidak berubah: tidak ada field baru,
 `schemaVersion` tetap "4.1", format output kedua prompt sama. Prompt C tetap
