@@ -9,5 +9,6 @@ import bank from './bank.js';
 import pwa from './pwa.js';
 import ui from './ui.js';
 import calc from './calc.js';
+import storage from './storage.js';
 
-export default [contract, core, grading, exportSuite, exportQa, bank, pwa, ui, calc];
+export default [contract, core, grading, exportSuite, exportQa, bank, pwa, ui, calc, storage];

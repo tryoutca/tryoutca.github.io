@@ -672,10 +672,12 @@ Object.defineProperties(__exports, {
   "StorageFullError": { enumerable: true, get: () => StorageFullError },
   "keys": { enumerable: true, get: () => keys },
   "Store": { enumerable: true, get: () => Store },
-  "memoryBackend": { enumerable: true, get: () => memoryBackend }
+  "memoryBackend": { enumerable: true, get: () => memoryBackend },
+  "isQuotaError": { enumerable: true, get: () => isQuotaError }
 });
-// Penyimpanan lokal ber-namespace caSim:<subjectId>:... (SPEC 4).
-// Backend dapat diganti (memoryBackend) agar logika dapat dites di Node.
+// Penyimpanan lokal ber-namespace caSim:<subjectId>:... (SPEC 4, D-107).
+// Backend dapat diganti: IndexedDB (async-backend.js + platform/idb.js),
+// localStorage, atau memoryBackend agar logika dapat dites di Node.
 
 class StorageFullError extends Error {
   constructor() {
@@ -722,6 +724,17 @@ class Store {
     this.backend.removeItem(key);
   }
 
+  // Selesai bila semua tulis sebelumnya sudah tersimpan permanen; ditolak bila
+  // ada yang gagal. Backend sinkron (localStorage, memori) langsung selesai.
+  flush() {
+    return this.backend.flush ? this.backend.flush() : Promise.resolve();
+  }
+
+  // fn(error, keys): tulis asinkron gagal (mis. StorageFullError).
+  onWriteError(fn) {
+    if (this.backend.onWriteError) this.backend.onWriteError(fn);
+  }
+
   keysWithPrefix(prefix) {
     const found = [];
     for (let i = 0; i < this.backend.length; i++) {
@@ -756,6 +769,319 @@ function memoryBackend(limitBytes = Infinity) {
 function isQuotaError(e) {
   return e && (e.name === 'QuotaExceededError' || e.name === 'NS_ERROR_DOM_QUOTA_REACHED'
     || e.code === 22 || e.code === 1014);
+}
+
+});
+
+__define("js/core/async-backend.js", function (__exports, __require) {
+'use strict';
+Object.defineProperties(__exports, {
+  "NAMESPACE": { enumerable: true, get: () => NAMESPACE },
+  "MIGRATION_META": { enumerable: true, get: () => MIGRATION_META },
+  "MigrationError": { enumerable: true, get: () => MigrationError },
+  "createWriteQueue": { enumerable: true, get: () => createWriteQueue },
+  "migrateLegacy": { enumerable: true, get: () => migrateLegacy },
+  "openAsyncBackend": { enumerable: true, get: () => openAsyncBackend }
+});
+// Backend Store di atas penyimpanan asinkron (IndexedDB, D-107). Baca selalu dari
+// memori; tulis digabung per kunci lalu dikirim per batch ke driver, sehingga
+// antarmuka Store tetap sinkron. Migrasi satu kali dari localStorage (D-108) dan
+// sinkronisasi antar-tab (D-109). Murni: driver, localStorage lama, dan kanal
+// antar-tab disuntikkan agar dapat dites di Node.
+//
+// driver: { readAll() -> Promise<Map<kunci, teks>>, readMeta(nama) -> Promise<nilai|null>,
+//           write(batch: Map<kunci, teks|null>, meta?: {nama: nilai}) -> Promise (satu transaksi),
+//           clear() -> Promise }
+// legacy: objek berantarmuka localStorage, atau null.
+// channel: objek berantarmuka BroadcastChannel (postMessage, onmessage, close), atau null.
+
+const { StorageFullError, isQuotaError } = __require("js/core/storage.js");
+
+const NAMESPACE = 'caSim:';
+const MIGRATION_META = 'migration';
+
+class MigrationError extends Error {
+  constructor(detail) {
+    super(`Data lama tidak dapat dipindahkan ke penyimpanan baru (${detail}). Aplikasi tetap memakai penyimpanan lama.`);
+    this.name = 'MigrationError';
+  }
+}
+
+// commit(batch) -> Promise; batch = Map<kunci, teks|null>, null = hapus. Tulis ke
+// kunci yang sama sebelum batch berangkat digabung (nilai terakhir menang).
+function createWriteQueue(commit, { schedule = queueMicrotask } = {}) {
+  let pending = new Map();
+  let scheduled = false;
+  let chain = Promise.resolve();
+  let failures = 0;
+  let lastError = null;
+  const listeners = [];
+
+  function kick() {
+    if (scheduled) return;
+    scheduled = true;
+    chain = chain
+      .then(() => new Promise((resolve) => schedule(resolve)))
+      .then(async () => {
+        scheduled = false;
+        const batch = pending;
+        pending = new Map();
+        if (!batch.size) return;
+        try {
+          await commit(batch);
+        } catch (e) {
+          const error = isQuotaError(e) ? new StorageFullError() : e;
+          failures += 1;
+          lastError = error;
+          for (const fn of listeners) {
+            try { fn(error, [...batch.keys()]); } catch { /* pendengar tidak boleh memutus antrean */ }
+          }
+        }
+      });
+  }
+
+  return {
+    set(key, value) { pending.set(key, value); kick(); },
+    remove(key) { pending.set(key, null); kick(); },
+    // Selesai setelah semua tulis yang sudah diterima tersimpan; ditolak dengan
+    // error terakhir bila ada batch yang gagal sejak flush dipanggil.
+    flush() {
+      const before = failures;
+      if (pending.size) kick();
+      return chain.then(() => { if (failures > before) throw lastError; });
+    },
+    onError(fn) { listeners.push(fn); },
+    get pendingCount() { return pending.size; },
+  };
+}
+
+// Menyalin semua kunci caSim:* dari localStorage dalam satu transaksi, lalu
+// mencocokkan isi hasil baca ulang. localStorage tidak diubah (D-108).
+async function migrateLegacy(driver, legacy, now) {
+  const entries = new Map();
+  if (legacy) {
+    for (let i = 0; i < legacy.length; i++) {
+      const k = legacy.key(i);
+      if (k && k.startsWith(NAMESPACE)) entries.set(k, legacy.getItem(k));
+    }
+  }
+  let chars = 0;
+  for (const v of entries.values()) chars += v.length;
+  const meta = { from: legacy ? 'localStorage' : 'kosong', at: now(), keys: entries.size, chars };
+  await driver.write(entries, { [MIGRATION_META]: meta });
+  const check = await driver.readAll();
+  const missing = [...entries].filter(([k, v]) => check.get(k) !== v).length;
+  if (missing) {
+    await driver.clear();
+    throw new MigrationError(`${missing} dari ${entries.size} data tidak cocok`);
+  }
+  return meta;
+}
+
+async function openAsyncBackend({
+  driver, legacy = null, channel = null, now = () => new Date().toISOString(), schedule,
+}) {
+  let migration = await driver.readMeta(MIGRATION_META);
+  if (!migration) migration = await migrateLegacy(driver, legacy, now);
+  const data = await driver.readAll();
+  const queue = createWriteQueue((batch) => driver.write(batch), schedule ? { schedule } : {});
+  let keyList = null;
+  let peerSeen = false;
+  const peers = [];
+
+  const post = (msg) => {
+    if (!channel) return;
+    try { channel.postMessage(msg); } catch { /* kanal ditutup */ }
+  };
+  const notePeer = () => {
+    if (peerSeen) return;
+    peerSeen = true;
+    for (const fn of peers) fn();
+  };
+
+  if (channel) {
+    // Tab lain sudah menulis ke driver; di sini cukup memperbarui memori.
+    channel.onmessage = (e) => {
+      const msg = e.data || {};
+      if (msg.type === 'set') {
+        if (!data.has(msg.key)) keyList = null;
+        data.set(msg.key, msg.value);
+      } else if (msg.type === 'remove') {
+        if (data.delete(msg.key)) keyList = null;
+      } else if (msg.type === 'hello') {
+        post({ type: 'here' });
+        notePeer();
+      } else if (msg.type === 'here') {
+        notePeer();
+      }
+    };
+    post({ type: 'hello' });
+  }
+
+  return {
+    kind: 'indexeddb',
+    migration,
+    getItem: (k) => (data.has(k) ? data.get(k) : null),
+    setItem(k, v) {
+      const value = String(v);
+      if (!data.has(k)) keyList = null;
+      data.set(k, value);
+      queue.set(k, value);
+      post({ type: 'set', key: k, value });
+    },
+    removeItem(k) {
+      if (!data.delete(k)) return;
+      keyList = null;
+      queue.remove(k);
+      post({ type: 'remove', key: k });
+    },
+    key(i) {
+      if (!keyList) keyList = [...data.keys()];
+      return keyList[i] ?? null;
+    },
+    get length() { return data.size; },
+    flush: () => queue.flush(),
+    onWriteError: (fn) => queue.onError(fn),
+    // fn() dipanggil sekali bila aplikasi juga terbuka di tab/jendela lain.
+    onPeer(fn) {
+      peers.push(fn);
+      if (peerSeen) fn();
+    },
+  };
+}
+
+});
+
+__define("js/platform/idb.js", function (__exports, __require) {
+'use strict';
+Object.defineProperties(__exports, {
+  "DB_NAME": { enumerable: true, get: () => DB_NAME },
+  "openIdbDriver": { enumerable: true, get: () => openIdbDriver },
+  "deleteIdbDatabase": { enumerable: true, get: () => deleteIdbDatabase },
+  "openStoreChannel": { enumerable: true, get: () => openStoreChannel }
+});
+// Driver IndexedDB untuk js/core/async-backend.js (D-107): database caSim versi 1,
+// object store kv (kunci -> teks JSON, sama dengan isi localStorage lama) dan
+// meta (penanda migrasi). Satu transaksi per batch tulis, durability bawaan (D-110).
+
+const DB_NAME = 'caSim';
+const DB_VERSION = 1;
+const KV = 'kv';
+const META = 'meta';
+
+function request(r) {
+  return new Promise((resolve, reject) => {
+    r.onsuccess = () => resolve(r.result);
+    r.onerror = () => reject(r.error);
+  });
+}
+
+function completion(tx) {
+  return new Promise((resolve, reject) => {
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => reject(tx.error);
+    tx.onabort = () => reject(tx.error || new Error('Transaksi penyimpanan dibatalkan.'));
+  });
+}
+
+// Membuka database. Ditolak bila IndexedDB tidak ada, diblokir, atau tidak
+// merespons dalam timeoutMs (sebagian Safari lama dapat menggantung saat open).
+function openIdbDriver({ idb = globalThis.indexedDB, name = DB_NAME, timeoutMs = 8000 } = {}) {
+  return new Promise((resolve, reject) => {
+    if (!idb) {
+      reject(new Error('IndexedDB tidak tersedia.'));
+      return;
+    }
+    let settled = false;
+    const fail = (e) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      reject(e);
+    };
+    const timer = setTimeout(() => fail(new Error('IndexedDB tidak merespons.')), timeoutMs);
+    let r;
+    try {
+      r = idb.open(name, DB_VERSION);
+    } catch (e) {
+      fail(e);
+      return;
+    }
+    r.onupgradeneeded = () => {
+      const db = r.result;
+      if (!db.objectStoreNames.contains(KV)) db.createObjectStore(KV);
+      if (!db.objectStoreNames.contains(META)) db.createObjectStore(META);
+    };
+    r.onsuccess = () => {
+      const db = r.result;
+      if (settled) {
+        db.close();
+        return;
+      }
+      settled = true;
+      clearTimeout(timer);
+      // Versi database berikutnya dari tab lain tidak terhalang tab ini.
+      db.onversionchange = () => db.close();
+      resolve(driverFor(db));
+    };
+    r.onerror = () => fail(r.error);
+  });
+}
+
+function driverFor(db) {
+  return {
+    async readAll() {
+      const store = db.transaction(KV, 'readonly').objectStore(KV);
+      const [ks, vs] = await Promise.all([request(store.getAllKeys()), request(store.getAll())]);
+      return new Map(ks.map((k, i) => [k, vs[i]]));
+    },
+    async readMeta(name) {
+      const value = await request(db.transaction(META, 'readonly').objectStore(META).get(name));
+      return value ?? null;
+    },
+    write(batch, meta = {}) {
+      const tx = db.transaction([KV, META], 'readwrite');
+      const done = completion(tx);
+      const kv = tx.objectStore(KV);
+      for (const [k, v] of batch) {
+        if (v === null) kv.delete(k);
+        else kv.put(v, k);
+      }
+      const m = tx.objectStore(META);
+      for (const [k, v] of Object.entries(meta)) m.put(v, k);
+      if (tx.commit) tx.commit();
+      return done;
+    },
+    clear() {
+      const tx = db.transaction([KV, META], 'readwrite');
+      const done = completion(tx);
+      tx.objectStore(KV).clear();
+      tx.objectStore(META).clear();
+      return done;
+    },
+    close() {
+      db.close();
+    },
+  };
+}
+
+// Untuk self-test: menghapus database uji.
+function deleteIdbDatabase(name, idb = globalThis.indexedDB) {
+  return new Promise((resolve, reject) => {
+    const r = idb.deleteDatabase(name);
+    r.onsuccess = () => resolve();
+    r.onerror = () => reject(r.error);
+    r.onblocked = () => resolve();
+  });
+}
+
+// Kanal antar-tab (D-109), atau null bila browser tidak mendukung.
+function openStoreChannel(name = 'caSim-store') {
+  try {
+    return typeof BroadcastChannel === 'function' ? new BroadcastChannel(name) : null;
+  } catch {
+    return null;
+  }
 }
 
 });
@@ -6294,7 +6620,12 @@ function renderExam(app, { session }) {
     if (!dirty) return;
     if (app.persist(session)) {
       dirty = false;
-      savedEl.textContent = `Tersimpan ${formatClockTime(new Date())}`;
+      // "Tersimpan" baru tampil setelah data benar-benar masuk penyimpanan (D-107).
+      const at = new Date();
+      app.store.flush().then(
+        () => { savedEl.textContent = `Tersimpan ${formatClockTime(at)}`; },
+        () => { dirty = true; savedEl.textContent = 'Belum tersimpan'; },
+      );
     }
   }
 
@@ -8811,8 +9142,28 @@ const { removeImportedPack, saveImportedPack, validatePackText } = __require("js
 const { applyBackupImport, loadActiveSession, makeBackup, planBackupImport } = __require("js/core/session-store.js");
 const { parseJsonText } = __require("js/core/contract.js");
 
+// Jenis penyimpanan yang dipakai (D-107), tanpa istilah teknis.
+const STORAGE_KINDS = {
+  indexeddb: 'Tempat penyimpanan: penyimpanan utama browser (kapasitas besar).',
+  localStorage: 'Tempat penyimpanan: penyimpanan dasar browser (kapasitas sekitar 5 MB).',
+  memory: 'Tempat penyimpanan: sementara. Data hilang saat halaman ditutup.',
+};
+
+const mb = (bytes) => (bytes / 1e6).toLocaleString('id-ID', { maximumFractionDigits: 1 });
+
+// navigator.storage.estimate() adalah perkiraan browser untuk seluruh situs.
+function showUsage(el) {
+  if (!navigator.storage || !navigator.storage.estimate) return;
+  navigator.storage.estimate().then(({ usage, quota }) => {
+    if (typeof usage === 'number' && typeof quota === 'number' && quota > 0) {
+      el.textContent = `Terpakai sekitar ${mb(usage)} MB dari ${mb(quota)} MB yang tersedia.`;
+    }
+  }).catch(() => {});
+}
+
 function renderSettings(app) {
   const el = h('div', { class: 'screen' }, header(app, { title: 'Pengaturan' }));
+  const usageEl = h('p', { class: 'hint' });
 
   el.append(h('div', { class: 'card' },
     h('h2', { style: 'margin-top:0', text: 'Suara' }),
@@ -8825,7 +9176,10 @@ function renderSettings(app) {
     h('h2', { style: 'margin-top:0', text: 'Penyimpanan di perangkat' }),
     h('p', { text: app.storagePersisted === true
       ? 'Penyimpanan permanen aktif: browser tidak akan menghapus data aplikasi secara otomatis.'
-      : 'Penyimpanan permanen belum diberikan browser. Data dapat terhapus bila ruang penyimpanan menipis atau (di iPhone/iPad) bila aplikasi lama tidak dibuka. Pasang ke Layar Utama dan buat cadangan sesi berkala.' })));
+      : 'Penyimpanan permanen belum diberikan browser. Data dapat terhapus bila ruang penyimpanan menipis atau (di iPhone/iPad) bila aplikasi lama tidak dibuka. Pasang ke Layar Utama dan buat cadangan sesi berkala.' }),
+    h('p', { text: STORAGE_KINDS[app.storageKind] || STORAGE_KINDS.localStorage }),
+    usageEl));
+  if (app.storageKind === 'indexeddb') showUsage(usageEl);
 
   const packInput = h('input', { type: 'file', accept: '.json,application/json', hidden: true, onchange: () => importPack(packInput) });
   el.append(h('div', { class: 'card' },
@@ -10896,6 +11250,8 @@ Object.defineProperties(__exports, {
 
 const { h, clear, confirmDialog, alertDialog, toast } = __require("js/ui/dom.js");
 const { Store, StorageFullError, keys, memoryBackend } = __require("js/core/storage.js");
+const { openAsyncBackend } = __require("js/core/async-backend.js");
+const { openIdbDriver, openStoreChannel } = __require("js/platform/idb.js");
 const { loadAllPacks } = __require("js/core/pack-loader.js");
 const { formatErrors, loadActiveSession, releaseActive, saveSession } = __require("js/core/session-store.js");
 const { createSession, recoverOnOpen, submit } = __require("js/core/session.js");
@@ -10937,8 +11293,18 @@ class App {
   }
 
   async start() {
-    this.store = createStore(this.notices);
-    this.settings = { sound: false, lastSubjectId: null, ...(this.store.getJson(keys.settings) || {}) };
+    const { store, kind } = await createStore(this.notices);
+    this.store = store;
+    this.storageKind = kind;
+    this.store.onWriteError((e, failedKeys) => this.onWriteError(e, failedKeys));
+    if (store.backend.onPeer) {
+      store.backend.onPeer(() => toast('Aplikasi ini juga terbuka di tab atau jendela lain. Tutup salah satu agar data tidak saling menimpa.'));
+    }
+    // Tulis yang masih di antrean dikirim sebelum halaman disembunyikan/ditutup.
+    const flushNow = () => { this.store.flush().catch(() => {}); };
+    window.addEventListener('pagehide', flushNow);
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') flushNow(); });
+    this.settings ={ sound: false, lastSubjectId: null, ...(this.store.getJson(keys.settings) || {}) };
     // SPEC 2a: minta penyimpanan permanen (mengurangi risiko data dihapus Safari).
     if (navigator.storage && navigator.storage.persist) {
       navigator.storage.persist().then((ok) => { this.storagePersisted = ok; }).catch(() => {});
@@ -11066,17 +11432,36 @@ class App {
       saveSession(this.store, session);
       return true;
     } catch (e) {
-      const full = e instanceof StorageFullError;
-      confirmDialog({
-        title: full ? 'Penyimpanan penuh' : 'Gagal menyimpan',
-        body: [e.message, 'Unduh cadangan sesi ini agar jawaban tidak hilang.'],
-        confirmLabel: 'Unduh cadangan sesi',
-        cancelLabel: 'Tutup',
-      }).then((ok) => {
-        if (ok) this.download(`cadangan-${session.sessionId}.json`, JSON.stringify({ backupVersion: '4.1', subjectId: session.subjectId, exportedAt: new Date().toISOString(), sessions: [session] }, null, 2));
-      });
+      this.offerSessionBackup(e, session);
       return false;
     }
+  }
+
+  offerSessionBackup(e, session) {
+    const full = e instanceof StorageFullError;
+    return confirmDialog({
+      title: full ? 'Penyimpanan penuh' : 'Gagal menyimpan',
+      body: [e.message, 'Unduh cadangan sesi ini agar jawaban tidak hilang.'],
+      confirmLabel: 'Unduh cadangan sesi',
+      cancelLabel: 'Tutup',
+    }).then((ok) => {
+      if (ok) this.download(`cadangan-${session.sessionId}.json`, JSON.stringify({ backupVersion: '4.1', subjectId: session.subjectId, exportedAt: new Date().toISOString(), sessions: [session] }, null, 2));
+    });
+  }
+
+  // Tulis asinkron ke IndexedDB gagal (D-107). Data masih ada di memori selama
+  // halaman terbuka; satu dialog sekaligus agar autosave tidak membanjiri layar.
+  onWriteError(e, failedKeys) {
+    if (this.writeErrorOpen) return;
+    this.writeErrorOpen = true;
+    const sessionKey = failedKeys.find((k) => k.includes(':session:'));
+    const session = sessionKey ? this.store.getJson(sessionKey) : null;
+    let shown;
+    if (session && session.sessionId) shown = this.offerSessionBackup(e, session);
+    else if (failedKeys.some((k) => k.endsWith(':bank'))) {
+      shown = alertDialog('Bank soal gagal disimpan', [e.message, 'Ekspor pack di tab Publikasi agar perubahan tidak hilang.']);
+    } else shown = alertDialog('Gagal menyimpan', [e.message]);
+    shown.finally(() => { this.writeErrorOpen = false; });
   }
 
   // Memulai sesi baru. build(rng) -> { ok, items, problems }.
@@ -11143,15 +11528,42 @@ class App {
   }
 }
 
-function createStore(notices) {
+// Penanda di localStorage bahwa data sudah pindah ke IndexedDB (D-107). Di luar
+// namespace caSim: agar tidak ikut dimigrasi.
+const MIGRATED_MARKER = '__caSim_storage__';
+
+function legacyStorage() {
   try {
     const probe = '__caSim_probe__';
     window.localStorage.setItem(probe, '1');
     window.localStorage.removeItem(probe);
-    return new Store(window.localStorage);
+    return window.localStorage;
   } catch {
+    return null;
+  }
+}
+
+// Urutan: IndexedDB -> localStorage -> memori. Setelah migrasi, localStorage tidak
+// dipakai lagi walau IndexedDB gagal dibuka, karena isinya sudah usang.
+async function createStore(notices) {
+  const legacy = legacyStorage();
+  const migrated = legacy && legacy.getItem(MIGRATED_MARKER) === 'indexeddb';
+  try {
+    const driver = await openIdbDriver();
+    const backend = await openAsyncBackend({ driver, legacy: migrated ? null : legacy, channel: openStoreChannel() });
+    if (legacy && !migrated) {
+      try { legacy.setItem(MIGRATED_MARKER, 'indexeddb'); } catch { /* penuh: migrasi diulang lain kali, aman */ }
+    }
+    return { store: new Store(backend), kind: 'indexeddb' };
+  } catch (e) {
+    console.warn('IndexedDB tidak dipakai:', e);
+    if (migrated) {
+      notices.push('Penyimpanan utama perangkat tidak dapat dibuka. Tutup tab lain aplikasi ini lalu muat ulang. Sampai berhasil, data baru hanya bertahan selama halaman terbuka.');
+      return { store: new Store(memoryBackend()), kind: 'memory' };
+    }
+    if (legacy) return { store: new Store(legacy), kind: 'localStorage' };
     notices.push('Penyimpanan perangkat tidak tersedia (mode privat?). Data hanya bertahan selama halaman terbuka.');
-    return new Store(memoryBackend());
+    return { store: new Store(memoryBackend()), kind: 'memory' };
   }
 }
 

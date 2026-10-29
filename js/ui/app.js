@@ -2,6 +2,8 @@
 
 import { h, clear, confirmDialog, alertDialog, toast } from './dom.js';
 import { Store, StorageFullError, keys, memoryBackend } from '../core/storage.js';
+import { openAsyncBackend } from '../core/async-backend.js';
+import { openIdbDriver, openStoreChannel } from '../platform/idb.js';
 import { loadAllPacks } from '../core/pack-loader.js';
 import { formatErrors, loadActiveSession, releaseActive, saveSession } from '../core/session-store.js';
 import { createSession, recoverOnOpen, submit } from '../core/session.js';
@@ -43,8 +45,18 @@ export class App {
   }
 
   async start() {
-    this.store = createStore(this.notices);
-    this.settings = { sound: false, lastSubjectId: null, ...(this.store.getJson(keys.settings) || {}) };
+    const { store, kind } = await createStore(this.notices);
+    this.store = store;
+    this.storageKind = kind;
+    this.store.onWriteError((e, failedKeys) => this.onWriteError(e, failedKeys));
+    if (store.backend.onPeer) {
+      store.backend.onPeer(() => toast('Aplikasi ini juga terbuka di tab atau jendela lain. Tutup salah satu agar data tidak saling menimpa.'));
+    }
+    // Tulis yang masih di antrean dikirim sebelum halaman disembunyikan/ditutup.
+    const flushNow = () => { this.store.flush().catch(() => {}); };
+    window.addEventListener('pagehide', flushNow);
+    document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'hidden') flushNow(); });
+    this.settings ={ sound: false, lastSubjectId: null, ...(this.store.getJson(keys.settings) || {}) };
     // SPEC 2a: minta penyimpanan permanen (mengurangi risiko data dihapus Safari).
     if (navigator.storage && navigator.storage.persist) {
       navigator.storage.persist().then((ok) => { this.storagePersisted = ok; }).catch(() => {});
@@ -172,17 +184,36 @@ export class App {
       saveSession(this.store, session);
       return true;
     } catch (e) {
-      const full = e instanceof StorageFullError;
-      confirmDialog({
-        title: full ? 'Penyimpanan penuh' : 'Gagal menyimpan',
-        body: [e.message, 'Unduh cadangan sesi ini agar jawaban tidak hilang.'],
-        confirmLabel: 'Unduh cadangan sesi',
-        cancelLabel: 'Tutup',
-      }).then((ok) => {
-        if (ok) this.download(`cadangan-${session.sessionId}.json`, JSON.stringify({ backupVersion: '4.1', subjectId: session.subjectId, exportedAt: new Date().toISOString(), sessions: [session] }, null, 2));
-      });
+      this.offerSessionBackup(e, session);
       return false;
     }
+  }
+
+  offerSessionBackup(e, session) {
+    const full = e instanceof StorageFullError;
+    return confirmDialog({
+      title: full ? 'Penyimpanan penuh' : 'Gagal menyimpan',
+      body: [e.message, 'Unduh cadangan sesi ini agar jawaban tidak hilang.'],
+      confirmLabel: 'Unduh cadangan sesi',
+      cancelLabel: 'Tutup',
+    }).then((ok) => {
+      if (ok) this.download(`cadangan-${session.sessionId}.json`, JSON.stringify({ backupVersion: '4.1', subjectId: session.subjectId, exportedAt: new Date().toISOString(), sessions: [session] }, null, 2));
+    });
+  }
+
+  // Tulis asinkron ke IndexedDB gagal (D-107). Data masih ada di memori selama
+  // halaman terbuka; satu dialog sekaligus agar autosave tidak membanjiri layar.
+  onWriteError(e, failedKeys) {
+    if (this.writeErrorOpen) return;
+    this.writeErrorOpen = true;
+    const sessionKey = failedKeys.find((k) => k.includes(':session:'));
+    const session = sessionKey ? this.store.getJson(sessionKey) : null;
+    let shown;
+    if (session && session.sessionId) shown = this.offerSessionBackup(e, session);
+    else if (failedKeys.some((k) => k.endsWith(':bank'))) {
+      shown = alertDialog('Bank soal gagal disimpan', [e.message, 'Ekspor pack di tab Publikasi agar perubahan tidak hilang.']);
+    } else shown = alertDialog('Gagal menyimpan', [e.message]);
+    shown.finally(() => { this.writeErrorOpen = false; });
   }
 
   // Memulai sesi baru. build(rng) -> { ok, items, problems }.
@@ -249,14 +280,41 @@ export class App {
   }
 }
 
-function createStore(notices) {
+// Penanda di localStorage bahwa data sudah pindah ke IndexedDB (D-107). Di luar
+// namespace caSim: agar tidak ikut dimigrasi.
+const MIGRATED_MARKER = '__caSim_storage__';
+
+function legacyStorage() {
   try {
     const probe = '__caSim_probe__';
     window.localStorage.setItem(probe, '1');
     window.localStorage.removeItem(probe);
-    return new Store(window.localStorage);
+    return window.localStorage;
   } catch {
+    return null;
+  }
+}
+
+// Urutan: IndexedDB -> localStorage -> memori. Setelah migrasi, localStorage tidak
+// dipakai lagi walau IndexedDB gagal dibuka, karena isinya sudah usang.
+async function createStore(notices) {
+  const legacy = legacyStorage();
+  const migrated = legacy && legacy.getItem(MIGRATED_MARKER) === 'indexeddb';
+  try {
+    const driver = await openIdbDriver();
+    const backend = await openAsyncBackend({ driver, legacy: migrated ? null : legacy, channel: openStoreChannel() });
+    if (legacy && !migrated) {
+      try { legacy.setItem(MIGRATED_MARKER, 'indexeddb'); } catch { /* penuh: migrasi diulang lain kali, aman */ }
+    }
+    return { store: new Store(backend), kind: 'indexeddb' };
+  } catch (e) {
+    console.warn('IndexedDB tidak dipakai:', e);
+    if (migrated) {
+      notices.push('Penyimpanan utama perangkat tidak dapat dibuka. Tutup tab lain aplikasi ini lalu muat ulang. Sampai berhasil, data baru hanya bertahan selama halaman terbuka.');
+      return { store: new Store(memoryBackend()), kind: 'memory' };
+    }
+    if (legacy) return { store: new Store(legacy), kind: 'localStorage' };
     notices.push('Penyimpanan perangkat tidak tersedia (mode privat?). Data hanya bertahan selama halaman terbuka.');
-    return new Store(memoryBackend());
+    return { store: new Store(memoryBackend()), kind: 'memory' };
   }
 }

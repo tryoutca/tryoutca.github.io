@@ -7,8 +7,28 @@ import { removeImportedPack, saveImportedPack, validatePackText } from '../core/
 import { applyBackupImport, loadActiveSession, makeBackup, planBackupImport } from '../core/session-store.js';
 import { parseJsonText } from '../core/contract.js';
 
+// Jenis penyimpanan yang dipakai (D-107), tanpa istilah teknis.
+const STORAGE_KINDS = {
+  indexeddb: 'Tempat penyimpanan: penyimpanan utama browser (kapasitas besar).',
+  localStorage: 'Tempat penyimpanan: penyimpanan dasar browser (kapasitas sekitar 5 MB).',
+  memory: 'Tempat penyimpanan: sementara. Data hilang saat halaman ditutup.',
+};
+
+const mb = (bytes) => (bytes / 1e6).toLocaleString('id-ID', { maximumFractionDigits: 1 });
+
+// navigator.storage.estimate() adalah perkiraan browser untuk seluruh situs.
+function showUsage(el) {
+  if (!navigator.storage || !navigator.storage.estimate) return;
+  navigator.storage.estimate().then(({ usage, quota }) => {
+    if (typeof usage === 'number' && typeof quota === 'number' && quota > 0) {
+      el.textContent = `Terpakai sekitar ${mb(usage)} MB dari ${mb(quota)} MB yang tersedia.`;
+    }
+  }).catch(() => {});
+}
+
 export function renderSettings(app) {
   const el = h('div', { class: 'screen' }, header(app, { title: 'Pengaturan' }));
+  const usageEl = h('p', { class: 'hint' });
 
   el.append(h('div', { class: 'card' },
     h('h2', { style: 'margin-top:0', text: 'Suara' }),
@@ -21,7 +41,10 @@ export function renderSettings(app) {
     h('h2', { style: 'margin-top:0', text: 'Penyimpanan di perangkat' }),
     h('p', { text: app.storagePersisted === true
       ? 'Penyimpanan permanen aktif: browser tidak akan menghapus data aplikasi secara otomatis.'
-      : 'Penyimpanan permanen belum diberikan browser. Data dapat terhapus bila ruang penyimpanan menipis atau (di iPhone/iPad) bila aplikasi lama tidak dibuka. Pasang ke Layar Utama dan buat cadangan sesi berkala.' })));
+      : 'Penyimpanan permanen belum diberikan browser. Data dapat terhapus bila ruang penyimpanan menipis atau (di iPhone/iPad) bila aplikasi lama tidak dibuka. Pasang ke Layar Utama dan buat cadangan sesi berkala.' }),
+    h('p', { text: STORAGE_KINDS[app.storageKind] || STORAGE_KINDS.localStorage }),
+    usageEl));
+  if (app.storageKind === 'indexeddb') showUsage(usageEl);
 
   const packInput = h('input', { type: 'file', accept: '.json,application/json', hidden: true, onchange: () => importPack(packInput) });
   el.append(h('div', { class: 'card' },

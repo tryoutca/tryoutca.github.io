@@ -55,7 +55,8 @@ docs/                      SPEC, ARCHITECTURE, DECISIONS, PROMPT_ALIGNMENT,
 | contract.js | `validateDocument`/`loadDocument`: migrasi + skema + konsistensi | A1 |
 | pack-loader.js | Muat pack (fetch pack.json, cadangan packs/*/pack.js, pack impor), validasi | A1 |
 | migrate.js | Migrasi/penolakan data dengan schemaVersion berbeda; tidak menghapus data lama | A1 |
-| storage.js | localStorage ber-namespace `caSim:<subjectId>:...`, StorageFullError, backend memori untuk tes | A1 |
+| storage.js | `Store` sinkron ber-namespace `caSim:<subjectId>:...` di atas backend yang dapat diganti (IndexedDB, localStorage, memori), `flush`, StorageFullError | A1/S1 |
+| async-backend.js | Backend IndexedDB tanpa DOM: cache memori + antrean tulis per batch, migrasi sekali dari localStorage, sinkronisasi antar-tab (driver dan kanal disuntikkan) | S1 |
 | session-store.js | Simpan/muat sesi, satu sesi aktif, riwayat, cadangan sesi | A1 |
 | blueprint.js | Bangun paket T1/T2/SIM/Kustom dari soal LIVE; largest remainder; aturan kesulitan/cakupan; validasi Kustom | A1 |
 | scoring.js | Skor mcq/numeric × faktor skala, status penilaian, LULUS/TIDAK LULUS | A1/A2 |
@@ -105,6 +106,8 @@ petunjuk iOS). Lihat DECISIONS D-43. (A2)
 `ios.js` (ajakan Layar Utama, storage.persist, visibilitychange/pageshow),
 `seb.js` (deteksi user agent, lencana), `pwa.js` (registrasi service worker,
 "Versi baru tersedia", menunda pembaruan selama sesi). (A1/A4)
+`idb.js` (driver IndexedDB untuk `core/async-backend.js`, kanal
+`BroadcastChannel` antar-tab; D-107). (S1)
 
 ## 4. Alur data
 ```

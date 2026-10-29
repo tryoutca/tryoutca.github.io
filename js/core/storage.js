@@ -1,5 +1,6 @@
-// Penyimpanan lokal ber-namespace caSim:<subjectId>:... (SPEC 4).
-// Backend dapat diganti (memoryBackend) agar logika dapat dites di Node.
+// Penyimpanan lokal ber-namespace caSim:<subjectId>:... (SPEC 4, D-107).
+// Backend dapat diganti: IndexedDB (async-backend.js + platform/idb.js),
+// localStorage, atau memoryBackend agar logika dapat dites di Node.
 
 export class StorageFullError extends Error {
   constructor() {
@@ -46,6 +47,17 @@ export class Store {
     this.backend.removeItem(key);
   }
 
+  // Selesai bila semua tulis sebelumnya sudah tersimpan permanen; ditolak bila
+  // ada yang gagal. Backend sinkron (localStorage, memori) langsung selesai.
+  flush() {
+    return this.backend.flush ? this.backend.flush() : Promise.resolve();
+  }
+
+  // fn(error, keys): tulis asinkron gagal (mis. StorageFullError).
+  onWriteError(fn) {
+    if (this.backend.onWriteError) this.backend.onWriteError(fn);
+  }
+
   keysWithPrefix(prefix) {
     const found = [];
     for (let i = 0; i < this.backend.length; i++) {
@@ -77,7 +89,7 @@ export function memoryBackend(limitBytes = Infinity) {
   };
 }
 
-function isQuotaError(e) {
+export function isQuotaError(e) {
   return e && (e.name === 'QuotaExceededError' || e.name === 'NS_ERROR_DOM_QUOTA_REACHED'
     || e.code === 22 || e.code === 1014);
 }

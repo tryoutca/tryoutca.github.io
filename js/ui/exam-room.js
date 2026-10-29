@@ -110,7 +110,12 @@ export function renderExam(app, { session }) {
     if (!dirty) return;
     if (app.persist(session)) {
       dirty = false;
-      savedEl.textContent = `Tersimpan ${formatClockTime(new Date())}`;
+      // "Tersimpan" baru tampil setelah data benar-benar masuk penyimpanan (D-107).
+      const at = new Date();
+      app.store.flush().then(
+        () => { savedEl.textContent = `Tersimpan ${formatClockTime(at)}`; },
+        () => { dirty = true; savedEl.textContent = 'Belum tersimpan'; },
+      );
     }
   }
 

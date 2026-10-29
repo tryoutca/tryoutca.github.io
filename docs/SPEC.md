@@ -83,7 +83,9 @@ Mata ujian awal: Manajemen Stratejik dan Kepemimpinan (MSK)
 - Data sesi, pack, penilaian, dan review menyimpan schemaVersion "4.1".
   Versi berbeda dimigrasi atau ditolak dengan pesan. DILARANG menghapus
   data lama secara diam-diam.
-- Penyimpanan: localStorage ber-namespace caSim:<subjectId>:...; tangani
+- Penyimpanan: IndexedDB (database caSim, kunci ber-namespace
+  caSim:<subjectId>:...), dengan localStorage lalu memori sebagai cadangan;
+  data localStorage lama dimigrasi sekali tanpa dihapus (D-107, D-108). Tangani
   QuotaExceededError dengan pesan jelas dan tawaran ekspor cadangan.
 
 ## 5. KONTRAK DATA (SUMBER TUNGGAL: folder schema/)

@@ -113,3 +113,21 @@ Tidak ada skenario berstatus DIUJI-GAGAL pada akhir Fase A5.
 - PIN Pengelola Bank Soal bukan fitur keamanan.
 - Bank soal MSK belum ada; hanya pack DEMO (5 soal) yang terpasang.
 - Pengujian di perangkat Apple, SEB, AI nyata, dan Node.js belum dilakukan (lihat tabel di atas).
+
+---
+
+## Fase S1 — Penyimpanan IndexedDB (2026-10-29)
+
+| ID | Skenario | Cara uji | Hasil | Status |
+|---|---|---|---|---|
+| S1-01 | Tes otomatis | `node --test` (Node 24.20) dan `node tools/validate.mjs` | 111 lulus, 0 gagal, 7 dilewati (butuh DOM); validasi semua PASS | DIUJI-LULUS |
+| S1-02 | Self-test browser | `index.html?selftest` di Chromium (browser pane aplikasi Claude), server statis lokal | 118/118 PASS, termasuk driver IndexedDB asli | DIUJI-LULUS |
+| S1-03 | Migrasi perangkat lama | localStorage diisi pack PK publikasi 25 Okt 2026 (185 soal, 1,55 juta karakter) + pengaturan + satu kunci di luar namespace; IndexedDB dikosongkan; aplikasi dibuka | 2 kunci `caSim:*` pindah, isi identik; kunci lain tidak ikut; localStorage tetap utuh; penanda tercatat; beranda menampilkan PK 185 soal dari pack impor | DIUJI-LULUS |
+| S1-04 | Autosave dan buka ulang | Mulai PK Level 2, pilih jawaban soal 1, muat ulang halaman, LANJUTKAN | Label "Tersimpan hh.mm" muncul setelah transaksi; jawaban ada di IndexedDB, tidak ada sesi di localStorage; setelah dimuat ulang jawaban C tetap terpilih | DIUJI-LULUS |
+| S1-05 | Dua tab | Tab kedua membuka aplikasi selama ujian berjalan di tab pertama | Kedua tab menampilkan toast peringatan (D-109); sinkronisasi isi dites di S1-01 dengan kanal tiruan | DIUJI-LULUS |
+| S1-06 | Data besar | Rekaman 20 MB ditambahkan langsung ke IndexedDB, aplikasi dimuat ulang | Aplikasi terbuka normal; baca semua 21,6 juta karakter 45 ms (desktop); rekaman uji dihapus | DIUJI-LULUS |
+| S1-07 | Pengaturan | Layar Pengaturan › Penyimpanan di perangkat | "penyimpanan utama browser (kapasitas besar)", "Terpakai sekitar 5,7 MB dari 1.505,3 MB" | DIUJI-LULUS |
+| S1-08 | Safari iOS/iPadOS (terpasang dan tidak) | — | Belum dicoba di perangkat Apple | BELUM DIVERIFIKASI |
+| S1-09 | `dist/simulator-offline.html` dibuka dari `file://` | — | Hanya diuji lewat iframe srcdoc di self-test; IndexedDB di `file://` belum dicoba | BELUM DIVERIFIKASI |
+| S1-10 | Kuota IndexedDB benar-benar penuh | — | Jalur error dites dengan driver tiruan (S1-01); dialog di browser belum dipicu | BELUM DIVERIFIKASI |
+| S1-11 | IndexedDB gagal dibuka (cadangan localStorage/memori) | — | Logika ditinjau; belum dipicu di browser | BELUM DIVERIFIKASI |
