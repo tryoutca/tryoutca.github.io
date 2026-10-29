@@ -3,6 +3,38 @@
 Catatan perubahan prompt (`prompts/*.md`) dan kontrak data. Setiap
 perubahan prompt dirujuk ke docs/PROMPT_ALIGNMENT.md.
 
+## 2026-10-29 — Prompt B v4.6, C v4.5, D v1.3: isyarat kata mutlak, pembuka soal teori, nama mirip nama nyata
+Disetujui pemilik 2026-10-29. Latar: pemeriksaan batch MSK-B57 (Prompt B
+v4.5) menemukan (1) kunci soal teori satu-satunya opsi berimbang sementara
+distraktor memakai kata mutlak; (2) keempat soal teori dibuka dengan latar
+periode 2023-2026; (3) nama fiktif mirip merek atau BUMD nyata. Kontrak data
+tidak berubah. Rujukan: D-114, PROMPT_ALIGNMENT B-17, C-8, K-3.
+
+### prompts/prompt_penyusun_soal.md (Prompt B)
+- Judul v4.5 → v4.6.
+- Kedalaman soal teori: aturan isyarat kata mutlak (paling banyak satu
+  distraktor), istilah khas kerangka tidak hanya di kunci, dan pembuka soal
+  teori bervariasi (paling banyak dua diawali latar periode).
+- Variasi cerita: nama fiktif tidak boleh mirip merek, perusahaan, aplikasi,
+  atau lembaga nyata.
+- Langkah 3: baca opsi PG tanpa stem untuk menguji isyarat.
+
+### prompts/prompt_reviewer_soal.md (Prompt C)
+- Judul v4.4 → v4.5.
+- Langkah 9: kunci tertebak dari opsi = mayor (distractorQuality); nama
+  mirip nama nyata = minor (originality).
+- Langkah 10: lebih dari dua soal teori diawali latar periode = minor
+  (originality).
+- Tingkat temuan disesuaikan.
+
+### prompts/prompt_kalibrasi_soal.md (Prompt D)
+- Judul v1.2 → v1.3; rujukan Prompt B v4.6.
+- Variasi soal: aturan isyarat kata mutlak, istilah khas, pembuka soal teori,
+  dan nama fiktif; cacat PENGECOH tetap berupa ketidakrelevanan konsep.
+
+### docs/formulir/*_gelombang5_siap_tempel.md
+- Rujukan versi menjadi Prompt B v4.6 dan Prompt C v4.5.
+
 ## 2026-10-29 — Prompt D v1.2: soal kalibrasi mengikuti variasi soal dan porsi teori
 Disetujui pemilik 2026-10-29. Menyelaraskan Prompt D dengan Prompt B v4.5
 dan Prompt C v4.4 agar soal kalibrasi tidak dapat dikenali dari pola cerita

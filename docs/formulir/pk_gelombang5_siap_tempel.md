@@ -1,6 +1,6 @@
 # PK gelombang 5 — siap tempel
 
-Formulir gelombang 5, disusun 2026-10-29 untuk **Prompt B v4.5** dan **Prompt C v4.4** (variasi soal cerita, porsi dan kedalaman soal teori; D-112).
+Formulir gelombang 5, disusun 2026-10-29 untuk **Prompt B v4.6** dan **Prompt C v4.5** (variasi soal cerita, porsi dan kedalaman soal teori; D-112).
 Tujuan: (1) menambah soal teori yang lebih dalam dan soal cerita yang lebih bervariasi; (2) menutup kekurangan stok LIVE (sasaran SPEC 7: per tingkat minimal 30 PG, 9 esai, 3 kasus).
 Nomor melanjutkan nomor tertinggi gelombang 4 (PK-B45, PK-MCQ-165, PK-ESA-055, PK-KAS-031).
 
@@ -15,10 +15,10 @@ Stok pack PK 1.9.0 (`Publikasi Soal/PK 25 Okt 2026pack.json`), mudah/sedang/suli
 Sebaran gaya di gelombang ini: soal teori 10 dari 25 PG dan esai (40%), ditambah satu sub teori di setiap kasus. Jenis entitas dibatasi pada entitas yang menerapkan SAK Indonesia; akuntansi syariah dan sektor publik tetap di luar taksonomi.
 
 Cara pakai:
-1. Pastikan instruksi Project Claude penyusun sudah memakai **Prompt B v4.5** dan Project reviewer memakai **Prompt C v4.4**. Pengetahuan Project memuat `schema/CONTRACT.md`, `docs/pk_taksonomi.md`, `docs/pk_rujukan_penyusun.md`, dan contoh soal ujian PK.
+1. Pastikan instruksi Project Claude penyusun sudah memakai **Prompt B v4.6** dan Project reviewer memakai **Prompt C v4.5**. Pengetahuan Project memuat `schema/CONTRACT.md`, `docs/pk_taksonomi.md`, `docs/pk_rujukan_penyusun.md`, dan contoh soal ujian PK.
 2. Buka **satu percakapan baru**, lalu salin satu blok utuh per pesan, berurutan dari atas.
 3. Impor setiap hasil ke Pengelola Bank Soal. Perhatikan peringatan standar waktu saat impor. Periksa juga baris pertama authoring.notes (label bentuk) dan kalimat pertama setiap soal.
-4. Review dengan Prompt C v4.4. Bila Project melaporkan Batch ID atau rentang ID sudah terpakai, naikkan nomornya.
+4. Review dengan Prompt C v4.5. Bila Project melaporkan Batch ID atau rentang ID sudah terpakai, naikkan nomornya.
 
 Prioritas: 1 = menutup kekurangan stok; 2 = menambah variasi dan soal teori di tingkat yang stoknya sudah cukup.
 
@@ -64,12 +64,12 @@ Catatan umum:
 - Tanpa akuntansi syariah, sektor publik, dan kontrak asuransi. Tanpa kategori lama PSAK 55.
 - Jangan menyalin angka, nama perusahaan, atau skenario dari materi dan contoh ujian.
 - Hindari skenario yang mirip soal PK yang sudah ada (PK-MCQ-001 s.d. 165, PK-ESA-001 s.d. 055, PK-KAS-001 s.d. 031) dan batch sebelumnya di percakapan ini.
-Bentuk soal dan variasi (wajib, Prompt B v4.5):
+Bentuk soal dan variasi (wajib, Prompt B v4.6):
 - Teori: menguji alasan, asumsi, keterbatasan, perbandingan, atau hubungan antarkonsep dari kerangka konseptual, prinsip, dan dasar standar yang umum dipakai (mis. definisi unsur dan kriteria pengakuan, dasar pengukuran, pengendalian, model lima langkah pendapatan, model kerugian kredit ekspektasian). Tanpa entitas, atau ilustrasi paling banyak dua kalimat. Ikuti ragam yang tertulis di setiap topik. Bukan hafalan definisi, daftar, nama tokoh, nomor paragraf, atau tahun terbit.
 - Analisis: situasi entitas fiktif dengan data; ikuti pembuka dan jenis entitas yang tertulis di setiap topik. Entitas analisis menerapkan SAK Indonesia (bukan SAK EMKM, bukan entitas syariah atau instansi pemerintah). Kalimat pertama tidak boleh berbentuk "<Nama> (fiktif) adalah ...". Nama entitas tidak selalu berpola "PT <kata> <kata>".
 - Perintah tidak selalu "Menurut kerangka X". Pada soal sulit dan sangat sulit, sebagian soal tidak menyebut nama kerangka sehingga peserta memilih sendiri kerangka yang tepat.
-- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.5. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
-- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.5, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
+- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.6. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
+- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.6, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
 - Contoh soal ujian lama di Project hanya salah satu sumber gaya, bukan cetakan.
 Konteks ekonomi (wajib):
 - Kaitkan setiap soal dengan situasi perekonomian Indonesia dan global dalam tiga tahun terakhir (2023-2026) serta tantangan yang dihadapi ke depan, yang relevan dengan topiknya. Pilih tema yang paling cocok dari daftar di bawah; jangan memaksakan tema yang tidak relevan. Dalam satu batch, pakai tema yang beragam.
@@ -124,14 +124,14 @@ Catatan umum:
 - Tanpa akuntansi syariah, sektor publik, dan kontrak asuransi. Tanpa kategori lama PSAK 55.
 - Jangan menyalin angka, nama perusahaan, atau skenario dari materi dan contoh ujian.
 - Hindari skenario yang mirip soal PK yang sudah ada (PK-MCQ-001 s.d. 165, PK-ESA-001 s.d. 055, PK-KAS-001 s.d. 031) dan batch sebelumnya di percakapan ini.
-Bentuk soal dan variasi (wajib, Prompt B v4.5):
+Bentuk soal dan variasi (wajib, Prompt B v4.6):
 - Teori: menguji alasan, asumsi, keterbatasan, perbandingan, atau hubungan antarkonsep dari kerangka konseptual, prinsip, dan dasar standar yang umum dipakai (mis. definisi unsur dan kriteria pengakuan, dasar pengukuran, pengendalian, model lima langkah pendapatan, model kerugian kredit ekspektasian). Tanpa entitas, atau ilustrasi paling banyak dua kalimat. Ikuti ragam yang tertulis di setiap topik. Bukan hafalan definisi, daftar, nama tokoh, nomor paragraf, atau tahun terbit.
 - Analisis: situasi entitas fiktif dengan data; ikuti pembuka dan jenis entitas yang tertulis di setiap topik. Entitas analisis menerapkan SAK Indonesia (bukan SAK EMKM, bukan entitas syariah atau instansi pemerintah). Kalimat pertama tidak boleh berbentuk "<Nama> (fiktif) adalah ...". Nama entitas tidak selalu berpola "PT <kata> <kata>".
 - Perintah tidak selalu "Menurut kerangka X". Pada soal sulit dan sangat sulit, sebagian soal tidak menyebut nama kerangka sehingga peserta memilih sendiri kerangka yang tepat.
 - Rubrik menilai kualitas penalaran, ketepatan konsep, dan penggunaan data; acceptableAlternatives menyebut kerangka atau sudut pandang lain yang sah beserta syarat nilai penuhnya.
 - Setiap kasus memuat tepat satu sub teori (tertulis di rincian kasus). Paling banyak dua sub menyebut nama alat analisis; alur kedua kasus berbeda.
-- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.5. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
-- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.5, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
+- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.6. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
+- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.6, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
 - Contoh soal ujian lama di Project hanya salah satu sumber gaya, bukan cetakan.
 Konteks ekonomi (wajib):
 - Kaitkan setiap soal dengan situasi perekonomian Indonesia dan global dalam tiga tahun terakhir (2023-2026) serta tantangan yang dihadapi ke depan, yang relevan dengan topiknya. Pilih tema yang paling cocok dari daftar di bawah; jangan memaksakan tema yang tidak relevan. Dalam satu batch, pakai tema yang beragam.
@@ -196,12 +196,12 @@ Catatan umum:
 - Tanpa akuntansi syariah, sektor publik, dan kontrak asuransi. Tanpa kategori lama PSAK 55.
 - Jangan menyalin angka, nama perusahaan, atau skenario dari materi dan contoh ujian.
 - Hindari skenario yang mirip soal PK yang sudah ada (PK-MCQ-001 s.d. 165, PK-ESA-001 s.d. 055, PK-KAS-001 s.d. 031) dan batch sebelumnya di percakapan ini.
-Bentuk soal dan variasi (wajib, Prompt B v4.5):
+Bentuk soal dan variasi (wajib, Prompt B v4.6):
 - Teori: menguji alasan, asumsi, keterbatasan, perbandingan, atau hubungan antarkonsep dari kerangka konseptual, prinsip, dan dasar standar yang umum dipakai (mis. definisi unsur dan kriteria pengakuan, dasar pengukuran, pengendalian, model lima langkah pendapatan, model kerugian kredit ekspektasian). Tanpa entitas, atau ilustrasi paling banyak dua kalimat. Ikuti ragam yang tertulis di setiap topik. Bukan hafalan definisi, daftar, nama tokoh, nomor paragraf, atau tahun terbit.
 - Analisis: situasi entitas fiktif dengan data; ikuti pembuka dan jenis entitas yang tertulis di setiap topik. Entitas analisis menerapkan SAK Indonesia (bukan SAK EMKM, bukan entitas syariah atau instansi pemerintah). Kalimat pertama tidak boleh berbentuk "<Nama> (fiktif) adalah ...". Nama entitas tidak selalu berpola "PT <kata> <kata>".
 - Perintah tidak selalu "Menurut kerangka X". Pada soal sulit dan sangat sulit, sebagian soal tidak menyebut nama kerangka sehingga peserta memilih sendiri kerangka yang tepat.
-- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.5. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
-- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.5, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
+- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.6. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
+- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.6, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
 - Contoh soal ujian lama di Project hanya salah satu sumber gaya, bukan cetakan.
 Konteks ekonomi (wajib):
 - Kaitkan setiap soal dengan situasi perekonomian Indonesia dan global dalam tiga tahun terakhir (2023-2026) serta tantangan yang dihadapi ke depan, yang relevan dengan topiknya. Pilih tema yang paling cocok dari daftar di bawah; jangan memaksakan tema yang tidak relevan. Dalam satu batch, pakai tema yang beragam.
@@ -262,13 +262,13 @@ Catatan umum:
 - Tanpa akuntansi syariah, sektor publik, dan kontrak asuransi. Tanpa kategori lama PSAK 55.
 - Jangan menyalin angka, nama perusahaan, atau skenario dari materi dan contoh ujian.
 - Hindari skenario yang mirip soal PK yang sudah ada (PK-MCQ-001 s.d. 165, PK-ESA-001 s.d. 055, PK-KAS-001 s.d. 031) dan batch sebelumnya di percakapan ini.
-Bentuk soal dan variasi (wajib, Prompt B v4.5):
+Bentuk soal dan variasi (wajib, Prompt B v4.6):
 - Teori: menguji alasan, asumsi, keterbatasan, perbandingan, atau hubungan antarkonsep dari kerangka konseptual, prinsip, dan dasar standar yang umum dipakai (mis. definisi unsur dan kriteria pengakuan, dasar pengukuran, pengendalian, model lima langkah pendapatan, model kerugian kredit ekspektasian). Tanpa entitas, atau ilustrasi paling banyak dua kalimat. Ikuti ragam yang tertulis di setiap topik. Bukan hafalan definisi, daftar, nama tokoh, nomor paragraf, atau tahun terbit.
 - Analisis: situasi entitas fiktif dengan data; ikuti pembuka dan jenis entitas yang tertulis di setiap topik. Entitas analisis menerapkan SAK Indonesia (bukan SAK EMKM, bukan entitas syariah atau instansi pemerintah). Kalimat pertama tidak boleh berbentuk "<Nama> (fiktif) adalah ...". Nama entitas tidak selalu berpola "PT <kata> <kata>".
 - Perintah tidak selalu "Menurut kerangka X". Pada soal sulit dan sangat sulit, sebagian soal tidak menyebut nama kerangka sehingga peserta memilih sendiri kerangka yang tepat.
 - Rubrik menilai kualitas penalaran, ketepatan konsep, dan penggunaan data; acceptableAlternatives menyebut kerangka atau sudut pandang lain yang sah beserta syarat nilai penuhnya.
-- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.5. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
-- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.5, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
+- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.6. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
+- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.6, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
 - Contoh soal ujian lama di Project hanya salah satu sumber gaya, bukan cetakan.
 Konteks ekonomi (wajib):
 - Kaitkan setiap soal dengan situasi perekonomian Indonesia dan global dalam tiga tahun terakhir (2023-2026) serta tantangan yang dihadapi ke depan, yang relevan dengan topiknya. Pilih tema yang paling cocok dari daftar di bawah; jangan memaksakan tema yang tidak relevan. Dalam satu batch, pakai tema yang beragam.

@@ -1,6 +1,6 @@
 # MSK gelombang 5 — siap tempel
 
-Formulir gelombang 5, disusun 2026-10-29 untuk **Prompt B v4.5** dan **Prompt C v4.4** (variasi soal cerita, porsi dan kedalaman soal teori; D-112).
+Formulir gelombang 5, disusun 2026-10-29 untuk **Prompt B v4.6** dan **Prompt C v4.5** (variasi soal cerita, porsi dan kedalaman soal teori; D-112).
 Tujuan: (1) menambah soal teori yang lebih dalam dan soal cerita yang lebih bervariasi; (2) menutup kekurangan stok LIVE per tingkat kesulitan (sasaran SPEC 7: per tingkat minimal 30 PG, 9 esai, 3 kasus).
 Nomor melanjutkan nomor tertinggi gelombang 4 (MSK-B56, MSK-MCQ-220, MSK-ESA-070, MSK-KAS-035).
 
@@ -17,11 +17,11 @@ Sisa kekurangan (esai sangat sulit 1, kasus mudah 1) ditutup dengan merevisi soa
 Sebaran gaya di gelombang ini: soal teori 12 dari 30 PG dan esai (40%), ditambah satu sub teori di setiap kasus. Ada 8 ragam teori dan 8 bentuk pembuka. Tidak ada jenis entitas yang dipakai lebih dari sekali dalam satu batch.
 
 Cara pakai:
-1. Pastikan instruksi Project Claude penyusun sudah memakai **Prompt B v4.5** dan Project reviewer memakai **Prompt C v4.4**. Pengetahuan Project memuat `schema/CONTRACT.md`, `docs/msk_taksonomi.md`, dan contoh soal ujian MSK.
+1. Pastikan instruksi Project Claude penyusun sudah memakai **Prompt B v4.6** dan Project reviewer memakai **Prompt C v4.5**. Pengetahuan Project memuat `schema/CONTRACT.md`, `docs/msk_taksonomi.md`, dan contoh soal ujian MSK.
 2. Buka **satu percakapan baru**, lalu salin satu blok utuh per pesan, berurutan dari atas.
 3. Impor setiap hasil ke Pengelola Bank Soal. Perhatikan peringatan standar waktu saat impor. Periksa juga baris pertama authoring.notes (label bentuk) dan kalimat pertama setiap soal.
-4. Review dengan Prompt C v4.4. Bila Project melaporkan Batch ID atau rentang ID sudah terpakai, naikkan nomornya.
-5. Revisi soal NEEDS_REVISION memakai aturan revisi Prompt B v4.5. Saat merevisi, tambahkan label bentuk di baris pertama authoring.notes.
+4. Review dengan Prompt C v4.5. Bila Project melaporkan Batch ID atau rentang ID sudah terpakai, naikkan nomornya.
+5. Revisi soal NEEDS_REVISION memakai aturan revisi Prompt B v4.6. Saat merevisi, tambahkan label bentuk di baris pertama authoring.notes.
 
 Prioritas: 1 = menutup kekurangan stok; 2 = menambah variasi dan soal teori di tingkat yang stoknya sudah cukup atau hampir cukup.
 
@@ -65,12 +65,12 @@ Catatan umum:
 - Ikuti docs/msk_taksonomi.md (taksonomi 12 topik T01-T12 dan kompetensi K01-K06; bukan taksonomi lama T01-T16).
 - Jangan menyalin contoh, nama perusahaan, atau angka dari modul dan soal resmi.
 - Hindari skenario yang mirip soal MSK yang sudah ada (MSK-MCQ-001 s.d. 220, MSK-ESA-001 s.d. 070, MSK-KAS-001 s.d. 035) dan batch sebelumnya di percakapan ini.
-Bentuk soal dan variasi (wajib, Prompt B v4.5):
+Bentuk soal dan variasi (wajib, Prompt B v4.6):
 - Teori: menguji alasan, asumsi, keterbatasan, perbandingan, atau hubungan antarkonsep dari teori dan kerangka akademik manajemen stratejik dan kepemimpinan yang umum dipakai (mis. lima kekuatan Porter, PESTEL, VRIO, rantai nilai, strategi generik, matriks Ansoff dan BCG, balanced scorecard, 7S McKinsey, model perubahan Lewin dan Kotter, teori kepemimpinan). Tanpa entitas, atau ilustrasi paling banyak dua kalimat. Ikuti ragam yang tertulis di setiap topik. Bukan hafalan definisi, daftar, nama tokoh, nomor paragraf, atau tahun terbit.
 - Analisis: situasi entitas fiktif dengan data; ikuti pembuka dan jenis entitas yang tertulis di setiap topik. Kalimat pertama tidak boleh berbentuk "<Nama> (fiktif) adalah ...". Nama entitas tidak selalu berpola "PT <kata> <kata>".
 - Perintah tidak selalu "Menurut kerangka X". Pada soal sulit dan sangat sulit, sebagian soal tidak menyebut nama kerangka sehingga peserta memilih sendiri kerangka yang tepat.
-- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.5. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
-- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.5, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
+- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.6. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
+- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.6, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
 - Contoh soal ujian lama di Project hanya salah satu sumber gaya, bukan cetakan.
 Konteks ekonomi (wajib):
 - Kaitkan setiap soal dengan situasi perekonomian Indonesia dan global dalam tiga tahun terakhir (2023-2026) serta tantangan yang dihadapi ke depan, yang relevan dengan topiknya. Pilih tema yang paling cocok dari daftar di bawah; jangan memaksakan tema yang tidak relevan. Dalam satu batch, pakai tema yang beragam.
@@ -123,13 +123,13 @@ Catatan umum:
 - Ikuti docs/msk_taksonomi.md (taksonomi 12 topik T01-T12 dan kompetensi K01-K06; bukan taksonomi lama T01-T16).
 - Jangan menyalin contoh, nama perusahaan, atau angka dari modul dan soal resmi.
 - Hindari skenario yang mirip soal MSK yang sudah ada (MSK-MCQ-001 s.d. 220, MSK-ESA-001 s.d. 070, MSK-KAS-001 s.d. 035) dan batch sebelumnya di percakapan ini.
-Bentuk soal dan variasi (wajib, Prompt B v4.5):
+Bentuk soal dan variasi (wajib, Prompt B v4.6):
 - Teori: menguji alasan, asumsi, keterbatasan, perbandingan, atau hubungan antarkonsep dari teori dan kerangka akademik manajemen stratejik dan kepemimpinan yang umum dipakai (mis. lima kekuatan Porter, PESTEL, VRIO, rantai nilai, strategi generik, matriks Ansoff dan BCG, balanced scorecard, 7S McKinsey, model perubahan Lewin dan Kotter, teori kepemimpinan). Tanpa entitas, atau ilustrasi paling banyak dua kalimat. Ikuti ragam yang tertulis di setiap topik. Bukan hafalan definisi, daftar, nama tokoh, nomor paragraf, atau tahun terbit.
 - Analisis: situasi entitas fiktif dengan data; ikuti pembuka dan jenis entitas yang tertulis di setiap topik. Kalimat pertama tidak boleh berbentuk "<Nama> (fiktif) adalah ...". Nama entitas tidak selalu berpola "PT <kata> <kata>".
 - Perintah tidak selalu "Menurut kerangka X". Pada soal sulit dan sangat sulit, sebagian soal tidak menyebut nama kerangka sehingga peserta memilih sendiri kerangka yang tepat.
 - Rubrik menilai kualitas penalaran, ketepatan konsep, dan penggunaan data; acceptableAlternatives menyebut kerangka atau sudut pandang lain yang sah beserta syarat nilai penuhnya.
-- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.5. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
-- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.5, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
+- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.6. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
+- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.6, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
 - Contoh soal ujian lama di Project hanya salah satu sumber gaya, bukan cetakan.
 Konteks ekonomi (wajib):
 - Kaitkan setiap soal dengan situasi perekonomian Indonesia dan global dalam tiga tahun terakhir (2023-2026) serta tantangan yang dihadapi ke depan, yang relevan dengan topiknya. Pilih tema yang paling cocok dari daftar di bawah; jangan memaksakan tema yang tidak relevan. Dalam satu batch, pakai tema yang beragam.
@@ -178,14 +178,14 @@ Catatan umum:
 - Ikuti docs/msk_taksonomi.md (taksonomi 12 topik T01-T12 dan kompetensi K01-K06; bukan taksonomi lama T01-T16).
 - Jangan menyalin contoh, nama perusahaan, atau angka dari modul dan soal resmi.
 - Hindari skenario yang mirip soal MSK yang sudah ada (MSK-MCQ-001 s.d. 220, MSK-ESA-001 s.d. 070, MSK-KAS-001 s.d. 035) dan batch sebelumnya di percakapan ini.
-Bentuk soal dan variasi (wajib, Prompt B v4.5):
+Bentuk soal dan variasi (wajib, Prompt B v4.6):
 - Teori: menguji alasan, asumsi, keterbatasan, perbandingan, atau hubungan antarkonsep dari teori dan kerangka akademik manajemen stratejik dan kepemimpinan yang umum dipakai (mis. lima kekuatan Porter, PESTEL, VRIO, rantai nilai, strategi generik, matriks Ansoff dan BCG, balanced scorecard, 7S McKinsey, model perubahan Lewin dan Kotter, teori kepemimpinan). Tanpa entitas, atau ilustrasi paling banyak dua kalimat. Ikuti ragam yang tertulis di setiap topik. Bukan hafalan definisi, daftar, nama tokoh, nomor paragraf, atau tahun terbit.
 - Analisis: situasi entitas fiktif dengan data; ikuti pembuka dan jenis entitas yang tertulis di setiap topik. Kalimat pertama tidak boleh berbentuk "<Nama> (fiktif) adalah ...". Nama entitas tidak selalu berpola "PT <kata> <kata>".
 - Perintah tidak selalu "Menurut kerangka X". Pada soal sulit dan sangat sulit, sebagian soal tidak menyebut nama kerangka sehingga peserta memilih sendiri kerangka yang tepat.
 - Rubrik menilai kualitas penalaran, ketepatan konsep, dan penggunaan data; acceptableAlternatives menyebut kerangka atau sudut pandang lain yang sah beserta syarat nilai penuhnya.
 - Setiap kasus memuat tepat satu sub teori (tertulis di rincian kasus). Paling banyak dua sub menyebut nama alat analisis; alur kedua kasus berbeda.
-- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.5. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
-- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.5, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
+- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.6. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
+- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.6, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
 - Contoh soal ujian lama di Project hanya salah satu sumber gaya, bukan cetakan.
 Konteks ekonomi (wajib):
 - Kaitkan setiap soal dengan situasi perekonomian Indonesia dan global dalam tiga tahun terakhir (2023-2026) serta tantangan yang dihadapi ke depan, yang relevan dengan topiknya. Pilih tema yang paling cocok dari daftar di bawah; jangan memaksakan tema yang tidak relevan. Dalam satu batch, pakai tema yang beragam.
@@ -234,14 +234,14 @@ Catatan umum:
 - Ikuti docs/msk_taksonomi.md (taksonomi 12 topik T01-T12 dan kompetensi K01-K06; bukan taksonomi lama T01-T16).
 - Jangan menyalin contoh, nama perusahaan, atau angka dari modul dan soal resmi.
 - Hindari skenario yang mirip soal MSK yang sudah ada (MSK-MCQ-001 s.d. 220, MSK-ESA-001 s.d. 070, MSK-KAS-001 s.d. 035) dan batch sebelumnya di percakapan ini.
-Bentuk soal dan variasi (wajib, Prompt B v4.5):
+Bentuk soal dan variasi (wajib, Prompt B v4.6):
 - Teori: menguji alasan, asumsi, keterbatasan, perbandingan, atau hubungan antarkonsep dari teori dan kerangka akademik manajemen stratejik dan kepemimpinan yang umum dipakai (mis. lima kekuatan Porter, PESTEL, VRIO, rantai nilai, strategi generik, matriks Ansoff dan BCG, balanced scorecard, 7S McKinsey, model perubahan Lewin dan Kotter, teori kepemimpinan). Tanpa entitas, atau ilustrasi paling banyak dua kalimat. Ikuti ragam yang tertulis di setiap topik. Bukan hafalan definisi, daftar, nama tokoh, nomor paragraf, atau tahun terbit.
 - Analisis: situasi entitas fiktif dengan data; ikuti pembuka dan jenis entitas yang tertulis di setiap topik. Kalimat pertama tidak boleh berbentuk "<Nama> (fiktif) adalah ...". Nama entitas tidak selalu berpola "PT <kata> <kata>".
 - Perintah tidak selalu "Menurut kerangka X". Pada soal sulit dan sangat sulit, sebagian soal tidak menyebut nama kerangka sehingga peserta memilih sendiri kerangka yang tepat.
 - Rubrik menilai kualitas penalaran, ketepatan konsep, dan penggunaan data; acceptableAlternatives menyebut kerangka atau sudut pandang lain yang sah beserta syarat nilai penuhnya.
 - Setiap kasus memuat tepat satu sub teori (tertulis di rincian kasus). Paling banyak dua sub menyebut nama alat analisis; alur kedua kasus berbeda.
-- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.5. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
-- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.5, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
+- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.6. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
+- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.6, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
 - Contoh soal ujian lama di Project hanya salah satu sumber gaya, bukan cetakan.
 Konteks ekonomi (wajib):
 - Kaitkan setiap soal dengan situasi perekonomian Indonesia dan global dalam tiga tahun terakhir (2023-2026) serta tantangan yang dihadapi ke depan, yang relevan dengan topiknya. Pilih tema yang paling cocok dari daftar di bawah; jangan memaksakan tema yang tidak relevan. Dalam satu batch, pakai tema yang beragam.
@@ -298,12 +298,12 @@ Catatan umum:
 - Ikuti docs/msk_taksonomi.md (taksonomi 12 topik T01-T12 dan kompetensi K01-K06; bukan taksonomi lama T01-T16).
 - Jangan menyalin contoh, nama perusahaan, atau angka dari modul dan soal resmi.
 - Hindari skenario yang mirip soal MSK yang sudah ada (MSK-MCQ-001 s.d. 220, MSK-ESA-001 s.d. 070, MSK-KAS-001 s.d. 035) dan batch sebelumnya di percakapan ini.
-Bentuk soal dan variasi (wajib, Prompt B v4.5):
+Bentuk soal dan variasi (wajib, Prompt B v4.6):
 - Teori: menguji alasan, asumsi, keterbatasan, perbandingan, atau hubungan antarkonsep dari teori dan kerangka akademik manajemen stratejik dan kepemimpinan yang umum dipakai (mis. lima kekuatan Porter, PESTEL, VRIO, rantai nilai, strategi generik, matriks Ansoff dan BCG, balanced scorecard, 7S McKinsey, model perubahan Lewin dan Kotter, teori kepemimpinan). Tanpa entitas, atau ilustrasi paling banyak dua kalimat. Ikuti ragam yang tertulis di setiap topik. Bukan hafalan definisi, daftar, nama tokoh, nomor paragraf, atau tahun terbit.
 - Analisis: situasi entitas fiktif dengan data; ikuti pembuka dan jenis entitas yang tertulis di setiap topik. Kalimat pertama tidak boleh berbentuk "<Nama> (fiktif) adalah ...". Nama entitas tidak selalu berpola "PT <kata> <kata>".
 - Perintah tidak selalu "Menurut kerangka X". Pada soal sulit dan sangat sulit, sebagian soal tidak menyebut nama kerangka sehingga peserta memilih sendiri kerangka yang tepat.
-- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.5. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
-- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.5, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
+- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.6. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
+- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.6, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
 - Contoh soal ujian lama di Project hanya salah satu sumber gaya, bukan cetakan.
 Konteks ekonomi (wajib):
 - Kaitkan setiap soal dengan situasi perekonomian Indonesia dan global dalam tiga tahun terakhir (2023-2026) serta tantangan yang dihadapi ke depan, yang relevan dengan topiknya. Pilih tema yang paling cocok dari daftar di bawah; jangan memaksakan tema yang tidak relevan. Dalam satu batch, pakai tema yang beragam.
@@ -357,13 +357,13 @@ Catatan umum:
 - Ikuti docs/msk_taksonomi.md (taksonomi 12 topik T01-T12 dan kompetensi K01-K06; bukan taksonomi lama T01-T16).
 - Jangan menyalin contoh, nama perusahaan, atau angka dari modul dan soal resmi.
 - Hindari skenario yang mirip soal MSK yang sudah ada (MSK-MCQ-001 s.d. 220, MSK-ESA-001 s.d. 070, MSK-KAS-001 s.d. 035) dan batch sebelumnya di percakapan ini.
-Bentuk soal dan variasi (wajib, Prompt B v4.5):
+Bentuk soal dan variasi (wajib, Prompt B v4.6):
 - Teori: menguji alasan, asumsi, keterbatasan, perbandingan, atau hubungan antarkonsep dari teori dan kerangka akademik manajemen stratejik dan kepemimpinan yang umum dipakai (mis. lima kekuatan Porter, PESTEL, VRIO, rantai nilai, strategi generik, matriks Ansoff dan BCG, balanced scorecard, 7S McKinsey, model perubahan Lewin dan Kotter, teori kepemimpinan). Tanpa entitas, atau ilustrasi paling banyak dua kalimat. Ikuti ragam yang tertulis di setiap topik. Bukan hafalan definisi, daftar, nama tokoh, nomor paragraf, atau tahun terbit.
 - Analisis: situasi entitas fiktif dengan data; ikuti pembuka dan jenis entitas yang tertulis di setiap topik. Kalimat pertama tidak boleh berbentuk "<Nama> (fiktif) adalah ...". Nama entitas tidak selalu berpola "PT <kata> <kata>".
 - Perintah tidak selalu "Menurut kerangka X". Pada soal sulit dan sangat sulit, sebagian soal tidak menyebut nama kerangka sehingga peserta memilih sendiri kerangka yang tepat.
 - Rubrik menilai kualitas penalaran, ketepatan konsep, dan penggunaan data; acceptableAlternatives menyebut kerangka atau sudut pandang lain yang sah beserta syarat nilai penuhnya.
-- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.5. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
-- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.5, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
+- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.6. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
+- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.6, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
 - Contoh soal ujian lama di Project hanya salah satu sumber gaya, bukan cetakan.
 Konteks ekonomi (wajib):
 - Kaitkan setiap soal dengan situasi perekonomian Indonesia dan global dalam tiga tahun terakhir (2023-2026) serta tantangan yang dihadapi ke depan, yang relevan dengan topiknya. Pilih tema yang paling cocok dari daftar di bawah; jangan memaksakan tema yang tidak relevan. Dalam satu batch, pakai tema yang beragam.

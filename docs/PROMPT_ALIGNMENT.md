@@ -84,3 +84,11 @@ data), jadi bentuk keluarannya harus lengkap di dalam prompt itu sendiri.
 | No | Prompt | Bagian | Perubahan | Dampak pada kontrak |
 |---|---|---|---|---|
 | K-2 | Kalibrasi | Sumber, pemeriksaan formulir, Aturan cacat, Aturan bentuk soal (`authoring.notes`), bagian baru "Variasi soal", langkah 1 dan 3 | Variasi soal dan porsi teori sama dengan Prompt B v4.5; kode cacat yang cocok untuk soal teori; cacat tidak boleh pada bentuk atau variasi | Tidak ada. Label bentuk di `authoring.notes` (string bebas); `calibration.defectDimension` tetap memakai enum yang ada |
+
+## Prompt B v4.6, Prompt C v4.5, Prompt D v1.3 (2026-10-29, disetujui pemilik)
+
+| No | Prompt | Bagian | Perubahan | Dampak pada kontrak |
+|---|---|---|---|---|
+| B-17 | Penyusun | Kedalaman soal teori, Variasi cerita, langkah 3 | Isyarat kata mutlak, istilah khas, pembuka soal teori, nama fiktif | Tidak ada |
+| C-8 | Reviewer | Langkah 9 dan 10, Tingkat temuan | Kunci tertebak dari opsi (distractorQuality, mayor); pembuka teori seragam dan nama mirip nama nyata (originality, minor) | Tidak ada. Enum dimension dan reviewVersion "4.1" tetap |
+| K-3 | Kalibrasi | Variasi soal | Aturan yang sama dengan B-17; cacat PENGECOH tetap ketidakrelevanan konsep | Tidak ada |
