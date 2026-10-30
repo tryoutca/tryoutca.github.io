@@ -280,3 +280,9 @@ Rancangan: `docs/PLAN_INDEXEDDB.md`.
 | ID | Keputusan | Alasan | Status |
 |---|---|---|---|
 | D-115 | Ekspor Pack 2026-10-25 disinkronkan seperti D-86/D-89/D-97, **hanya soal LIVE**. **MSK** 1.5.2 → 1.6.0: 146 soal LIVE dari `MSK 25 Okt 2026pack.json`. Ekspor memuat 185 soal; 29 NEEDS_REVISION dan 10 DRAFT tidak dimasukkan. Ke-52 soal lama identik, dan taksonomi serta paket identik dengan repo. **PK** 1.7.3 → 1.9.0: 185 soal LIVE dari `PK 25 Okt 2026pack.json`. Changelog digabung: entri repo 1.7.2/1.7.3 (D-99, D-101) dipertahankan, lalu entri ekspor 1.8.0/1.9.0 ditambahkan karena ekspor tidak memuat 1.7.2/1.7.3. Paket dan taksonomi ekspor sudah identik. Tidak ada soal kalibrasi. `contentHash` diperiksa build-pack. | Soal gelombang 4 hanya tersimpan di bank perangkat pemilik dan belum tayang di tryoutca.github.io. Soal yang belum lolos review tidak boleh masuk pack publik. | TEKNIS |
+
+## Pengelola Bank Soal: hapus soal Ditolak
+
+| ID | Keputusan | Alasan | Status |
+|---|---|---|---|
+| D-116 | Soal berstatus Ditolak (REJECTED) dapat dihapus permanen dari bank lewat tombol "Hapus soal ditolak" di Daftar Soal (aktif hanya bila semua soal terpilih Ditolak) atau "Hapus soal" di pratinjau. Wajib inisial dan alasan; tercatat di log bank. `reviewRecords` dan log tetap disimpan; perbedaan review (`conflicts`) soal itu dibuang. Bila soal ada di paket review yang hasilnya belum diimpor, dialog memberi peringatan karena hasil paket itu tidak dapat diterapkan lagi. Status lain tidak dapat dihapus (LIVE tetap lewat Pensiunkan). ID yang dihapus dapat muncul lagi bila batch berikutnya memakai ID yang sama. | Permintaan pemilik 2026-10-30: soal yang ditolak ingin dibuang agar tidak berlaku lagi. Soal Ditolak tidak pernah tayang, sehingga menghapusnya tidak memengaruhi pack yang dipakai ujian maupun riwayat sesi peserta. | Menunggu persetujuan pemilik |

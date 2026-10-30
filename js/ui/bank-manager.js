@@ -7,8 +7,8 @@ import { h, append, clear, confirmDialog, alertDialog, formDialog, toast } from 
 import { disclaimer, header } from './layout.js';
 import { getType } from '../types/registry.js';
 import {
-  BankError, STATUS_LABELS, STATUS_ORDER, adoptBuiltInLive, applyBatchImport, approve, bankStats, builtInLiveDiff, createBank, exportPackText,
-  filterQuestions, findQuestion, loadBank, previewNeighbors, pendingPublication, planBatchImport, publish, resolveConflict,
+  BankError, STATUS_LABELS, STATUS_ORDER, adoptBuiltInLive, applyBatchImport, approve, bankStats, builtInLiveDiff, createBank, deleteRejected, exportPackText,
+  filterQuestions, findQuestion, loadBank, openReviewBatches, previewNeighbors, pendingPublication, planBatchImport, publish, resolveConflict,
   retire, returnToDraft, saveBank, taxonomyDiff, undoReject, updateTaxonomy, withTaxonomy, KEY_SHARE_LIMIT,
 } from '../core/bank.js';
 import {
@@ -300,6 +300,7 @@ export function renderBank(app) {
       h('td', { text: DIFFICULTY_LABELS[q.difficulty] }),
       h('td', {}, statusBadge(q.lifecycle.status), bank.conflicts[q.id] ? h('span', { class: 'badge badge-wait', text: 'Review berbeda' }) : null)));
     const selected = [...state.selected].filter((id) => findQuestion(bank, id));
+    const allRejected = selected.length > 0 && selected.every((id) => findQuestion(bank, id).lifecycle.status === 'REJECTED');
     const shown = list.filter((q) => state.selected.has(q.id)).length;
     const selectShown = (on) => { for (const q of list) { if (on) state.selected.add(q.id); else state.selected.delete(q.id); } render(); };
     const allBox = h('input', {
@@ -319,6 +320,7 @@ export function renderBank(app) {
         h('button', { type: 'button', class: 'btn', disabled: !selected.length, onclick: approveSelected }, 'Setujui terpilih'),
         h('button', { type: 'button', class: 'btn', disabled: !selected.length, onclick: () => { state.tab = 'review'; render(); } }, 'Buat paket review dari terpilih'),
         h('button', { type: 'button', class: 'btn', disabled: !selected.length, onclick: () => copyRevision(selected) }, 'Salin untuk penyusun'),
+        h('button', { type: 'button', class: 'btn btn-danger', disabled: !allRejected, title: allRejected ? null : 'Hanya untuk soal berstatus Ditolak', onclick: () => deleteIds(selected) }, 'Hapus soal ditolak'),
         h('button', { type: 'button', class: 'btn btn-link', disabled: !selected.length, onclick: () => { state.selected.clear(); render(); } }, 'Kosongkan pilihan')),
       h('div', { class: 'table-wrap' }, h('table', { class: 'data-table bank-table' },
         h('thead', {}, h('tr', {}, h('th', {}, allBox), ['ID', 'Tipe', 'Topik', 'Kesulitan', 'Status'].map((t) => h('th', { text: t })))),
@@ -353,6 +355,7 @@ export function renderBank(app) {
     if (review && s !== 'CALIBRATION') actions.push(h('button', { type: 'button', class: s === 'NEEDS_REVISION' ? 'btn btn-primary' : 'btn', onclick: () => copyRevision([q.id]) }, 'Salin untuk penyusun'));
     if (s === 'NEEDS_REVISION') actions.push(h('button', { type: 'button', class: 'btn', onclick: () => withReason(q.id, 'Kembalikan ke Draf', returnToDraft) }, 'Kembalikan ke Draf'));
     if (s === 'REJECTED') actions.push(h('button', { type: 'button', class: 'btn', onclick: () => withReason(q.id, 'Batalkan penolakan', undoReject) }, 'Batalkan penolakan'));
+    if (s === 'REJECTED') actions.push(h('button', { type: 'button', class: 'btn btn-danger', onclick: () => deleteIds([q.id]) }, 'Hapus soal'));
     if (s === 'LIVE') actions.push(h('button', { type: 'button', class: 'btn', onclick: () => withReason(q.id, 'Pensiunkan soal', retire) }, 'Pensiunkan'));
     return h('div', { class: 'card preview-card' },
       previewNav(q, list),
@@ -445,6 +448,29 @@ export function renderBank(app) {
     });
     if (!ok) return;
     if (persist()) toast('Tersimpan.');
+    render();
+  }
+
+  // Hapus permanen soal Ditolak (D-116). Tidak dapat dibatalkan.
+  async function deleteIds(ids) {
+    const open = openReviewBatches(bank, ids);
+    const reason = h('textarea', { id: 'reason', class: 'answer-text', rows: 3 });
+    const by = h('input', { type: 'text', id: 'by', maxlength: 15, autocomplete: 'off' });
+    const ok = await formDialog({
+      title: `Hapus ${ids.length} soal ditolak?`, confirmLabel: 'Hapus permanen',
+      body: [
+        h('p', { text: `Soal: ${ids.join(', ')}.` }),
+        h('p', { text: 'Soal dihapus dari bank dan tidak dapat dikembalikan. Ekspor pack di tab Publikasi lebih dulu bila ingin menyimpan salinan.' }),
+        open.length ? h('p', { class: 'notice', text: `Soal ini ada di paket review yang hasilnya belum diimpor (${open.join(', ')}). Hasil paket itu tidak dapat diterapkan lagi; buat paket review baru untuk soal lainnya.` }) : null,
+        h('div', { class: 'field' }, h('label', { for: 'by', text: 'Inisial' }), by),
+        h('div', { class: 'field' }, h('label', { for: 'reason', text: 'Alasan (wajib)' }), reason),
+      ],
+      validate: () => { deleteRejected(bank, ids, { by: by.value, reason: reason.value }, Date.now()); return null; },
+    });
+    if (!ok) return;
+    for (const id of ids) state.selected.delete(id);
+    if (ids.includes(state.preview)) state.preview = null;
+    if (persist()) toast(`${ids.length} soal dihapus dari bank.`);
     render();
   }
 

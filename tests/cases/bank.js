@@ -3,8 +3,8 @@
 import * as assert from './assert.js';
 import { loadJson } from './env.js';
 import {
-  adoptBuiltInLive, applyBatchImport, approve, bankStats, builtInLiveDiff, createBank, editQuestion, exportPackText, extractJson, findQuestion,
-  loadBank, planBatchImport, previewNeighbors, publish, resolveConflict, retire, returnToDraft, saveBank, taxonomyDiff, undoReject, updateTaxonomy, withTaxonomy,
+  adoptBuiltInLive, applyBatchImport, approve, bankStats, builtInLiveDiff, createBank, deleteRejected, editQuestion, exportPackText, extractJson, findQuestion,
+  loadBank, openReviewBatches, planBatchImport, previewNeighbors, publish, resolveConflict, retire, returnToDraft, saveBank, taxonomyDiff, undoReject, updateTaxonomy, withTaxonomy,
 } from '../../js/core/bank.js';
 import {
   applyReviewResult, buildReviewPackage, checkReviewSelection, decide, reviewPromptText, revisionRequestText, validateReviewResult,
@@ -275,6 +275,31 @@ export default {
         await assert.rejects(() => undoReject(bank, ids[3], { by: 'LMA', reason: ' ' }, T), /Alasan/);
         undoReject(bank, ids[3], { by: 'LMA', reason: 'Reviewer keliru membaca stem.' }, T);
         assert.equal(findQuestion(bank, ids[3]).lifecycle.status, 'DRAFT');
+        assert.deepEqual(validatePack(bank.pack).errors, undefined);
+      },
+    },
+    {
+      name: 'hapus soal Ditolak: hanya REJECTED, wajib inisial dan alasan, paket review terbuka dilaporkan',
+      run: async () => {
+        const { bank, ids } = await bankWithDrafts(2);
+        const pkg = await buildReviewPackage(bank, ids, { includeCalibration: false, rng: createRng(7), now: T });
+        const pending = bank.pendingReviews.at(-1);
+        assert.deepEqual(openReviewBatches(bank, [ids[1]]), [pending.batchId]);
+        const result = makeReviewResult(pkg, { model: 'reviewer-a', verdictFor: (i) => (pending.keyMap[i.reviewKey].questionId === ids[1] ? { verdict: 'REJECT' } : { verdict: 'APPROVE' }) });
+        const v = validateReviewResult(bank, result);
+        assert.ok(v.ok, v.errors && messages(v.errors));
+        applyReviewResult(bank, v, T);
+        assert.deepEqual(openReviewBatches(bank, [ids[1]]), []);
+        const total = bank.pack.questions.length;
+        await assert.rejects(() => deleteRejected(bank, [ids[0]], { by: 'LMA', reason: 'x' }, T), /Ditolak/);
+        await assert.rejects(() => deleteRejected(bank, [ids[1]], { by: 'LMA', reason: ' ' }, T), /Alasan/);
+        await assert.rejects(() => deleteRejected(bank, [ids[1]], { by: '', reason: 'x' }, T), /inisial/);
+        await assert.rejects(() => deleteRejected(bank, [ids[1], ids[0]], { by: 'LMA', reason: 'x' }, T), /Ditolak/);
+        assert.equal(bank.pack.questions.length, total);
+        deleteRejected(bank, [ids[1]], { by: 'LMA', reason: 'Kunci tidak dapat dipertahankan.' }, T);
+        assert.equal(findQuestion(bank, ids[1]), null);
+        assert.equal(bank.pack.questions.length, total - 1);
+        assert.ok(bank.log.at(-1).message.includes(ids[1]));
         assert.deepEqual(validatePack(bank.pack).errors, undefined);
       },
     },

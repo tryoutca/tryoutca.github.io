@@ -429,6 +429,31 @@ export function undoReject(bank, id, { by, reason }, now) {
   log(bank, now, `Penolakan soal ${id} dibatalkan: ${reason}`);
 }
 
+// Paket review yang memuat soal-soal ini dan belum pernah diimpor hasilnya;
+// hasil paket itu tidak dapat diterapkan lagi bila soalnya dihapus (D-116).
+export function openReviewBatches(bank, ids) {
+  return bank.pendingReviews
+    .filter((p) => !p.imports.length && Object.values(p.keyMap).some((ref) => ids.includes(ref.questionId)))
+    .map((p) => p.batchId);
+}
+
+// Hapus permanen soal Ditolak dari bank (D-116): hanya status REJECTED, wajib
+// inisial dan alasan. Riwayat review (reviewRecords) dan log tetap disimpan.
+export function deleteRejected(bank, ids, { by, reason }, now) {
+  const who = String(by ?? '').trim();
+  if (!INITIALS.test(who)) throw new BankError('Isi inisial (huruf, maks 15 karakter), mis. "LMA".');
+  const why = requireReason(reason);
+  if (!ids.length) throw new BankError('Belum ada soal yang dipilih.');
+  ids.forEach((id) => {
+    const q = findQuestion(bank, id);
+    if (!q) throw new BankError(`Soal ${id} tidak ada di bank.`);
+    if (q.lifecycle.status !== 'REJECTED') throw new BankError(`Soal ${id}: hanya soal berstatus Ditolak yang dapat dihapus (status sekarang ${STATUS_LABELS[q.lifecycle.status]}).`);
+  });
+  bank.pack.questions = bank.pack.questions.filter((q) => !ids.includes(q.id));
+  for (const id of ids) delete bank.conflicts[id];
+  log(bank, now, `${ids.length} soal Ditolak dihapus oleh ${who}: ${ids.join(', ')} — ${why}`);
+}
+
 // Perlu revisi -> Draf oleh manusia dengan alasan tertulis (D-88), mis. revisi sudah
 // diimpor sebelum perbaikan D-88 atau pemilik tidak setuju dengan temuan reviewer.
 export function returnToDraft(bank, id, { by, reason }, now) {
