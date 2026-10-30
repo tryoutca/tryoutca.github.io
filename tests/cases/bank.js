@@ -3,8 +3,8 @@
 import * as assert from './assert.js';
 import { loadJson } from './env.js';
 import {
-  adoptBuiltInLive, applyBatchImport, approve, bankStats, builtInLiveDiff, createBank, deleteRejected, editQuestion, exportPackText, extractJson, findQuestion,
-  loadBank, openReviewBatches, planBatchImport, previewNeighbors, publish, resolveConflict, retire, returnToDraft, saveBank, taxonomyDiff, undoReject, updateTaxonomy, withTaxonomy,
+  adoptBuiltInLive, applyBatchImport, approve, bankStats, builtInLiveDiff, createBank, deleteRejected, editQuestion, exportPackText, extractJson, filterQuestions, findQuestion,
+  loadBank, openReviewBatches, pageOf, planBatchImport, previewNeighbors, publish, resolveConflict, retire, returnToDraft, saveBank, taxonomyDiff, undoReject, updateTaxonomy, withTaxonomy,
 } from '../../js/core/bank.js';
 import {
   applyReviewResult, buildReviewPackage, checkReviewSelection, decide, reviewPromptText, revisionRequestText, validateReviewResult,
@@ -276,6 +276,26 @@ export default {
         undoReject(bank, ids[3], { by: 'LMA', reason: 'Reviewer keliru membaca stem.' }, T);
         assert.equal(findQuestion(bank, ids[3]).lifecycle.status, 'DRAFT');
         assert.deepEqual(validatePack(bank.pack).errors, undefined);
+      },
+    },
+    {
+      name: 'cari soal (ID, isi, beberapa kata kunci) dan bagi per halaman',
+      run: async () => {
+        const { bank } = await freshBank();
+        const [a, b] = bank.pack.questions;
+        assert.deepEqual(filterQuestions(bank, { query: a.id.toLowerCase() }).map((q) => q.id), [a.id]);
+        assert.ok(filterQuestions(bank, { query: ` ${a.id} , ${b.id} ` }).map((q) => q.id).includes(b.id));
+        const word = a.stem.split(/\s+/).find((w) => w.length > 6).toUpperCase();
+        assert.ok(filterQuestions(bank, { query: word }).some((q) => q.id === a.id));
+        assert.equal(filterQuestions(bank, { query: ' , ' }).length, bank.pack.questions.length);
+        assert.equal(filterQuestions(bank, { query: 'tidak-ada-zzz' }).length, 0);
+        assert.equal(filterQuestions(bank, { query: a.id, type: a.type === 'mcq' ? 'essay' : 'mcq' }).length, 0);
+        const list = Array.from({ length: 45 }, (_, i) => i);
+        assert.deepEqual(pageOf(list, 0, 20), { items: list.slice(0, 20), page: 0, pages: 3, from: 1, to: 20, total: 45 });
+        assert.deepEqual(pageOf(list, 2, 20).items, list.slice(40));
+        assert.equal(pageOf(list, 9, 20).page, 2);
+        assert.equal(pageOf(list, 1, 0).items.length, 45);
+        assert.deepEqual(pageOf([], 3, 20), { items: [], page: 0, pages: 1, from: 0, to: 0, total: 0 });
       },
     },
     {

@@ -538,11 +538,34 @@ export function exportPackText(bank) {
 
 // ---------- Daftar, filter, statistik ----------
 
-export function filterQuestions(bank, { status, topicId, type, difficulty } = {}) {
+// Pencarian teks (D-117): tanpa membedakan huruf besar/kecil, cocok bila ada di
+// ID atau stem soal. Koma memisahkan beberapa kata kunci (cukup salah satu cocok),
+// mis. "163, 225" untuk memeriksa beberapa ID sekaligus.
+function matchesQuery(q, query) {
+  const terms = String(query ?? '').toLowerCase().split(',').map((t) => t.trim()).filter(Boolean);
+  if (!terms.length) return true;
+  const text = `${q.id}\n${q.stem}`.toLowerCase();
+  return terms.some((t) => text.includes(t));
+}
+
+export function filterQuestions(bank, { status, topicId, type, difficulty, query } = {}) {
   return bank.pack.questions.filter((q) => (!status || q.lifecycle.status === status)
     && (!topicId || q.topicIds.includes(topicId))
     && (!type || q.type === type)
-    && (!difficulty || q.difficulty === difficulty));
+    && (!difficulty || q.difficulty === difficulty)
+    && matchesQuery(q, query));
+}
+
+// Satu halaman daftar (D-117). pageSize 0 = semua. Halaman di luar jangkauan
+// digeser ke halaman terakhir yang ada.
+export function pageOf(list, page, pageSize) {
+  const total = list.length;
+  if (!pageSize || pageSize >= total) return { items: list, page: 0, pages: 1, from: total ? 1 : 0, to: total, total };
+  const pages = Math.ceil(total / pageSize);
+  const p = Math.min(Math.max(0, page), pages - 1);
+  const start = p * pageSize;
+  const items = list.slice(start, start + pageSize);
+  return { items, page: p, pages, from: start + 1, to: start + items.length, total };
 }
 
 export const KEY_SHARE_LIMIT = 0.35; // SPEC 7: posisi kunci PG maks 35% di satu huruf.

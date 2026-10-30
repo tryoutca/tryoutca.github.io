@@ -8,7 +8,7 @@ import { disclaimer, header } from './layout.js';
 import { getType } from '../types/registry.js';
 import {
   BankError, STATUS_LABELS, STATUS_ORDER, adoptBuiltInLive, applyBatchImport, approve, bankStats, builtInLiveDiff, createBank, deleteRejected, exportPackText,
-  filterQuestions, findQuestion, loadBank, openReviewBatches, previewNeighbors, pendingPublication, planBatchImport, publish, resolveConflict,
+  filterQuestions, findQuestion, loadBank, openReviewBatches, pageOf, previewNeighbors, pendingPublication, planBatchImport, publish, resolveConflict,
   retire, returnToDraft, saveBank, taxonomyDiff, undoReject, updateTaxonomy, withTaxonomy, KEY_SHARE_LIMIT,
 } from '../core/bank.js';
 import {
@@ -30,12 +30,13 @@ const REVIEW_PROMPT = 'prompt_reviewer_soal.md';
 const TYPE_LABELS = { mcq: 'PG', numeric: 'Numerik', essay: 'Esai', case: 'Kasus' };
 const TABS = [['soal', 'Daftar Soal'], ['impor', 'Impor Batch'], ['review', 'Review'], ['publikasi', 'Publikasi'], ['statistik', 'Statistik'], ['catatan', 'Catatan']];
 const PIN_SALT = 'caSim-bank-pin:';
+const PAGE_SIZES = [[20, '20 soal'], [50, '50 soal'], [100, '100 soal'], [0, 'Semua']];
 
 const pinHash = (pin) => sha256Hex(`${PIN_SALT}${pin}`);
 
 export function renderBank(app) {
   const el = h('div', { class: 'screen bank-screen' });
-  const state = { tab: 'soal', filters: {}, selected: new Set(), preview: null, batchPlan: null, batchText: '', batchErrors: [], reviewText: '', reviewCheck: null, lastPackage: null, statsScope: 'LIVE', builtInLive: null };
+  const state = { tab: 'soal', filters: {}, page: 0, selected: new Set(), preview: null, batchPlan: null, batchText: '', batchErrors: [], reviewText: '', reviewCheck: null, lastPackage: null, statsScope: 'LIVE', builtInLive: null };
   let bank = null;
   start();
 
@@ -288,8 +289,24 @@ export function renderBank(app) {
   function soalTab() {
     const f = state.filters;
     const list = filterQuestions(bank, f);
-    const setFilter = (key) => (v) => { f[key] = v || undefined; render(); };
-    const rows = list.map((q) => h('tr', { class: state.preview === q.id ? 'selected-row' : null },
+    const size = pageSize();
+    const pg = pageOf(list, state.page, size);
+    state.page = pg.page;
+    const setFilter = (key) => (v) => { f[key] = v || undefined; state.page = 0; render(); };
+    const filtered = Object.values(f).some(Boolean);
+    const search = h('input', {
+      type: 'search', id: 'f-query', value: f.query || '', autocomplete: 'off', placeholder: 'mis. MSK-MCQ-163, 225, atau kata dalam soal',
+      oninput: (e) => {
+        const pos = e.target.selectionStart;
+        f.query = e.target.value || undefined;
+        state.page = 0;
+        render();
+        const again = el.querySelector('#f-query');
+        again.focus();
+        again.setSelectionRange(pos, pos);
+      },
+    });
+    const rows = pg.items.map((q) => h('tr', { class: state.preview === q.id ? 'selected-row' : null },
       h('td', {}, h('input', {
         type: 'checkbox', checked: state.selected.has(q.id), 'aria-label': `Pilih ${q.id}`,
         onchange: (e) => { if (e.target.checked) state.selected.add(q.id); else state.selected.delete(q.id); render(); },
@@ -302,35 +319,72 @@ export function renderBank(app) {
     const selected = [...state.selected].filter((id) => findQuestion(bank, id));
     const allRejected = selected.length > 0 && selected.every((id) => findQuestion(bank, id).lifecycle.status === 'REJECTED');
     const shown = list.filter((q) => state.selected.has(q.id)).length;
-    const selectShown = (on) => { for (const q of list) { if (on) state.selected.add(q.id); else state.selected.delete(q.id); } render(); };
+    const onPage = pg.items.filter((q) => state.selected.has(q.id)).length;
+    const selectAll = (items, on) => { for (const q of items) { if (on) state.selected.add(q.id); else state.selected.delete(q.id); } render(); };
+    // Kotak di kepala tabel memilih soal di halaman ini; "Pilih semua" memilih semua yang cocok (D-117).
     const allBox = h('input', {
-      type: 'checkbox', checked: list.length > 0 && shown === list.length, disabled: !list.length,
-      'aria-label': 'Pilih semua soal yang ditampilkan', onchange: (e) => selectShown(e.target.checked),
+      type: 'checkbox', checked: pg.items.length > 0 && onPage === pg.items.length, disabled: !pg.items.length,
+      'aria-label': 'Pilih semua soal di halaman ini', onchange: (e) => selectAll(pg.items, e.target.checked),
     });
-    allBox.indeterminate = shown > 0 && shown < list.length;
+    allBox.indeterminate = onPage > 0 && onPage < pg.items.length;
     return h('div', {},
+      h('div', { class: 'field' },
+        h('label', { for: 'f-query', text: 'Cari ID atau isi soal' }),
+        h('div', { class: 'row search-row' }, search,
+          h('button', { type: 'button', class: 'btn', disabled: !filtered, onclick: () => { state.filters = {}; state.page = 0; render(); } }, 'Hapus filter'))),
       h('div', { class: 'form-grid' },
         select('f-status', 'Status', f.status, STATUS_ORDER.map((s) => [s, STATUS_LABELS[s]]), setFilter('status')),
         select('f-topic', 'Topik', f.topicId, bank.pack.topics.map((t) => [t.id, `${t.id} ${t.name}`]), setFilter('topicId')),
         select('f-type', 'Tipe', f.type, Object.entries(TYPE_LABELS), setFilter('type')),
         select('f-diff', 'Kesulitan', f.difficulty, Object.entries(DIFFICULTY_LABELS), setFilter('difficulty'))),
-      h('p', { class: 'hint', text: `${list.length} soal ditampilkan · ${selected.length} dipilih` }),
+      h('p', { class: 'hint', text: `${list.length} soal cocok · ${selected.length} dipilih` }),
       h('div', { class: 'row' },
-        h('button', { type: 'button', class: 'btn', disabled: !list.length || shown === list.length, onclick: () => selectShown(true) }, `Pilih semua (${list.length})`),
+        h('button', { type: 'button', class: 'btn', disabled: !list.length || shown === list.length, onclick: () => selectAll(list, true) }, `Pilih semua (${list.length})`),
         h('button', { type: 'button', class: 'btn', disabled: !selected.length, onclick: approveSelected }, 'Setujui terpilih'),
         h('button', { type: 'button', class: 'btn', disabled: !selected.length, onclick: () => { state.tab = 'review'; render(); } }, 'Buat paket review dari terpilih'),
         h('button', { type: 'button', class: 'btn', disabled: !selected.length, onclick: () => copyRevision(selected) }, 'Salin untuk penyusun'),
         h('button', { type: 'button', class: 'btn btn-danger', disabled: !allRejected, title: allRejected ? null : 'Hanya untuk soal berstatus Ditolak', onclick: () => deleteIds(selected) }, 'Hapus soal ditolak'),
         h('button', { type: 'button', class: 'btn btn-link', disabled: !selected.length, onclick: () => { state.selected.clear(); render(); } }, 'Kosongkan pilihan')),
+      pager(pg, size, false),
       h('div', { class: 'table-wrap' }, h('table', { class: 'data-table bank-table' },
         h('thead', {}, h('tr', {}, h('th', {}, allBox), ['ID', 'Tipe', 'Topik', 'Kesulitan', 'Status'].map((t) => h('th', { text: t })))),
         h('tbody', {}, rows))),
-      list.length ? null : h('p', { class: 'hint', text: 'Tidak ada soal yang cocok dengan filter.' }),
+      list.length ? null : h('p', { class: 'hint', text: 'Tidak ada soal yang cocok dengan pencarian atau filter.' }),
+      pg.pages > 1 ? pager(pg, size, true) : null,
       state.preview && findQuestion(bank, state.preview) ? previewCard(findQuestion(bank, state.preview), list) : null);
+  }
+
+  // Jumlah soal per halaman (D-117), diingat di pengaturan perangkat. 0 = semua.
+  function pageSize() {
+    const n = app.settings.bankPageSize;
+    return PAGE_SIZES.some(([v]) => v === n) ? n : 50;
+  }
+
+  // Halaman seperti kotak masuk surel: "1–50 dari 193" dengan ‹ ›. Pager bawah
+  // menggulir kembali ke atas tabel setelah pindah halaman.
+  function pager(pg, size, bottom) {
+    const go = (p) => {
+      state.page = p;
+      render();
+      if (bottom) el.querySelector('.bank-table')?.scrollIntoView({ block: 'start' });
+    };
+    return h('div', { class: 'row pager' },
+      bottom ? null : h('label', { for: 'f-pagesize', class: 'hint', text: 'Tampilkan' }),
+      bottom ? null : h('select', {
+        id: 'f-pagesize',
+        onchange: (e) => { app.saveSettings({ bankPageSize: Number(e.target.value) }); state.page = 0; render(); },
+      }, PAGE_SIZES.map(([v, t]) => h('option', { value: String(v), selected: v === size }, t))),
+      h('div', { class: 'row pager-nav' },
+        h('span', { class: 'hint pager-range', text: pg.total ? `${pg.from}–${pg.to} dari ${pg.total}` : '0 soal' }),
+        h('button', { type: 'button', class: 'btn btn-icon', 'aria-label': 'Halaman sebelumnya', disabled: pg.page === 0, onclick: () => go(pg.page - 1) }, '‹'),
+        h('button', { type: 'button', class: 'btn btn-icon', 'aria-label': 'Halaman berikutnya', disabled: pg.page >= pg.pages - 1, onclick: () => go(pg.page + 1) }, '›')));
   }
 
   function showPreview(id) {
     state.preview = id;
+    const size = pageSize();
+    const index = filterQuestions(bank, state.filters).findIndex((q) => q.id === id);
+    if (size && index >= 0) state.page = Math.floor(index / size);
     render();
     el.querySelector('.preview-card')?.scrollIntoView({ block: 'start' });
   }

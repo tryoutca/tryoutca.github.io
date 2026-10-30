@@ -111,7 +111,7 @@ a { color: var(--accent); }
 .package-card .name { font-weight: 700; font-size: 1.05rem; display: block; margin-bottom: 6px; }
 .package-card .meta { color: var(--muted); font-size: .92rem; display: block; }
 .resume-card { border-color: var(--warn); }
-select, input[type=number], input[type=text] {
+select, input[type=number], input[type=text], input[type=search] {
   font: inherit; min-height: var(--tap); padding: 6px 10px; border-radius: 8px;
   border: 1px solid var(--border); background: var(--surface); color: var(--text);
 }
@@ -295,6 +295,10 @@ dialog select, dialog input[type=text] { width: 100%; }
 .tab.active { background: var(--surface); border-color: var(--border); font-weight: 700; margin-bottom: -2px; border-bottom: 2px solid var(--surface); }
 .bank-table td { vertical-align: middle; }
 .bank-table input[type=checkbox] { width: 22px; height: 22px; }
+.search-row { flex-wrap: nowrap; margin-bottom: 10px; }
+.search-row input[type=search] { flex: 1; min-width: 0; }
+.pager { margin: 10px 0; }
+.pager-nav { flex-wrap: nowrap; margin-left: auto; }
 .selected-row { background: var(--accent-soft); }
 .warn-row td { background: var(--warn-soft); }
 .status-live { background: var(--ok); color: #fff; }
