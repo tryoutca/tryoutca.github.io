@@ -305,10 +305,36 @@ dialog select, dialog input[type=text] { width: 100%; }
 .tab.active { background: var(--surface); border-color: var(--border); font-weight: 700; margin-bottom: -2px; border-bottom: 2px solid var(--surface); }
 .bank-table td { vertical-align: middle; }
 .bank-table input[type=checkbox] { width: 22px; height: 22px; }
-.search-row { flex-wrap: nowrap; margin-bottom: 10px; }
-.search-row input[type=search] { flex: 1; min-width: 0; }
-.pager { margin: 10px 0; }
-.pager-nav { flex-wrap: nowrap; margin-left: auto; }
+/* Daftar Soal ringkas (D-118): kontrol lebih kecil agar tabel cepat terlihat. */
+.bank-controls { font-size: .88rem; }
+.bank-controls .field { gap: 2px; }
+.bank-controls .field label { font-size: .8rem; }
+.bank-controls select, .bank-controls input[type=search], .bank-controls .btn { min-height: 34px; padding: 4px 10px; font-size: .88rem; }
+.bank-controls .btn-icon, .pager .btn-icon { min-height: 34px; min-width: 34px; padding: 4px 10px; font-size: 1.05rem; }
+.bank-table { font-size: .88rem; }
+.bank-table th, .bank-table td { padding: 3px 8px; }
+.bank-table .btn-link { padding: 2px 0; white-space: nowrap; }
+.bank-table .badge { padding: 2px 8px; font-size: .8rem; }
+.bank-table input[type=checkbox] { width: 18px; height: 18px; }
+.bank-controls .btn-link { padding: 4px; }
+.bank-controls .hint { font-size: .82rem; }
+.bank-filters { display: grid; gap: 6px 10px; align-items: end; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.bank-filters select, .bank-filters input[type=search] { width: 100%; min-width: 0; }
+.bank-filters .search-field { grid-column: span 2; }
+@media (min-width: 900px) {
+  .bank-filters { grid-template-columns: minmax(200px, 2fr) repeat(4, minmax(100px, 1fr)) auto; }
+  .bank-filters .search-field { grid-column: auto; }
+}
+.bank-filters > .btn { justify-self: start; }
+.bank-actions { gap: 6px; margin: 8px 0 4px; }
+.pager { gap: 6px; margin: 4px 0 6px; justify-content: flex-end; }
+.pager-summary { margin-right: auto; }
+.pager-nav { flex-wrap: nowrap; gap: 6px; }
+@media (pointer: coarse) {
+  .bank-controls select, .bank-controls input[type=search], .bank-controls .btn { min-height: 40px; }
+  .bank-controls .btn-icon, .pager .btn-icon { min-height: 40px; min-width: 40px; }
+  .bank-table input[type=checkbox] { width: 22px; height: 22px; }
+}
 .selected-row { background: var(--accent-soft); }
 .warn-row td { background: var(--warn-soft); }
 .status-live { background: var(--ok); color: #fff; }
@@ -10751,25 +10777,24 @@ function renderBank(app) {
       'aria-label': 'Pilih semua soal di halaman ini', onchange: (e) => selectAll(pg.items, e.target.checked),
     });
     allBox.indeterminate = onPage > 0 && onPage < pg.items.length;
+    // Kontrol dibuat ringkas agar daftar soal terlihat tanpa banyak menggulir (D-118).
     return h('div', {},
-      h('div', { class: 'field' },
-        h('label', { for: 'f-query', text: 'Cari ID atau isi soal' }),
-        h('div', { class: 'row search-row' }, search,
-          h('button', { type: 'button', class: 'btn', disabled: !filtered, onclick: () => { state.filters = {}; state.page = 0; render(); } }, 'Hapus filter'))),
-      h('div', { class: 'form-grid' },
-        select('f-status', 'Status', f.status, STATUS_ORDER.map((s) => [s, STATUS_LABELS[s]]), setFilter('status')),
-        select('f-topic', 'Topik', f.topicId, bank.pack.topics.map((t) => [t.id, `${t.id} ${t.name}`]), setFilter('topicId')),
-        select('f-type', 'Tipe', f.type, Object.entries(TYPE_LABELS), setFilter('type')),
-        select('f-diff', 'Kesulitan', f.difficulty, Object.entries(DIFFICULTY_LABELS), setFilter('difficulty'))),
-      h('p', { class: 'hint', text: `${list.length} soal cocok · ${selected.length} dipilih` }),
-      h('div', { class: 'row' },
-        h('button', { type: 'button', class: 'btn', disabled: !list.length || shown === list.length, onclick: () => selectAll(list, true) }, `Pilih semua (${list.length})`),
-        h('button', { type: 'button', class: 'btn', disabled: !selected.length, onclick: approveSelected }, 'Setujui terpilih'),
-        h('button', { type: 'button', class: 'btn', disabled: !selected.length, onclick: () => { state.tab = 'review'; render(); } }, 'Buat paket review dari terpilih'),
-        h('button', { type: 'button', class: 'btn', disabled: !selected.length, onclick: () => copyRevision(selected) }, 'Salin untuk penyusun'),
-        h('button', { type: 'button', class: 'btn btn-danger', disabled: !allRejected, title: allRejected ? null : 'Hanya untuk soal berstatus Ditolak', onclick: () => deleteIds(selected) }, 'Hapus soal ditolak'),
-        h('button', { type: 'button', class: 'btn btn-link', disabled: !selected.length, onclick: () => { state.selected.clear(); render(); } }, 'Kosongkan pilihan')),
-      pager(pg, size, false),
+      h('div', { class: 'bank-controls' },
+        h('div', { class: 'bank-filters' },
+          h('div', { class: 'field search-field' }, h('label', { for: 'f-query', text: 'Cari ID atau isi soal' }), search),
+          select('f-status', 'Status', f.status, STATUS_ORDER.map((s) => [s, STATUS_LABELS[s]]), setFilter('status')),
+          select('f-topic', 'Topik', f.topicId, bank.pack.topics.map((t) => [t.id, `${t.id} ${t.name}`]), setFilter('topicId')),
+          select('f-type', 'Tipe', f.type, Object.entries(TYPE_LABELS), setFilter('type')),
+          select('f-diff', 'Kesulitan', f.difficulty, Object.entries(DIFFICULTY_LABELS), setFilter('difficulty')),
+          h('button', { type: 'button', class: 'btn', disabled: !filtered, onclick: () => { state.filters = {}; state.page = 0; render(); } }, 'Hapus filter')),
+        h('div', { class: 'row bank-actions' },
+          h('button', { type: 'button', class: 'btn', disabled: !list.length || shown === list.length, onclick: () => selectAll(list, true) }, `Pilih semua (${list.length})`),
+          h('button', { type: 'button', class: 'btn', disabled: !selected.length, onclick: approveSelected }, 'Setujui terpilih'),
+          h('button', { type: 'button', class: 'btn', disabled: !selected.length, onclick: () => { state.tab = 'review'; render(); } }, 'Buat paket review'),
+          h('button', { type: 'button', class: 'btn', disabled: !selected.length, onclick: () => copyRevision(selected) }, 'Salin untuk penyusun'),
+          h('button', { type: 'button', class: 'btn btn-danger', disabled: !allRejected, title: allRejected ? null : 'Hanya untuk soal berstatus Ditolak', onclick: () => deleteIds(selected) }, 'Hapus soal ditolak'),
+          h('button', { type: 'button', class: 'btn btn-link', disabled: !selected.length, onclick: () => { state.selected.clear(); render(); } }, 'Kosongkan pilihan')),
+        pager(pg, size, false, `${list.length} soal cocok · ${selected.length} dipilih`)),
       h('div', { class: 'table-wrap' }, h('table', { class: 'data-table bank-table' },
         h('thead', {}, h('tr', {}, h('th', {}, allBox), ['ID', 'Tipe', 'Topik', 'Kesulitan', 'Status'].map((t) => h('th', { text: t })))),
         h('tbody', {}, rows))),
@@ -10786,13 +10811,14 @@ function renderBank(app) {
 
   // Halaman seperti kotak masuk surel: "1–50 dari 193" dengan ‹ ›. Pager bawah
   // menggulir kembali ke atas tabel setelah pindah halaman.
-  function pager(pg, size, bottom) {
+  function pager(pg, size, bottom, summary) {
     const go = (p) => {
       state.page = p;
       render();
       if (bottom) el.querySelector('.bank-table')?.scrollIntoView({ block: 'start' });
     };
     return h('div', { class: 'row pager' },
+      summary ? h('span', { class: 'hint pager-summary', text: summary }) : null,
       bottom ? null : h('label', { for: 'f-pagesize', class: 'hint', text: 'Tampilkan' }),
       bottom ? null : h('select', {
         id: 'f-pagesize',

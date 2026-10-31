@@ -295,10 +295,36 @@ dialog select, dialog input[type=text] { width: 100%; }
 .tab.active { background: var(--surface); border-color: var(--border); font-weight: 700; margin-bottom: -2px; border-bottom: 2px solid var(--surface); }
 .bank-table td { vertical-align: middle; }
 .bank-table input[type=checkbox] { width: 22px; height: 22px; }
-.search-row { flex-wrap: nowrap; margin-bottom: 10px; }
-.search-row input[type=search] { flex: 1; min-width: 0; }
-.pager { margin: 10px 0; }
-.pager-nav { flex-wrap: nowrap; margin-left: auto; }
+/* Daftar Soal ringkas (D-118): kontrol lebih kecil agar tabel cepat terlihat. */
+.bank-controls { font-size: .88rem; }
+.bank-controls .field { gap: 2px; }
+.bank-controls .field label { font-size: .8rem; }
+.bank-controls select, .bank-controls input[type=search], .bank-controls .btn { min-height: 34px; padding: 4px 10px; font-size: .88rem; }
+.bank-controls .btn-icon, .pager .btn-icon { min-height: 34px; min-width: 34px; padding: 4px 10px; font-size: 1.05rem; }
+.bank-table { font-size: .88rem; }
+.bank-table th, .bank-table td { padding: 3px 8px; }
+.bank-table .btn-link { padding: 2px 0; white-space: nowrap; }
+.bank-table .badge { padding: 2px 8px; font-size: .8rem; }
+.bank-table input[type=checkbox] { width: 18px; height: 18px; }
+.bank-controls .btn-link { padding: 4px; }
+.bank-controls .hint { font-size: .82rem; }
+.bank-filters { display: grid; gap: 6px 10px; align-items: end; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.bank-filters select, .bank-filters input[type=search] { width: 100%; min-width: 0; }
+.bank-filters .search-field { grid-column: span 2; }
+@media (min-width: 900px) {
+  .bank-filters { grid-template-columns: minmax(200px, 2fr) repeat(4, minmax(100px, 1fr)) auto; }
+  .bank-filters .search-field { grid-column: auto; }
+}
+.bank-filters > .btn { justify-self: start; }
+.bank-actions { gap: 6px; margin: 8px 0 4px; }
+.pager { gap: 6px; margin: 4px 0 6px; justify-content: flex-end; }
+.pager-summary { margin-right: auto; }
+.pager-nav { flex-wrap: nowrap; gap: 6px; }
+@media (pointer: coarse) {
+  .bank-controls select, .bank-controls input[type=search], .bank-controls .btn { min-height: 40px; }
+  .bank-controls .btn-icon, .pager .btn-icon { min-height: 40px; min-width: 40px; }
+  .bank-table input[type=checkbox] { width: 22px; height: 22px; }
+}
 .selected-row { background: var(--accent-soft); }
 .warn-row td { background: var(--warn-soft); }
 .status-live { background: var(--ok); color: #fff; }
