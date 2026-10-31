@@ -12,6 +12,8 @@ import { sheetsToCsv } from '../../js/export/csv.js';
 import { reportFile } from '../../js/export/report-files.js';
 import { cleanText, escapeXml } from '../../js/export/xml.js';
 import { buildReport, levelFor, trendSeries } from '../../js/core/report.js';
+import { SITE_URL, shareText, shortTopic, weakestTopics, whatsappUrl } from '../../js/core/share.js';
+import { formatScore } from '../../js/core/format.js';
 import { applyGradingResult, validateGradingResult } from '../../js/core/grading-io.js';
 import { checkXml } from '../fixtures/xml-check.js';
 import { CASE_ANSWER, ESSAY_ANSWER, T0, MIN, sampleResult, submittedDemo } from '../fixtures/demo-graded.js';
@@ -62,6 +64,29 @@ function checkPackage(bytes, required) {
 export default {
   name: 'Ekspor',
   cases: [
+    {
+      name: 'bagikan hasil: skor, status, topik terlemah, tautan; tanpa soal atau kunci (D-121)',
+      run: async () => {
+        const { pack, report } = await finalDemo();
+        const text = shareText(report);
+        const r = report.recap;
+        assert.ok(text.includes(r.subjectName) && text.includes(r.packageName));
+        assert.ok(text.includes(`Nilai ${formatScore(r.finalScore)}`));
+        assert.ok(text.includes(r.passed ? 'LULUS' : 'BELUM LULUS'));
+        assert.ok(text.includes(SITE_URL) && text.includes('bukan ujian resmi IAI'));
+        for (const q of pack.questions) assert.ok(!text.includes(q.stem), `stem ${q.id} tidak boleh ikut`);
+        const weak = weakestTopics([
+          { id: 'T1', name: 'A', pct: 90 }, { id: 'T2', name: 'B', pct: 40 }, { id: 'T3', name: 'C', pct: 65.4 },
+          { id: 'T4', name: 'D', pct: 50 }, { id: 'T5', name: 'E', pct: null },
+        ]);
+        assert.deepEqual(weak.map((t) => t.id), ['T2', 'T4']);
+        const pending = buildReport(submittedDemo(pack, { seed: 11 }), { pack, history: [], now: T0 + 31 * MIN });
+        assert.ok(shareText(pending).includes('Skor sementara'));
+        assert.equal(whatsappUrl('a b&c'), 'https://wa.me/?text=a%20b%26c');
+        assert.equal(shortTopic('Konsep manajemen stratejik dan arah perusahaan: visi, misi'), 'Konsep manajemen stratejik dan arah perusahaan');
+        assert.equal(shortTopic('x'.repeat(80)).length, 60);
+      },
+    },
     {
       name: 'CRC-32 vektor standar; ZIP STORE terbaca ulang; kerusakan terdeteksi',
       run: async () => {

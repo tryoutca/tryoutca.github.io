@@ -241,6 +241,7 @@ select, input[type=number], input[type=text], input[type=search] {
 .score-table { width: 100%; border-collapse: collapse; }
 .score-table th, .score-table td { padding: 8px; border-bottom: 1px solid var(--border); text-align: left; }
 .score-table td.num, .score-table th.num { text-align: right; font-variant-numeric: tabular-nums; }
+.share-row { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--border); }
 .big-score { font-size: 2.2rem; font-weight: 800; }
 .history-list { display: grid; gap: 8px; }
 .history-item { width: 100%; text-align: left; display: grid; gap: 2px; }
@@ -9081,6 +9082,62 @@ function saveFile({ filename, mime, data }) {
 
 });
 
+__define("js/core/share.js", function (__exports, __require) {
+'use strict';
+Object.defineProperties(__exports, {
+  "SITE_URL": { enumerable: true, get: () => SITE_URL },
+  "weakestTopics": { enumerable: true, get: () => weakestTopics },
+  "shortTopic": { enumerable: true, get: () => shortTopic },
+  "shareText": { enumerable: true, get: () => shareText },
+  "whatsappUrl": { enumerable: true, get: () => whatsappUrl }
+});
+// Teks "Bagikan hasil" (D-121): ringkasan skor dan topik terlemah untuk dikirim
+// peserta lewat WhatsApp atau aplikasi lain. Sengaja TIDAK memuat soal, kunci,
+// atau pembahasan agar isi bank soal tidak tersebar. Fungsi murni tanpa DOM.
+
+const { formatFixed2, formatScore } = __require("js/core/format.js");
+
+const SITE_URL = 'https://tryoutca.github.io/';
+const WEAK_LIMIT = 2;
+
+// Topik dengan persentase terendah di bawah 70%, paling banyak dua.
+function weakestTopics(topics, limit = WEAK_LIMIT) {
+  return topics
+    .filter((t) => t.pct !== null && t.pct < 70)
+    .sort((a, b) => a.pct - b.pct || a.id.localeCompare(b.id))
+    .slice(0, limit);
+}
+
+// Nama topik dipendekkan agar pesan singkat: bagian sebelum titik dua, maks 60 karakter.
+function shortTopic(name) {
+  const head = String(name).split(':')[0].trim();
+  return head.length > 60 ? `${head.slice(0, 59).trimEnd()}…` : head;
+}
+
+function shareText(report, url = SITE_URL) {
+  const r = report.recap;
+  const lines = [
+    'Hasil tryout latihan saya di tryoutCA',
+    `${r.subjectName} · ${r.packageName}`,
+  ];
+  if (r.isFinal) {
+    lines.push(`Nilai ${formatScore(r.finalScore)} (passing grade ${formatFixed2(r.passingGrade)}) · ${r.passed ? 'LULUS' : 'BELUM LULUS'}`);
+  } else {
+    lines.push(`Skor sementara ${formatScore(r.interimScore)} (esai dan kasus belum dinilai)`);
+  }
+  const weak = weakestTopics(report.topics);
+  if (weak.length) lines.push(`Perlu diperkuat: ${weak.map((t) => `${shortTopic(t.name)} (${Math.round(t.pct)}%)`).join(', ')}`);
+  lines.push('', `Coba juga, gratis: ${url}`, 'Latihan mandiri, bukan ujian resmi IAI.');
+  return lines.join('\n');
+}
+
+// Tautan cadangan bila perangkat tidak punya menu Bagikan bawaan.
+function whatsappUrl(text) {
+  return `https://wa.me/?text=${encodeURIComponent(text)}`;
+}
+
+});
+
 __define("js/ui/results.js", function (__exports, __require) {
 'use strict';
 Object.defineProperties(__exports, {
@@ -9108,6 +9165,7 @@ const { formatDateTime, formatFixed2, formatNumber, formatScore, parseDecimalInp
 const { reportBlocks } = __require("js/export/report-blocks.js");
 const { reportFile } = __require("js/export/report-files.js");
 const { saveFile } = __require("js/export/download.js");
+const { shareText, whatsappUrl } = __require("js/core/share.js");
 
 const GRADING_PROMPT = 'prompt_penilai_ai.md';
 const STATUS_CLASS = { MENUNGGU_PENILAIAN_URAIAN: 'badge-wait', PENILAIAN_SEBAGIAN: 'badge-wait', FINAL: '' };
@@ -9165,7 +9223,40 @@ function renderResults(app, { session }) {
           h('th', { text: 'Komponen' }), h('th', { class: 'num', text: 'Soal' }),
           h('th', { class: 'num', text: 'Skor' }), h('th', { class: 'num', text: 'Maks' }))),
         h('tbody', {}, rows)),
-      final);
+      final,
+      shareRow(report));
+  }
+
+  // ---- Bagikan hasil (D-121): ringkasan skor saja, tanpa soal/kunci/pembahasan ----
+  function shareRow(report) {
+    return h('div', { class: 'row share-row no-print' },
+      h('button', { type: 'button', class: 'btn', onclick: () => shareResult(report) }, 'Bagikan hasil'),
+      h('button', { type: 'button', class: 'btn btn-link', onclick: () => copyShare(report) }, 'Salin teks'));
+  }
+
+  // Menu Bagikan bawaan perangkat (WhatsApp, Telegram, dll.); bila tidak ada, buka WhatsApp.
+  async function shareResult(report) {
+    const text = shareText(report);
+    if (navigator.share) {
+      try {
+        await navigator.share({ text });
+        return;
+      } catch (e) {
+        if (e && e.name === 'AbortError') return;
+      }
+    }
+    const win = window.open(whatsappUrl(text), '_blank', 'noopener');
+    if (!win) copyShare(report);
+  }
+
+  async function copyShare(report) {
+    const text = shareText(report);
+    try {
+      await navigator.clipboard.writeText(text);
+      toast('Ringkasan hasil tersalin. Tempel di WhatsApp atau aplikasi lain.');
+    } catch {
+      manualCopy(text, 'Ringkasan hasil');
+    }
   }
 
   // ---- Penilaian uraian dengan AI pilihan pengguna ----
@@ -9291,8 +9382,8 @@ function renderResults(app, { session }) {
   }
 
   // Cadangan bila papan klip tidak diizinkan (mis. dibuka dari berkas lokal).
-  function manualCopy(text) {
-    const box = h('textarea', { class: 'answer-text', rows: 10, readonly: true, 'aria-label': 'Prompt dan data penilaian' });
+  function manualCopy(text, label = 'Prompt dan data penilaian') {
+    const box = h('textarea', { class: 'answer-text', rows: 10, readonly: true, 'aria-label': label });
     box.value = text;
     alertDialog('Salin secara manual', [
       'Papan klip tidak dapat diakses otomatis. Pilih semua teks di bawah lalu salin (Ctrl+A lalu Ctrl+C, atau tekan lama lalu Pilih Semua dan Salin).',

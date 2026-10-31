@@ -20,6 +20,7 @@ import { formatDateTime, formatFixed2, formatNumber, formatScore, parseDecimalIn
 import { reportBlocks } from '../export/report-blocks.js';
 import { reportFile } from '../export/report-files.js';
 import { saveFile } from '../export/download.js';
+import { shareText, whatsappUrl } from '../core/share.js';
 
 const GRADING_PROMPT = 'prompt_penilai_ai.md';
 const STATUS_CLASS = { MENUNGGU_PENILAIAN_URAIAN: 'badge-wait', PENILAIAN_SEBAGIAN: 'badge-wait', FINAL: '' };
@@ -77,7 +78,40 @@ export function renderResults(app, { session }) {
           h('th', { text: 'Komponen' }), h('th', { class: 'num', text: 'Soal' }),
           h('th', { class: 'num', text: 'Skor' }), h('th', { class: 'num', text: 'Maks' }))),
         h('tbody', {}, rows)),
-      final);
+      final,
+      shareRow(report));
+  }
+
+  // ---- Bagikan hasil (D-121): ringkasan skor saja, tanpa soal/kunci/pembahasan ----
+  function shareRow(report) {
+    return h('div', { class: 'row share-row no-print' },
+      h('button', { type: 'button', class: 'btn', onclick: () => shareResult(report) }, 'Bagikan hasil'),
+      h('button', { type: 'button', class: 'btn btn-link', onclick: () => copyShare(report) }, 'Salin teks'));
+  }
+
+  // Menu Bagikan bawaan perangkat (WhatsApp, Telegram, dll.); bila tidak ada, buka WhatsApp.
+  async function shareResult(report) {
+    const text = shareText(report);
+    if (navigator.share) {
+      try {
+        await navigator.share({ text });
+        return;
+      } catch (e) {
+        if (e && e.name === 'AbortError') return;
+      }
+    }
+    const win = window.open(whatsappUrl(text), '_blank', 'noopener');
+    if (!win) copyShare(report);
+  }
+
+  async function copyShare(report) {
+    const text = shareText(report);
+    try {
+      await navigator.clipboard.writeText(text);
+      toast('Ringkasan hasil tersalin. Tempel di WhatsApp atau aplikasi lain.');
+    } catch {
+      manualCopy(text, 'Ringkasan hasil');
+    }
   }
 
   // ---- Penilaian uraian dengan AI pilihan pengguna ----
@@ -203,8 +237,8 @@ export function renderResults(app, { session }) {
   }
 
   // Cadangan bila papan klip tidak diizinkan (mis. dibuka dari berkas lokal).
-  function manualCopy(text) {
-    const box = h('textarea', { class: 'answer-text', rows: 10, readonly: true, 'aria-label': 'Prompt dan data penilaian' });
+  function manualCopy(text, label = 'Prompt dan data penilaian') {
+    const box = h('textarea', { class: 'answer-text', rows: 10, readonly: true, 'aria-label': label });
     box.value = text;
     alertDialog('Salin secara manual', [
       'Papan klip tidak dapat diakses otomatis. Pilih semua teks di bawah lalu salin (Ctrl+A lalu Ctrl+C, atau tekan lama lalu Pilih Semua dan Salin).',
