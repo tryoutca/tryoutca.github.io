@@ -407,60 +407,178 @@ html.exam-focus, html.exam-focus body { overscroll-behavior: none; }
 .calc-key.eq { grid-column: 1 / -1; background: var(--accent); color: var(--accent-text); border-color: var(--accent); font-weight: 700; }
 @media print { .calc-fab, .calc-panel { display: none !important; } }
 
-/* Halaman awal (D-103): sederhana, satu kolom di ponsel, kartu berjajar di layar lebar. */
-.landing { max-width: 880px; }
-.landing-top { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
-.landing-brand {
-  flex: 1; display: flex; align-items: center; gap: 10px;
-  font-size: clamp(1.3rem, 2.6vw, 1.7rem); font-weight: 800; color: var(--accent); letter-spacing: .01em; line-height: 1.2;
+/* Halaman awal (D-103, desain baru D-120): kepala hijau tua dan amber, lebar penuh.
+   Warna tetap (tidak ikut mode gelap) agar sesuai desain. Font dari sistem karena
+   aplikasi tanpa CDN; Plus Jakarta Sans dipakai bila terpasang di perangkat. */
+.lp {
+  --lp-ink: #0F2A24; --lp-ink-line: #3B5A51; --lp-amber: #E8B04B; --lp-amber-dark: #C98A14; --lp-amber-text: #9A6608;
+  --lp-paper: #F4F5F1; --lp-paper-2: #ECEFEA; --lp-white: #FFFFFF; --lp-text: #12201C; --lp-muted: #4A5A55;
+  --lp-on-ink: #F4F5F1; --lp-on-ink-muted: #C8D3CE; --lp-on-ink-soft: #9FB2AA; --lp-line: #DDE3DF;
+  --lp-green: #0F5C4A; --lp-green-bg: #EAF3EF; --lp-ok: #1E7A55; --lp-ok-bg: #E3F2EA; --lp-bad: #B3412E; --lp-bad-bg: #FBE9E6;
+  --lp-mono: ui-monospace, 'Cascadia Mono', 'SF Mono', Consolas, Menlo, monospace;
+  max-width: none; padding: 0 !important; margin: 0;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--lp-text); background: var(--lp-paper); line-height: 1.5; color-scheme: light;
 }
-.landing-brand img { width: 1.6em; height: 1.6em; border-radius: 8px; flex: none; }
-.landing-top .btn-link { font-size: 1.05rem; }
-.landing-hero {
-  text-align: center; padding: 40px 20px 32px; margin: 8px 0 24px; border-radius: 16px;
-  background: linear-gradient(180deg, var(--accent-soft), var(--surface));
-  border: 1px solid var(--border);
+body:has(.lp) { background: var(--lp-paper, #F4F5F1); }
+.lp a { color: var(--lp-green); }
+.lp h1, .lp h2, .lp h3 { margin: 0; letter-spacing: -.02em; color: inherit; }
+.lp h2 { font-size: clamp(28px, 3.5vw, 40px); line-height: 1.15; font-weight: 800; }
+.lp-wrap { max-width: 1200px; margin: 0 auto; padding-left: max(24px, env(safe-area-inset-left)); padding-right: max(24px, env(safe-area-inset-right)); }
+.lp-eyebrow { font-family: var(--lp-mono); font-size: 13px; font-weight: 600; letter-spacing: .06em; color: var(--lp-green); text-transform: uppercase; }
+.lp-lead { margin: 0; font-size: 17px; line-height: 1.6; color: var(--lp-muted); }
+.lp-meta { font-family: var(--lp-mono); font-size: 13px; color: var(--lp-muted); }
+.lp-section-head { display: flex; flex-direction: column; gap: 12px; max-width: 44rem; }
+
+.lp-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 44px; padding: 12px 20px;
+  border-radius: 12px; font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; border: 0; text-align: left;
 }
-.landing-eyebrow {
-  display: inline-block; margin: 0 0 12px; padding: 4px 12px; border-radius: 999px;
-  background: var(--surface); border: 1px solid var(--border); color: var(--muted); font-size: .85rem; font-weight: 600;
-}
-.landing-hero h1 { font-size: clamp(1.6rem, 4.5vw, 2.3rem); line-height: 1.2; margin: 0 auto 12px; max-width: 22ch; }
-.landing-lead { font-size: 1.08rem; color: var(--muted); max-width: 52ch; margin: 0 auto 20px; }
-.landing-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-.landing-cta { font-size: 1.05rem; padding: 10px 24px; min-height: 50px; }
-.landing-facts {
-  list-style: none; padding: 0; margin: 24px 0 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px;
-  color: var(--muted); font-size: .95rem;
-}
-.landing-facts strong { color: var(--text); font-size: 1.15rem; }
-.landing-section { margin: 32px 0; }
-.landing-section > h2 { font-size: 1.35rem; margin: 0 0 8px; }
-.landing-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin: 12px 0; }
-.landing-grid .card { margin: 0; }
-.landing-tile h3, .landing-subject h3 { margin: 0 0 6px; font-size: 1.05rem; }
-.landing-tile p { margin: 0; color: var(--muted); }
-.landing-subject { display: flex; flex-direction: column; gap: 2px; }
-.landing-subject p:last-of-type { margin-bottom: 12px; }
-.landing-subject .btn { margin-top: auto; align-self: flex-start; }
-.landing-steps { list-style: none; counter-reset: step; padding: 0; margin: 12px 0; display: grid; gap: 12px; }
-.landing-steps li {
-  counter-increment: step; position: relative; padding: 12px 12px 12px 56px;
-  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-}
-.landing-steps li::before {
-  content: counter(step); position: absolute; left: 12px; top: 12px; width: 32px; height: 32px; border-radius: 50%;
-  display: grid; place-items: center; background: var(--accent); color: var(--accent-text); font-weight: 700;
-}
-.landing-steps strong { display: block; }
-.landing-steps span { color: var(--muted); }
-.landing-final { text-align: center; padding: 24px 16px; border-radius: 16px; background: var(--surface-2); }
-.landing-final h2 { margin-top: 0; }
-.landing-resume { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; justify-content: space-between; }
-.landing-resume p { margin: 0; }
-@media (max-width: 480px) {
-  .landing-hero { padding: 28px 16px 24px; }
-  .landing-actions .btn { flex: 1 1 100%; }
+.lp-btn-lg { font-size: 17px; padding: 16px 26px; }
+.lp-btn-amber { background: var(--lp-amber); color: var(--lp-ink); }
+.lp-btn-amber:hover { background: #F0BE60; }
+.lp-btn-ink { background: var(--lp-ink); color: var(--lp-white); }
+.lp-btn-ink:hover { background: #18392F; }
+.lp-btn-ghost { background: transparent; color: var(--lp-on-ink); border: 1px solid var(--lp-ink-line); }
+.lp-btn-ghost:hover { color: var(--lp-white); border-color: #5C7F74; }
+.lp-btn:focus-visible, .lp-navlink:focus-visible, .lp-tab:focus-visible, .lp-opt:focus-visible { outline: 3px solid var(--lp-amber); outline-offset: 2px; }
+
+/* Kepala dan hero */
+.lp-top { background: var(--lp-ink); color: var(--lp-on-ink); padding-top: env(safe-area-inset-top); }
+.lp-nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-top: 20px; padding-bottom: 20px; }
+.lp-brand { display: flex; align-items: center; gap: 12px; color: var(--lp-on-ink); }
+.lp-logo { flex: none; }
+.lp-brand-text { display: flex; flex-direction: column; gap: 3px; }
+.lp-brand-name { font-weight: 800; font-size: 28px; line-height: 1; letter-spacing: -.02em; }
+.lp-brand-name span { color: var(--lp-amber); }
+.lp-brand-tag { font-weight: 600; font-size: 11.5px; line-height: 1.2; letter-spacing: .08em; text-transform: uppercase; color: var(--lp-on-ink-muted); }
+.lp-navlinks { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; font-size: 15px; }
+.lp-navlink { font: inherit; background: none; border: 0; padding: 8px 0; min-height: 44px; color: #D5DED9; cursor: pointer; }
+.lp-navlink:hover { color: var(--lp-white); }
+.lp-navlinks .btn-icon { background: transparent; color: var(--lp-on-ink); border-color: var(--lp-ink-line); }
+.lp-navlinks .menu { color: var(--text); }
+.lp-hero { display: flex; flex-wrap: wrap; gap: 56px; align-items: center; padding-top: 48px; padding-bottom: 96px; }
+.lp-hero-copy { flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
+.lp-pill { align-self: flex-start; font-family: var(--lp-mono); font-size: 13px; font-weight: 600; letter-spacing: .06em; color: var(--lp-amber); border: 1px solid var(--lp-ink-line); padding: 8px 12px; border-radius: 999px; }
+.lp-hero h1 { font-size: clamp(36px, 5vw, 60px); line-height: 1.08; font-weight: 800; letter-spacing: -.03em; }
+.lp-hero p { margin: 0; font-size: 19px; line-height: 1.6; color: var(--lp-on-ink-muted); max-width: 34rem; }
+.lp-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.lp-hero .lp-actions { margin-top: 8px; }
+.lp-hero small { font-size: 14px; color: var(--lp-on-ink-soft); }
+.lp-preview { flex: 1 1 420px; min-width: 0; margin: 0; }
+.lp-preview-card { background: var(--lp-white); color: var(--lp-text); border-radius: 18px; box-shadow: 0 30px 60px rgba(0, 0, 0, .35); overflow: hidden; }
+.lp-preview-bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; padding: 16px 20px; border-bottom: 1px solid #E3E8E5; font-weight: 700; font-size: 15px; }
+.lp-timer { font-family: var(--lp-mono); font-weight: 600; background: #FFF4DC; color: #7A4D00; padding: 6px 10px; border-radius: 8px; }
+.lp-preview-body { padding: 24px 20px; display: flex; flex-direction: column; gap: 14px; }
+.lp-hero .lp-preview-body p { color: var(--lp-text); font-size: 17px; max-width: none; }
+.lp-preview-opt { border: 1px solid #D5DDD9; border-radius: 10px; padding: 12px 14px; font-size: 15px; display: flex; gap: 12px; }
+.lp-preview-opt.lp-sel { border: 2px solid var(--lp-green); background: var(--lp-green-bg); padding: 11px 13px; }
+.lp-preview-nav { display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+.lp-preview-nav b { color: var(--lp-white); background: var(--lp-ink); padding: 10px 16px; border-radius: 8px; }
+
+/* Bagian dan kartu */
+.lp-block { padding-top: 48px; padding-bottom: 48px; display: flex; flex-direction: column; gap: 32px; }
+.lp-first { padding-top: 96px; }
+.lp-last { padding-bottom: 96px; }
+.lp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 24px; }
+.lp-card { background: var(--lp-white); border: 1px solid var(--lp-line); border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 14px; }
+.lp-card p { margin: 0; font-size: 16px; line-height: 1.6; color: var(--lp-muted); }
+.lp-card .lp-btn { align-self: flex-start; margin-top: auto; }
+.lp-card-title { font-size: 23px; font-weight: 800; }
+.lp-level-on { border: 2px solid var(--lp-green); }
+.lp-level-off { background: var(--lp-paper-2); border: 1px dashed #A9B8B1; }
+.lp-level-off h3 { color: #33443F; }
+.lp-card-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.lp-card-head h3 { font-size: 26px; font-weight: 800; }
+.lp-badge { font-size: 13px; font-weight: 700; padding: 6px 12px; border-radius: 999px; }
+.lp-badge-on { color: var(--lp-white); background: var(--lp-green); }
+.lp-badge-dev { color: #7A4D00; background: #FFE9B8; }
+.lp-checks { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 16px; }
+.lp-checks li { display: flex; gap: 10px; align-items: flex-start; }
+.lp-checks svg { flex: none; margin-top: 2px; }
+
+/* Contoh soal */
+.lp-quiz { background: var(--lp-white); border: 1px solid var(--lp-line); border-radius: 20px; padding: clamp(20px, 4vw, 36px); display: flex; flex-direction: column; gap: 24px; scroll-margin-top: 24px; }
+.lp-tabs { display: flex; flex-wrap: wrap; gap: 10px; }
+.lp-tab { font: inherit; font-weight: 700; font-size: 15px; padding: 12px 18px; border-radius: 999px; min-height: 44px; cursor: pointer; border: 1px solid #C5D0CB; background: var(--lp-white); color: var(--lp-text); }
+.lp-tab[aria-pressed="true"] { background: var(--lp-ink); border-color: var(--lp-ink); color: var(--lp-white); }
+.lp-quiz-status { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; font-size: 15px; color: var(--lp-muted); }
+.lp-quiz-status b { color: var(--lp-text); }
+.lp-quiz-status span { font-family: var(--lp-mono); }
+.lp-qlist { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 20px; }
+.lp-q { border: 1px solid var(--lp-line); border-radius: 16px; padding: 22px; display: flex; flex-direction: column; gap: 14px; background: var(--lp-paper); }
+.lp-q-text { margin: 0; font-size: 17px; line-height: 1.55; font-weight: 500; }
+.lp-opts { display: flex; flex-direction: column; gap: 10px; }
+.lp-opt { display: flex; gap: 12px; align-items: flex-start; text-align: left; width: 100%; min-height: 44px; padding: 12px 14px; border-radius: 10px; font: inherit; font-size: 15px; line-height: 1.5; color: var(--lp-text); cursor: pointer; border: 2px solid #D5DDD9; background: var(--lp-white); }
+.lp-opt b { flex: none; color: var(--lp-muted); }
+.lp-opt[aria-pressed="true"] { border-color: var(--lp-green); background: var(--lp-green-bg); }
+.lp-opt[aria-pressed="true"] b { color: var(--lp-green); }
+.lp-opt.lp-correct { border-color: var(--lp-ok); background: var(--lp-ok-bg); }
+.lp-opt.lp-correct b { color: var(--lp-ok); }
+.lp-opt.lp-wrong { border-color: var(--lp-bad); background: var(--lp-bad-bg); }
+.lp-opt.lp-wrong b { color: var(--lp-bad); }
+.lp-opt:disabled { cursor: default; opacity: 1; }
+.lp-explain { background: var(--lp-white); border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 1.55; color: #33443F; }
+.lp-v-ok { color: var(--lp-ok); }
+.lp-v-bad { color: var(--lp-bad); }
+.lp-check { align-self: flex-start; font-weight: 800; }
+.lp-result { background: var(--lp-ink); color: var(--lp-on-ink); border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 14px; }
+.lp-score { font-family: var(--lp-mono); font-size: 24px; font-weight: 600; color: var(--lp-amber); }
+.lp-result p { margin: 0; color: var(--lp-on-ink-muted); }
+.lp-note { margin: 0; font-size: 14px; color: var(--lp-muted); }
+
+/* Cara kerja */
+.lp-steps { margin: 0; padding: 0; list-style: none; }
+.lp-step-num { font-family: var(--lp-mono); font-size: 32px; font-weight: 600; color: var(--lp-amber-dark); }
+.lp-steps h3 { font-size: 21px; font-weight: 700; }
+
+/* Sebelum mulai */
+.lp-ready { background: var(--lp-ink); color: var(--lp-on-ink); border-radius: 24px; padding: clamp(28px, 5vw, 56px); display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start; }
+.lp-ready-copy { flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.lp-ready-copy .lp-eyebrow { color: var(--lp-amber); }
+.lp-ready-copy p { margin: 0; font-size: 17px; line-height: 1.6; color: var(--lp-on-ink-muted); }
+.lp-facts { margin: 8px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.lp-facts div { border: 1px solid var(--lp-ink-line); border-radius: 14px; padding: 16px; }
+.lp-facts dt { font-size: 13px; color: var(--lp-on-ink-soft); }
+.lp-facts dd { margin: 6px 0 0; font-size: 18px; font-weight: 600; }
+.lp-facts dd.lp-num { font-family: var(--lp-mono); font-size: 20px; }
+.lp-facts dd.lp-free { color: var(--lp-amber); }
+.lp-checklist { flex: 1 1 360px; min-width: 0; background: var(--lp-paper); color: var(--lp-text); border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 16px; }
+.lp-checklist h3 { font-size: 20px; font-weight: 700; }
+.lp-checklist ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px; font-size: 16px; }
+.lp-checklist li { display: flex; gap: 12px; }
+.lp-checklist svg { flex: none; }
+.lp-start { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+.lp-start p { margin: 0; }
+.lp-start-label { font-weight: 800; font-size: 18px; }
+.lp-btn-start { width: 100%; justify-content: space-between; font-size: 17px; font-weight: 800; padding: 16px 22px; }
+
+/* FAQ */
+.lp-faq { max-width: 860px; margin: 0 auto; padding: 0 24px 96px; display: flex; flex-direction: column; gap: 28px; }
+.lp-faq-list { display: flex; flex-direction: column; gap: 12px; }
+.lp-faq details { background: var(--lp-white); border: 1px solid var(--lp-line); border-radius: 14px; padding: 20px 24px; }
+.lp-faq summary { font-weight: 700; font-size: 18px; cursor: pointer; }
+.lp-faq details p { margin: 12px 0 0; font-size: 16px; line-height: 1.6; color: var(--lp-muted); }
+
+/* Kaki dan kartu lanjutkan ujian */
+.lp-footer { border-top: 1px solid var(--lp-line); background: var(--lp-paper-2); padding-bottom: env(safe-area-inset-bottom); }
+.lp-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; padding-top: 32px; padding-bottom: 32px; font-size: 14px; color: var(--lp-muted); }
+.lp-foot .lp-brand { color: var(--lp-text); align-self: flex-start; }
+.lp-foot .lp-brand-name { font-size: 21px; }
+.lp-foot .lp-brand-name span { color: var(--lp-amber-text); }
+.lp-foot .lp-brand-tag { font-size: 10.5px; color: var(--lp-muted); }
+.lp-foot-text { max-width: 40rem; display: flex; flex-direction: column; gap: 8px; }
+.lp-foot p { margin: 0; line-height: 1.6; }
+.lp-foot .disclaimer { color: var(--lp-muted); font-size: 13px; border: 0; padding: 0; background: none; }
+.lp-resume { margin-top: 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px; padding: 16px 20px; border-radius: 14px; background: #FFF4DC; border: 1px solid #F0D59A; }
+.lp-resume p { margin: 0; font-weight: 600; }
+
+@media (max-width: 640px) {
+  .lp-navlinks { gap: 4px 16px; }
+  .lp-hero { padding-top: 24px; padding-bottom: 64px; gap: 40px; }
+  .lp-first { padding-top: 64px; }
+  .lp-facts { grid-template-columns: 1fr; }
+  .lp-brand-name { font-size: 24px; }
 }
 /* Kalkulator mengambang tidak diperlukan di halaman awal. */
 body:has(.landing) .calc-fab { display: none; }

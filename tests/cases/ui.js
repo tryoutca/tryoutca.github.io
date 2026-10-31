@@ -7,7 +7,7 @@ import { reportBlocks } from '../../js/export/report-blocks.js';
 import { buildReport } from '../../js/core/report.js';
 import { applyGradingResult, validateGradingResult } from '../../js/core/grading-io.js';
 import { T0, sampleResult, submittedDemo } from '../fixtures/demo-graded.js';
-import { landingPacks, renderLanding, subjectSummary } from '../../js/ui/landing.js';
+import { landingPacks, packageFacts, renderLanding, subjectSummary } from '../../js/ui/landing.js';
 import { Store, memoryBackend } from '../../js/core/storage.js';
 
 const XSS = '<script>window.__xss = 1</script><img src=x onerror="window.__xss = 2">';
@@ -139,11 +139,20 @@ export default {
         const entries = [{ pack: demo }, { pack: pk }];
         assert.deepEqual(landingPacks(entries).map((p) => p.subjectId), ['pk']);
         assert.deepEqual(landingPacks([{ pack: demo }]).map((p) => p.subjectId), ['demo'], 'demo tampil bila satu-satunya');
+        // Fakta "Sebelum Anda mulai" dihitung dari paket, bukan placeholder (D-120).
+        const f = packageFacts([pk]);
+        const mins = pk.packages.map((p) => p.durationMinutes);
+        const counts = pk.packages.map((p) => p.sections.reduce((n, s) => n + s.count, 0));
+        assert.equal(f.duration, `${Math.min(...mins)}–${Math.max(...mins)} menit`);
+        assert.equal(f.questions, `${Math.min(...counts)}–${Math.max(...counts)} soal`);
+        assert.equal(f.mostQuestions, Math.max(...counts));
+        assert.ok(f.forms.startsWith('Pilihan ganda'));
+        assert.equal(packageFacts([]), null);
       },
     },
     {
       browserOnly: true,
-      name: 'halaman awal: pengantar Ujian CA, kartu mata ujian, Pilih membuka beranda mata ujian itu (D-103)',
+      name: 'halaman awal: hero, level, contoh soal, tombol mulai membuka beranda mata ujian itu (D-103, D-120)',
       run: async () => {
         const msk = await loadJson('packs/msk/pack.json');
         const pk = await loadJson('packs/pk/pack.json');
@@ -159,9 +168,15 @@ export default {
           const { el } = renderLanding(app);
           box.append(el);
           const text = el.textContent;
-          assert.ok(text.includes('Sekilas tentang Ujian CA') && text.includes('Tingkat Lanjutan (Advanced Level)'));
+          assert.ok(text.includes('Rasakan suasana ujian CA') && text.includes('Level Advanced'));
           assert.ok(text.includes(msk.subjectName) && text.includes(pk.subjectName));
           assert.ok(!text.includes('belum selesai'), 'tanpa sesi aktif tidak ada kartu lanjutkan');
+          assert.ok(!/\[[A-Z /]+\]/.test(text), 'tidak ada placeholder desain seperti [DURASI]');
+          // Contoh soal: pilih jawaban, periksa, pembahasan tampil.
+          el.querySelector('.lp-opt').click();
+          assert.ok(el.textContent.includes('1 dari 5 soal terjawab'));
+          el.querySelector('.lp-check').click();
+          assert.ok(el.textContent.includes('Skor Anda:') && el.textContent.includes('Jawaban benar:'));
           const picks = [...el.querySelectorAll('.landing-subject button')];
           assert.equal(picks.length, 2);
           picks[1].click();
