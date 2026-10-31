@@ -214,11 +214,11 @@ Tema:
 13. Tantangan ke depan: AI dan otomasi pekerjaan profesional, perlindungan data pribadi dan keamanan siber (UU 27/2022 tentang Pelindungan Data Pribadi), perdagangan karbon (Bursa Karbon Indonesia diluncurkan 26 September 2023) dan target net zero, perubahan demografi dan pola konsumsi. Proyeksi ke depan selalu dinyatakan sebagai skenario atau asumsi: visi-misi dan arah perusahaan (T01), lingkungan eksternal (T02), kapabilitas (T03), perubahan (T11), informasi dan data (T12).
 ```
 
-## 4. MSK-B60 (case mini)
+## 4. MSK-B61 (case mini)
 ```
 FORMULIR BATCH
 Mata ujian: Manajemen Stratejik dan Kepemimpinan (subjectId: msk)
-Batch ID: MSK-B60
+Batch ID: MSK-B61
 Tipe: case | Jumlah: 2 | ID mulai: MSK-KAS-038
 Sebaran topik: MSK-KAS-038 T06, T02; MSK-KAS-039 T09, T12, T10
 Sebaran kesulitan: sedang 2
@@ -270,11 +270,11 @@ Tema:
 13. Tantangan ke depan: AI dan otomasi pekerjaan profesional, perlindungan data pribadi dan keamanan siber (UU 27/2022 tentang Pelindungan Data Pribadi), perdagangan karbon (Bursa Karbon Indonesia diluncurkan 26 September 2023) dan target net zero, perubahan demografi dan pola konsumsi. Proyeksi ke depan selalu dinyatakan sebagai skenario atau asumsi: visi-misi dan arah perusahaan (T01), lingkungan eksternal (T02), kapabilitas (T03), perubahan (T11), informasi dan data (T12).
 ```
 
-## 5. MSK-B61 (mcq)
+## 5. MSK-B62 (mcq)
 ```
 FORMULIR BATCH
 Mata ujian: Manajemen Stratejik dan Kepemimpinan (subjectId: msk)
-Batch ID: MSK-B61
+Batch ID: MSK-B62
 Tipe: mcq | Jumlah: 10 | ID mulai: MSK-MCQ-231
 Sebaran topik: T02 1, T03 1, T04 1, T05 1, T06 1, T07 1, T08 1, T10 1, T11 1, T12 1
 Sebaran kesulitan: sedang 10
@@ -332,11 +332,11 @@ Tema:
 13. Tantangan ke depan: AI dan otomasi pekerjaan profesional, perlindungan data pribadi dan keamanan siber (UU 27/2022 tentang Pelindungan Data Pribadi), perdagangan karbon (Bursa Karbon Indonesia diluncurkan 26 September 2023) dan target net zero, perubahan demografi dan pola konsumsi. Proyeksi ke depan selalu dinyatakan sebagai skenario atau asumsi: visi-misi dan arah perusahaan (T01), lingkungan eksternal (T02), kapabilitas (T03), perubahan (T11), informasi dan data (T12).
 ```
 
-## 6. MSK-B62 (essay)
+## 6. MSK-B63 (essay)
 ```
 FORMULIR BATCH
 Mata ujian: Manajemen Stratejik dan Kepemimpinan (subjectId: msk)
-Batch ID: MSK-B62
+Batch ID: MSK-B63
 Tipe: essay | Jumlah: 5 | ID mulai: MSK-ESA-076
 Sebaran topik: T01 1, T03 1, T05 1, T11 1, T12 1
 Sebaran kesulitan: mudah 2, sedang 2, sulit 1
