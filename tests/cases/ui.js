@@ -139,7 +139,7 @@ export default {
         const entries = [{ pack: demo }, { pack: pk }];
         assert.deepEqual(landingPacks(entries).map((p) => p.subjectId), ['pk']);
         assert.deepEqual(landingPacks([{ pack: demo }]).map((p) => p.subjectId), ['demo'], 'demo tampil bila satu-satunya');
-        // Fakta "Sebelum Anda mulai" dihitung dari paket, bukan placeholder (D-120).
+        // Fakta "Sebelum Anda mulai" dihitung dari paket, bukan placeholder (D-123).
         const f = packageFacts([pk]);
         const mins = pk.packages.map((p) => p.durationMinutes);
         const counts = pk.packages.map((p) => p.sections.reduce((n, s) => n + s.count, 0));
@@ -152,7 +152,7 @@ export default {
     },
     {
       browserOnly: true,
-      name: 'halaman awal: hero, level, contoh soal, tombol mulai membuka beranda mata ujian itu (D-103, D-120)',
+      name: 'halaman awal: hero, level, contoh soal, tombol mulai membuka beranda mata ujian itu (D-103, D-123)',
       run: async () => {
         const msk = await loadJson('packs/msk/pack.json');
         const pk = await loadJson('packs/pk/pack.json');

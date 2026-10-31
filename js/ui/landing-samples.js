@@ -1,4 +1,4 @@
-// Contoh soal mudah di halaman awal (D-120): 5 soal PG per mata ujian, tanpa
+// Contoh soal mudah di halaman awal (D-123): 5 soal PG per mata ujian, tanpa
 // timer, dari desain halaman awal pemilik. Bukan soal bank dan tidak dinilai
 // aplikasi; hanya untuk pemanasan sebelum tryout penuh. Kunci = indeks opsi.
 

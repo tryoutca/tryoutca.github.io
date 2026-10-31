@@ -1,4 +1,4 @@
-// Halaman awal (D-103, desain baru D-120): pengantar sebelum peserta memilih
+// Halaman awal (D-103, desain baru D-123): pengantar sebelum peserta memilih
 // mata ujian. Angka (durasi, jumlah soal, bentuk soal) dihitung dari pack,
 // tanpa teks khusus satu mata ujian (SPEC 4), kecuali contoh soal pemanasan
 // di landing-samples.js. Pack demo hanya tampil bila tidak ada pack lain.
@@ -27,7 +27,7 @@ export function landingPacks(packs) {
 }
 
 // Fakta "Sebelum Anda mulai" dari paket semua pack: rentang durasi, rentang
-// jumlah soal per paket, dan bentuk soal yang dipakai (D-120).
+// jumlah soal per paket, dan bentuk soal yang dipakai (D-123).
 export function packageFacts(packs) {
   const pkgs = packs.flatMap((p) => p.packages);
   if (!pkgs.length) return null;

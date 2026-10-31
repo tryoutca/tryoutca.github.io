@@ -327,7 +327,7 @@ export function renderBank(app) {
       'aria-label': 'Pilih semua soal di halaman ini', onchange: (e) => selectAll(pg.items, e.target.checked),
     });
     allBox.indeterminate = onPage > 0 && onPage < pg.items.length;
-    // Kontrol dibuat ringkas agar daftar soal terlihat tanpa banyak menggulir (D-118).
+    // Kontrol dibuat ringkas agar daftar soal terlihat tanpa banyak menggulir (D-122).
     return h('div', {},
       h('div', { class: 'bank-controls' },
         h('div', { class: 'bank-filters' },

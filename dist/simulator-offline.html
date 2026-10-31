@@ -306,7 +306,7 @@ dialog select, dialog input[type=text] { width: 100%; }
 .tab.active { background: var(--surface); border-color: var(--border); font-weight: 700; margin-bottom: -2px; border-bottom: 2px solid var(--surface); }
 .bank-table td { vertical-align: middle; }
 .bank-table input[type=checkbox] { width: 22px; height: 22px; }
-/* Daftar Soal ringkas (D-118): kontrol lebih kecil agar tabel cepat terlihat. */
+/* Daftar Soal ringkas (D-122): kontrol lebih kecil agar tabel cepat terlihat. */
 .bank-controls { font-size: .88rem; }
 .bank-controls .field { gap: 2px; }
 .bank-controls .field label { font-size: .8rem; }
@@ -418,7 +418,7 @@ html.exam-focus, html.exam-focus body { overscroll-behavior: none; }
 .calc-key.eq { grid-column: 1 / -1; background: var(--accent); color: var(--accent-text); border-color: var(--accent); font-weight: 700; }
 @media print { .calc-fab, .calc-panel { display: none !important; } }
 
-/* Halaman awal (D-103, desain baru D-120): kepala hijau tua dan amber, lebar penuh.
+/* Halaman awal (D-103, desain baru D-123): kepala hijau tua dan amber, lebar penuh.
    Warna tetap (tidak ikut mode gelap) agar sesuai desain. Font dari sistem karena
    aplikasi tanpa CDN; Plus Jakarta Sans dipakai bila terpasang di perangkat. */
 .lp {
@@ -6167,7 +6167,7 @@ __define("js/ui/landing-samples.js", function (__exports, __require) {
 Object.defineProperties(__exports, {
   "LANDING_SAMPLES": { enumerable: true, get: () => LANDING_SAMPLES }
 });
-// Contoh soal mudah di halaman awal (D-120): 5 soal PG per mata ujian, tanpa
+// Contoh soal mudah di halaman awal (D-123): 5 soal PG per mata ujian, tanpa
 // timer, dari desain halaman awal pemilik. Bukan soal bank dan tidak dinilai
 // aplikasi; hanya untuk pemanasan sebelum tryout penuh. Kunci = indeks opsi.
 
@@ -6254,7 +6254,7 @@ Object.defineProperties(__exports, {
   "packageFacts": { enumerable: true, get: () => packageFacts },
   "renderLanding": { enumerable: true, get: () => renderLanding }
 });
-// Halaman awal (D-103, desain baru D-120): pengantar sebelum peserta memilih
+// Halaman awal (D-103, desain baru D-123): pengantar sebelum peserta memilih
 // mata ujian. Angka (durasi, jumlah soal, bentuk soal) dihitung dari pack,
 // tanpa teks khusus satu mata ujian (SPEC 4), kecuali contoh soal pemanasan
 // di landing-samples.js. Pack demo hanya tampil bila tidak ada pack lain.
@@ -6283,7 +6283,7 @@ function landingPacks(packs) {
 }
 
 // Fakta "Sebelum Anda mulai" dari paket semua pack: rentang durasi, rentang
-// jumlah soal per paket, dan bentuk soal yang dipakai (D-120).
+// jumlah soal per paket, dan bentuk soal yang dipakai (D-123).
 function packageFacts(packs) {
   const pkgs = packs.flatMap((p) => p.packages);
   if (!pkgs.length) return null;
@@ -11261,7 +11261,7 @@ function renderBank(app) {
       'aria-label': 'Pilih semua soal di halaman ini', onchange: (e) => selectAll(pg.items, e.target.checked),
     });
     allBox.indeterminate = onPage > 0 && onPage < pg.items.length;
-    // Kontrol dibuat ringkas agar daftar soal terlihat tanpa banyak menggulir (D-118).
+    // Kontrol dibuat ringkas agar daftar soal terlihat tanpa banyak menggulir (D-122).
     return h('div', {},
       h('div', { class: 'bank-controls' },
         h('div', { class: 'bank-filters' },

@@ -296,7 +296,7 @@ dialog select, dialog input[type=text] { width: 100%; }
 .tab.active { background: var(--surface); border-color: var(--border); font-weight: 700; margin-bottom: -2px; border-bottom: 2px solid var(--surface); }
 .bank-table td { vertical-align: middle; }
 .bank-table input[type=checkbox] { width: 22px; height: 22px; }
-/* Daftar Soal ringkas (D-118): kontrol lebih kecil agar tabel cepat terlihat. */
+/* Daftar Soal ringkas (D-122): kontrol lebih kecil agar tabel cepat terlihat. */
 .bank-controls { font-size: .88rem; }
 .bank-controls .field { gap: 2px; }
 .bank-controls .field label { font-size: .8rem; }
@@ -408,7 +408,7 @@ html.exam-focus, html.exam-focus body { overscroll-behavior: none; }
 .calc-key.eq { grid-column: 1 / -1; background: var(--accent); color: var(--accent-text); border-color: var(--accent); font-weight: 700; }
 @media print { .calc-fab, .calc-panel { display: none !important; } }
 
-/* Halaman awal (D-103, desain baru D-120): kepala hijau tua dan amber, lebar penuh.
+/* Halaman awal (D-103, desain baru D-123): kepala hijau tua dan amber, lebar penuh.
    Warna tetap (tidak ikut mode gelap) agar sesuai desain. Font dari sistem karena
    aplikasi tanpa CDN; Plus Jakarta Sans dipakai bila terpasang di perangkat. */
 .lp {
