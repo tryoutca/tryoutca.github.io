@@ -5973,7 +5973,8 @@ __define("js/ui/layout.js", function (__exports, __require) {
 Object.defineProperties(__exports, {
   "DISCLAIMER": { enumerable: true, get: () => DISCLAIMER },
   "disclaimer": { enumerable: true, get: () => disclaimer },
-  "header": { enumerable: true, get: () => header }
+  "header": { enumerable: true, get: () => header },
+  "secondaryMenu": { enumerable: true, get: () => secondaryMenu }
 });
 // Komponen bersama layar non-ujian: kepala layar, menu sekunder, disclaimer.
 
@@ -5999,6 +6000,7 @@ function header(app, { title, back = true, menu = false }) {
 }
 
 // Menu ⋯ (SPEC 3): Riwayat, Pengelola Bank Soal (PIN lokal), Pengaturan, Panduan.
+// Juga dipakai di halaman awal (D-119).
 function secondaryMenu(app) {
   const items = [
     ['Riwayat', 'history'],
@@ -6054,7 +6056,7 @@ Object.defineProperties(__exports, {
 // pack lain.
 
 const { h } = __require("js/ui/dom.js");
-const { disclaimer } = __require("js/ui/layout.js");
+const { disclaimer, secondaryMenu } = __require("js/ui/layout.js");
 const { loadActiveSession } = __require("js/core/session-store.js");
 const { sebBadge } = __require("js/platform/seb.js");
 
@@ -6092,7 +6094,8 @@ function renderLanding(app) {
     h('div', { class: 'landing-top' },
       h('span', { class: 'landing-brand' }, h('img', { src: brandIcon(), alt: '' }), 'Tryout CA Indonesia'),
       sebBadge(),
-      h('button', { type: 'button', class: 'btn btn-link', onclick: () => app.show('guide') }, 'Panduan')),
+      h('button', { type: 'button', class: 'btn btn-link', onclick: () => app.show('guide') }, 'Panduan'),
+      secondaryMenu(app)),
 
     active ? h('div', { class: 'card resume-card landing-resume' },
       h('p', { text: `Ada ujian ${active.subjectName} yang belum selesai.` }),

@@ -4,7 +4,7 @@
 // pack lain.
 
 import { h } from './dom.js';
-import { disclaimer } from './layout.js';
+import { disclaimer, secondaryMenu } from './layout.js';
 import { loadActiveSession } from '../core/session-store.js';
 import { sebBadge } from '../platform/seb.js';
 
@@ -42,7 +42,8 @@ export function renderLanding(app) {
     h('div', { class: 'landing-top' },
       h('span', { class: 'landing-brand' }, h('img', { src: brandIcon(), alt: '' }), 'Tryout CA Indonesia'),
       sebBadge(),
-      h('button', { type: 'button', class: 'btn btn-link', onclick: () => app.show('guide') }, 'Panduan')),
+      h('button', { type: 'button', class: 'btn btn-link', onclick: () => app.show('guide') }, 'Panduan'),
+      secondaryMenu(app)),
 
     active ? h('div', { class: 'card resume-card landing-resume' },
       h('p', { text: `Ada ujian ${active.subjectName} yang belum selesai.` }),

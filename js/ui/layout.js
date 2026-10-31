@@ -22,7 +22,8 @@ export function header(app, { title, back = true, menu = false }) {
 }
 
 // Menu ⋯ (SPEC 3): Riwayat, Pengelola Bank Soal (PIN lokal), Pengaturan, Panduan.
-function secondaryMenu(app) {
+// Juga dipakai di halaman awal (D-119).
+export function secondaryMenu(app) {
   const items = [
     ['Riwayat', 'history'],
     ['Pengelola Bank Soal', 'bank'],
