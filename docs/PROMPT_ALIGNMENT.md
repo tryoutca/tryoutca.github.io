@@ -100,3 +100,11 @@ data), jadi bentuk keluarannya harus lengkap di dalam prompt itu sendiri.
 | B-18 | Penyusun | Aturan wajib, langkah 3, Revisi | Nilai uang ditulis penuh dalam rupiah; jenis revisi "format angka" | Tidak ada. `numericAnswer.unit` tetap string bebas ("Rp") |
 | C-9 | Reviewer | Langkah 7, Tingkat temuan | Nilai uang tidak penuh = minor (stemClarity) | Tidak ada |
 | K-4 | Kalibrasi | Variasi soal | Aturan nilai uang sama; bukan tempat cacat | Tidak ada |
+
+## Prompt B v4.8, Prompt C v4.7, Prompt D v1.5 (2026-11-01, disetujui pemilik)
+
+| No | Prompt | Bagian | Perubahan | Dampak pada kontrak |
+|---|---|---|---|---|
+| B-19 | Penyusun | Bagian baru "Gaya bahasa", langkah 3, Revisi | Batas kalimat, titik koma, kurung, opsi PG, pilihan kata; jenis revisi bahasa | Tidak ada. Batas kata bacaan per tingkat (lint D-99) tetap berlaku |
+| C-10 | Reviewer | Langkah 7 | Kemudahan dipahami: minor (stemClarity), ambigu = mayor | Tidak ada. Enum dimension dan reviewVersion "4.1" tetap |
+| K-5 | Kalibrasi | Aturan bentuk soal | Gaya bahasa sama dengan Prompt B; bukan tempat cacat | Tidak ada |

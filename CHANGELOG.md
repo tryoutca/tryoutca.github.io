@@ -3,6 +3,42 @@
 Catatan perubahan prompt (`prompts/*.md`) dan kontrak data. Setiap
 perubahan prompt dirujuk ke docs/PROMPT_ALIGNMENT.md.
 
+## 2026-11-01 — Prompt B v4.8, C v4.7, D v1.5: gaya bahasa yang mudah dipahami
+Disetujui pemilik 2026-11-01. Latar: pemilik menilai bahasa soal kurang
+natural dan agak sulit dipahami. Pengukuran terhadap contoh ujian resmi
+2015-2017: panjang kalimat dan kata panjang setara, tetapi titik koma 2-3
+kali lipat (stem 13-21 vs 0-6 per 1.000 kata) dan tanda kurung 2-3 kali
+lipat pada PK (37-44 vs 10-18); opsi PG teori 19-27 kata berisi 2-3 gagasan.
+Masalahnya pemadatan kalimat, bukan tingkat kesulitan kata. Kontrak data
+tidak berubah. Rujukan: D-120, PROMPT_ALIGNMENT B-19, C-10, K-5.
+
+### prompts/prompt_penyusun_soal.md (Prompt B)
+- Judul v4.7 → v4.8.
+- Bagian baru "Gaya bahasa": satu gagasan per kalimat; kalimat narasi paling
+  banyak 25 kata (mudah, sedang) atau 30 kata (sulit, sangat sulit); titik
+  koma tidak dirantai; kurung hanya untuk singkatan, nomor PSAK, padanan
+  istilah; opsi PG satu pernyataan dengan satu alasan; kata sehari-hari
+  lebih dulu, istilah asing dengan padanan Indonesia; kalimat aktif; bahasa
+  mengikuti tingkat soal; butir daftar diakhiri titik.
+- Langkah 3: periksa kalimat terpanjang tiap soal.
+- Revisi: jenis "Revisi bahasa" tanpa temuan reviewer.
+
+### prompts/prompt_reviewer_soal.md (Prompt C)
+- Judul v4.6 → v4.7.
+- Langkah 7: kemudahan dipahami dinilai; satu-dua kalimat berat = minor
+  (stemClarity) dengan kalimat usulan; bahasa yang membuat soal bermakna
+  ganda = mayor; istilah teknis materi tidak disederhanakan.
+
+### prompts/prompt_kalibrasi_soal.md (Prompt D)
+- Judul v1.4 → v1.5; gaya bahasa sama dengan Prompt B v4.8; kalimat
+  berbelit bukan tempat cacat.
+
+### docs/formulir
+- Gelombang 6 MSK dan PK: baris "Gaya bahasa" di setiap blok; rujukan versi
+  Prompt B v4.8 dan Prompt C v4.7.
+- `pk_revisi_angka_siap_tempel.md`: catatan opsional untuk sekalian
+  merapikan bahasa pada putaran revisi yang sama.
+
 ## 2026-11-01 — Prompt B v4.7, C v4.6, D v1.4: nilai uang ditulis penuh
 Disetujui pemilik 2026-11-01. Latar: pemilik menilai penulisan "Rp6.000 juta"
 tidak familiar bagi peserta; 56 soal PK LIVE memakai satuan juta. Pemilik

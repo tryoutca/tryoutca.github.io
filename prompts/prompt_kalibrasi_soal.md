@@ -1,4 +1,4 @@
-# PROMPT PENYUSUN SOAL KALIBRASI — SIMULATOR UJIAN CA (v1.4)
+# PROMPT PENYUSUN SOAL KALIBRASI — SIMULATOR UJIAN CA (v1.5)
 
 ## Peran
 Anda dosen senior dan penyusun soal ujian profesi akuntan untuk mata ujian
@@ -116,7 +116,7 @@ expectedVerdict = "REVISE" untuk semua kode, kecuali formulir menyebut lain.
   pengelola dapat memeriksa cacat di pratinjau tanpa mengerjakan ulang soal.
 
 ## Variasi soal
-Sama dengan prompt penyusun soal biasa (v4.7), agar soal kalibrasi tidak
+Sama dengan prompt penyusun soal biasa (v4.8), agar soal kalibrasi tidak
 dapat dikenali dari polanya.
 - Porsi teori: paling banyak 40% PG dan 40% esai dalam batch, sebaiknya
   mendekati batas; ikuti formulir bila menyebut bentuk per soal. Kode cacat
@@ -146,6 +146,11 @@ dapat dikenali dari polanya.
 - Nilai uang ditulis penuh dalam rupiah (mis. Rp6.000.000.000), tanpa
   "juta", "miliar", atau tabel "dalam jutaan Rupiah", sama dengan soal
   biasa. Format angka bukan tempat cacat.
+- Gaya bahasa sama dengan soal biasa (Prompt B v4.8, bagian "Gaya
+  bahasa"): satu gagasan per kalimat, kalimat narasi paling banyak 25 kata
+  (mudah dan sedang) atau 30 kata (sulit dan sangat sulit), titik koma
+  tidak dirantai, opsi PG tidak berantai tiga klausa. Kalimat berbelit
+  bukan tempat cacat; cacat tetap hanya pada satu dimensi yang dipilih.
 
 ## Standar waktu dan tingkat kesulitan
 Sama dengan soal biasa. estimatedMinutes = angka di tabel ini, tidak ditebak.

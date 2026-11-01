@@ -1,6 +1,6 @@
 # PK gelombang 6 — siap tempel
 
-Formulir gelombang 6, disusun 2026-10-31 untuk **Prompt B v4.7** dan **Prompt C v4.6** (D-112, D-114).
+Formulir gelombang 6, disusun 2026-10-31 untuk **Prompt B v4.8** dan **Prompt C v4.7** (D-112, D-114).
 Tujuan: **meratakan stok per tingkat kesulitan** (PG sekitar 41, esai 12-13 per tingkat) dan menambah kasus mudah serta kasus sangat sulit yang paling sedikit.
 Nomor melanjutkan gelombang 5 (PK-B46 s.d. B49; PK-MCQ-185, PK-ESA-060, PK-KAS-033). Bila gelombang 5 PK belum dikerjakan, kerjakan gelombang 5 lebih dulu, karena perhitungan di bawah mengasumsikan gelombang 5 sudah lolos.
 
@@ -15,10 +15,10 @@ Stok LIVE pack PK 1.9.0 (`Publikasi Soal/PK 25 Okt 2026pack.json`), mudah/sedang
 Topik yang paling sedikit di tingkat mudah (T06, T11, T13, T14) dan sangat sulit (T02, T06, T11, T13, T14) diprioritaskan.
 
 Cara pakai:
-1. Pastikan instruksi Project Claude penyusun memakai **Prompt B v4.7**, dengan pengetahuan Project `schema/CONTRACT.md`, `docs/pk_taksonomi.md`, dan `docs/pk_rujukan_penyusun.md`.
+1. Pastikan instruksi Project Claude penyusun memakai **Prompt B v4.8**, dengan pengetahuan Project `schema/CONTRACT.md`, `docs/pk_taksonomi.md`, dan `docs/pk_rujukan_penyusun.md`.
 2. Buka **satu percakapan baru**, lalu salin satu blok utuh per pesan, berurutan dari atas.
 3. Impor setiap hasil ke Pengelola Bank Soal. Perhatikan peringatan standar waktu, label bentuk di baris pertama authoring.notes, dan kalimat pertama setiap soal.
-4. Review dengan Prompt C v4.6 (tersalin lewat tombol **Salin Prompt + Data**). Bila Project melaporkan Batch ID atau rentang ID sudah terpakai, naikkan nomornya.
+4. Review dengan Prompt C v4.7 (tersalin lewat tombol **Salin Prompt + Data**). Bila Project melaporkan Batch ID atau rentang ID sudah terpakai, naikkan nomornya.
 
 Prioritas: 1 = tingkat yang paling kurang (PG mudah, sedang, sangat sulit; esai mudah; kasus mudah); 2 = kasus tambahan.
 
@@ -63,18 +63,19 @@ Catatan umum:
 - Ikuti docs/pk_taksonomi.md (T01-T14, K01-K05) dan docs/pk_rujukan_penyusun.md.
 - Tulis PSAK dengan nomor baru dan nomor lama, mis. "PSAK 116 (73)". Untuk ISAK, cukup nomor baru bila ragu.
 - Nilai uang ditulis penuh dalam rupiah dengan titik ribuan (mis. Rp6.000.000.000), tanpa "ribu", "juta", "miliar", "triliun", atau tabel "dalam jutaan Rupiah"; sebut aturan pembulatan di stem bila hasil hitung tidak bulat.
+- Gaya bahasa (Prompt B v4.8): satu gagasan per kalimat; kalimat narasi paling banyak 25 kata (mudah, sedang) atau 30 kata (sulit, sangat sulit); titik koma paling banyak satu per kalimat dan tidak dirantai; kurung hanya untuk singkatan, nomor PSAK, atau padanan istilah; opsi PG satu pernyataan dengan satu alasan pendek; kata sehari-hari lebih dulu, istilah teknis hanya yang menjadi bagian materi; kalimat aktif. Soal mudah dan sedang memakai bahasa paling sederhana.
 - Tanpa akuntansi syariah, sektor publik, dan kontrak asuransi. Tanpa kategori lama PSAK 55.
 - Jangan menyalin angka, nama perusahaan, atau skenario dari materi dan contoh ujian.
 - Hindari skenario yang mirip soal PK yang sudah ada (PK-MCQ-001 s.d. 185, PK-ESA-001 s.d. 060, PK-KAS-001 s.d. 033) dan batch sebelumnya di percakapan ini.
-Bentuk soal dan variasi (wajib, Prompt B v4.7):
+Bentuk soal dan variasi (wajib, Prompt B v4.8):
 - Teori: menguji alasan, asumsi, keterbatasan, perbandingan, atau hubungan antarkonsep dari kerangka konseptual, prinsip, dan dasar standar yang umum dipakai (mis. definisi unsur dan kriteria pengakuan, dasar pengukuran, pengendalian, model lima langkah pendapatan, model kerugian kredit ekspektasian). Tanpa entitas, atau ilustrasi paling banyak dua kalimat. Ikuti ragam yang tertulis di setiap topik. Bukan hafalan definisi, daftar, nama tokoh, nomor paragraf, atau tahun terbit.
 - Analisis: situasi entitas fiktif dengan data; ikuti pembuka dan jenis entitas yang tertulis di setiap topik. Entitas analisis menerapkan SAK Indonesia (bukan SAK EMKM, bukan entitas syariah atau instansi pemerintah). Kalimat pertama tidak boleh berbentuk "<Nama> (fiktif) adalah ...". Nama entitas tidak selalu berpola "PT <kata> <kata>".
 - Perintah tidak selalu "Menurut kerangka X". Pada soal sulit dan sangat sulit, sebagian soal tidak menyebut nama kerangka sehingga peserta memilih sendiri kerangka yang tepat.
 - Soal teori: paling banyak dua soal teori diawali latar periode atau kondisi ekonomi (mis. "Sepanjang 2023-2026 ..."); soal teori lain dibuka langsung dengan konsep, kutipan pernyataan, argumen yang keliru, atau perbandingan dua situasi. Kalimat perintah bervariasi.
 - Kunci tidak boleh dapat ditebak dari opsi saja: paling banyak satu distraktor per soal memakai kata mutlak (selalu, pasti, hanya, permanen, sepenuhnya); istilah khas kerangka tidak hanya muncul di kunci; panjang opsi setara.
 - Nama fiktif tidak boleh mirip merek, perusahaan, aplikasi, atau lembaga nyata, termasuk pola nama BUMD nyata dengan nama daerah atau tempat nyata.
-- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.7. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
-- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.7, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
+- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.8. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
+- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.8, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
 - Contoh soal ujian lama di Project hanya salah satu sumber gaya, bukan cetakan.
 Konteks ekonomi (wajib):
 - Kaitkan setiap soal dengan situasi perekonomian Indonesia dan global dalam tiga tahun terakhir (2023-2026) serta tantangan yang dihadapi ke depan, yang relevan dengan topiknya. Pilih tema yang paling cocok dari daftar di bawah; jangan memaksakan tema yang tidak relevan. Dalam satu batch, pakai tema yang beragam.
@@ -135,18 +136,19 @@ Catatan umum:
 - Ikuti docs/pk_taksonomi.md (T01-T14, K01-K05) dan docs/pk_rujukan_penyusun.md.
 - Tulis PSAK dengan nomor baru dan nomor lama, mis. "PSAK 116 (73)". Untuk ISAK, cukup nomor baru bila ragu.
 - Nilai uang ditulis penuh dalam rupiah dengan titik ribuan (mis. Rp6.000.000.000), tanpa "ribu", "juta", "miliar", "triliun", atau tabel "dalam jutaan Rupiah"; sebut aturan pembulatan di stem bila hasil hitung tidak bulat.
+- Gaya bahasa (Prompt B v4.8): satu gagasan per kalimat; kalimat narasi paling banyak 25 kata (mudah, sedang) atau 30 kata (sulit, sangat sulit); titik koma paling banyak satu per kalimat dan tidak dirantai; kurung hanya untuk singkatan, nomor PSAK, atau padanan istilah; opsi PG satu pernyataan dengan satu alasan pendek; kata sehari-hari lebih dulu, istilah teknis hanya yang menjadi bagian materi; kalimat aktif. Soal mudah dan sedang memakai bahasa paling sederhana.
 - Tanpa akuntansi syariah, sektor publik, dan kontrak asuransi. Tanpa kategori lama PSAK 55.
 - Jangan menyalin angka, nama perusahaan, atau skenario dari materi dan contoh ujian.
 - Hindari skenario yang mirip soal PK yang sudah ada (PK-MCQ-001 s.d. 185, PK-ESA-001 s.d. 060, PK-KAS-001 s.d. 033) dan batch sebelumnya di percakapan ini.
-Bentuk soal dan variasi (wajib, Prompt B v4.7):
+Bentuk soal dan variasi (wajib, Prompt B v4.8):
 - Teori: menguji alasan, asumsi, keterbatasan, perbandingan, atau hubungan antarkonsep dari kerangka konseptual, prinsip, dan dasar standar yang umum dipakai (mis. definisi unsur dan kriteria pengakuan, dasar pengukuran, pengendalian, model lima langkah pendapatan, model kerugian kredit ekspektasian). Tanpa entitas, atau ilustrasi paling banyak dua kalimat. Ikuti ragam yang tertulis di setiap topik. Bukan hafalan definisi, daftar, nama tokoh, nomor paragraf, atau tahun terbit.
 - Analisis: situasi entitas fiktif dengan data; ikuti pembuka dan jenis entitas yang tertulis di setiap topik. Entitas analisis menerapkan SAK Indonesia (bukan SAK EMKM, bukan entitas syariah atau instansi pemerintah). Kalimat pertama tidak boleh berbentuk "<Nama> (fiktif) adalah ...". Nama entitas tidak selalu berpola "PT <kata> <kata>".
 - Perintah tidak selalu "Menurut kerangka X". Pada soal sulit dan sangat sulit, sebagian soal tidak menyebut nama kerangka sehingga peserta memilih sendiri kerangka yang tepat.
 - Soal teori: paling banyak dua soal teori diawali latar periode atau kondisi ekonomi (mis. "Sepanjang 2023-2026 ..."); soal teori lain dibuka langsung dengan konsep, kutipan pernyataan, argumen yang keliru, atau perbandingan dua situasi. Kalimat perintah bervariasi.
 - Kunci tidak boleh dapat ditebak dari opsi saja: paling banyak satu distraktor per soal memakai kata mutlak (selalu, pasti, hanya, permanen, sepenuhnya); istilah khas kerangka tidak hanya muncul di kunci; panjang opsi setara.
 - Nama fiktif tidak boleh mirip merek, perusahaan, aplikasi, atau lembaga nyata, termasuk pola nama BUMD nyata dengan nama daerah atau tempat nyata.
-- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.7. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
-- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.7, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
+- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.8. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
+- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.8, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
 - Contoh soal ujian lama di Project hanya salah satu sumber gaya, bukan cetakan.
 Konteks ekonomi (wajib):
 - Kaitkan setiap soal dengan situasi perekonomian Indonesia dan global dalam tiga tahun terakhir (2023-2026) serta tantangan yang dihadapi ke depan, yang relevan dengan topiknya. Pilih tema yang paling cocok dari daftar di bawah; jangan memaksakan tema yang tidak relevan. Dalam satu batch, pakai tema yang beragam.
@@ -203,18 +205,19 @@ Catatan umum:
 - Ikuti docs/pk_taksonomi.md (T01-T14, K01-K05) dan docs/pk_rujukan_penyusun.md.
 - Tulis PSAK dengan nomor baru dan nomor lama, mis. "PSAK 116 (73)". Untuk ISAK, cukup nomor baru bila ragu.
 - Nilai uang ditulis penuh dalam rupiah dengan titik ribuan (mis. Rp6.000.000.000), tanpa "ribu", "juta", "miliar", "triliun", atau tabel "dalam jutaan Rupiah"; sebut aturan pembulatan di stem bila hasil hitung tidak bulat.
+- Gaya bahasa (Prompt B v4.8): satu gagasan per kalimat; kalimat narasi paling banyak 25 kata (mudah, sedang) atau 30 kata (sulit, sangat sulit); titik koma paling banyak satu per kalimat dan tidak dirantai; kurung hanya untuk singkatan, nomor PSAK, atau padanan istilah; opsi PG satu pernyataan dengan satu alasan pendek; kata sehari-hari lebih dulu, istilah teknis hanya yang menjadi bagian materi; kalimat aktif. Soal mudah dan sedang memakai bahasa paling sederhana.
 - Tanpa akuntansi syariah, sektor publik, dan kontrak asuransi. Tanpa kategori lama PSAK 55.
 - Jangan menyalin angka, nama perusahaan, atau skenario dari materi dan contoh ujian.
 - Hindari skenario yang mirip soal PK yang sudah ada (PK-MCQ-001 s.d. 185, PK-ESA-001 s.d. 060, PK-KAS-001 s.d. 033) dan batch sebelumnya di percakapan ini.
-Bentuk soal dan variasi (wajib, Prompt B v4.7):
+Bentuk soal dan variasi (wajib, Prompt B v4.8):
 - Teori: menguji alasan, asumsi, keterbatasan, perbandingan, atau hubungan antarkonsep dari kerangka konseptual, prinsip, dan dasar standar yang umum dipakai (mis. definisi unsur dan kriteria pengakuan, dasar pengukuran, pengendalian, model lima langkah pendapatan, model kerugian kredit ekspektasian). Tanpa entitas, atau ilustrasi paling banyak dua kalimat. Ikuti ragam yang tertulis di setiap topik. Bukan hafalan definisi, daftar, nama tokoh, nomor paragraf, atau tahun terbit.
 - Analisis: situasi entitas fiktif dengan data; ikuti pembuka dan jenis entitas yang tertulis di setiap topik. Entitas analisis menerapkan SAK Indonesia (bukan SAK EMKM, bukan entitas syariah atau instansi pemerintah). Kalimat pertama tidak boleh berbentuk "<Nama> (fiktif) adalah ...". Nama entitas tidak selalu berpola "PT <kata> <kata>".
 - Perintah tidak selalu "Menurut kerangka X". Pada soal sulit dan sangat sulit, sebagian soal tidak menyebut nama kerangka sehingga peserta memilih sendiri kerangka yang tepat.
 - Rubrik menilai kualitas penalaran, ketepatan konsep, dan penggunaan data; acceptableAlternatives menyebut kerangka atau sudut pandang lain yang sah beserta syarat nilai penuhnya.
 - Soal teori: paling banyak dua soal teori diawali latar periode atau kondisi ekonomi (mis. "Sepanjang 2023-2026 ..."); soal teori lain dibuka langsung dengan konsep, kutipan pernyataan, argumen yang keliru, atau perbandingan dua situasi. Kalimat perintah bervariasi.
 - Nama fiktif tidak boleh mirip merek, perusahaan, aplikasi, atau lembaga nyata, termasuk pola nama BUMD nyata dengan nama daerah atau tempat nyata.
-- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.7. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
-- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.7, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
+- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.8. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
+- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.8, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
 - Contoh soal ujian lama di Project hanya salah satu sumber gaya, bukan cetakan.
 Konteks ekonomi (wajib):
 - Kaitkan setiap soal dengan situasi perekonomian Indonesia dan global dalam tiga tahun terakhir (2023-2026) serta tantangan yang dihadapi ke depan, yang relevan dengan topiknya. Pilih tema yang paling cocok dari daftar di bawah; jangan memaksakan tema yang tidak relevan. Dalam satu batch, pakai tema yang beragam.
@@ -265,18 +268,19 @@ Catatan umum:
 - Ikuti docs/pk_taksonomi.md (T01-T14, K01-K05) dan docs/pk_rujukan_penyusun.md.
 - Tulis PSAK dengan nomor baru dan nomor lama, mis. "PSAK 116 (73)". Untuk ISAK, cukup nomor baru bila ragu.
 - Nilai uang ditulis penuh dalam rupiah dengan titik ribuan (mis. Rp6.000.000.000), tanpa "ribu", "juta", "miliar", "triliun", atau tabel "dalam jutaan Rupiah"; sebut aturan pembulatan di stem bila hasil hitung tidak bulat.
+- Gaya bahasa (Prompt B v4.8): satu gagasan per kalimat; kalimat narasi paling banyak 25 kata (mudah, sedang) atau 30 kata (sulit, sangat sulit); titik koma paling banyak satu per kalimat dan tidak dirantai; kurung hanya untuk singkatan, nomor PSAK, atau padanan istilah; opsi PG satu pernyataan dengan satu alasan pendek; kata sehari-hari lebih dulu, istilah teknis hanya yang menjadi bagian materi; kalimat aktif. Soal mudah dan sedang memakai bahasa paling sederhana.
 - Tanpa akuntansi syariah, sektor publik, dan kontrak asuransi. Tanpa kategori lama PSAK 55.
 - Jangan menyalin angka, nama perusahaan, atau skenario dari materi dan contoh ujian.
 - Hindari skenario yang mirip soal PK yang sudah ada (PK-MCQ-001 s.d. 185, PK-ESA-001 s.d. 060, PK-KAS-001 s.d. 033) dan batch sebelumnya di percakapan ini.
-Bentuk soal dan variasi (wajib, Prompt B v4.7):
+Bentuk soal dan variasi (wajib, Prompt B v4.8):
 - Teori: menguji alasan, asumsi, keterbatasan, perbandingan, atau hubungan antarkonsep dari kerangka konseptual, prinsip, dan dasar standar yang umum dipakai (mis. definisi unsur dan kriteria pengakuan, dasar pengukuran, pengendalian, model lima langkah pendapatan, model kerugian kredit ekspektasian). Tanpa entitas, atau ilustrasi paling banyak dua kalimat. Ikuti ragam yang tertulis di setiap topik. Bukan hafalan definisi, daftar, nama tokoh, nomor paragraf, atau tahun terbit.
 - Analisis: situasi entitas fiktif dengan data; ikuti pembuka dan jenis entitas yang tertulis di setiap topik. Entitas analisis menerapkan SAK Indonesia (bukan SAK EMKM, bukan entitas syariah atau instansi pemerintah). Kalimat pertama tidak boleh berbentuk "<Nama> (fiktif) adalah ...". Nama entitas tidak selalu berpola "PT <kata> <kata>".
 - Perintah tidak selalu "Menurut kerangka X". Pada soal sulit dan sangat sulit, sebagian soal tidak menyebut nama kerangka sehingga peserta memilih sendiri kerangka yang tepat.
 - Rubrik menilai kualitas penalaran, ketepatan konsep, dan penggunaan data; acceptableAlternatives menyebut kerangka atau sudut pandang lain yang sah beserta syarat nilai penuhnya.
 - Setiap kasus memuat tepat satu sub teori (tertulis di rincian kasus). Paling banyak dua sub menyebut nama alat analisis; alur kedua kasus berbeda.
 - Nama fiktif tidak boleh mirip merek, perusahaan, aplikasi, atau lembaga nyata, termasuk pola nama BUMD nyata dengan nama daerah atau tempat nyata.
-- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.7. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
-- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.7, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
+- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.8. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
+- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.8, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
 - Contoh soal ujian lama di Project hanya salah satu sumber gaya, bukan cetakan.
 Konteks ekonomi (wajib):
 - Kaitkan setiap soal dengan situasi perekonomian Indonesia dan global dalam tiga tahun terakhir (2023-2026) serta tantangan yang dihadapi ke depan, yang relevan dengan topiknya. Pilih tema yang paling cocok dari daftar di bawah; jangan memaksakan tema yang tidak relevan. Dalam satu batch, pakai tema yang beragam.
@@ -327,18 +331,19 @@ Catatan umum:
 - Ikuti docs/pk_taksonomi.md (T01-T14, K01-K05) dan docs/pk_rujukan_penyusun.md.
 - Tulis PSAK dengan nomor baru dan nomor lama, mis. "PSAK 116 (73)". Untuk ISAK, cukup nomor baru bila ragu.
 - Nilai uang ditulis penuh dalam rupiah dengan titik ribuan (mis. Rp6.000.000.000), tanpa "ribu", "juta", "miliar", "triliun", atau tabel "dalam jutaan Rupiah"; sebut aturan pembulatan di stem bila hasil hitung tidak bulat.
+- Gaya bahasa (Prompt B v4.8): satu gagasan per kalimat; kalimat narasi paling banyak 25 kata (mudah, sedang) atau 30 kata (sulit, sangat sulit); titik koma paling banyak satu per kalimat dan tidak dirantai; kurung hanya untuk singkatan, nomor PSAK, atau padanan istilah; opsi PG satu pernyataan dengan satu alasan pendek; kata sehari-hari lebih dulu, istilah teknis hanya yang menjadi bagian materi; kalimat aktif. Soal mudah dan sedang memakai bahasa paling sederhana.
 - Tanpa akuntansi syariah, sektor publik, dan kontrak asuransi. Tanpa kategori lama PSAK 55.
 - Jangan menyalin angka, nama perusahaan, atau skenario dari materi dan contoh ujian.
 - Hindari skenario yang mirip soal PK yang sudah ada (PK-MCQ-001 s.d. 185, PK-ESA-001 s.d. 060, PK-KAS-001 s.d. 033) dan batch sebelumnya di percakapan ini.
-Bentuk soal dan variasi (wajib, Prompt B v4.7):
+Bentuk soal dan variasi (wajib, Prompt B v4.8):
 - Teori: menguji alasan, asumsi, keterbatasan, perbandingan, atau hubungan antarkonsep dari kerangka konseptual, prinsip, dan dasar standar yang umum dipakai (mis. definisi unsur dan kriteria pengakuan, dasar pengukuran, pengendalian, model lima langkah pendapatan, model kerugian kredit ekspektasian). Tanpa entitas, atau ilustrasi paling banyak dua kalimat. Ikuti ragam yang tertulis di setiap topik. Bukan hafalan definisi, daftar, nama tokoh, nomor paragraf, atau tahun terbit.
 - Analisis: situasi entitas fiktif dengan data; ikuti pembuka dan jenis entitas yang tertulis di setiap topik. Entitas analisis menerapkan SAK Indonesia (bukan SAK EMKM, bukan entitas syariah atau instansi pemerintah). Kalimat pertama tidak boleh berbentuk "<Nama> (fiktif) adalah ...". Nama entitas tidak selalu berpola "PT <kata> <kata>".
 - Perintah tidak selalu "Menurut kerangka X". Pada soal sulit dan sangat sulit, sebagian soal tidak menyebut nama kerangka sehingga peserta memilih sendiri kerangka yang tepat.
 - Rubrik menilai kualitas penalaran, ketepatan konsep, dan penggunaan data; acceptableAlternatives menyebut kerangka atau sudut pandang lain yang sah beserta syarat nilai penuhnya.
 - Setiap kasus memuat tepat satu sub teori (tertulis di rincian kasus). Paling banyak dua sub menyebut nama alat analisis; alur kedua kasus berbeda.
 - Nama fiktif tidak boleh mirip merek, perusahaan, aplikasi, atau lembaga nyata, termasuk pola nama BUMD nyata dengan nama daerah atau tempat nyata.
-- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.7. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
-- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.7, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
+- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.8. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
+- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.8, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
 - Contoh soal ujian lama di Project hanya salah satu sumber gaya, bukan cetakan.
 Konteks ekonomi (wajib):
 - Kaitkan setiap soal dengan situasi perekonomian Indonesia dan global dalam tiga tahun terakhir (2023-2026) serta tantangan yang dihadapi ke depan, yang relevan dengan topiknya. Pilih tema yang paling cocok dari daftar di bawah; jangan memaksakan tema yang tidak relevan. Dalam satu batch, pakai tema yang beragam.
@@ -389,18 +394,19 @@ Catatan umum:
 - Ikuti docs/pk_taksonomi.md (T01-T14, K01-K05) dan docs/pk_rujukan_penyusun.md.
 - Tulis PSAK dengan nomor baru dan nomor lama, mis. "PSAK 116 (73)". Untuk ISAK, cukup nomor baru bila ragu.
 - Nilai uang ditulis penuh dalam rupiah dengan titik ribuan (mis. Rp6.000.000.000), tanpa "ribu", "juta", "miliar", "triliun", atau tabel "dalam jutaan Rupiah"; sebut aturan pembulatan di stem bila hasil hitung tidak bulat.
+- Gaya bahasa (Prompt B v4.8): satu gagasan per kalimat; kalimat narasi paling banyak 25 kata (mudah, sedang) atau 30 kata (sulit, sangat sulit); titik koma paling banyak satu per kalimat dan tidak dirantai; kurung hanya untuk singkatan, nomor PSAK, atau padanan istilah; opsi PG satu pernyataan dengan satu alasan pendek; kata sehari-hari lebih dulu, istilah teknis hanya yang menjadi bagian materi; kalimat aktif. Soal mudah dan sedang memakai bahasa paling sederhana.
 - Tanpa akuntansi syariah, sektor publik, dan kontrak asuransi. Tanpa kategori lama PSAK 55.
 - Jangan menyalin angka, nama perusahaan, atau skenario dari materi dan contoh ujian.
 - Hindari skenario yang mirip soal PK yang sudah ada (PK-MCQ-001 s.d. 185, PK-ESA-001 s.d. 060, PK-KAS-001 s.d. 033) dan batch sebelumnya di percakapan ini.
-Bentuk soal dan variasi (wajib, Prompt B v4.7):
+Bentuk soal dan variasi (wajib, Prompt B v4.8):
 - Teori: menguji alasan, asumsi, keterbatasan, perbandingan, atau hubungan antarkonsep dari kerangka konseptual, prinsip, dan dasar standar yang umum dipakai (mis. definisi unsur dan kriteria pengakuan, dasar pengukuran, pengendalian, model lima langkah pendapatan, model kerugian kredit ekspektasian). Tanpa entitas, atau ilustrasi paling banyak dua kalimat. Ikuti ragam yang tertulis di setiap topik. Bukan hafalan definisi, daftar, nama tokoh, nomor paragraf, atau tahun terbit.
 - Analisis: situasi entitas fiktif dengan data; ikuti pembuka dan jenis entitas yang tertulis di setiap topik. Entitas analisis menerapkan SAK Indonesia (bukan SAK EMKM, bukan entitas syariah atau instansi pemerintah). Kalimat pertama tidak boleh berbentuk "<Nama> (fiktif) adalah ...". Nama entitas tidak selalu berpola "PT <kata> <kata>".
 - Perintah tidak selalu "Menurut kerangka X". Pada soal sulit dan sangat sulit, sebagian soal tidak menyebut nama kerangka sehingga peserta memilih sendiri kerangka yang tepat.
 - Rubrik menilai kualitas penalaran, ketepatan konsep, dan penggunaan data; acceptableAlternatives menyebut kerangka atau sudut pandang lain yang sah beserta syarat nilai penuhnya.
 - Setiap kasus memuat tepat satu sub teori (tertulis di rincian kasus). Paling banyak dua sub menyebut nama alat analisis; alur kedua kasus berbeda.
 - Nama fiktif tidak boleh mirip merek, perusahaan, aplikasi, atau lembaga nyata, termasuk pola nama BUMD nyata dengan nama daerah atau tempat nyata.
-- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.7. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
-- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.7, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
+- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.8. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
+- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.8, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
 - Contoh soal ujian lama di Project hanya salah satu sumber gaya, bukan cetakan.
 Konteks ekonomi (wajib):
 - Kaitkan setiap soal dengan situasi perekonomian Indonesia dan global dalam tiga tahun terakhir (2023-2026) serta tantangan yang dihadapi ke depan, yang relevan dengan topiknya. Pilih tema yang paling cocok dari daftar di bawah; jangan memaksakan tema yang tidak relevan. Dalam satu batch, pakai tema yang beragam.
