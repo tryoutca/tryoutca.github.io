@@ -3,6 +3,37 @@
 Catatan perubahan prompt (`prompts/*.md`) dan kontrak data. Setiap
 perubahan prompt dirujuk ke docs/PROMPT_ALIGNMENT.md.
 
+## 2026-11-01 — Prompt B v4.7, C v4.6, D v1.4: nilai uang ditulis penuh
+Disetujui pemilik 2026-11-01. Latar: pemilik menilai penulisan "Rp6.000 juta"
+tidak familiar bagi peserta; 56 soal PK LIVE memakai satuan juta. Pemilik
+memilih angka rupiah penuh (mis. Rp6.000.000.000) dan revisi soal PK lama.
+Kontrak data tidak berubah. Rujukan: D-119, PROMPT_ALIGNMENT B-18, C-9, K-4.
+
+### prompts/prompt_penyusun_soal.md (Prompt B)
+- Judul v4.6 → v4.7.
+- Aturan wajib baru: nilai uang ditulis penuh dalam rupiah dengan titik
+  ribuan, tanpa "ribu", "juta", "miliar", "triliun", atau tabel "dalam
+  jutaan Rupiah"; berlaku di semua field; tanpa desimal rupiah.
+- Langkah 3: periksa penulisan nilai uang.
+- Revisi: jenis revisi baru "Revisi format angka" tanpa temuan reviewer;
+  skenario, data, kunci, tingkat, dan skor tidak berubah.
+
+### prompts/prompt_reviewer_soal.md (Prompt C)
+- Judul v4.5 → v4.6.
+- Langkah 7: nilai uang tidak ditulis penuh = minor (stemClarity); konversi
+  yang merusak data atau kunci dinilai seperti biasa.
+- Tingkat temuan minor disesuaikan.
+
+### prompts/prompt_kalibrasi_soal.md (Prompt D)
+- Judul v1.3 → v1.4; rujukan Prompt B v4.7; aturan nilai uang sama, format
+  angka bukan tempat cacat.
+
+### docs/formulir
+- Gelombang 6 MSK dan PK: aturan nilai uang lama ("sebut satuan
+  ribu/juta/miliar") diganti aturan angka penuh; rujukan versi menjadi
+  Prompt B v4.7 dan Prompt C v4.6.
+- Baru: `pk_revisi_angka_siap_tempel.md`, 12 kelompok revisi untuk 56 soal PK.
+
 ## 2026-10-29 — Prompt B v4.6, C v4.5, D v1.3: isyarat kata mutlak, pembuka soal teori, nama mirip nama nyata
 Disetujui pemilik 2026-10-29. Latar: pemeriksaan batch MSK-B57 (Prompt B
 v4.5) menemukan (1) kunci soal teori satu-satunya opsi berimbang sementara

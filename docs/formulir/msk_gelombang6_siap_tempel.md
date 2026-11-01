@@ -1,6 +1,6 @@
 # MSK gelombang 6 — siap tempel
 
-Formulir gelombang 6, disusun 2026-10-31 untuk **Prompt B v4.6** dan **Prompt C v4.5** (D-112, D-114).
+Formulir gelombang 6, disusun 2026-10-31 untuk **Prompt B v4.7** dan **Prompt C v4.6** (D-112, D-114).
 Tujuan utama: **menambah kasus mudah** agar paket Level 1 dapat dimulai dan kasusnya bervariasi. Gelombang ini memuat 6 kasus mini mudah dengan topik yang belum dipakai kasus mudah sebelumnya (T03, T07, T09, T11, T12, T02/T04, T06), 2 kasus komprehensif sangat sulit, dan PG serta esai untuk meratakan stok per tingkat.
 Nomor batch mulai MSK-B64 (MSK-B63 sudah dipakai). Nomor soal melanjutkan nomor tertinggi di bank: MSK-MCQ-240, MSK-ESA-080, MSK-KAS-039.
 
@@ -15,10 +15,10 @@ Stok LIVE pack MSK 1.11.0 (`Publikasi Soal/1.11.0 (2026-10-31) ... pack.json`), 
 Kasus mudah yang sudah ada (MSK-KAS-028, 029, 030, 036, 037) memakai topik T01/T05, T02/T06, T10/T08, T04/T05, dan T08/T10. Keenam kasus baru memakai pasangan topik dan entitas yang berbeda.
 
 Cara pakai:
-1. Pastikan instruksi Project Claude penyusun memakai **Prompt B v4.6**. Project reviewer cukup memakai instruksi singkat; prompt reviewer v4.5 ikut tersalin lewat tombol **Salin Prompt + Data**.
+1. Pastikan instruksi Project Claude penyusun memakai **Prompt B v4.7**. Project reviewer cukup memakai instruksi singkat; prompt reviewer v4.5 ikut tersalin lewat tombol **Salin Prompt + Data**.
 2. Buka **satu percakapan baru**, lalu salin satu blok utuh per pesan, berurutan dari atas. Kerjakan **prioritas 1** (tiga batch kasus mudah) lebih dulu.
 3. Impor setiap hasil ke Pengelola Bank Soal. Perhatikan peringatan standar waktu, label bentuk di baris pertama authoring.notes, dan kalimat pertama setiap soal.
-4. Review dengan Prompt C v4.5. Bila Project melaporkan Batch ID atau rentang ID sudah terpakai, naikkan nomornya.
+4. Review dengan Prompt C v4.6. Bila Project melaporkan Batch ID atau rentang ID sudah terpakai, naikkan nomornya.
 5. Setelah kasus mudah lolos dan dipublikasikan, ekspor pack dan sinkronkan ke repositori agar paket Level 1 di situs memakai kasus baru.
 
 Prioritas: 1 = kasus mudah untuk Level 1; 2 = meratakan stok tingkat lain.
@@ -53,16 +53,17 @@ Catatan khusus:
 Catatan umum:
 - Ikuti docs/msk_taksonomi.md (taksonomi 12 topik T01-T12 dan kompetensi K01-K06; bukan taksonomi lama T01-T16).
 - Jangan menyalin contoh, nama perusahaan, atau angka dari modul dan soal resmi.
+- Nilai uang ditulis penuh dalam rupiah dengan titik ribuan (mis. Rp6.000.000.000), tanpa "ribu", "juta", "miliar", "triliun", atau tabel "dalam jutaan Rupiah"; sebut aturan pembulatan di stem bila hasil hitung tidak bulat.
 - Hindari skenario yang mirip soal MSK yang sudah ada (MSK-MCQ-001 s.d. 240, MSK-ESA-001 s.d. 080, MSK-KAS-001 s.d. 039) dan batch sebelumnya di percakapan ini.
-Bentuk soal dan variasi (wajib, Prompt B v4.6):
+Bentuk soal dan variasi (wajib, Prompt B v4.7):
 - Teori: menguji alasan, asumsi, keterbatasan, perbandingan, atau hubungan antarkonsep dari teori dan kerangka akademik manajemen stratejik dan kepemimpinan yang umum dipakai (mis. lima kekuatan Porter, PESTEL, VRIO, rantai nilai, strategi generik, matriks Ansoff dan BCG, balanced scorecard, 7S McKinsey, model perubahan Lewin dan Kotter, teori kepemimpinan). Tanpa entitas, atau ilustrasi paling banyak dua kalimat. Ikuti ragam yang tertulis di setiap topik. Bukan hafalan definisi, daftar, nama tokoh, nomor paragraf, atau tahun terbit.
 - Analisis: situasi entitas fiktif dengan data; ikuti pembuka dan jenis entitas yang tertulis di setiap topik. Kalimat pertama tidak boleh berbentuk "<Nama> (fiktif) adalah ...". Nama entitas tidak selalu berpola "PT <kata> <kata>".
 - Perintah tidak selalu "Menurut kerangka X". Pada soal sulit dan sangat sulit, sebagian soal tidak menyebut nama kerangka sehingga peserta memilih sendiri kerangka yang tepat.
 - Rubrik menilai kualitas penalaran, ketepatan konsep, dan penggunaan data; acceptableAlternatives menyebut kerangka atau sudut pandang lain yang sah beserta syarat nilai penuhnya.
 - Setiap kasus memuat tepat satu sub teori (tertulis di rincian kasus). Paling banyak dua sub menyebut nama alat analisis; alur kedua kasus berbeda.
 - Nama fiktif tidak boleh mirip merek, perusahaan, aplikasi, atau lembaga nyata, termasuk pola nama BUMD nyata dengan nama daerah atau tempat nyata.
-- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.6. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
-- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.6, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
+- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.7. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
+- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.7, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
 - Contoh soal ujian lama di Project hanya salah satu sumber gaya, bukan cetakan.
 Konteks ekonomi (wajib):
 - Kaitkan setiap soal dengan situasi perekonomian Indonesia dan global dalam tiga tahun terakhir (2023-2026) serta tantangan yang dihadapi ke depan, yang relevan dengan topiknya. Pilih tema yang paling cocok dari daftar di bawah; jangan memaksakan tema yang tidak relevan. Dalam satu batch, pakai tema yang beragam.
@@ -110,16 +111,17 @@ Catatan khusus:
 Catatan umum:
 - Ikuti docs/msk_taksonomi.md (taksonomi 12 topik T01-T12 dan kompetensi K01-K06; bukan taksonomi lama T01-T16).
 - Jangan menyalin contoh, nama perusahaan, atau angka dari modul dan soal resmi.
+- Nilai uang ditulis penuh dalam rupiah dengan titik ribuan (mis. Rp6.000.000.000), tanpa "ribu", "juta", "miliar", "triliun", atau tabel "dalam jutaan Rupiah"; sebut aturan pembulatan di stem bila hasil hitung tidak bulat.
 - Hindari skenario yang mirip soal MSK yang sudah ada (MSK-MCQ-001 s.d. 240, MSK-ESA-001 s.d. 080, MSK-KAS-001 s.d. 039) dan batch sebelumnya di percakapan ini.
-Bentuk soal dan variasi (wajib, Prompt B v4.6):
+Bentuk soal dan variasi (wajib, Prompt B v4.7):
 - Teori: menguji alasan, asumsi, keterbatasan, perbandingan, atau hubungan antarkonsep dari teori dan kerangka akademik manajemen stratejik dan kepemimpinan yang umum dipakai (mis. lima kekuatan Porter, PESTEL, VRIO, rantai nilai, strategi generik, matriks Ansoff dan BCG, balanced scorecard, 7S McKinsey, model perubahan Lewin dan Kotter, teori kepemimpinan). Tanpa entitas, atau ilustrasi paling banyak dua kalimat. Ikuti ragam yang tertulis di setiap topik. Bukan hafalan definisi, daftar, nama tokoh, nomor paragraf, atau tahun terbit.
 - Analisis: situasi entitas fiktif dengan data; ikuti pembuka dan jenis entitas yang tertulis di setiap topik. Kalimat pertama tidak boleh berbentuk "<Nama> (fiktif) adalah ...". Nama entitas tidak selalu berpola "PT <kata> <kata>".
 - Perintah tidak selalu "Menurut kerangka X". Pada soal sulit dan sangat sulit, sebagian soal tidak menyebut nama kerangka sehingga peserta memilih sendiri kerangka yang tepat.
 - Rubrik menilai kualitas penalaran, ketepatan konsep, dan penggunaan data; acceptableAlternatives menyebut kerangka atau sudut pandang lain yang sah beserta syarat nilai penuhnya.
 - Setiap kasus memuat tepat satu sub teori (tertulis di rincian kasus). Paling banyak dua sub menyebut nama alat analisis; alur kedua kasus berbeda.
 - Nama fiktif tidak boleh mirip merek, perusahaan, aplikasi, atau lembaga nyata, termasuk pola nama BUMD nyata dengan nama daerah atau tempat nyata.
-- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.6. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
-- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.6, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
+- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.7. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
+- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.7, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
 - Contoh soal ujian lama di Project hanya salah satu sumber gaya, bukan cetakan.
 Konteks ekonomi (wajib):
 - Kaitkan setiap soal dengan situasi perekonomian Indonesia dan global dalam tiga tahun terakhir (2023-2026) serta tantangan yang dihadapi ke depan, yang relevan dengan topiknya. Pilih tema yang paling cocok dari daftar di bawah; jangan memaksakan tema yang tidak relevan. Dalam satu batch, pakai tema yang beragam.
@@ -167,16 +169,17 @@ Catatan khusus:
 Catatan umum:
 - Ikuti docs/msk_taksonomi.md (taksonomi 12 topik T01-T12 dan kompetensi K01-K06; bukan taksonomi lama T01-T16).
 - Jangan menyalin contoh, nama perusahaan, atau angka dari modul dan soal resmi.
+- Nilai uang ditulis penuh dalam rupiah dengan titik ribuan (mis. Rp6.000.000.000), tanpa "ribu", "juta", "miliar", "triliun", atau tabel "dalam jutaan Rupiah"; sebut aturan pembulatan di stem bila hasil hitung tidak bulat.
 - Hindari skenario yang mirip soal MSK yang sudah ada (MSK-MCQ-001 s.d. 240, MSK-ESA-001 s.d. 080, MSK-KAS-001 s.d. 039) dan batch sebelumnya di percakapan ini.
-Bentuk soal dan variasi (wajib, Prompt B v4.6):
+Bentuk soal dan variasi (wajib, Prompt B v4.7):
 - Teori: menguji alasan, asumsi, keterbatasan, perbandingan, atau hubungan antarkonsep dari teori dan kerangka akademik manajemen stratejik dan kepemimpinan yang umum dipakai (mis. lima kekuatan Porter, PESTEL, VRIO, rantai nilai, strategi generik, matriks Ansoff dan BCG, balanced scorecard, 7S McKinsey, model perubahan Lewin dan Kotter, teori kepemimpinan). Tanpa entitas, atau ilustrasi paling banyak dua kalimat. Ikuti ragam yang tertulis di setiap topik. Bukan hafalan definisi, daftar, nama tokoh, nomor paragraf, atau tahun terbit.
 - Analisis: situasi entitas fiktif dengan data; ikuti pembuka dan jenis entitas yang tertulis di setiap topik. Kalimat pertama tidak boleh berbentuk "<Nama> (fiktif) adalah ...". Nama entitas tidak selalu berpola "PT <kata> <kata>".
 - Perintah tidak selalu "Menurut kerangka X". Pada soal sulit dan sangat sulit, sebagian soal tidak menyebut nama kerangka sehingga peserta memilih sendiri kerangka yang tepat.
 - Rubrik menilai kualitas penalaran, ketepatan konsep, dan penggunaan data; acceptableAlternatives menyebut kerangka atau sudut pandang lain yang sah beserta syarat nilai penuhnya.
 - Setiap kasus memuat tepat satu sub teori (tertulis di rincian kasus). Paling banyak dua sub menyebut nama alat analisis; alur kedua kasus berbeda.
 - Nama fiktif tidak boleh mirip merek, perusahaan, aplikasi, atau lembaga nyata, termasuk pola nama BUMD nyata dengan nama daerah atau tempat nyata.
-- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.6. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
-- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.6, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
+- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.7. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
+- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.7, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
 - Contoh soal ujian lama di Project hanya salah satu sumber gaya, bukan cetakan.
 Konteks ekonomi (wajib):
 - Kaitkan setiap soal dengan situasi perekonomian Indonesia dan global dalam tiga tahun terakhir (2023-2026) serta tantangan yang dihadapi ke depan, yang relevan dengan topiknya. Pilih tema yang paling cocok dari daftar di bawah; jangan memaksakan tema yang tidak relevan. Dalam satu batch, pakai tema yang beragam.
@@ -224,16 +227,17 @@ Catatan khusus:
 Catatan umum:
 - Ikuti docs/msk_taksonomi.md (taksonomi 12 topik T01-T12 dan kompetensi K01-K06; bukan taksonomi lama T01-T16).
 - Jangan menyalin contoh, nama perusahaan, atau angka dari modul dan soal resmi.
+- Nilai uang ditulis penuh dalam rupiah dengan titik ribuan (mis. Rp6.000.000.000), tanpa "ribu", "juta", "miliar", "triliun", atau tabel "dalam jutaan Rupiah"; sebut aturan pembulatan di stem bila hasil hitung tidak bulat.
 - Hindari skenario yang mirip soal MSK yang sudah ada (MSK-MCQ-001 s.d. 240, MSK-ESA-001 s.d. 080, MSK-KAS-001 s.d. 039) dan batch sebelumnya di percakapan ini.
-Bentuk soal dan variasi (wajib, Prompt B v4.6):
+Bentuk soal dan variasi (wajib, Prompt B v4.7):
 - Teori: menguji alasan, asumsi, keterbatasan, perbandingan, atau hubungan antarkonsep dari teori dan kerangka akademik manajemen stratejik dan kepemimpinan yang umum dipakai (mis. lima kekuatan Porter, PESTEL, VRIO, rantai nilai, strategi generik, matriks Ansoff dan BCG, balanced scorecard, 7S McKinsey, model perubahan Lewin dan Kotter, teori kepemimpinan). Tanpa entitas, atau ilustrasi paling banyak dua kalimat. Ikuti ragam yang tertulis di setiap topik. Bukan hafalan definisi, daftar, nama tokoh, nomor paragraf, atau tahun terbit.
 - Analisis: situasi entitas fiktif dengan data; ikuti pembuka dan jenis entitas yang tertulis di setiap topik. Kalimat pertama tidak boleh berbentuk "<Nama> (fiktif) adalah ...". Nama entitas tidak selalu berpola "PT <kata> <kata>".
 - Perintah tidak selalu "Menurut kerangka X". Pada soal sulit dan sangat sulit, sebagian soal tidak menyebut nama kerangka sehingga peserta memilih sendiri kerangka yang tepat.
 - Rubrik menilai kualitas penalaran, ketepatan konsep, dan penggunaan data; acceptableAlternatives menyebut kerangka atau sudut pandang lain yang sah beserta syarat nilai penuhnya.
 - Setiap kasus memuat tepat satu sub teori (tertulis di rincian kasus). Paling banyak dua sub menyebut nama alat analisis; alur kedua kasus berbeda.
 - Nama fiktif tidak boleh mirip merek, perusahaan, aplikasi, atau lembaga nyata, termasuk pola nama BUMD nyata dengan nama daerah atau tempat nyata.
-- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.6. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
-- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.6, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
+- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.7. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
+- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.7, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
 - Contoh soal ujian lama di Project hanya salah satu sumber gaya, bukan cetakan.
 Konteks ekonomi (wajib):
 - Kaitkan setiap soal dengan situasi perekonomian Indonesia dan global dalam tiga tahun terakhir (2023-2026) serta tantangan yang dihadapi ke depan, yang relevan dengan topiknya. Pilih tema yang paling cocok dari daftar di bawah; jangan memaksakan tema yang tidak relevan. Dalam satu batch, pakai tema yang beragam.
@@ -291,16 +295,17 @@ Catatan khusus:
 Catatan umum:
 - Ikuti docs/msk_taksonomi.md (taksonomi 12 topik T01-T12 dan kompetensi K01-K06; bukan taksonomi lama T01-T16).
 - Jangan menyalin contoh, nama perusahaan, atau angka dari modul dan soal resmi.
+- Nilai uang ditulis penuh dalam rupiah dengan titik ribuan (mis. Rp6.000.000.000), tanpa "ribu", "juta", "miliar", "triliun", atau tabel "dalam jutaan Rupiah"; sebut aturan pembulatan di stem bila hasil hitung tidak bulat.
 - Hindari skenario yang mirip soal MSK yang sudah ada (MSK-MCQ-001 s.d. 240, MSK-ESA-001 s.d. 080, MSK-KAS-001 s.d. 039) dan batch sebelumnya di percakapan ini.
-Bentuk soal dan variasi (wajib, Prompt B v4.6):
+Bentuk soal dan variasi (wajib, Prompt B v4.7):
 - Teori: menguji alasan, asumsi, keterbatasan, perbandingan, atau hubungan antarkonsep dari teori dan kerangka akademik manajemen stratejik dan kepemimpinan yang umum dipakai (mis. lima kekuatan Porter, PESTEL, VRIO, rantai nilai, strategi generik, matriks Ansoff dan BCG, balanced scorecard, 7S McKinsey, model perubahan Lewin dan Kotter, teori kepemimpinan). Tanpa entitas, atau ilustrasi paling banyak dua kalimat. Ikuti ragam yang tertulis di setiap topik. Bukan hafalan definisi, daftar, nama tokoh, nomor paragraf, atau tahun terbit.
 - Analisis: situasi entitas fiktif dengan data; ikuti pembuka dan jenis entitas yang tertulis di setiap topik. Kalimat pertama tidak boleh berbentuk "<Nama> (fiktif) adalah ...". Nama entitas tidak selalu berpola "PT <kata> <kata>".
 - Perintah tidak selalu "Menurut kerangka X". Pada soal sulit dan sangat sulit, sebagian soal tidak menyebut nama kerangka sehingga peserta memilih sendiri kerangka yang tepat.
 - Soal teori: paling banyak dua soal teori diawali latar periode atau kondisi ekonomi (mis. "Sepanjang 2023-2026 ..."); soal teori lain dibuka langsung dengan konsep, kutipan pernyataan, argumen yang keliru, atau perbandingan dua situasi. Kalimat perintah bervariasi.
 - Kunci tidak boleh dapat ditebak dari opsi saja: paling banyak satu distraktor per soal memakai kata mutlak (selalu, pasti, hanya, permanen, sepenuhnya); istilah khas kerangka tidak hanya muncul di kunci; panjang opsi setara.
 - Nama fiktif tidak boleh mirip merek, perusahaan, aplikasi, atau lembaga nyata, termasuk pola nama BUMD nyata dengan nama daerah atau tempat nyata.
-- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.6. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
-- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.6, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
+- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.7. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
+- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.7, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
 - Contoh soal ujian lama di Project hanya salah satu sumber gaya, bukan cetakan.
 Konteks ekonomi (wajib):
 - Kaitkan setiap soal dengan situasi perekonomian Indonesia dan global dalam tiga tahun terakhir (2023-2026) serta tantangan yang dihadapi ke depan, yang relevan dengan topiknya. Pilih tema yang paling cocok dari daftar di bawah; jangan memaksakan tema yang tidak relevan. Dalam satu batch, pakai tema yang beragam.
@@ -354,16 +359,17 @@ Catatan khusus:
 Catatan umum:
 - Ikuti docs/msk_taksonomi.md (taksonomi 12 topik T01-T12 dan kompetensi K01-K06; bukan taksonomi lama T01-T16).
 - Jangan menyalin contoh, nama perusahaan, atau angka dari modul dan soal resmi.
+- Nilai uang ditulis penuh dalam rupiah dengan titik ribuan (mis. Rp6.000.000.000), tanpa "ribu", "juta", "miliar", "triliun", atau tabel "dalam jutaan Rupiah"; sebut aturan pembulatan di stem bila hasil hitung tidak bulat.
 - Hindari skenario yang mirip soal MSK yang sudah ada (MSK-MCQ-001 s.d. 240, MSK-ESA-001 s.d. 080, MSK-KAS-001 s.d. 039) dan batch sebelumnya di percakapan ini.
-Bentuk soal dan variasi (wajib, Prompt B v4.6):
+Bentuk soal dan variasi (wajib, Prompt B v4.7):
 - Teori: menguji alasan, asumsi, keterbatasan, perbandingan, atau hubungan antarkonsep dari teori dan kerangka akademik manajemen stratejik dan kepemimpinan yang umum dipakai (mis. lima kekuatan Porter, PESTEL, VRIO, rantai nilai, strategi generik, matriks Ansoff dan BCG, balanced scorecard, 7S McKinsey, model perubahan Lewin dan Kotter, teori kepemimpinan). Tanpa entitas, atau ilustrasi paling banyak dua kalimat. Ikuti ragam yang tertulis di setiap topik. Bukan hafalan definisi, daftar, nama tokoh, nomor paragraf, atau tahun terbit.
 - Analisis: situasi entitas fiktif dengan data; ikuti pembuka dan jenis entitas yang tertulis di setiap topik. Kalimat pertama tidak boleh berbentuk "<Nama> (fiktif) adalah ...". Nama entitas tidak selalu berpola "PT <kata> <kata>".
 - Perintah tidak selalu "Menurut kerangka X". Pada soal sulit dan sangat sulit, sebagian soal tidak menyebut nama kerangka sehingga peserta memilih sendiri kerangka yang tepat.
 - Rubrik menilai kualitas penalaran, ketepatan konsep, dan penggunaan data; acceptableAlternatives menyebut kerangka atau sudut pandang lain yang sah beserta syarat nilai penuhnya.
 - Soal teori: paling banyak dua soal teori diawali latar periode atau kondisi ekonomi (mis. "Sepanjang 2023-2026 ..."); soal teori lain dibuka langsung dengan konsep, kutipan pernyataan, argumen yang keliru, atau perbandingan dua situasi. Kalimat perintah bervariasi.
 - Nama fiktif tidak boleh mirip merek, perusahaan, aplikasi, atau lembaga nyata, termasuk pola nama BUMD nyata dengan nama daerah atau tempat nyata.
-- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.6. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
-- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.6, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
+- Pembuka, entitas, dan ragam di daftar topik sudah memenuhi batas Prompt B v4.7. Jangan menukarnya; bila terpaksa, tulis alasannya di Catatan penyusun.
+- Baris pertama authoring.notes: label bentuk sesuai Prompt B v4.7, mis. "Bentuk: teori; ragam: asumsi." atau "Bentuk: analisis; pembuka: dokumen; entitas: BUMD."
 - Contoh soal ujian lama di Project hanya salah satu sumber gaya, bukan cetakan.
 Konteks ekonomi (wajib):
 - Kaitkan setiap soal dengan situasi perekonomian Indonesia dan global dalam tiga tahun terakhir (2023-2026) serta tantangan yang dihadapi ke depan, yang relevan dengan topiknya. Pilih tema yang paling cocok dari daftar di bawah; jangan memaksakan tema yang tidak relevan. Dalam satu batch, pakai tema yang beragam.

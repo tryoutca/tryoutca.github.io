@@ -92,3 +92,11 @@ data), jadi bentuk keluarannya harus lengkap di dalam prompt itu sendiri.
 | B-17 | Penyusun | Kedalaman soal teori, Variasi cerita, langkah 3 | Isyarat kata mutlak, istilah khas, pembuka soal teori, nama fiktif | Tidak ada |
 | C-8 | Reviewer | Langkah 9 dan 10, Tingkat temuan | Kunci tertebak dari opsi (distractorQuality, mayor); pembuka teori seragam dan nama mirip nama nyata (originality, minor) | Tidak ada. Enum dimension dan reviewVersion "4.1" tetap |
 | K-3 | Kalibrasi | Variasi soal | Aturan yang sama dengan B-17; cacat PENGECOH tetap ketidakrelevanan konsep | Tidak ada |
+
+## Prompt B v4.7, Prompt C v4.6, Prompt D v1.4 (2026-11-01, disetujui pemilik)
+
+| No | Prompt | Bagian | Perubahan | Dampak pada kontrak |
+|---|---|---|---|---|
+| B-18 | Penyusun | Aturan wajib, langkah 3, Revisi | Nilai uang ditulis penuh dalam rupiah; jenis revisi "format angka" | Tidak ada. `numericAnswer.unit` tetap string bebas ("Rp") |
+| C-9 | Reviewer | Langkah 7, Tingkat temuan | Nilai uang tidak penuh = minor (stemClarity) | Tidak ada |
+| K-4 | Kalibrasi | Variasi soal | Aturan nilai uang sama; bukan tempat cacat | Tidak ada |
