@@ -55,8 +55,16 @@ export function measureWords(q) {
   return { reading: countWords(q.stem), answer: 0 };
 }
 
-// Daftar pesan peringatan (kosong bila sesuai standar). Soal kalibrasi tidak
-// diperiksa; soal yang sudah tayang (LIVE/RETIRED) dipertahankan apa adanya (D-101).
+// Toleransi (D-123): selisih kecil dari standar tidak dipersoalkan. Perkiraan waktu
+// boleh berbeda sampai 20% dari standar; panjang bacaan dan jawaban ideal boleh
+// melebihi batas sampai 25%. Prompt penyusun dan reviewer memakai angka yang sama.
+export const MINUTES_TOLERANCE = 0.2;
+export const WORDS_TOLERANCE = 0.25;
+const minutesOk = (estimated, standard) => Math.abs(estimated - standard) <= standard * MINUTES_TOLERANCE + 1e-9;
+export const wordCap = (limit) => Math.floor(limit * (1 + WORDS_TOLERANCE));
+
+// Daftar pesan peringatan (kosong bila sesuai standar dalam toleransi). Soal kalibrasi
+// tidak diperiksa; soal yang sudah tayang (LIVE/RETIRED) dipertahankan apa adanya (D-101).
 const UNCHECKED = ['CALIBRATION', 'LIVE', 'RETIRED'];
 export function timeStandardIssues(q) {
   if (q.lifecycle && UNCHECKED.includes(q.lifecycle.status)) return [];
@@ -67,15 +75,15 @@ export function timeStandardIssues(q) {
     if (q.caseSize !== allowed) issues.push(`kasus ${level} harus berukuran ${allowed}, bukan ${q.caseSize}`);
   }
   const std = standardMinutes(q);
-  if (std !== null && q.estimatedMinutes !== std) {
-    issues.push(`perkiraan waktu ${String(q.estimatedMinutes).replace('.', ',')} menit, standar ${level} ${String(std).replace('.', ',')} menit`);
+  if (std !== null && !minutesOk(q.estimatedMinutes, std)) {
+    issues.push(`perkiraan waktu ${String(q.estimatedMinutes).replace('.', ',')} menit, standar ${level} ${String(std).replace('.', ',')} menit (toleransi ±${MINUTES_TOLERANCE * 100}%)`);
   }
   const limits = (WORD_LIMITS[standardKey(q)] || {})[q.difficulty];
   if (limits) {
     const words = measureWords(q);
     const readingName = q.type === 'case' ? 'narasi dan data' : q.type === 'mcq' ? 'stem dan opsi' : 'stem';
-    if (words.reading > limits.reading) issues.push(`${readingName} ${words.reading} kata, batas ${level} ${limits.reading}`);
-    if (limits.answer && words.answer > limits.answer) issues.push(`jawaban ideal ${words.answer} kata, batas ${level} ${limits.answer}`);
+    if (words.reading > wordCap(limits.reading)) issues.push(`${readingName} ${words.reading} kata, batas ${level} ${limits.reading} (toleransi sampai ${wordCap(limits.reading)})`);
+    if (limits.answer && words.answer > wordCap(limits.answer)) issues.push(`jawaban ideal ${words.answer} kata, batas ${level} ${limits.answer} (toleransi sampai ${wordCap(limits.answer)})`);
   }
   return issues;
 }

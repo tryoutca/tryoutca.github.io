@@ -285,10 +285,11 @@ dengan tingkat kesulitan tertentu.
 - Lint sebelum review: field wajib; ID unik; jumlah rubrik; tepat 4 opsi;
   answerKey A-D; distractorRationale lengkap; topik/kompetensi ada di pack;
   skor kelipatan 0,5. Pesan lint menyebut ID dan field.
-- Peringatan lint standar waktu (6.2, D-99): estimatedMinutes tidak sama
-  dengan standar, ukuran kasus tidak sesuai tingkat kesulitan, atau panjang
-  stem/narasi/jawaban ideal melebihi batas kriteria. Peringatan tidak menolak
-  batch; reviewer menilai dimensi timeEstimate terhadap standar yang sama.
+- Peringatan lint standar waktu (6.2, D-99, toleransi D-123): estimatedMinutes
+  berbeda lebih dari 20% dari standar, ukuran kasus tidak sesuai tingkat
+  kesulitan, atau panjang stem/narasi/jawaban ideal melebihi batas kriteria
+  lebih dari 25%. Peringatan tidak menolak batch; reviewer menilai dimensi
+  timeEstimate dengan toleransi yang sama.
 - Pengelola Bank Soal: Impor Batch; daftar soal dengan filter status/topik/tipe;
   pratinjau soal seperti tampilan peserta; Ekspor Paket Review (maks 10 soal
   PG, 5 esai, atau 2 kasus per batch) dengan tombol Salin Prompt + Data.
@@ -300,7 +301,16 @@ dengan tingkat kesulitan tertentu.
   reviewerModel.
 - Keputusan otomatis: APPROVE tanpa temuan kritis -> AI_REVIEWED; REVISE atau
   ada temuan kritis -> NEEDS_REVISION; REJECT -> REJECTED (dapat dibatalkan
-  manusia dengan alasan tertulis).
+  manusia dengan alasan tertulis; hitungan revisi mulai dari awal).
+- Batas revisi (D-121): paling banyak 3 kali revisi per soal. Putaran revisi
+  = isi soal berbeda (contentHash) yang hasil reviewnya Perlu revisi. Bila
+  hasil review pada putaran ke-4 masih Perlu revisi, soal otomatis REJECTED
+  (riwayat mencatat alasannya).
+- Penolakan hasil review oleh admin (D-122): untuk soal Perlu revisi atau
+  Ditolak, admin dapat menolak hasil review yang dinilai janggal dan
+  meloloskan soal menjadi AI_REVIEWED dengan inisial dan alasan wajib.
+  Hasil itu tidak dihitung sebagai revisi gagal; APPROVED tetap langkah
+  terpisah.
 - SEBAIKNYA mendukung review ganda; bila dua verdict berbeda, wajib keputusan
   manusia.
 - Persetujuan manusia: tombol Setujui dengan isian inisial -> APPROVED.

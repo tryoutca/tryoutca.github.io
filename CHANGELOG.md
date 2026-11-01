@@ -3,6 +3,43 @@
 Catatan perubahan prompt (`prompts/*.md`) dan kontrak data. Setiap
 perubahan prompt dirujuk ke docs/PROMPT_ALIGNMENT.md.
 
+## 2026-11-01 — Prompt B v4.9, C v4.8, D v1.6: toleransi waktu dan batas revisi
+Disetujui pemilik 2026-11-01. Latar: pemilik meminta (1) revisi paling banyak
+3 kali, lewat dari itu Ditolak; (2) menu admin untuk menolak hasil review
+yang janggal dan meloloskan soal; (3) toleransi pada estimasi waktu agar
+penyusun tidak kebingungan menyesuaikan dan substansi yang diutamakan.
+Kontrak data tidak berubah. Rujukan: D-121, D-122, D-123, PROMPT_ALIGNMENT
+B-20, C-11, K-6.
+
+### prompts/prompt_penyusun_soal.md (Prompt B)
+- Judul v4.8 → v4.9.
+- Standar waktu: toleransi menit ±20% dan bacaan/jawaban ideal sampai +25%;
+  rumus pemeriksa × 1,2; substansi diutamakan atas penghematan kata.
+- Revisi: batas 3 kali per soal, perbaiki semua temuan sekaligus; jangan
+  merevisi hanya karena waktu atau panjang dalam toleransi.
+
+### prompts/prompt_reviewer_soal.md (Prompt C)
+- Judul v4.7 → v4.8.
+- timeEstimate dengan toleransi: dalam toleransi skor 4-5 tanpa temuan;
+  melebihi batas 25-50% atau menit di luar ±20% = minor; lebih dari 50% =
+  mayor. Waktu atau panjang dalam toleransi tidak menyebabkan REVISE;
+  temuan minor saja tidak menghalangi APPROVE.
+
+### prompts/prompt_kalibrasi_soal.md (Prompt D)
+- Judul v1.5 → v1.6; toleransi sama dengan Prompt B; rujukan Prompt B v4.9.
+
+### Aplikasi
+- `js/core/time-standard.js`: lint waktu memakai toleransi (D-123).
+- `js/core/bank.js` dan `js/core/review-io.js`: batas 3 revisi dengan Ditolak
+  otomatis (D-121); `overrideReview` (D-122); teks "Salin untuk penyusun"
+  memuat putaran revisi.
+- `js/ui/bank-manager.js`: tombol "Tolak hasil review, loloskan", catatan
+  putaran revisi dan penolakan oleh admin.
+
+### docs/formulir
+- Gelombang 6 MSK dan PK: baris toleransi di setiap blok; rujukan versi
+  Prompt B v4.9 dan Prompt C v4.8.
+
 ## 2026-11-01 — Prompt B v4.8, C v4.7, D v1.5: gaya bahasa yang mudah dipahami
 Disetujui pemilik 2026-11-01. Latar: pemilik menilai bahasa soal kurang
 natural dan agak sulit dipahami. Pengukuran terhadap contoh ujian resmi

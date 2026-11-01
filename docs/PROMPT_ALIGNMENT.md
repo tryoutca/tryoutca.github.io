@@ -108,3 +108,11 @@ data), jadi bentuk keluarannya harus lengkap di dalam prompt itu sendiri.
 | B-19 | Penyusun | Bagian baru "Gaya bahasa", langkah 3, Revisi | Batas kalimat, titik koma, kurung, opsi PG, pilihan kata; jenis revisi bahasa | Tidak ada. Batas kata bacaan per tingkat (lint D-99) tetap berlaku |
 | C-10 | Reviewer | Langkah 7 | Kemudahan dipahami: minor (stemClarity), ambigu = mayor | Tidak ada. Enum dimension dan reviewVersion "4.1" tetap |
 | K-5 | Kalibrasi | Aturan bentuk soal | Gaya bahasa sama dengan Prompt B; bukan tempat cacat | Tidak ada |
+
+## Prompt B v4.9, Prompt C v4.8, Prompt D v1.6 (2026-11-01, disetujui pemilik)
+
+| No | Prompt | Bagian | Perubahan | Dampak pada kontrak |
+|---|---|---|---|---|
+| B-20 | Penyusun | Aturan wajib (estimatedMinutes), Standar waktu, Revisi | Toleransi menit ±20% dan bacaan +25%; batas 3 revisi; jangan merevisi karena waktu dalam toleransi | Tidak ada. `estimatedMinutes` tetap number > 0 di skema |
+| C-11 | Reviewer | Langkah 6, tabel standar, Tingkat temuan, Aturan verdict | timeEstimate dengan toleransi; substansi diutamakan; minor tidak menghalangi APPROVE | Tidak ada. Enum dimension dan reviewVersion "4.1" tetap |
+| K-6 | Kalibrasi | Aturan bentuk soal, Standar waktu | Toleransi sama dengan Prompt B; waktu dan panjang bukan tempat cacat | Tidak ada |

@@ -420,13 +420,50 @@ function requireReason(reason) {
   return r;
 }
 
+// Batas revisi (D-121): satu soal dapat diminta direvisi paling banyak 3 kali. Bila
+// sesudah revisi ketiga hasil review masih Perlu revisi, soal otomatis Ditolak.
+export const MAX_REVISIONS = 3;
+export const OVERRIDE_PREFIX = 'hasil review ditolak admin: ';
+
+// Jumlah putaran revisi yang gagal: isi soal (contentHash) berbeda yang hasil reviewnya
+// Perlu revisi. Hasil yang ditolak admin (D-122) dan riwayat sebelum penolakan
+// dibatalkan tidak dihitung. Dua reviewer pada isi yang sama dihitung satu putaran.
+export function failedRounds(bank, id) {
+  const hashes = bank.reviewRecords.filter((r) => r.questionId === id && r.decision === 'NEEDS_REVISION' && !r.overridden && !r.archived).map((r) => r.contentHash);
+  return new Set(hashes).size;
+}
+
+// Catatan penolakan hasil review oleh admin bila itu perubahan status terakhir soal.
+export function lastOverride(q) {
+  const last = (q.lifecycle.history || []).at(-1);
+  return last && last.reason && last.reason.startsWith(OVERRIDE_PREFIX) ? last : null;
+}
+
 // REJECTED dapat dibatalkan manusia dengan alasan tertulis (SPEC 8) -> DRAFT untuk direview ulang.
+// Hitungan revisi dimulai dari awal (D-121).
 export function undoReject(bank, id, { by, reason }, now) {
   const q = findQuestion(bank, id);
   if (!q || q.lifecycle.status !== 'REJECTED') throw new BankError(`Soal ${id} tidak berstatus Ditolak.`);
   setStatus(q, 'DRAFT', now, { by: String(by ?? '').trim() || undefined, reason: requireReason(reason) });
   q.lifecycle.review = null;
+  for (const r of bank.reviewRecords) if (r.questionId === id) r.archived = true;
   log(bank, now, `Penolakan soal ${id} dibatalkan: ${reason}`);
+}
+
+// Admin menolak hasil review yang dinilai janggal dan meloloskan soal menjadi Lolos review AI
+// (D-122). Berlaku untuk Perlu revisi dan Ditolak; wajib inisial dan alasan. Persetujuan
+// (APPROVED) tetap langkah terpisah. Hasil review pada isi soal ini tidak dihitung sebagai revisi gagal.
+export function overrideReview(bank, id, { by, reason }, now) {
+  const q = findQuestion(bank, id);
+  if (!q || !['NEEDS_REVISION', 'REJECTED'].includes(q.lifecycle.status)) throw new BankError(`Soal ${id} tidak berstatus Perlu revisi atau Ditolak.`);
+  if (!q.lifecycle.review) throw new BankError(`Soal ${id}: belum ada hasil review yang dapat ditolak.`);
+  const who = String(by ?? '').trim();
+  if (!INITIALS.test(who)) throw new BankError('Isi inisial (huruf, maks 15 karakter), mis. "LMA".');
+  const why = requireReason(reason);
+  setStatus(q, 'AI_REVIEWED', now, { by: who, reason: `${OVERRIDE_PREFIX}${why}` });
+  for (const r of bank.reviewRecords) if (r.questionId === id && r.contentHash === q.lifecycle.contentHash) r.overridden = true;
+  delete bank.conflicts[id];
+  log(bank, now, `Hasil review soal ${id} ditolak admin ${who}, soal diloloskan ke Lolos review AI: ${why}`);
 }
 
 // Paket review yang memuat soal-soal ini dan belum pernah diimpor hasilnya;

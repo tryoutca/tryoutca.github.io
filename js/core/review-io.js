@@ -6,7 +6,7 @@ import { contentHash } from './hash.js';
 import { validateDocument } from './contract.js';
 import { SCHEMA_VERSION } from './version.js';
 import { shuffle } from './random.js';
-import { BankError, STATUS_LABELS, extractJson, findQuestion } from './bank.js';
+import { BankError, MAX_REVISIONS, STATUS_LABELS, extractJson, failedRounds, findQuestion } from './bank.js';
 
 const iso = (ms) => new Date(ms).toISOString();
 const clone = (x) => JSON.parse(JSON.stringify(x));
@@ -116,6 +116,8 @@ export function revisionRequestText(bank, ids) {
   const sections = qs.map((q) => {
     const review = q.lifecycle.review;
     const lines = [`## ${q.id}`];
+    const rounds = failedRounds(bank, q.id);
+    if (rounds) lines.push(`Putaran revisi: ${rounds} dari maksimal ${MAX_REVISIONS}. Perbaiki semua temuan sekaligus; bila setelah revisi ketiga hasil review masih Perlu revisi, soal ditolak.`);
     if (!review) lines.push('Belum ada hasil review untuk soal ini.');
     else {
       const r = review.result;
@@ -284,8 +286,12 @@ export function applyReviewResult(bank, validation, now) {
       target = distinct.sort((a, b) => DECISION_RANK[b] - DECISION_RANK[a])[0];
       bank.conflicts[q.id] = { contentHash: ref.contentHash, decisions: all.map((r) => ({ reviewerModel: r.reviewerModel, verdict: r.verdict, decision: r.decision, batchId: r.batchId })) };
     }
+    // Batas revisi (D-121): putaran gagal ke-4 (lebih dari MAX_REVISIONS) -> Ditolak.
+    const rounds = failedRounds(bank, q.id);
+    const overLimit = target === 'NEEDS_REVISION' && rounds > MAX_REVISIONS;
+    if (overLimit) target = 'REJECTED';
     const from = q.lifecycle.status;
-    const reason = `review ${result.batchId} oleh ${model}: ${item.verdict}${conflict ? ' (berbeda dengan review lain)' : ''}`;
+    const reason = `review ${result.batchId} oleh ${model}: ${item.verdict}${conflict ? ' (berbeda dengan review lain)' : ''}${overLimit ? `; ditolak otomatis karena masih Perlu revisi setelah ${MAX_REVISIONS} kali revisi` : ''}`;
     if (from !== target) {
       q.lifecycle.history = [...(q.lifecycle.history || []), { from, to: target, at: iso(now), by: model, reason }];
       q.lifecycle.status = target;

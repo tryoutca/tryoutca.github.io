@@ -157,7 +157,12 @@ Skala asli: mcq 1, numeric 1, essay 10, case 20. Field wajib per tipe: lihat
    bila ada isi yang berubah, termasuk pembahasan, alasan distraktor, atau
    kesulitan. Bila revisi sudah diimpor tetapi status belum berubah, atau Anda
    tidak setuju dengan temuan reviewer, tekan **Kembalikan ke Draf** di
-   pratinjau soal (inisial dan alasan wajib).
+   pratinjau soal (inisial dan alasan wajib). Satu soal paling banyak 3 kali
+   direvisi: bila hasil review sesudah revisi ketiga masih *Perlu revisi*,
+   soal otomatis *Ditolak*. Bila hasil review dinilai janggal, tekan **Tolak
+   hasil review, loloskan** di pratinjau soal *Perlu revisi* atau *Ditolak*
+   (inisial dan alasan wajib); soal menjadi *Lolos review AI* dan hasil itu
+   tidak dihitung sebagai revisi gagal.
 8. **Setujui**: periksa pratinjau, lalu Setujui dengan inisial → *Disetujui*.
    Review ganda opsional: impor hasil reviewer kedua untuk paket yang sama. Bila
    pendapat berbeda, putuskan sendiri dengan alasan.

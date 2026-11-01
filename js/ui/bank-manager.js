@@ -10,6 +10,7 @@ import {
   BankError, STATUS_LABELS, STATUS_ORDER, adoptBuiltInLive, applyBatchImport, approve, bankStats, builtInLiveDiff, createBank, deleteRejected, exportPackText,
   filterQuestions, findQuestion, loadBank, openReviewBatches, pageOf, previewNeighbors, pendingPublication, planBatchImport, publish, resolveConflict,
   retire, returnToDraft, saveBank, taxonomyDiff, undoReject, updateTaxonomy, withTaxonomy, KEY_SHARE_LIMIT,
+  MAX_REVISIONS, failedRounds, lastOverride, overrideReview,
 } from '../core/bank.js';
 import {
   REVIEWABLE, applyReviewResult, buildReviewPackage, calibrationTable, checkReviewSelection,
@@ -408,6 +409,7 @@ export function renderBank(app) {
     if (bank.conflicts[q.id]) actions.push(h('button', { type: 'button', class: 'btn btn-primary', onclick: () => decideConflict(q.id) }, 'Putuskan hasil review'));
     if (review && s !== 'CALIBRATION') actions.push(h('button', { type: 'button', class: s === 'NEEDS_REVISION' ? 'btn btn-primary' : 'btn', onclick: () => copyRevision([q.id]) }, 'Salin untuk penyusun'));
     if (s === 'NEEDS_REVISION') actions.push(h('button', { type: 'button', class: 'btn', onclick: () => withReason(q.id, 'Kembalikan ke Draf', returnToDraft) }, 'Kembalikan ke Draf'));
+    if ((s === 'NEEDS_REVISION' || s === 'REJECTED') && review) actions.push(h('button', { type: 'button', class: 'btn', onclick: () => withReason(q.id, 'Loloskan review AI', overrideReview) }, 'Tolak hasil review, loloskan'));
     if (s === 'REJECTED') actions.push(h('button', { type: 'button', class: 'btn', onclick: () => withReason(q.id, 'Batalkan penolakan', undoReject) }, 'Batalkan penolakan'));
     if (s === 'REJECTED') actions.push(h('button', { type: 'button', class: 'btn btn-danger', onclick: () => deleteIds([q.id]) }, 'Hapus soal'));
     if (s === 'LIVE') actions.push(h('button', { type: 'button', class: 'btn', onclick: () => withReason(q.id, 'Pensiunkan soal', retire) }, 'Pensiunkan'));
@@ -417,6 +419,7 @@ export function renderBank(app) {
         h('button', { type: 'button', class: 'btn btn-icon', 'aria-label': 'Tutup pratinjau', onclick: () => { state.preview = null; render(); } }, '×')),
       h('p', { class: 'hint', text: `${TYPE_LABELS[q.type]} · ${q.topicIds.join(', ')} · ${q.competencyIds.join(', ')} · ${DIFFICULTY_LABELS[q.difficulty]} · ${q.cognitiveLevel} · ${formatNumber(q.estimatedMinutes)} menit` }),
       timeStandardNotice(q),
+      revisionNotice(q),
       h('div', { class: 'preview-view' }, view),
       h('details', { open: true }, h('summary', { text: 'Kunci, pembahasan, dan rubrik' }), answerKeyView(q)),
       review ? h('details', {}, h('summary', { text: `Hasil review terakhir: ${review.result.verdict} (${review.reviewerModel})` }), reviewView(review.result)) : null,
@@ -575,6 +578,17 @@ export function renderBank(app) {
         timeWarningsNotice(plan.entries),
         plan.notes ? h('p', { class: 'prose hint', text: plan.notes }) : null,
         h('button', { type: 'button', class: 'btn btn-primary', onclick: doImportBatch }, 'Impor ke bank')) : null);
+  }
+
+  // Putaran revisi (D-121) dan penolakan hasil review oleh admin (D-122).
+  function revisionNotice(q) {
+    const s = q.lifecycle.status;
+    const rounds = failedRounds(bank, q.id);
+    const override = lastOverride(q);
+    if (override && s === 'AI_REVIEWED') return h('p', { class: 'notice', text: `Hasil review ditolak admin${override.by ? ` (${override.by})` : ''}: ${override.reason.slice('hasil review ditolak admin: '.length)}. Soal diloloskan ke Lolos review AI; persetujuan tetap langkah terpisah.` });
+    if (s === 'NEEDS_REVISION') return h('p', { class: 'hint', text: `Putaran revisi ${rounds} dari maksimal ${MAX_REVISIONS}. Bila setelah revisi ketiga masih Perlu revisi, soal otomatis Ditolak.` });
+    if (s === 'REJECTED' && rounds > MAX_REVISIONS) return h('p', { class: 'notice', text: `Ditolak otomatis: masih Perlu revisi setelah ${MAX_REVISIONS} kali revisi. Bila hasil review dinilai janggal, admin dapat meloloskan soal lewat "Tolak hasil review, loloskan".` });
+    return null;
   }
 
   function timeStandardNotice(q) {

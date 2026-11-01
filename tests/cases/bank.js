@@ -5,6 +5,7 @@ import { loadJson } from './env.js';
 import {
   adoptBuiltInLive, applyBatchImport, approve, bankStats, builtInLiveDiff, createBank, deleteRejected, editQuestion, exportPackText, extractJson, filterQuestions, findQuestion,
   loadBank, openReviewBatches, pageOf, planBatchImport, previewNeighbors, publish, resolveConflict, retire, returnToDraft, saveBank, taxonomyDiff, undoReject, updateTaxonomy, withTaxonomy,
+  MAX_REVISIONS, failedRounds, lastOverride, overrideReview,
 } from '../../js/core/bank.js';
 import {
   applyReviewResult, buildReviewPackage, checkReviewSelection, decide, reviewPromptText, revisionRequestText, validateReviewResult,
@@ -296,6 +297,88 @@ export default {
         assert.equal(pageOf(list, 9, 20).page, 2);
         assert.equal(pageOf(list, 1, 0).items.length, 45);
         assert.deepEqual(pageOf([], 3, 20), { items: [], page: 0, pages: 1, from: 0, to: 0, total: 0 });
+      },
+    },
+    {
+      name: 'batas revisi (D-121): putaran gagal ke-4 -> Ditolak otomatis; batalkan penolakan mengulang hitungan',
+      run: async () => {
+        const { bank, ids } = await bankWithDrafts(2);
+        let n = 0;
+        // Satu putaran: ubah isi bila soal bukan Draf, lalu review dengan verdict yang diminta.
+        const round = async (id, verdict = 'REVISE') => {
+          n++;
+          const current = findQuestion(bank, id);
+          if (current.lifecycle.status !== 'DRAFT') {
+            const q = clone(current);
+            q.stem = `${q.stem} (perbaikan ${n})`;
+            await editQuestion(bank, q, T, 'revisi uji');
+          }
+          const pkg = await buildReviewPackage(bank, [id], { includeCalibration: false, rng: createRng(n), now: T + n });
+          const v = validateReviewResult(bank, makeReviewResult(pkg, { model: `reviewer-${n}`, verdictFor: () => ({ verdict, findings: verdict === 'REVISE' ? [finding('mayor', 'stemClarity')] : [] }) }));
+          assert.ok(v.ok, v.errors && messages(v.errors));
+          applyReviewResult(bank, v, T + n);
+          return findQuestion(bank, id);
+        };
+        assert.equal(MAX_REVISIONS, 3);
+        const [a, b] = ids;
+        for (let i = 1; i <= MAX_REVISIONS; i++) {
+          const q = await round(a);
+          assert.equal(q.lifecycle.status, 'NEEDS_REVISION', `putaran ${i}`);
+          assert.equal(failedRounds(bank, a), i);
+        }
+        assert.ok(revisionRequestText(bank, [a]).includes('Putaran revisi: 3 dari maksimal 3'));
+        const rejected = await round(a);
+        assert.equal(rejected.lifecycle.status, 'REJECTED', 'putaran ke-4 yang gagal ditolak otomatis');
+        assert.equal(failedRounds(bank, a), 4);
+        assert.ok(rejected.lifecycle.history.at(-1).reason.includes('ditolak otomatis'));
+        // Soal lain: gagal sekali lalu lolos tetap berjalan normal.
+        assert.equal((await round(b)).lifecycle.status, 'NEEDS_REVISION');
+        assert.equal((await round(b, 'APPROVE')).lifecycle.status, 'AI_REVIEWED');
+        // Batalkan penolakan: hitungan revisi mulai dari awal.
+        undoReject(bank, a, { by: 'LMA', reason: 'Layak dicoba lagi.' }, T);
+        assert.equal(failedRounds(bank, a), 0);
+        const again = await round(a);
+        assert.equal(again.lifecycle.status, 'NEEDS_REVISION');
+        assert.equal(failedRounds(bank, a), 1);
+      },
+    },
+    {
+      name: 'admin menolak hasil review (D-122): Perlu revisi atau Ditolak -> Lolos review AI, wajib inisial dan alasan, tidak dihitung revisi gagal',
+      run: async () => {
+        const { bank, ids } = await bankWithDrafts(2);
+        const [a, b] = ids;
+        let n = 100;
+        const review = async (id, verdict) => {
+          n++;
+          const pkg = await buildReviewPackage(bank, [id], { includeCalibration: false, rng: createRng(n), now: T + n });
+          const v = validateReviewResult(bank, makeReviewResult(pkg, { model: `reviewer-${n}`, verdictFor: () => ({ verdict, findings: [finding('kritis', 'keyCorrectness')] }) }));
+          assert.ok(v.ok, v.errors && messages(v.errors));
+          applyReviewResult(bank, v, T + n);
+        };
+        await review(a, 'REVISE');
+        await review(b, 'REJECT');
+        assert.equal(findQuestion(bank, a).lifecycle.status, 'NEEDS_REVISION');
+        assert.equal(findQuestion(bank, b).lifecycle.status, 'REJECTED');
+        assert.equal(failedRounds(bank, a), 1);
+        await assert.rejects(() => overrideReview(bank, a, { by: '', reason: 'x' }, T), /inisial/);
+        await assert.rejects(() => overrideReview(bank, a, { by: 'LMA', reason: ' ' }, T), /Alasan/);
+        overrideReview(bank, a, { by: 'LMA', reason: 'Temuan reviewer keliru: kunci sudah benar.' }, T);
+        const qa = findQuestion(bank, a);
+        assert.equal(qa.lifecycle.status, 'AI_REVIEWED');
+        assert.equal(failedRounds(bank, a), 0, 'hasil yang ditolak admin tidak dihitung');
+        const note = lastOverride(qa);
+        assert.equal(note.by, 'LMA');
+        assert.ok(note.reason.includes('kunci sudah benar'));
+        approve(bank, [a], 'LMA', T);
+        assert.equal(findQuestion(bank, a).lifecycle.status, 'APPROVED');
+        assert.equal(lastOverride(findQuestion(bank, a)), null, 'catatan hanya tampil sebagai riwayat terakhir');
+        overrideReview(bank, b, { by: 'LMA', reason: 'Penolakan terlalu keras.' }, T);
+        assert.equal(findQuestion(bank, b).lifecycle.status, 'AI_REVIEWED');
+        await assert.rejects(() => overrideReview(bank, b, { by: 'LMA', reason: 'x' }, T), /Perlu revisi atau Ditolak/);
+        assert.ok(bank.log.at(-1).message.includes(b));
+        // Soal Draf tanpa hasil review tidak dapat diloloskan.
+        const fresh = await bankWithDrafts(1);
+        await assert.rejects(() => overrideReview(fresh.bank, fresh.ids[0], { by: 'LMA', reason: 'x' }, T), /Perlu revisi atau Ditolak/);
       },
     },
     {

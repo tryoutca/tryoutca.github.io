@@ -109,10 +109,16 @@ export default {
         const words = (n) => Array.from({ length: n }, () => 'kata').join(' ');
         const essay = { type: 'essay', difficulty: 'sedang', estimatedMinutes: 10, stem: words(150), modelAnswer: words(170) };
         assert.deepEqual(timeStandardIssues(essay), []);
-        assert.deepEqual(timeStandardIssues({ ...essay, modelAnswer: words(171), estimatedMinutes: 18 }), [
-          'perkiraan waktu 18 menit, standar sedang 10 menit',
-          'jawaban ideal 171 kata, batas sedang 170',
+        // Toleransi (D-123): waktu ±20%, bacaan dan jawaban ideal sampai +25% dari batas.
+        assert.deepEqual(timeStandardIssues({ ...essay, estimatedMinutes: 12, stem: words(187), modelAnswer: words(212) }), [], 'di dalam toleransi');
+        assert.deepEqual(timeStandardIssues({ ...essay, estimatedMinutes: 8 }), []);
+        assert.deepEqual(timeStandardIssues({ ...essay, modelAnswer: words(213), estimatedMinutes: 18 }), [
+          'perkiraan waktu 18 menit, standar sedang 10 menit (toleransi ±20%)',
+          'jawaban ideal 213 kata, batas sedang 170 (toleransi sampai 212)',
         ]);
+        assert.equal(timeStandardIssues({ ...essay, estimatedMinutes: 12.1 }).length, 1);
+        assert.equal(timeStandardIssues({ ...essay, estimatedMinutes: 7.9 }).length, 1);
+        assert.deepEqual(timeStandardIssues({ type: 'mcq', difficulty: 'sedang', estimatedMinutes: 1.8, stem: words(150), options: [] }), [], 'PG sedang 1,8 menit dan 150 kata dalam toleransi');
         const kasus = {
           type: 'case', caseSize: 'mini', difficulty: 'sulit', estimatedMinutes: 40, stem: words(10), caseNarrative: words(100),
           subQuestions: [{ modelAnswer: words(50) }],
