@@ -102,13 +102,13 @@ a { color: var(--accent); }
 /* Beranda */
 .package-list { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); margin: 12px 0 16px; }
 .package-card {
-  display: block; position: relative; border: 2px solid var(--border); border-radius: var(--radius);
-  background: var(--surface); padding: 14px; cursor: pointer; min-height: 120px;
+  display: flex; flex-direction: column; border: 2px solid var(--border); border-radius: var(--radius);
+  background: var(--surface); padding: 14px; min-height: 120px;
 }
-.package-card input { position: absolute; opacity: 0; pointer-events: none; }
-.package-card:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
-.package-card:has(input:focus-visible) { outline: 3px solid var(--accent); outline-offset: 2px; }
-.package-card .name { font-weight: 700; font-size: 1.05rem; display: block; margin-bottom: 6px; }
+.package-card:hover, .package-card:focus-within { border-color: var(--accent); }
+.package-card .name { font-weight: 700; font-size: 1.05rem; display: block; margin: 0 0 6px; }
+.package-card .package-start { margin-top: auto; width: 100%; letter-spacing: .03em; }
+.package-card .meta:last-of-type { margin-bottom: 12px; }
 .package-card .meta { color: var(--muted); font-size: .92rem; display: block; }
 .resume-card { border-color: var(--warn); }
 select, input[type=number], input[type=text], input[type=search] {

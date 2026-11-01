@@ -252,6 +252,9 @@ export default {
             text = doc().body.innerText;
           }
           assert.ok(text.includes('MULAI'), `beranda tidak tampil: ${text.slice(0, 200)}`);
+          // Tombol MULAI ada di tiap kartu paket, Kustom memakai "Atur paket" (D-124).
+          const starts = [...doc().querySelectorAll('.package-card .package-start')].map((b) => b.textContent);
+          assert.ok(starts.length >= 2 && starts.at(-1) === 'Atur paket' && starts.slice(0, -1).every((t) => t === 'MULAI'), starts.join(', '));
         } finally {
           frame.remove();
         }

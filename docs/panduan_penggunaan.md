@@ -46,7 +46,9 @@ Ketuk **Mulai Latihan**, lalu **Pilih** pada mata ujian yang diinginkan. Tombol
    sulit, 140 menit), **Simulasi Ujian** (campuran, 180 menit, tanpa jeda), atau
    **Kustom**. Kartu paket menyebut durasi, jumlah soal, dan passing grade.
    Paket yang soalnya belum cukup menampilkan pesan kekurangan saat MULAI.
-2. Ketuk **MULAI**. Waktu berjalan sejak saat itu.
+2. Ketuk **MULAI** di bawah kartu paket itu (untuk Kustom: **Atur paket**).
+   Simulasi Ujian meminta konfirmasi lebih dulu karena tidak dapat dijeda.
+   Waktu berjalan sejak saat itu.
 3. Di ruang ujian:
    - Bilah atas berisi nama paket, sisa waktu, **Daftar Soal**, dan **KUMPULKAN**.
    - **Daftar Soal** menunjukkan soal yang sudah dijawab dan yang ditandai (⚑).

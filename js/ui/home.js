@@ -1,7 +1,7 @@
-// Beranda (SPEC 3): pemilih mata ujian, kartu paket + Kustom, tombol MULAI,
+// Beranda (SPEC 3): pemilih mata ujian, kartu paket + Kustom dengan tombol MULAI di tiap kartu (D-124),
 // kartu "Lanjutkan Ujian" bila ada sesi belum selesai.
 
-import { h } from './dom.js';
+import { h, confirmDialog } from './dom.js';
 import { disclaimer, header } from './layout.js';
 import { formatErrors, loadActiveSession } from '../core/session-store.js';
 import { remainingMs } from '../core/session.js';
@@ -51,35 +51,41 @@ export function renderHome(app) {
     el.append(h('p', { class: 'notice', text: `Sesi aktif tidak dapat dimuat (${formatErrors(active.errors, 3).join('; ')}). Ketuk MULAI untuk melepasnya dan memulai ujian baru; datanya tetap tersimpan.` }));
   }
 
+  // Tiap kartu paket punya tombol MULAI sendiri (D-124): sekali ketuk langsung
+  // masuk ujian, tanpa memilih kartu lalu mencari tombol di bawah.
   const pack = app.pack;
-  let selected = pack.packages[0] ? pack.packages[0].id : CUSTOM;
-  const cards = pack.packages.map((pkg) => packageCard(pkg.id, pkg.name, [
+  const cards = pack.packages.map((pkg) => packageCard(pkg.name, [
     formatMinutes(pkg.durationMinutes * 60000),
     `${packageQuestionCount(pkg)} soal`,
     `Passing grade ${pack.passingGrade}`,
     pkg.strictMode ? 'Mode ketat (tanpa jeda)' : 'Mode latihan (boleh jeda)',
-  ]));
-  cards.push(packageCard(CUSTOM, 'Kustom', ['Atur durasi, jumlah soal, topik, dan bobot sendiri']));
+  ], 'MULAI', () => start(pkg.id)));
+  cards.push(packageCard('Kustom', ['Atur durasi, jumlah soal, topik, dan bobot sendiri'], 'Atur paket', () => start(CUSTOM)));
 
-  function packageCard(id, name, lines) {
-    return h('label', { class: 'package-card' },
-      h('input', { type: 'radio', name: 'package', value: id, checked: id === selected, onchange: () => { selected = id; } }),
-      h('span', { class: 'name', text: name }),
-      lines.map((line) => h('span', { class: 'meta', text: line })));
+  function packageCard(name, lines, label, onclick) {
+    return h('div', { class: 'package-card', role: 'listitem' },
+      h('h3', { class: 'name', text: name }),
+      lines.map((line) => h('span', { class: 'meta', text: line })),
+      h('button', { type: 'button', class: 'btn btn-primary package-start', 'aria-label': `${label} ${name}`, onclick }, label));
   }
 
   el.append(
-    h('fieldset', { class: 'package-list', style: 'border:0;padding:0;margin:12px 0 16px' },
-      h('legend', { class: 'hint', text: 'Pilih paket' }), cards),
-    h('button', { type: 'button', class: 'btn btn-primary btn-big', onclick: start }, 'MULAI'),
+    h('p', { class: 'hint', text: 'Pilih paket, lalu ketuk MULAI pada kartunya.' }),
+    h('div', { class: 'package-list', role: 'list' }, cards),
     disclaimer());
 
-  function start() {
-    if (selected === CUSTOM) {
+  async function start(id) {
+    if (id === CUSTOM) {
       app.show('custom');
       return;
     }
-    const pkg = pack.packages.find((p) => p.id === selected);
+    const pkg = pack.packages.find((p) => p.id === id);
+    // Mode ketat tidak dapat dijeda; satu ketukan tidak boleh langsung mengunci peserta.
+    if (pkg.strictMode && !(await confirmDialog({
+      title: `Mulai ${pkg.name}?`,
+      body: [`${formatMinutes(pkg.durationMinutes * 60000)}, ${packageQuestionCount(pkg)} soal. Mode ketat: timer tidak dapat dijeda sampai ujian dikumpulkan.`],
+      confirmLabel: 'Mulai sekarang',
+    }))) return;
     const weights = {};
     for (const s of pkg.sections) weights[s.type] = (weights[s.type] || 0) + s.weight;
     app.beginSession({
