@@ -2,7 +2,7 @@
   "schemaVersion": "4.1",
   "subjectId": "msk",
   "subjectName": "Manajemen Stratejik dan Kepemimpinan",
-  "packVersion": "1.12.0",
+  "packVersion": "1.13.0",
   "language": "id",
   "passingGrade": 70,
   "topics": [
@@ -33348,6 +33348,2555 @@
         "revision": 1,
         "notes": "Bentuk: analisis; pembuka: data; entitas: jaringan waralaba.\nTema 9 (data dan kanal digital). Hitungan: 105 × 600 = 63.000; × 1,08 = 68.040; ÷ 120 = 567 (turun 5,5%); gerai naik 15/105 = 14,3%. Soal tidak menyebut nama kerangka."
       }
+    },
+    {
+      "id": "MSK-MCQ-251",
+      "type": "mcq",
+      "topicIds": [
+        "T01"
+      ],
+      "competencyIds": [
+        "K01"
+      ],
+      "difficulty": "sulit",
+      "cognitiveLevel": "C4",
+      "estimatedMinutes": 2.5,
+      "maxScore": 1,
+      "stem": "Sebuah perusahaan lokal menghadapi pesaing global berskala jauh lebih besar yang masuk lewat platform digital. Direksi membandingkan maksud stratejik (strategic intent) dengan rencana stratejik bertahap. Pernyataan manakah yang paling tepat tentang fungsi keduanya dan keterbatasan masing-masing bila dipakai sendiri?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Maksud stratejik memberi ambisi yang melampaui sumber daya saat ini; rencana bertahap sebaiknya disusun setelah kapabilitas inti terbentuk, karena rencana tanpa kapabilitas sekadar menjadi daftar target."
+        },
+        {
+          "key": "B",
+          "text": "Maksud stratejik memberi ambisi yang melampaui sumber daya saat ini; rencana bertahap menjabarkannya menjadi prioritas yang ditinjau berkala, sebab tanpa ambisi itu rencana cenderung terbatas pada sumber daya yang ada."
+        },
+        {
+          "key": "C",
+          "text": "Maksud stratejik memberi ambisi yang melampaui sumber daya saat ini; rencana bertahap menjabarkannya menjadi prioritas, dan keduanya ditinjau setiap tahun agar ambisi disesuaikan dengan sumber daya terkini."
+        },
+        {
+          "key": "D",
+          "text": "Maksud stratejik memberi ambisi yang melampaui sumber daya saat ini; rencana bertahap disusun tiap unit secara terpisah, sehingga pembangunan kapabilitas mengikuti prioritas masing-masing unit."
+        }
+      ],
+      "answerKey": "B",
+      "explanation": "Maksud stratejik adalah ambisi dan arah pembangunan kapabilitas jangka panjang yang melampaui sumber daya saat ini. Ambisi itu relatif tetap. Rencana stratejik bertahap menerjemahkannya menjadi prioritas dan sasaran antara yang ditinjau berkala, dan rencana inilah yang membangun kapabilitas. Bila dipakai sendiri, maksud stratejik tidak menjadi tindakan, sedangkan rencana bertahap cenderung terbatas pada sumber daya yang ada. Kekeliruan pada opsi lain ada pada urutan (A), pada apa yang ditinjau (C), dan pada keterkaitan antarunit (D).",
+      "distractorRationale": {
+        "A": "Urutan terbalik. Rencana bertahap justru menjadi alat untuk membangun kapabilitas, sehingga menunggu kapabilitas terbentuk lebih dulu membuat ambisi tidak pernah diterjemahkan menjadi tindakan.",
+        "C": "Yang ditinjau keliru. Rencana dan sasaran antara memang ditinjau berkala, tetapi ambisi yang disesuaikan dengan sumber daya terkini kehilangan fungsinya sebagai pendorong pembangunan kapabilitas.",
+        "D": "Keterkaitan terputus. Rencana tiap unit harus diturunkan dari ambisi bersama, sebab prioritas unit yang terpisah memecah sumber daya dan tidak membangun kapabilitas yang dituju."
+      },
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "7468b7ca2c824d782ff0e4857e14c786f4b0770790aed8c81a55ea3a176bf96d",
+        "review": {
+          "batchId": "MSK-RV079",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-11-02T00:00:00+07:00",
+          "result": {
+            "reviewKey": "R03",
+            "contentHash": "7468b7ca2c824d782ff0e4857e14c786f4b0770790aed8c81a55ea3a176bf96d",
+            "independentAnswer": "B. Maksud stratejik menetapkan ambisi jangka panjang yang melampaui sumber daya saat ini, sedangkan rencana bertahap menerjemahkan ambisi tersebut menjadi prioritas dan sasaran antara yang ditinjau berkala.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci B benar. Maksud stratejik memberi arah dan ambisi, sedangkan rencana bertahap menerjemahkannya menjadi tindakan serta pembangunan kapabilitas."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-11-02T11:24:46.740Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:44:38.375Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV070 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T10:49:50.082Z",
+            "reason": "isi berubah lewat impor batch MSK-B70"
+          },
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:51:37.996Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV072 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T10:55:25.527Z",
+            "reason": "isi berubah lewat impor batch MSK-B70"
+          },
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:57:05.118Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV074 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T11:03:05.209Z",
+            "reason": "isi berubah lewat impor batch MSK-B70"
+          },
+          {
+            "from": "DRAFT",
+            "to": "REJECTED",
+            "at": "2026-11-02T11:13:10.749Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV076 oleh GPT-6: REVISE; ditolak otomatis karena masih Perlu revisi setelah 3 kali revisi"
+          },
+          {
+            "from": "REJECTED",
+            "to": "DRAFT",
+            "at": "2026-11-02T11:17:53.354Z",
+            "reason": "isi berubah lewat impor batch MSK-B70"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-11-02T11:19:24.707Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV078 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-11-02T11:24:46.740Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-11-02T11:24:57.584Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "Claude Opus 5.5",
+        "createdAt": "2026-11-02",
+        "revision": 5,
+        "notes": "Bentuk: teori; ragam: banding-kontras.\nLatar: tema 9 (pesaing global lewat platform digital), tanpa fakta bernomor.\nRevisi 5: keempat opsi dibuka dengan fungsi maksud stratejik yang sama dan sama-sama menyebut fungsi rencana bertahap. Perbedaannya hanya pada kekeliruan halus: urutan (A), apa yang ditinjau (C), dan keterkaitan antarunit (D). Kata mutlak dihapus dari distraktor dan panjang opsi diseimbangkan."
+      }
+    },
+    {
+      "id": "MSK-MCQ-252",
+      "type": "mcq",
+      "topicIds": [
+        "T03"
+      ],
+      "competencyIds": [
+        "K02"
+      ],
+      "difficulty": "sangat_sulit",
+      "cognitiveLevel": "C5",
+      "estimatedMinutes": 3.5,
+      "maxScore": 1,
+      "stem": "Tabel berikut menilai tiga kapabilitas Aruna Gerak, produsen sepatu olahraga lokal, terhadap dua pesaingnya.\nKapabilitas | Nilai bagi pembeli | Dimiliki pesaing | Waktu peniruan | Dukungan organisasi\nDesain telapak kaki lebar | Tinggi | 0 dari 2 | 4 tahun | Belum\nProduksi massal murah | Sedang | 2 dari 2 | 1 tahun | Sudah\nPemasaran komunitas pelari | Tinggi | 1 dari 2 | 2 tahun | Sebagian\nDaya beli kelas menengah melemah, sehingga anggaran hanya cukup untuk menambah investasi pada satu kapabilitas. Manajemen memakai satu kriteria: kapabilitas harus mampu mempertahankan keunggulan bersaing selama tiga tahun ke depan. Kapabilitas mana yang paling layak diperkuat, dan apa alasannya?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Produksi massal murah, karena sudah terorganisasi dengan baik dan menjaga daya saing biaya di tengah daya beli yang melemah."
+        },
+        {
+          "key": "B",
+          "text": "Pemasaran komunitas pelari, karena nilainya tinggi dan cukup langka sebab baru satu dari dua pesaing yang memilikinya."
+        },
+        {
+          "key": "C",
+          "text": "Ketiganya dengan porsi sama, karena keunggulan yang bertahan hanya muncul bila semua kapabilitas naik bersamaan."
+        },
+        {
+          "key": "D",
+          "text": "Desain telapak kaki lebar, karena bernilai, langka, dan sulit ditiru, dengan syarat hubungan tim riset dan produksi dibenahi agar kapabilitas ini terorganisasi."
+        }
+      ],
+      "answerKey": "D",
+      "explanation": "Kriteria keputusan adalah mempertahankan keunggulan selama tiga tahun. Dengan penilaian nilai, kelangkaan, ketakteniruan, dan organisasi (VRIO), desain telapak bernilai tinggi, tidak dimiliki kedua pesaing, dan butuh 4 tahun untuk ditiru, sehingga keunggulannya bertahan melampaui horizon tiga tahun. Kelemahannya ada pada organisasi, sehingga investasi diarahkan ke sana. Produksi massal dimiliki kedua pesaing (paritas) dan dapat ditiru dalam 1 tahun. Pemasaran komunitas hanya sebagian langka dan dapat ditiru dalam 2 tahun, kurang dari horizon tiga tahun.",
+      "distractorRationale": {
+        "A": "Cocok untuk menjaga biaya, tetapi dimiliki kedua pesaing dan dapat ditiru dalam 1 tahun, sehingga tidak memenuhi kriteria tiga tahun.",
+        "B": "Hanya sebagian langka, dapat ditiru dalam 2 tahun, dan baru sebagian terorganisasi, sehingga keunggulannya tidak bertahan selama tiga tahun.",
+        "C": "Anggaran hanya cukup untuk satu kapabilitas, dan memeratakan investasi mengabaikan perbedaan potensi keunggulan tiap kapabilitas."
+      },
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "e1c1fd64a18314264e9ce26b3b7a4b9ad124d104ec07649ab062068d97cdfd6e",
+        "review": {
+          "batchId": "MSK-RV074",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-11-02T00:00:00+07:00",
+          "result": {
+            "reviewKey": "R02",
+            "contentHash": "e1c1fd64a18314264e9ce26b3b7a4b9ad124d104ec07649ab062068d97cdfd6e",
+            "independentAnswer": "D. Desain telapak kaki lebar bernilai tinggi, tidak dimiliki kedua pesaing, dan membutuhkan empat tahun untuk ditiru. Karena horizon keputusan adalah tiga tahun, kapabilitas tersebut berpotensi mempertahankan keunggulan sepanjang horizon itu. Investasi perlu diarahkan pada dukungan organisasi agar kapabilitas dapat dimanfaatkan secara efektif.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": 5,
+              "alignment": 4,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci D tepat berdasarkan kriteria tiga tahun dan analisis VRIO. Waktu peniruan empat tahun melampaui horizon keputusan, sedangkan kelemahan organisasi dapat menjadi sasaran investasi; tingkat sangat sulit C5 dapat diturunkan menjadi sulit C4 karena tuntutan utamanya adalah menerapkan dan membandingkan kriteria VRIO."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-11-02T11:24:46.740Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:44:38.375Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV070 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T10:49:50.082Z",
+            "reason": "isi berubah lewat impor batch MSK-B70"
+          },
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:51:37.996Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV072 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T10:55:25.527Z",
+            "reason": "isi berubah lewat impor batch MSK-B70"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-11-02T10:57:05.118Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV074 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-11-02T11:24:46.740Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-11-02T11:24:57.584Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "Claude Sonnet 5.5",
+        "createdAt": "2026-11-02",
+        "revision": 3,
+        "notes": "Bentuk: analisis; pembuka: data; entitas: produsen sepatu olahraga lokal.\nLatar: tema 7 (daya beli kelas menengah). Kerangka (VRIO) tidak disebut di stem.\nRevisi 3: horizon kriteria diubah dari lima tahun menjadi tiga tahun agar selaras dengan waktu peniruan desain 4 tahun; kriteria menyatakan kapabilitas harus mampu mempertahankan keunggulan sepanjang horizon; pembahasan dan rasional distraktor disesuaikan."
+      }
+    },
+    {
+      "id": "MSK-MCQ-253",
+      "type": "mcq",
+      "topicIds": [
+        "T04"
+      ],
+      "competencyIds": [
+        "K02"
+      ],
+      "cognitiveLevel": "C5",
+      "difficulty": "sangat_sulit",
+      "estimatedMinutes": 3.5,
+      "maxScore": 1,
+      "stem": "Dua pemilik jaringan toko buku independen, Larasati dan Bram, berbeda pendapat tentang cara menghadapi sebuah lokapasar raksasa. Larasati ingin menyamai harga lokapasar yang sedang gencar memberi diskon. Bram ingin menjual pengalaman komunitas lewat klub baca dan peluncuran buku. Harga rata-rata jaringan ini Rp100.000 per buku, harga beli Rp70.000, dan biaya operasional Rp12.000 per buku. Diasumsikan lokapasar menjual judul yang sama seharga Rp78.000 selama enam bulan ke depan. Anggota klub baca berbelanja tiga kali lebih sering, dan 70% dari mereka tidak membandingkan harga. Daya beli kelas menengah sedang melemah. Pilihan manakah yang paling konsisten dengan sumber keunggulan jaringan ini?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Menjual pengalaman komunitas, karena sumber keunggulan jaringan ada pada hubungan dengan pelanggan, sedangkan menyamai harga membuat margin tidak menutup biaya operasional."
+        },
+        {
+          "key": "B",
+          "text": "Menyamai harga lokapasar pada semua judul, karena pembeli buku sensitif harga dan volume tambahan akan menutup margin yang hilang."
+        },
+        {
+          "key": "C",
+          "text": "Menjual pengalaman komunitas sambil menyamai harga lokapasar, karena dua strategi itu saling menguatkan."
+        },
+        {
+          "key": "D",
+          "text": "Memindahkan seluruh penjualan ke lokapasar, karena itu pasti menghapus biaya sewa dan menjangkau pembeli lebih luas."
+        }
+      ],
+      "answerKey": "A",
+      "explanation": "Pada harga Rp78.000, margin kotor per buku = Rp78.000 - Rp70.000 = Rp8.000. Biaya operasional Rp12.000 sehingga rugi Rp4.000 per buku, dan tambahan volume memperbesar rugi. Anggota klub berbelanja lebih sering dan 70% tidak membandingkan harga, jadi keunggulan jaringan ada pada hubungan komunitas yang tidak mudah ditiru lokapasar. Strategi komunitas konsisten dengan sumber keunggulan itu.",
+      "distractorRationale": {
+        "B": "Mengira volume tambahan menutup margin. Karena margin per buku sudah negatif setelah biaya operasional, volume justru menambah kerugian.",
+        "C": "Menggabungkan diferensiasi dan harga rendah sekaligus (terjebak di tengah). Menyamai harga merusak margin dan tidak sejalan dengan sumber keunggulan.",
+        "D": "Meninggalkan sumber keunggulan jaringan dan bersaing langsung di arena lokapasar. Anggapan biaya sewa pasti hilang mengabaikan biaya dan komisi platform."
+      },
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "527f637d68da1f4aeca91f5ccf7c6dc5188d1364e2872827c5e01998eda6cf4a",
+        "review": {
+          "batchId": "MSK-RV070",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-11-02T00:00:00+07:00",
+          "result": {
+            "reviewKey": "R08",
+            "contentHash": "527f637d68da1f4aeca91f5ccf7c6dc5188d1364e2872827c5e01998eda6cf4a",
+            "independentAnswer": "A. Pada harga Rp78.000, selisih terhadap harga beli Rp70.000 hanya Rp8.000, lebih rendah daripada biaya operasional Rp12.000, sehingga terdapat kerugian Rp4.000 per buku sebelum biaya lain. Pengalaman komunitas menjadi sumber diferensiasi yang lebih konsisten.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": 5,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 4,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sangat_sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci A tepat dan perhitungan margin konsisten: Rp78.000 dikurangi Rp70.000 dan Rp12.000 menghasilkan kerugian Rp4.000 per buku. Soal menguji evaluasi strategi diferensiasi dengan dukungan data ekonomi yang relevan."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-11-02T11:24:46.740Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-11-02T10:44:38.375Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV070 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-11-02T11:24:46.740Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-11-02T11:24:57.584Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "Claude Sonnet 5.5",
+        "createdAt": "2026-11-02",
+        "revision": 1,
+        "notes": "Bentuk: analisis; pembuka: perdebatan; entitas: jaringan toko buku independen.\nLatar: tema 7 dan 9. Harga lokapasar Rp78.000 adalah angka asumsi."
+      }
+    },
+    {
+      "id": "MSK-MCQ-254",
+      "type": "mcq",
+      "topicIds": [
+        "T05"
+      ],
+      "competencyIds": [
+        "K03"
+      ],
+      "cognitiveLevel": "C3",
+      "difficulty": "sedang",
+      "estimatedMinutes": 1.5,
+      "maxScore": 1,
+      "stem": "Enam bulan setelah daya beli pelanggan melemah, penjualan produsen cat dekoratif Cakra Warna turun. Perusahaan ini menjalankan strategi biaya rendah bagi pemilik rumah kelas menengah. Manajemen memilih satu paket strategi fungsional di bidang operasi dan pemasaran. Paket manakah yang paling mendukung strategi bisnis itu?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Menambah 20 warna pesanan khusus dan beriklan sebagai cat premium."
+        },
+        {
+          "key": "B",
+          "text": "Menyimpan stok semua varian di tiap toko dan memberi diskon besar tiap bulan."
+        },
+        {
+          "key": "C",
+          "text": "Mengurangi varian menjadi warna terlaris, membeli bahan dalam jumlah besar, dan menjual kemasan hemat berharga rendah."
+        },
+        {
+          "key": "D",
+          "text": "Membangun pabrik otomatis berbiaya besar dengan utang dan beriklan sebagai merek paling bergengsi."
+        }
+      ],
+      "answerKey": "C",
+      "explanation": "Strategi biaya rendah didukung operasi yang menekan biaya per unit (varian sedikit, pembelian bahan dalam volume besar) dan pemasaran yang menawarkan harga terjangkau lewat kemasan hemat. Paket C menyelaraskan keduanya.",
+      "distractorRationale": {
+        "A": "Cocok untuk strategi diferensiasi, bukan biaya rendah. Warna khusus menaikkan biaya.",
+        "B": "Stok semua varian menaikkan biaya persediaan, dan diskon bulanan menggerus margin tanpa dukungan operasi.",
+        "D": "Investasi besar dengan utang dan citra bergengsi menaikkan biaya dan menyimpang dari pasar kelas menengah."
+      },
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "f26a2cebb10c78355022a8b3613552e5963e2091c1afdbf069570d12dbde266d",
+        "review": {
+          "batchId": "MSK-RV070",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-11-02T00:00:00+07:00",
+          "result": {
+            "reviewKey": "R01",
+            "contentHash": "f26a2cebb10c78355022a8b3613552e5963e2091c1afdbf069570d12dbde266d",
+            "independentAnswer": "C. Pengurangan varian, pembelian bahan dalam jumlah besar, dan kemasan hemat berharga rendah menyelaraskan operasi dan pemasaran dengan strategi biaya rendah.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 4,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 4,
+              "timeEstimate": 5,
+              "originality": 4,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sedang",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci C tepat dan merupakan satu-satunya paket yang konsisten menghubungkan efisiensi operasi dengan penawaran harga rendah. Skenario menguji penerapan strategi fungsional secara relevan, dengan tingkat kesulitan sedang."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-11-02T11:24:46.740Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-11-02T10:44:38.375Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV070 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-11-02T11:24:46.740Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-11-02T11:24:57.584Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "Claude Sonnet 5.5",
+        "createdAt": "2026-11-02",
+        "revision": 1,
+        "notes": "Bentuk: analisis; pembuka: peristiwa; entitas: produsen cat dekoratif.\nLatar: tema 7 (daya beli melemah)."
+      }
+    },
+    {
+      "id": "MSK-MCQ-255",
+      "type": "mcq",
+      "topicIds": [
+        "T06"
+      ],
+      "competencyIds": [
+        "K02"
+      ],
+      "difficulty": "sulit",
+      "cognitiveLevel": "C4",
+      "estimatedMinutes": 2.5,
+      "maxScore": 1,
+      "stem": "Kerangka tekanan efisiensi global dan responsivitas lokal dipakai untuk memilih strategi internasional. Diasumsikan beberapa negara tujuan mewajibkan data pengguna disimpan di dalam negeri. Pernyataan manakah yang paling tepat tentang keterbatasan kerangka ini dan cara menerapkannya pada layanan digital lintas negara?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Kerangka tetap berguna, tetapi modul per negara mengurangi sebagian ketegangannya; karena aturan data mengubah arsitektur, seluruh inti layanan dipindah ke tiap negara agar data dan pengolahannya berada di satu tempat."
+        },
+        {
+          "key": "B",
+          "text": "Kerangka tetap berguna, tetapi modul per negara mengurangi sebagian ketegangannya; aturan data ditangani dengan penyimpanan lokal, lalu semua fitur ikut disesuaikan per negara karena biaya arsitektur lokal sudah dikeluarkan."
+        },
+        {
+          "key": "C",
+          "text": "Kerangka tetap berguna, tetapi modul per negara mengurangi sebagian ketegangannya; setelah penyimpanan data lokal tersedia, kerangka tidak lagi diperlukan untuk menentukan fitur mana yang distandarkan atau disesuaikan."
+        },
+        {
+          "key": "D",
+          "text": "Kerangka tetap berguna, tetapi modul per negara mengurangi sebagian ketegangannya; aturan data ditangani dengan penyimpanan lokal di negara yang mewajibkannya, sedangkan inti layanan lain tetap standar global."
+        }
+      ],
+      "answerKey": "D",
+      "explanation": "Kerangka menekankan ketegangan antara efisiensi global dan responsivitas lokal. Pada layanan digital, modul per negara mengurangi sebagian ketegangan itu. Kewajiban penyimpanan data adalah tekanan lokal yang mengubah arsitektur, tetapi cakupannya terbatas pada penyimpanan data di negara yang mewajibkannya. Penyesuaian yang tepat berhenti pada batas itu, dan inti layanan lain tetap standar agar efisiensi global terjaga. Kerangka tetap dipakai untuk menilai fitur lain yang perlu distandarkan atau disesuaikan.",
+      "distractorRationale": {
+        "A": "Batas standardisasi terlalu sempit. Aturan hanya menuntut data disimpan di dalam negeri, sehingga memindahkan seluruh inti layanan ke tiap negara mengorbankan efisiensi global melebihi kebutuhan.",
+        "B": "Cakupan penyesuaian diperluas dengan alasan biaya yang sudah terlanjur dikeluarkan. Biaya itu tidak relevan bagi keputusan berikutnya, dan menyesuaikan semua fitur mengurangi efisiensi tanpa perlu.",
+        "C": "Menganggap modul dan penyimpanan lokal menghapus kebutuhan akan kerangka. Ketegangan efisiensi dan responsivitas tetap ada pada fitur lain, sehingga kerangka tetap diperlukan untuk menentukannya."
+      },
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "c37c45f30bb652ae3de5b4edf134c4efeb9346a3012687fb8c98a19f447038dd",
+        "review": {
+          "batchId": "MSK-RV079",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-11-02T00:00:00+07:00",
+          "result": {
+            "reviewKey": "R02",
+            "contentHash": "c37c45f30bb652ae3de5b4edf134c4efeb9346a3012687fb8c98a19f447038dd",
+            "independentAnswer": "D. Penyimpanan data dilakukan secara lokal di negara yang mewajibkannya, sementara inti layanan lainnya tetap distandardisasi secara global.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci D benar. Penyesuaian lokal dibatasi pada kewajiban penyimpanan data, sedangkan standardisasi layanan lain dipertahankan untuk menjaga efisiensi global."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-11-02T11:24:46.740Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:44:38.375Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV070 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T10:49:50.082Z",
+            "reason": "isi berubah lewat impor batch MSK-B70"
+          },
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:51:37.996Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV072 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T10:55:25.527Z",
+            "reason": "isi berubah lewat impor batch MSK-B70"
+          },
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:57:05.118Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV074 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T11:03:05.209Z",
+            "reason": "isi berubah lewat impor batch MSK-B70"
+          },
+          {
+            "from": "DRAFT",
+            "to": "REJECTED",
+            "at": "2026-11-02T11:13:10.749Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV076 oleh GPT-6: REVISE; ditolak otomatis karena masih Perlu revisi setelah 3 kali revisi"
+          },
+          {
+            "from": "REJECTED",
+            "to": "DRAFT",
+            "at": "2026-11-02T11:17:53.354Z",
+            "reason": "isi berubah lewat impor batch MSK-B70"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-11-02T11:19:24.707Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV078 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-11-02T11:24:46.740Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-11-02T11:24:57.584Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "Claude Opus 5.5",
+        "createdAt": "2026-11-02",
+        "revision": 5,
+        "notes": "Bentuk: teori; ragam: keterbatasan (dipadukan dengan asumsi).\nLatar: tema 3/13; kewajiban data lokal adalah asumsi hipotetis, bukan fakta.\nRevisi 5: keempat opsi sama-sama mengakui modul per negara dan dampak aturan data pada arsitektur. Perbedaannya pada batas standardisasi (A), cakupan penyesuaian karena biaya yang sudah dikeluarkan (B), dan peran kerangka setelah penyesuaian (C). Stem kini juga menanyakan cara penerapan."
+      }
+    },
+    {
+      "id": "MSK-MCQ-256",
+      "type": "mcq",
+      "topicIds": [
+        "T07"
+      ],
+      "competencyIds": [
+        "K02"
+      ],
+      "difficulty": "sangat_sulit",
+      "cognitiveLevel": "C5",
+      "estimatedMinutes": 3.5,
+      "maxScore": 1,
+      "stem": "RINGKASAN KOMITE INVESTASI. BUMN konstruksi Kriya Praba Konstruksi (fiktif) menilai dua unit non-inti setelah BPI Danantara mulai berjalan pada 24 Februari 2025. Dalam ringkasan ini, pertumbuhan pasar 3% per tahun dianggap rendah dan 9% dianggap tinggi. Unit beton pracetak: pangsa pasar relatif 1,4 dan pasar tumbuh 3% per tahun. Unit ini memasok 60% kebutuhan proyek induk, dan keahlian pengadaan induk menekan biayanya. Unit pengelolaan hotel: pangsa pasar relatif 0,2 dan pasar tumbuh 9% per tahun. Unit ini butuh tambahan modal Rp400.000.000.000, sedangkan induk tidak punya keahlian perhotelan. Keputusan manakah yang paling tepat?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Lepas beton pracetak dan pertahankan hotel, karena pasar hotel tumbuh lebih cepat sedangkan pasar beton melambat."
+        },
+        {
+          "key": "B",
+          "text": "Pertahankan keduanya, karena unit non-inti selalu memberi nilai tambah korporat melalui penyebaran risiko."
+        },
+        {
+          "key": "C",
+          "text": "Pertahankan beton pracetak dan lepas hotel, karena beton unggul di pasarnya dan mendapat nilai tambah dari induk, sedangkan hotel lemah dan tidak cocok dengan keahlian induk."
+        },
+        {
+          "key": "D",
+          "text": "Lepas keduanya, karena nilai tambah induk pada unit di luar bisnis inti konstruksi tidak terbukti."
+        }
+      ],
+      "answerKey": "C",
+      "explanation": "Beton pracetak berpangsa relatif tinggi di pasar bertumbuh rendah (penghasil kas), dan induk menambah nilai lewat pengadaan serta pasar internal 60% proyek, sehingga dipertahankan. Hotel berpangsa relatif rendah di pasar bertumbuh tinggi, butuh modal Rp400.000.000.000, dan induk bukan pemilik terbaik karena tidak punya keahlian perhotelan, sehingga dilepas. Pertumbuhan pasar saja tidak cukup sebagai dasar keputusan.",
+      "distractorRationale": {
+        "A": "Hanya melihat pertumbuhan pasar dan mengabaikan pangsa relatif, kebutuhan modal, serta nilai tambah induk.",
+        "B": "Mengira diversifikasi otomatis menambah nilai. Nilai tambah korporat hanya ada bila induk memperbaiki kinerja unit.",
+        "D": "Menyamakan semua unit non-inti, padahal beton pracetak punya hubungan kuat dengan proyek induk dan memperoleh nilai tambah dari keahlian pengadaan induk."
+      },
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "ae52b114036c401183989477aeb15e5ef41a3fdbd4133d93248c1bdaa144a2c6",
+        "review": {
+          "batchId": "MSK-RV072",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-11-02T00:00:00+07:00",
+          "result": {
+            "reviewKey": "R05",
+            "contentHash": "ae52b114036c401183989477aeb15e5ef41a3fdbd4133d93248c1bdaa144a2c6",
+            "independentAnswer": "C. Unit beton pracetak memiliki pangsa pasar relatif tinggi pada pasar dengan pertumbuhan rendah dan memperoleh nilai tambah dari induk melalui keahlian pengadaan serta penyerapan 60% kebutuhannya oleh proyek induk. Sebaliknya, unit hotel memiliki pangsa relatif rendah, membutuhkan tambahan modal besar, dan tidak memperoleh manfaat kapabilitas dari induk.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": 5,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sangat_sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci C tepat karena mempertimbangkan posisi pasar sekaligus nilai tambah yang dapat diberikan induk kepada masing-masing unit. Data pangsa relatif, pertumbuhan pasar, kebutuhan modal, dan hubungan dengan bisnis induk mendukung keputusan mempertahankan beton pracetak dan melepas hotel."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-11-02T11:24:46.740Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:44:38.375Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV070 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T10:49:50.082Z",
+            "reason": "isi berubah lewat impor batch MSK-B70"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-11-02T10:51:37.996Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV072 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-11-02T11:24:46.740Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-11-02T11:24:57.584Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "Claude Sonnet 5.5",
+        "createdAt": "2026-11-02",
+        "revision": 2,
+        "notes": "Bentuk: analisis; pembuka: dokumen; entitas: BUMN konstruksi.\nLatar: tema 5. Sumber: peluncuran BPI Danantara 24 Februari 2025 (UU 1/2025, PP 10/2025). Unit, angka, dan perusahaan fiktif.\nRevisi 2: nama entitas diganti menjadi Kriya Praba Konstruksi; ambang pertumbuhan rendah (3%) dan tinggi (9%) dinyatakan di stem; istilah nilai tambah dipakai juga di distraktor."
+      }
+    },
+    {
+      "id": "MSK-MCQ-257",
+      "type": "mcq",
+      "topicIds": [
+        "T08"
+      ],
+      "competencyIds": [
+        "K04"
+      ],
+      "difficulty": "sulit",
+      "cognitiveLevel": "C4",
+      "estimatedMinutes": 2.5,
+      "maxScore": 1,
+      "stem": "Dalam rapat tentang tuntutan ESG investor, seorang komisaris berpendapat: “Teori pemangku kepentingan meminta direksi memperhatikan pihak yang memengaruhi atau dipengaruhi perusahaan. Prioritas ditentukan oleh kekuatan, legitimasi, dan urgensi klaim mereka. Karena itu, pihak yang saat ini hanya memiliki satu dari ketiga atribut itu dapat diabaikan dalam keputusan stratejik.” Bagian mana yang keliru, dan mengapa?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Kesimpulannya keliru, karena atribut suatu pihak dapat berubah; pihak yang kini hanya memiliki satu atribut perlu dipantau karena dapat menjadi prioritas bila klaimnya berkembang."
+        },
+        {
+          "key": "B",
+          "text": "Bagian pertama keliru, karena teori hanya mencakup pihak yang memengaruhi perusahaan; pihak yang sekadar dipengaruhi berada di luar cakupan, sehingga kesimpulannya tetap dapat dipakai."
+        },
+        {
+          "key": "C",
+          "text": "Bagian kedua keliru, karena urgensi bersifat sementara sehingga tidak ikut menentukan prioritas; prioritas cukup ditentukan oleh kekuatan dan legitimasi, dan kesimpulannya tetap dapat dipakai."
+        },
+        {
+          "key": "D",
+          "text": "Kesimpulannya keliru, karena setiap pihak yang memiliki satu atribut berhak dipenuhi tuntutannya setara dengan pihak yang memiliki ketiga atribut agar tidak ada yang dirugikan."
+        }
+      ],
+      "answerKey": "A",
+      "explanation": "Dua bagian awal pernyataan komisaris benar. Cakupan pemangku kepentingan meliputi pihak yang memengaruhi maupun yang dipengaruhi perusahaan. Kekuatan, legitimasi, dan urgensi dipakai bersama untuk menimbang prioritas. Kekeliruannya ada pada kesimpulan, karena penilaian atribut bersifat dinamis. Komunitas yang kini hanya punya klaim sah, misalnya, dapat memperoleh kekuatan lewat media, regulator, atau investor, dan klaimnya menjadi mendesak saat terjadi insiden. Karena itu prioritasnya rendah, tetapi pihak itu tidak diabaikan.",
+      "distractorRationale": {
+        "B": "Mempersempit cakupan pemangku kepentingan. Pihak yang dipengaruhi perusahaan termasuk dalam teori, sehingga bagian pertama benar dan kesimpulan komisaris tetap keliru.",
+        "C": "Mengeluarkan urgensi karena sifatnya sementara. Justru karena berubah-ubah, urgensi menentukan kapan suatu klaim perlu segera ditanggapi, sehingga tetap dipakai bersama kekuatan dan legitimasi.",
+        "D": "Mengakui bahwa kesimpulan keliru, tetapi menggantinya dengan perlakuan setara. Atribut tetap dipakai untuk membedakan prioritas, sehingga pihak dengan satu atribut dipantau, bukan dipenuhi setara."
+      },
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "e207cb6e5d85ccff9eb25b56d149b495d92137129bdafb7bf61ce9d1535a46bc",
+        "review": {
+          "batchId": "MSK-RV079",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-11-02T00:00:00+07:00",
+          "result": {
+            "reviewKey": "R01",
+            "contentHash": "e207cb6e5d85ccff9eb25b56d149b495d92137129bdafb7bf61ce9d1535a46bc",
+            "independentAnswer": "A. Atribut kekuatan, legitimasi, dan urgensi dapat berubah. Pihak yang saat ini hanya memiliki satu atribut tetap perlu dipantau karena dapat menjadi prioritas ketika atribut atau klaimnya berkembang.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci A benar. Pernyataan komisaris keliru karena atribut pemangku kepentingan bersifat dinamis; pihak dengan satu atribut tidak boleh diabaikan meskipun prioritasnya saat ini lebih rendah."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-11-02T11:24:46.740Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:44:38.375Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV070 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T10:49:50.082Z",
+            "reason": "isi berubah lewat impor batch MSK-B70"
+          },
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:51:37.996Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV072 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T10:55:25.527Z",
+            "reason": "isi berubah lewat impor batch MSK-B70"
+          },
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:57:05.118Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV074 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T11:03:05.209Z",
+            "reason": "isi berubah lewat impor batch MSK-B70"
+          },
+          {
+            "from": "DRAFT",
+            "to": "REJECTED",
+            "at": "2026-11-02T11:13:10.749Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV076 oleh GPT-6: REVISE; ditolak otomatis karena masih Perlu revisi setelah 3 kali revisi"
+          },
+          {
+            "from": "REJECTED",
+            "to": "DRAFT",
+            "at": "2026-11-02T11:17:53.354Z",
+            "reason": "isi berubah lewat impor batch MSK-B70"
+          },
+          {
+            "from": "DRAFT",
+            "to": "REJECTED",
+            "at": "2026-11-02T11:19:24.707Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV078 oleh GPT-6: REVISE; ditolak otomatis karena masih Perlu revisi setelah 3 kali revisi"
+          },
+          {
+            "from": "REJECTED",
+            "to": "DRAFT",
+            "at": "2026-11-02T11:21:55.767Z",
+            "reason": "isi berubah lewat impor batch MSK-B70"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-11-02T11:24:14.863Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV079 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-11-02T11:24:46.740Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-11-02T11:24:57.584Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "Claude Opus 5.5",
+        "createdAt": "2026-11-02",
+        "revision": 6,
+        "notes": "Bentuk: teori; ragam: menilai pernyataan.\nLatar: tema 10 (tuntutan ESG investor), hanya sebagai latar. Penimbangan menurut kekuatan, legitimasi, dan urgensi serta sifatnya yang dinamis adalah konsep umum yang mapan, di luar materi terlampir.\nRevisi 6: tiga klaim terpisah diganti dengan satu pernyataan komisaris yang separuh benar. Semua opsi kini mengakui ketiga atribut relevan atau membahas cara memakainya, dan kekeliruannya halus: cakupan pihak (B), daftar atribut (C), dan perlakuan setara (D). Contoh di pembahasan tidak lagi mengulang kalimat kunci."
+      }
+    },
+    {
+      "id": "MSK-MCQ-258",
+      "type": "mcq",
+      "topicIds": [
+        "T09"
+      ],
+      "competencyIds": [
+        "K03"
+      ],
+      "difficulty": "sangat_sulit",
+      "cognitiveLevel": "C5",
+      "estimatedMinutes": 3.5,
+      "maxScore": 1,
+      "stem": "Anda kepala sumber daya manusia pabrik elektronik kontrak yang bersaing lewat mutu, dengan target cacat di bawah 50 per sejuta unit. Otomasi lini perakitan menghapus tugas 120 dari 400 operator. Otomasi juga menciptakan 30 posisi teknisi mesin dan 40 posisi inspektur mutu. Anggaran pelatihan hanya cukup untuk 70 orang. Pemutusan hubungan kerja (PHK) di industri padat karya sedang banyak disorot publik. Paket manakah yang paling selaras dengan strategi mutu?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Latih 70 operator untuk kedua peran, bentuk tim lintas stasiun, beri bonus individu menurut jumlah unit yang lolos inspeksi, dan sediakan pesangon sukarela bagi 50 operator lainnya."
+        },
+        {
+          "key": "B",
+          "text": "Latih 70 operator untuk kedua peran, bentuk tim lintas stasiun, beri bonus tim menurut tingkat cacat, dan sediakan pesangon sukarela bagi 50 operator lainnya."
+        },
+        {
+          "key": "C",
+          "text": "Latih 70 operator untuk kedua peran, pertahankan stasiun individual, beri bonus tim menurut tingkat cacat, dan sediakan pesangon sukarela bagi 50 operator lainnya."
+        },
+        {
+          "key": "D",
+          "text": "Latih seluruh 120 operator selama 12 bulan, bentuk tim lintas stasiun, dan beri bonus tim menurut tingkat cacat tanpa pemutusan hubungan kerja."
+        }
+      ],
+      "answerKey": "B",
+      "explanation": "Posisi baru berjumlah 30 + 40 = 70, sama dengan anggaran pelatihan, sehingga 120 - 70 = 50 operator lain perlu jalan keluar yang tidak memaksa. Paket B menyelaraskan kompetensi (teknisi dan inspektur mutu), struktur (tim lintas stasiun yang menutup celah cacat antartahap), dan insentif (bonus tim menurut cacat), serta memenuhi batas anggaran. A gagal pada insentif: bonus individu menurut unit lolos inspeksi mendorong tiap operator mengejar unit, bukan menutup cacat antartahap. C gagal pada struktur: stasiun individual tidak menutup celah antartahap. D melampaui anggaran, dan pelatihan 120 orang tidak terpakai karena hanya ada 70 posisi baru.",
+      "distractorRationale": {
+        "A": "Struktur dan pelatihan sudah tepat, tetapi bonus individu menurut unit lolos inspeksi melemahkan kerja sama lintas stasiun dan tidak mengarahkan perilaku pada pencegahan cacat.",
+        "C": "Pelatihan dan insentif sudah tepat, tetapi stasiun individual tidak menutup celah mutu antartahap yang menjadi tujuan tim lintas stasiun.",
+        "D": "Struktur dan insentif tepat, tetapi 120 orang melebihi anggaran 70 orang dan melampaui 70 posisi baru, sehingga biaya naik tanpa manfaat mutu tambahan."
+      },
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "f40b48322ee8c7bce7e61ff1ea3eb56886b4c983b4866cce3262b98be4fcbd50",
+        "review": {
+          "batchId": "MSK-RV072",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-11-02T00:00:00+07:00",
+          "result": {
+            "reviewKey": "R06",
+            "contentHash": "f40b48322ee8c7bce7e61ff1ea3eb56886b4c983b4866cce3262b98be4fcbd50",
+            "independentAnswer": "B. Sebanyak 70 posisi baru terdiri atas 30 teknisi mesin dan 40 inspektur mutu, sesuai dengan kapasitas pelatihan 70 orang. Tim lintas stasiun dan bonus tim berdasarkan tingkat cacat mendukung koordinasi serta sasaran mutu, sedangkan pesangon sukarela menyediakan jalan keluar bagi 50 operator yang tidak memperoleh posisi baru.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 5,
+              "rubricQuality": null,
+              "dataConsistency": 5,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sangat_sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci B tepat dan seluruh angka konsisten: 30 posisi teknisi ditambah 40 posisi inspektur mutu sama dengan kapasitas pelatihan 70 orang, sehingga tersisa 50 operator. Paket tersebut menyelaraskan kompetensi, struktur kerja, dan insentif dengan strategi mutu."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-11-02T11:24:46.740Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:44:38.375Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV070 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T10:49:50.082Z",
+            "reason": "isi berubah lewat impor batch MSK-B70"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-11-02T10:51:37.996Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV072 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-11-02T11:24:46.740Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-11-02T11:24:57.584Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "Claude Sonnet 5.5",
+        "createdAt": "2026-11-02",
+        "revision": 2,
+        "notes": "Bentuk: analisis; pembuka: peran; entitas: pabrik elektronik kontrak.\nLatar: tema 8 (PHK padat karya dan otomasi). Angka fiktif.\nRevisi 2: ditambah kendala anggaran dan jumlah posisi baru (trade-off); semua distraktor kini hampir selaras dengan strategi mutu dengan satu kelemahan tiap opsi; level kognitif diubah dari C6 ke C5 (memilih paket terbaik dari alternatif)."
+      }
+    },
+    {
+      "id": "MSK-MCQ-259",
+      "type": "mcq",
+      "topicIds": [
+        "T10"
+      ],
+      "competencyIds": [
+        "K05"
+      ],
+      "difficulty": "sedang",
+      "cognitiveLevel": "C3",
+      "estimatedMinutes": 1.5,
+      "maxScore": 1,
+      "stem": "Sebuah perusahaan pembiayaan memajang nilai kejujuran di dinding kantor, tetapi pimpinan memberi bonus kepada penjual yang mencapai target dengan melanggar aturan. Bagaimana kondisi ini paling mungkin memengaruhi perilaku etis pegawai?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Bonus itu mendorong sebagian penjual melanggar, tetapi nilai tertulis yang dipajang tetap menjadi acuan utama mayoritas pegawai selama tidak diubah pimpinan."
+        },
+        {
+          "key": "B",
+          "text": "Bonus itu mendorong pelanggaran, tetapi pengawasan formal yang diperketat dapat menahannya, sehingga budaya jujur pulih tanpa mengubah sistem bonus."
+        },
+        {
+          "key": "C",
+          "text": "Pelanggaran terutama didorong tekanan target, bukan bonus, sehingga menurunkan target sudah cukup memulihkan perilaku etis walau bonus bagi pelanggar tetap ada."
+        },
+        {
+          "key": "D",
+          "text": "Bonus dari pimpinan menjadi pesan yang lebih kuat daripada nilai tertulis, sehingga pegawai meniru perilaku yang dihargai dan pelanggaran perlahan menjadi kebiasaan."
+        }
+      ],
+      "answerKey": "D",
+      "explanation": "Budaya dibentuk oleh perilaku yang dihargai dan diteladankan pimpinan, dan pesan itu lebih kuat daripada nilai tertulis. Bonus bagi pelanggar menunjukkan kepada semua pegawai perilaku apa yang sebenarnya diinginkan, sehingga perilaku itu ditiru dan lama-lama menjadi kebiasaan. Nilai tertulis, pengawasan formal, dan penurunan target dapat membantu, tetapi tidak mengimbangi pesan dari sistem penghargaan selama bonus bagi pelanggar tetap diberikan.",
+      "distractorRationale": {
+        "A": "Mengakui pengaruh bonus, tetapi menilai nilai tertulis lebih kuat. Pegawai lain melihat siapa yang dihargai, sehingga pengaruh bonus menyebar melampaui penjual yang menerimanya.",
+        "B": "Mengakui pengaruh bonus, tetapi menilai pengawasan formal cukup kuat untuk mengimbanginya. Selama pelanggaran tetap dihargai, pengawasan hanya menahan sebagian pelanggaran dan tidak memulihkan budaya.",
+        "C": "Mengakui tekanan target, tetapi mengabaikan bonus sebagai pesan pimpinan. Menurunkan target mengurangi tekanan, tetapi bonus bagi pelanggar tetap mengajarkan bahwa pelanggaran diterima."
+      },
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "74a071c2485c1e0a1921d4c16d040d271c0727c946dfbd1186fe2bc6ca11fdd8",
+        "review": {
+          "batchId": "MSK-RV079",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-11-02T00:00:00+07:00",
+          "result": {
+            "reviewKey": "R04",
+            "contentHash": "74a071c2485c1e0a1921d4c16d040d271c0727c946dfbd1186fe2bc6ca11fdd8",
+            "independentAnswer": "D. Penghargaan pimpinan terhadap perilaku yang melanggar aturan menjadi pesan budaya yang kuat sehingga pegawai cenderung menirunya dan pelanggaran dapat berkembang menjadi kebiasaan.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sedang",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci D benar. Perilaku yang dihargai pimpinan menjadi sinyal budaya yang lebih kuat daripada nilai formal yang hanya dipajang."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-11-02T11:24:46.740Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:44:38.375Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV070 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T10:49:50.082Z",
+            "reason": "isi berubah lewat impor batch MSK-B70"
+          },
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:51:37.996Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV072 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T10:55:25.527Z",
+            "reason": "isi berubah lewat impor batch MSK-B70"
+          },
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:57:05.118Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV074 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T11:03:05.209Z",
+            "reason": "isi berubah lewat impor batch MSK-B70"
+          },
+          {
+            "from": "DRAFT",
+            "to": "REJECTED",
+            "at": "2026-11-02T11:13:10.749Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV076 oleh GPT-6: REVISE; ditolak otomatis karena masih Perlu revisi setelah 3 kali revisi"
+          },
+          {
+            "from": "REJECTED",
+            "to": "DRAFT",
+            "at": "2026-11-02T11:17:53.354Z",
+            "reason": "isi berubah lewat impor batch MSK-B70"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-11-02T11:19:24.707Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV078 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-11-02T11:24:46.740Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-11-02T11:24:57.584Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "Claude Opus 5.5",
+        "createdAt": "2026-11-02",
+        "revision": 5,
+        "notes": "Bentuk: teori; ragam: sebab-akibat.\nLatar: tema 11 (tata kelola lembaga keuangan nonbank), hanya sebagai latar. Ilustrasi dua kalimat tanpa profil entitas.\nRevisi 5: semua distraktor kini mengakui pengaruh bonus atau tekanan, tetapi keliru menilai kekuatan relatif nilai tertulis (A), pengawasan formal (B), dan tekanan target dibanding bonus (C). Tidak ada lagi opsi yang menyatakan faktor tertentu sama sekali tidak berpengaruh."
+      }
+    },
+    {
+      "id": "MSK-MCQ-260",
+      "type": "mcq",
+      "topicIds": [
+        "T12"
+      ],
+      "competencyIds": [
+        "K03"
+      ],
+      "difficulty": "sangat_sulit",
+      "cognitiveLevel": "C5",
+      "estimatedMinutes": 3.5,
+      "maxScore": 1,
+      "stem": "Perusahaan pembiayaan kendaraan (multifinance) menjalankan proyek analitik data selama tiga tahun. Pada 2024, perusahaan membeli lisensi platform analitik seharga Rp2.400.000.000, tetapi data pelanggan masih tersebar di lima sistem. Pada 2025, perusahaan membangun gudang data terpadu seharga Rp3.100.000.000 dan model skor kredit dari data pembayaran internal selama delapan tahun. Model itu dipakai dalam keputusan persetujuan kredit. Dengan portofolio pembiayaan Rp5.000.000.000.000, kredit macet turun dari 4,8% menjadi 3,9%, dan pengujian internal menyatakan penurunan itu berasal dari model. Pada 2026, perusahaan membeli dasbor eksekutif seharga Rp1.500.000.000, tetapi belum ada keputusan yang memakainya. Penilaian manakah yang paling tepat?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Lisensi platform 2024 adalah sumber keunggulan, karena platform mahal sulit dimiliki pesaing."
+        },
+        {
+          "key": "B",
+          "text": "Dasbor 2026 adalah sumber keunggulan, karena menampilkan data secara cepat bagi direksi."
+        },
+        {
+          "key": "C",
+          "text": "Gudang data dan model skor kredit 2025 menciptakan keunggulan karena memakai data internal yang sulit ditiru dan mengubah keputusan kredit, sedangkan lisensi dan dasbor baru menambah biaya."
+        },
+        {
+          "key": "D",
+          "text": "Tidak ada langkah yang menciptakan keunggulan, karena kemampuan analitik pasti dapat ditiru pesaing dalam waktu singkat."
+        }
+      ],
+      "answerKey": "C",
+      "explanation": "Keunggulan berasal dari data pembayaran internal selama delapan tahun yang tidak dimiliki pesaing, dan dari model yang dipakai dalam persetujuan kredit dengan bukti pengujian internal bahwa model menurunkan kredit macet. Penurunan rasio 0,9 poin persentase setara estimasi penurunan nilai eksposur kredit macet Rp45.000.000.000 (0,9% x Rp5.000.000.000.000). Angka ini bukan penghematan bersih, karena tingkat kerugian dan pemulihan tidak diketahui. Lisensi platform dapat dibeli pesaing dan belum bermanfaat saat data tersebar. Dasbor tidak dipakai untuk keputusan, sehingga hanya menambah biaya.",
+      "distractorRationale": {
+        "A": "Platform yang dapat dibeli bebas bukan sumber keunggulan, dan manfaatnya terhambat oleh data yang tersebar di lima sistem.",
+        "B": "Dasbor tanpa keputusan yang memakainya tidak menciptakan nilai.",
+        "D": "Mengabaikan bahwa data internal delapan tahun bersifat unik dan ada bukti pengujian internal bahwa model menurunkan kredit macet. Kemampuan berbasis data khusus perusahaan sulit ditiru."
+      },
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "209c1a8152e1f57850a561383ce482258df0b7c3db44dfb515b0660a849fe58a",
+        "review": {
+          "batchId": "MSK-RV072",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-11-02T00:00:00+07:00",
+          "result": {
+            "reviewKey": "R07",
+            "contentHash": "209c1a8152e1f57850a561383ce482258df0b7c3db44dfb515b0660a849fe58a",
+            "independentAnswer": "C. Gudang data terpadu dan model skor kredit merupakan sumber keunggulan yang paling kuat karena memanfaatkan data pembayaran internal selama delapan tahun dan digunakan dalam keputusan kredit. Penurunan kredit macet adalah 4,8% − 3,9% = 0,9 poin persentase. Jika diterapkan pada portofolio Rp5.000.000.000.000, selisih eksposur nominalnya adalah 0,9% × Rp5.000.000.000.000 = Rp45.000.000.000, tetapi angka tersebut bukan otomatis penghematan atau penurunan kerugian bersih.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": 5,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sangat_sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci C tepat karena mengidentifikasi data internal dan penerapannya dalam keputusan kredit sebagai sumber penciptaan nilai, bukan sekadar kepemilikan teknologi. Perhitungan penurunan eksposur nominal Rp45.000.000.000 benar dan pembahasan sudah membedakannya dari penghematan bersih."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-11-02T11:24:46.740Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:44:38.375Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV070 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T10:49:50.082Z",
+            "reason": "isi berubah lewat impor batch MSK-B70"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-11-02T10:51:37.996Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV072 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-11-02T11:24:46.740Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-11-02T11:24:57.584Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "Claude Sonnet 5.5",
+        "createdAt": "2026-11-02",
+        "revision": 2,
+        "notes": "Bentuk: analisis; pembuka: kronologi; entitas: perusahaan pembiayaan kendaraan (multifinance).\nLatar: tema 9 dan 13 (data dan AI). Semua angka fiktif.\nRevisi 2: Rp45.000.000.000 dinyatakan sebagai estimasi penurunan eksposur kredit macet, bukan manfaat bersih; perbandingan manfaat-biaya dihapus dari pembahasan; stem menegaskan model dipakai dalam persetujuan kredit."
+      }
+    },
+    {
+      "id": "MSK-MCQ-261",
+      "type": "mcq",
+      "topicIds": [
+        "T02"
+      ],
+      "competencyIds": [
+        "K01"
+      ],
+      "difficulty": "mudah",
+      "cognitiveLevel": "C3",
+      "estimatedMinutes": 1,
+      "maxScore": 1,
+      "stem": "Misalkan pemerintah menaikkan tarif pajak untuk hampir semua barang. Pemerintah juga membatasi impor baja, bahan baku utama industri rangka baja ringan. Bagaimana keduanya diperlakukan dalam analisis persaingan industri itu?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Keduanya faktor makro, tetapi pembatasan impor perlu ditelusuri dampaknya pada kekuatan pemasok dan hambatan masuk industri itu."
+        },
+        {
+          "key": "B",
+          "text": "Pembatasan impor adalah faktor industri karena dampaknya terkonsentrasi, sehingga dianalisis bersama pesaing dan tidak dicatat sebagai faktor makro."
+        },
+        {
+          "key": "C",
+          "text": "Keduanya cukup dicatat sebagai faktor makro, karena kebijakan pemerintah tidak mengubah kekuatan pemasok dan pesaing di industri itu."
+        },
+        {
+          "key": "D",
+          "text": "Kenaikan pajak lebih penting karena berlaku luas, sedangkan pembatasan impor dapat diabaikan karena hanya menyentuh satu bahan baku."
+        }
+      ],
+      "answerKey": "A",
+      "explanation": "Kebijakan pemerintah adalah kekuatan makro (politik-hukum), baik yang berlaku luas maupun yang dampaknya terkonsentrasi. Bedanya ada pada jalur pengaruhnya. Kenaikan pajak menekan permintaan di banyak industri. Pembatasan impor baja langsung mengubah struktur industri rangka baja ringan: pilihan pemasok menyempit sehingga kekuatan pemasok domestik naik, dan biaya masuk bagi pendatang baru bertambah. Karena itu faktor makro perlu ditelusuri sampai ke dampaknya pada kekuatan persaingan industri.",
+      "distractorRationale": {
+        "B": "Memindahkan kebijakan ke lingkungan industri hanya karena dampaknya terkonsentrasi. Sumbernya tetap kekuatan makro, sedangkan yang berubah di industri adalah kekuatan pemasok dan hambatan masuk.",
+        "C": "Berhenti pada pencatatan faktor makro. Kebijakan pemerintah dapat mengubah kekuatan pemasok dan hambatan masuk, sehingga dampaknya perlu ditelusuri ke struktur industri.",
+        "D": "Menilai penting tidaknya faktor dari luas cakupannya. Pembatasan bahan baku utama justru dapat mengubah persaingan satu industri lebih besar daripada kebijakan yang berlaku luas."
+      },
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "4603d9d4e6f6a93330975f48c0e24121d6af4c728f9a5a074689c00a32aba041",
+        "review": {
+          "batchId": "MSK-RV077",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-11-02T12:00:00+07:00",
+          "result": {
+            "reviewKey": "R03",
+            "contentHash": "4603d9d4e6f6a93330975f48c0e24121d6af4c728f9a5a074689c00a32aba041",
+            "independentAnswer": "A. Kenaikan pajak yang berlaku luas dan pembatasan impor baja sama-sama merupakan faktor lingkungan makro karena berasal dari kebijakan pemerintah. Namun, pembatasan impor baja perlu ditelusuri dampaknya terhadap kekuatan pemasok dan hambatan masuk dalam industri rangka baja ringan.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "mudah",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci A benar karena sumber kedua kebijakan tetap berada pada lingkungan makro, meskipun pembatasan impor baja berdampak langsung pada struktur industri. Soal menguji penerapan klasifikasi lingkungan dan penelusuran dampak kebijakan terhadap persaingan, sehingga lebih dari sekadar hafalan definisi."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-11-02T11:24:46.740Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:46:25.759Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV071 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T10:52:10.877Z",
+            "reason": "isi berubah lewat impor batch MSK-B71"
+          },
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:53:46.900Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV073 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T11:00:09.310Z",
+            "reason": "isi berubah lewat impor batch MSK-B71"
+          },
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T11:01:45.769Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV075 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T11:13:31.431Z",
+            "reason": "isi berubah lewat impor batch MSK-B71"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-11-02T11:15:27.727Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV077 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-11-02T11:24:46.740Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-11-02T11:24:57.584Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "Claude Opus 5.5",
+        "createdAt": "2026-11-02",
+        "revision": 4,
+        "notes": "Bentuk: teori; ragam: banding-kontras.\nIlustrasi dua kalimat hipotetis tanpa profil entitas.\nRevisi 4: soal tidak lagi menguji definisi. Kini peserta membandingkan kebijakan yang berdampak luas dengan kebijakan yang terkonsentrasi pada satu industri, lalu menilai implikasinya bagi analisis persaingan. Level dinaikkan dari C2 ke C3 (masih dalam rentang mudah)."
+      }
+    },
+    {
+      "id": "MSK-MCQ-262",
+      "type": "mcq",
+      "topicIds": [
+        "T04"
+      ],
+      "competencyIds": [
+        "K02"
+      ],
+      "cognitiveLevel": "C3",
+      "difficulty": "mudah",
+      "estimatedMinutes": 1,
+      "maxScore": 1,
+      "stem": "Sejak daya beli melemah, sebuah toko mebel keluarga justru ramai. Toko ini menjual model sederhana, membeli bahan dalam jumlah besar dari satu pemasok, memasang harga lebih rendah daripada toko lain, dan tidak memberi layanan pengiriman gratis. Strategi generik apa yang paling tepat menggambarkannya?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Diferensiasi, karena model sederhananya berbeda dari pesaing."
+        },
+        {
+          "key": "B",
+          "text": "Fokus diferensiasi, karena toko melayani kelompok pembeli tertentu dengan produk khas."
+        },
+        {
+          "key": "C",
+          "text": "Kepemimpinan biaya, karena pembelian besar dan layanan sederhana menekan biaya per unit."
+        },
+        {
+          "key": "D",
+          "text": "Terjebak di tengah, karena toko tidak unggul dalam mutu maupun layanan."
+        }
+      ],
+      "answerKey": "C",
+      "explanation": "Tiga ciri operasi (pembelian volume besar, model sederhana, layanan minimal) menekan biaya per unit sehingga toko dapat memasang harga rendah. Itu ciri kepemimpinan biaya.",
+      "distractorRationale": {
+        "A": "Model sederhana bukan keunikan yang dibayar premium; ciri toko menunjuk ke biaya rendah.",
+        "B": "Tidak ada kelompok pembeli khusus atau produk khas dalam data.",
+        "D": "Toko konsisten menekan biaya sehingga tidak terjebak di tengah."
+      },
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "75e9143028e0698d934f0bfcabe210b15f41d19923b690c35a97cbf04ae96349",
+        "review": {
+          "batchId": "MSK-RV071",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-11-02T00:00:00+07:00",
+          "result": {
+            "reviewKey": "R01",
+            "contentHash": "75e9143028e0698d934f0bfcabe210b15f41d19923b690c35a97cbf04ae96349",
+            "independentAnswer": "C. Kepemimpinan biaya, karena pembelian bahan dalam jumlah besar, model sederhana, dan layanan minimal mendukung biaya per unit yang lebih rendah sehingga toko dapat menawarkan harga lebih murah.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "mudah",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci C tepat karena karakteristik operasi dan penawaran toko konsisten dengan strategi kepemimpinan biaya. Skenario jelas, sesuai C3, dan dapat dijawab dalam waktu yang ditetapkan."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-11-02T11:24:46.740Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-11-02T10:46:25.759Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV071 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-11-02T11:24:46.740Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-11-02T11:24:57.584Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "Claude Sonnet 5.5",
+        "createdAt": "2026-11-02",
+        "revision": 1,
+        "notes": "Bentuk: analisis; pembuka: tanpa nama; entitas: toko mebel keluarga.\nLatar: tema 7 (daya beli melemah)."
+      }
+    },
+    {
+      "id": "MSK-MCQ-263",
+      "type": "mcq",
+      "topicIds": [
+        "T05"
+      ],
+      "competencyIds": [
+        "K03"
+      ],
+      "difficulty": "sulit",
+      "cognitiveLevel": "C4",
+      "estimatedMinutes": 2.5,
+      "maxScore": 1,
+      "stem": "LPK Taruna Lintas, lembaga pelatihan kerja swasta di Surabaya, melatih pekerja korban PHK menjadi tenaga administrasi digital. Strategi bisnisnya adalah diferensiasi lewat lulusan siap kerja. Pada kondisi awal, hanya 38% lulusan bekerja dalam tiga bulan. Survei terhadap 20 perusahaan menunjukkan 16 perusahaan menilai lulusan kurang menguasai aplikasi yang mereka pakai. Promosi lembaga selama ini menonjolkan jumlah jam pelatihan. Paket strategi fungsional pemasaran dan operasi manakah yang paling mendukung strategi bisnis itu?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Menyusun ulang materi bersama perusahaan perekrut dan melacak penempatan tiap angkatan, lalu langsung memasarkan jaminan penempatan kerja sejak angkatan pertama."
+        },
+        {
+          "key": "B",
+          "text": "Menyusun ulang materi berdasarkan survei kepuasan peserta dan melacak penempatan tiap angkatan, lalu memasarkan angka penempatan setelah peningkatannya terbukti terukur."
+        },
+        {
+          "key": "C",
+          "text": "Menyusun ulang materi bersama perusahaan perekrut dan melacak nilai ujian akhir tiap angkatan, lalu memasarkan nilai rata-rata lulusan setelah terbukti meningkat."
+        },
+        {
+          "key": "D",
+          "text": "Menyusun ulang materi bersama perusahaan perekrut dan melacak penempatan lulusan tiap angkatan, lalu memasarkan angka penempatan setelah perbaikannya terbukti terukur."
+        }
+      ],
+      "answerKey": "D",
+      "explanation": "Strategi bisnisnya adalah diferensiasi lewat lulusan siap kerja, tetapi 16 dari 20 perusahaan (80%) menilai lulusan kurang menguasai aplikasi yang dipakai. Karena itu sumber perbaikan materi adalah perusahaan perekrut, ukuran keberhasilannya adalah penempatan kerja, dan klaim pemasaran baru disampaikan setelah ada bukti. Opsi A tepat dalam operasi, tetapi menjanjikan jaminan penempatan saat angka awal baru 38%. Opsi B mengukur hasil dengan benar, tetapi menyusun materi dari kepuasan peserta, padahal keluhan datang dari perekrut. Opsi C melibatkan perekrut, tetapi nilai ujian internal bukan bukti bahwa lulusan diterima bekerja.",
+      "distractorRationale": {
+        "A": "Waktu klaim keliru. Jaminan penempatan dipasarkan sebelum perbaikan terbukti, padahal kondisi awal baru 38%, sehingga janji diferensiasi berisiko tidak terpenuhi.",
+        "B": "Sumber perbaikan materi keliru. Kepuasan peserta tidak menangkap aplikasi yang dibutuhkan perekrut, padahal 16 dari 20 perusahaan menilai lulusan kurang menguasainya.",
+        "C": "Ukuran hasil keliru. Nilai ujian akhir adalah ukuran internal, sedangkan janji diferensiasi adalah lulusan yang diterima bekerja, sehingga yang perlu dilacak dan dipasarkan adalah penempatan."
+      },
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "6aa45978b0f89468b6ca05748e6b8ab14803d3b14fedcc286d988f202c279ac2",
+        "review": {
+          "batchId": "MSK-RV077",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-11-02T12:00:00+07:00",
+          "result": {
+            "reviewKey": "R02",
+            "contentHash": "6aa45978b0f89468b6ca05748e6b8ab14803d3b14fedcc286d988f202c279ac2",
+            "independentAnswer": "D. Materi perlu disusun bersama perusahaan perekrut berdasarkan kebutuhan aplikasi yang digunakan, penempatan lulusan dilacak pada setiap angkatan, dan angka penempatan baru dipasarkan setelah peningkatannya terbukti terukur.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": 5,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci D paling konsisten dengan diferensiasi melalui lulusan siap kerja: kebutuhan perekrut menjadi dasar perbaikan operasi dan penempatan menjadi ukuran hasil yang relevan untuk pemasaran. Distraktor telah diperbaiki dengan kelemahan yang lebih spesifik, yaitu klaim yang terlalu dini, sumber masukan yang tidak tepat, dan ukuran keberhasilan internal yang tidak membuktikan penempatan."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-11-02T11:24:46.740Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:46:25.759Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV071 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T10:52:10.877Z",
+            "reason": "isi berubah lewat impor batch MSK-B71"
+          },
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:53:46.900Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV073 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T11:00:09.310Z",
+            "reason": "isi berubah lewat impor batch MSK-B71"
+          },
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T11:01:45.769Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV075 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T11:13:31.431Z",
+            "reason": "isi berubah lewat impor batch MSK-B71"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-11-02T11:15:27.727Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV077 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-11-02T11:24:46.740Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-11-02T11:24:57.584Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "Claude Opus 5.5",
+        "createdAt": "2026-11-02",
+        "revision": 4,
+        "notes": "Bentuk: analisis; pembuka: profil; entitas: lembaga pelatihan kerja swasta.\nLatar: tema 8 (PHK padat karya). Angka fiktif.\nRevisi 4: keempat opsi kini memuat unsur yang sama (perbaikan materi, pelacakan hasil, klaim pemasaran). Tiap distraktor keliru pada satu unsur yang halus: waktu klaim (A), sumber perbaikan materi (B), atau ukuran hasil (C)."
+      }
+    },
+    {
+      "id": "MSK-MCQ-264",
+      "type": "mcq",
+      "topicIds": [
+        "T06"
+      ],
+      "competencyIds": [
+        "K02"
+      ],
+      "cognitiveLevel": "C4",
+      "difficulty": "sulit",
+      "estimatedMinutes": 2.5,
+      "maxScore": 1,
+      "stem": "Surel pembeli luar negeri kepada PT Atsiri Nusa Rempah, eksportir minyak atsiri: “Kami memesan 20 ton untuk pengiriman Januari sampai Desember 2027. Harga setelah tarif maksimal Rp1.250.000 per kilogram. Pasokan dari Indonesia atau Vietnam dapat diterima.” Diasumsikan tarif masuk pada periode itu 19% untuk asal Indonesia dan 8% untuk asal Vietnam. Harga perusahaan dari Indonesia Rp1.100.000 per kilogram. Mitra penyulingan di Vietnam menawarkan Rp1.150.000 per kilogram untuk satu kontrak pengiriman. Langkah manakah yang paling sesuai?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Memasok dari Indonesia dan menanggung selisih harga, karena mutu minyak Indonesia membenarkan margin yang lebih tipis."
+        },
+        {
+          "key": "B",
+          "text": "Memasok lewat kontrak dengan mitra Vietnam, karena harga setelah tarif memenuhi batas pembeli dan komitmen modal tetap kecil bila tarif berubah."
+        },
+        {
+          "key": "C",
+          "text": "Membangun penyulingan sendiri di Vietnam, karena tarif rendah di sana memberi penghematan permanen."
+        },
+        {
+          "key": "D",
+          "text": "Menolak pesanan dan fokus ke pasar domestik, karena harga setelah tarif dari kedua negara melebihi batas pembeli."
+        }
+      ],
+      "answerKey": "B",
+      "explanation": "Harga setelah tarif asal Indonesia: Rp1.100.000 x 1,19 = Rp1.309.000, melebihi batas Rp1.250.000. Asal Vietnam: Rp1.150.000 x 1,08 = Rp1.242.000, memenuhi batas. Tarif hanya diasumsikan untuk 2027 dan dapat berubah, maka kontrak jangka pendek dengan mitra lebih sesuai daripada investasi tetap.",
+      "distractorRationale": {
+        "A": "Menanggung selisih Rp59.000 per kilogram tidak diperlukan karena ada opsi yang memenuhi batas harga.",
+        "C": "Investasi tetap atas dasar tarif sementara berisiko; penghematan tidak permanen.",
+        "D": "Salah hitung: harga setelah tarif asal Vietnam memenuhi batas pembeli."
+      },
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "704b59350731b9f59d12d22a9042177417474cdcec1e025cd8c973cf48d28904",
+        "review": {
+          "batchId": "MSK-RV071",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-11-02T00:00:00+07:00",
+          "result": {
+            "reviewKey": "R09",
+            "contentHash": "704b59350731b9f59d12d22a9042177417474cdcec1e025cd8c973cf48d28904",
+            "independentAnswer": "B. Harga setelah tarif dari Indonesia adalah Rp1.100.000 × 1,19 = Rp1.309.000 per kilogram, melebihi batas pembeli. Harga dari Vietnam adalah Rp1.150.000 × 1,08 = Rp1.242.000 per kilogram, masih di bawah batas Rp1.250.000. Kontrak dengan mitra Vietnam memenuhi batas harga tanpa investasi fasilitas sendiri.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": 5,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 4,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci B tepat dan kedua perhitungan harga setelah tarif benar. Asumsi tarif telah dinyatakan secara eksplisit untuk periode 2027, sehingga peserta tidak perlu mengandalkan pengetahuan regulasi di luar soal."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-11-02T11:24:46.740Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-11-02T10:46:25.759Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV071 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-11-02T11:24:46.740Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-11-02T11:24:57.584Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "Claude Sonnet 5.5",
+        "createdAt": "2026-11-02",
+        "revision": 1,
+        "notes": "Bentuk: analisis; pembuka: dokumen; entitas: eksportir minyak atsiri.\nLatar: tema 3. Tarif 19% dan 8% serta periode Januari-Desember 2027 adalah asumsi hipotetis yang dinyatakan di stem, bukan tarif nyata."
+      }
+    },
+    {
+      "id": "MSK-MCQ-265",
+      "type": "mcq",
+      "topicIds": [
+        "T07"
+      ],
+      "competencyIds": [
+        "K02"
+      ],
+      "difficulty": "mudah",
+      "cognitiveLevel": "C2",
+      "estimatedMinutes": 1,
+      "maxScore": 1,
+      "stem": "Mengapa perusahaan multibisnis perlu menilai daya tarik industri sebelum berdiversifikasi, misalnya ke industri baterai kendaraan listrik?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Karena pertumbuhan pasar tinggi dan peluang merebut pangsa pasar sudah menunjukkan laba, sehingga kekuatan pembeli dan pemasok dinilai belakangan."
+        },
+        {
+          "key": "B",
+          "text": "Karena kapabilitas kuat dapat mengimbangi struktur industri yang buruk, sehingga penilaian industri bisa digantikan penilaian kekuatan perusahaan itu."
+        },
+        {
+          "key": "C",
+          "text": "Karena laba perusahaan induk ditentukan portofolio yang ada, sehingga daya tarik industri baru cukup ditinjau setelah akuisisi selesai."
+        },
+        {
+          "key": "D",
+          "text": "Karena struktur industri, seperti persaingan dan kekuatan pembeli, ikut menentukan laba jangka panjang, sehingga industri kurang menarik sulit menguntungkan walau perusahaan kuat."
+        }
+      ],
+      "answerKey": "D",
+      "explanation": "Struktur industri (persaingan, kekuatan pembeli dan pemasok, hambatan masuk) memengaruhi laba jangka panjang. Industri yang kurang menarik membatasi laba meski perusahaan masuk dengan kapabilitas baik, sehingga daya tarik perlu diuji sebelum diversifikasi, bukan sesudahnya.",
+      "distractorRationale": {
+        "A": "Mengutamakan pertumbuhan dan pangsa pasar. Industri yang tumbuh cepat tetap sulit menguntungkan bila pembeli dan pemasok kuat, sehingga keduanya perlu dinilai sebelum keputusan.",
+        "B": "Menganggap kapabilitas dapat menggantikan penilaian industri. Struktur industri tetap membatasi laba jangka panjang walau kapabilitas perusahaan kuat.",
+        "C": "Menunda penilaian industri sampai setelah akuisisi. Penilaian harus dilakukan sebelum masuk, karena akuisisi di industri yang kurang menarik sulit dibatalkan."
+      },
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "fc72229616e82e0bc1829bf8461c2efc7a1868057d7cfd63ab07b308363b96a4",
+        "review": {
+          "batchId": "MSK-RV075",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-11-02T00:00:00+07:00",
+          "result": {
+            "reviewKey": "R02",
+            "contentHash": "fc72229616e82e0bc1829bf8461c2efc7a1868057d7cfd63ab07b308363b96a4",
+            "independentAnswer": "D. Struktur industri, termasuk intensitas persaingan serta kekuatan pembeli dan pemasok, memengaruhi potensi laba jangka panjang sehingga daya tarik industri perlu dinilai sebelum perusahaan melakukan diversifikasi.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 4,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "mudah",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci D benar dan alasan penilaian daya tarik industri sebelum diversifikasi disampaikan secara tepat. Soal sesuai untuk tingkat mudah dan C2, meskipun lebih menguji pemahaman hubungan struktur industri dengan profitabilitas daripada kemampuan analisis situasi perusahaan."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-11-02T11:24:46.740Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:46:25.759Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV071 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T10:52:10.877Z",
+            "reason": "isi berubah lewat impor batch MSK-B71"
+          },
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:53:46.900Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV073 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T11:00:09.310Z",
+            "reason": "isi berubah lewat impor batch MSK-B71"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-11-02T11:01:45.769Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV075 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-11-02T11:24:46.740Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-11-02T11:24:57.584Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "Claude Sonnet 5.5",
+        "createdAt": "2026-11-02",
+        "revision": 3,
+        "notes": "Bentuk: teori; ragam: alasan konseptual.\nLatar: tema 4 (industri baterai kendaraan listrik), hanya latar.\nRevisi 3: kata mutlak dihapus dari distraktor; distraktor diganti dengan penalaran yang masuk akal (pertumbuhan dan pangsa pasar tanpa menilai pembeli dan pemasok, kapabilitas menggantikan penilaian industri, penilaian ditunda sampai setelah akuisisi); panjang opsi diseimbangkan."
+      }
+    },
+    {
+      "id": "MSK-MCQ-266",
+      "type": "mcq",
+      "topicIds": [
+        "T08"
+      ],
+      "competencyIds": [
+        "K04"
+      ],
+      "cognitiveLevel": "C4",
+      "difficulty": "sulit",
+      "estimatedMinutes": 2.5,
+      "maxScore": 1,
+      "stem": "Direksi perusahaan perikanan tangkap Mina Karang berbeda pendapat. Seorang pembeli global menyumbang 60% dari pendapatan ekspor Rp300.000.000.000 per tahun. Pembeli itu meminta, mulai 1 Januari 2028, hanya menerima ikan dari alat tangkap yang tidak merusak habitat (diasumsikan). Pukat yang kini dipakai menghasilkan 35% volume tangkapan. Peralihan alat memakan waktu 12 bulan dan biaya Rp25.000.000.000. Direktur Operasi menolak karena biaya itu. Kepala Keberlanjutan mendukung karena stok ikan terus menurun. Keputusan diambil pada November 2026. Pilihan manakah yang paling selaras dengan keberlanjutan usaha?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Menolak permintaan, karena kewajiban utama perusahaan adalah menjaga laba pemegang saham dan pembeli lain akan menerima alat lama."
+        },
+        {
+          "key": "B",
+          "text": "Menerima dan mengganti seluruh alat tangkap bulan ini juga, karena keberlanjutan harus didahulukan dari biaya."
+        },
+        {
+          "key": "C",
+          "text": "Menerima dan beralih bertahap selama 12 bulan, karena biaya itu jauh lebih kecil daripada risiko kehilangan 60% pendapatan ekspor dan stok ikan ikut terjaga."
+        },
+        {
+          "key": "D",
+          "text": "Meminta pembeli menunda tenggat, dan bila ditolak beralih ke pembeli lain, karena pasar ikan dunia memiliki banyak pembeli."
+        }
+      ],
+      "answerKey": "C",
+      "explanation": "Pendapatan yang berisiko = 60% x Rp300.000.000.000 = Rp180.000.000.000 per tahun, jauh di atas biaya peralihan Rp25.000.000.000. Keputusan November 2026 dengan peralihan 12 bulan selesai sebelum tenggat 1 Januari 2028, sehingga peralihan bertahap memungkinkan. Langkah ini juga menjaga stok ikan sebagai dasar usaha jangka panjang dan memperhatikan kepentingan pembeli serta pemegang saham.",
+      "distractorRationale": {
+        "A": "Mengasumsikan pembeli lain menerima alat lama dan mengabaikan risiko kehilangan 60% pendapatan.",
+        "B": "Mengganti seluruh alat sekaligus tidak perlu dan mengabaikan batasan biaya serta waktu operasi.",
+        "D": "Bergantung pada asumsi pasar yang tidak ada di soal dan mengambil risiko kehilangan pembeli utama."
+      },
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "1bf5157f94ac82564eddbc6b53ee93d7da84166b31f65c4085fa942b9285c0cb",
+        "review": {
+          "batchId": "MSK-RV071",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-11-02T00:00:00+07:00",
+          "result": {
+            "reviewKey": "R04",
+            "contentHash": "1bf5157f94ac82564eddbc6b53ee93d7da84166b31f65c4085fa942b9285c0cb",
+            "independentAnswer": "C. Peralihan bertahap selama 12 bulan memungkinkan perusahaan memenuhi tenggat pembeli sebelum 1 Januari 2028. Risiko pendapatan ekspor yang terpapar adalah 60% × Rp300.000.000.000 = Rp180.000.000.000 per tahun, sedangkan biaya peralihan Rp25.000.000.000.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": 5,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 4,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci C tepat dan perhitungan pendapatan ekspor yang berisiko benar. Waktu peralihan 12 bulan dari November 2026 juga memungkinkan perusahaan memenuhi tenggat 1 Januari 2028, dengan tetap mempertimbangkan keberlanjutan sumber daya ikan."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-11-02T11:24:46.740Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-11-02T10:46:25.759Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV071 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-11-02T11:24:46.740Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-11-02T11:24:57.584Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "Claude Sonnet 5.5",
+        "createdAt": "2026-11-02",
+        "revision": 1,
+        "notes": "Bentuk: analisis; pembuka: perdebatan; entitas: perusahaan perikanan tangkap.\nLatar: tema 10 (tuntutan ESG pembeli global). Syarat pembeli dan tenggat 1 Januari 2028 adalah asumsi."
+      }
+    },
+    {
+      "id": "MSK-MCQ-267",
+      "type": "mcq",
+      "topicIds": [
+        "T09"
+      ],
+      "competencyIds": [
+        "K03"
+      ],
+      "cognitiveLevel": "C3",
+      "difficulty": "sedang",
+      "estimatedMinutes": 1.5,
+      "maxScore": 1,
+      "stem": "Enam bulan setelah membuka 40 gerai baru, restoran waralaba Dapur Sembilan menerima keluhan rasa yang tidak konsisten. Sebelumnya, 10 penyelia pusat mengawasi 120 gerai. Kini 10 penyelia yang sama mengawasi 160 gerai. Manajemen tetap ingin berekspansi meski daya beli pelanggan melemah. Penyesuaian manakah yang paling tepat?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Membentuk manajer wilayah yang mengawasi gerai, serta menetapkan standar resep dan daftar periksa mutu yang sama untuk semua gerai."
+        },
+        {
+          "key": "B",
+          "text": "Mewajibkan persetujuan pusat untuk setiap keputusan harian gerai, agar keseragaman terjaga."
+        },
+        {
+          "key": "C",
+          "text": "Membebaskan tiap gerai menyesuaikan resep, karena selera daerah berbeda dan pusat sulit mengawasi."
+        },
+        {
+          "key": "D",
+          "text": "Menghentikan pembukaan gerai selama dua tahun tanpa mengubah cara pengawasan."
+        }
+      ],
+      "answerKey": "A",
+      "explanation": "Rentang kendali naik dari 12 menjadi 16 gerai per penyelia (120/10 dan 160/10). Struktur perlu ditambah lapisan pengawasan wilayah, dan kendali operasi dijaga lewat standar resep serta daftar periksa mutu yang seragam.",
+      "distractorRationale": {
+        "B": "Sentralisasi keputusan harian memperlambat gerai dan membebani pusat.",
+        "C": "Kebebasan resep memperparah ketidakkonsistenan rasa, padahal merek waralaba bergantung pada keseragaman.",
+        "D": "Tidak memperbaiki akar masalah (rentang kendali dan standar) dan menghambat ekspansi."
+      },
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "a565cba24062cd3a2f6eee8d76f524d411f83e82b9dd028658d3f5c1617d7a04",
+        "review": {
+          "batchId": "MSK-RV071",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-11-02T00:00:00+07:00",
+          "result": {
+            "reviewKey": "R03",
+            "contentHash": "a565cba24062cd3a2f6eee8d76f524d411f83e82b9dd028658d3f5c1617d7a04",
+            "independentAnswer": "A. Penambahan manajer wilayah mengurangi beban pengawasan langsung penyelia pusat, sedangkan standar resep dan daftar periksa mutu membantu menjaga konsistensi layanan antargerai.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": 5,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 4,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sedang",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci A tepat. Perhitungan rentang kendali meningkat dari 12 menjadi 16 gerai per penyelia, sehingga penambahan lapisan pengawasan wilayah dan standardisasi operasi merupakan respons yang relevan."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-11-02T11:24:46.740Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-11-02T10:46:25.759Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV071 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-11-02T11:24:46.740Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-11-02T11:24:57.584Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "Claude Sonnet 5.5",
+        "createdAt": "2026-11-02",
+        "revision": 1,
+        "notes": "Bentuk: analisis; pembuka: peristiwa; entitas: restoran waralaba nasional.\nLatar: tema 7 (daya beli melemah). Angka fiktif."
+      }
+    },
+    {
+      "id": "MSK-MCQ-268",
+      "type": "mcq",
+      "topicIds": [
+        "T10"
+      ],
+      "competencyIds": [
+        "K05"
+      ],
+      "difficulty": "sulit",
+      "cognitiveLevel": "C4",
+      "estimatedMinutes": 2.5,
+      "maxScore": 1,
+      "stem": "Kepemimpinan situasional dan kepemimpinan transformasional dirumuskan untuk tim yang umumnya bekerja tatap muka. Pernyataan manakah yang paling tepat tentang penerapan teori kepemimpinan klasik itu pada tim hibrida, yaitu anggota bekerja sebagian dari kantor dan sebagian dari rumah?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Pemimpin menyesuaikan gaya dengan kesiapan tiap anggota dan memberi kebebasan luas dalam cara kerja, sehingga visi bersama cukup disampaikan sekali lewat pengumuman awal kepada seluruh tim."
+        },
+        {
+          "key": "B",
+          "text": "Prinsip dasar tetap berlaku, yaitu menyesuaikan gaya dengan kesiapan anggota dan menjaga visi bersama, tetapi asumsi kehadiran fisik perlu diperluas lewat komunikasi yang disengaja dan penilaian hasil."
+        },
+        {
+          "key": "C",
+          "text": "Pemimpin menilai seluruh anggota dengan target hasil yang sama dan memberi otonomi setara, sehingga perbedaan kesiapan antaranggota tidak perlu lagi dipertimbangkan dalam memilih gaya."
+        },
+        {
+          "key": "D",
+          "text": "Pemimpin mengutamakan anggota yang sering hadir di kantor karena kesiapannya lebih mudah diamati, sedangkan anggota yang jarang hadir diarahkan lewat instruksi tertulis yang rinci."
+        }
+      ],
+      "answerKey": "B",
+      "explanation": "Inti teori klasik tetap relevan: menyesuaikan gaya dengan kesiapan anggota dan menumbuhkan visi bersama. Yang perlu diperluas adalah asumsi bahwa pemimpin hadir secara fisik. Pada tim hibrida, kepercayaan dan visi dijaga lewat komunikasi yang disengaja, sedangkan kinerja dinilai dari hasil. Penilaian hasil tetap harus memperhatikan perbedaan kesiapan tiap anggota.",
+      "distractorRationale": {
+        "A": "Mengutamakan fleksibilitas individu tetapi mengabaikan konsistensi visi. Visi bersama perlu dijaga berulang lewat komunikasi, terutama saat anggota jarang bertemu.",
+        "C": "Memakai penilaian hasil tanpa memperhatikan perbedaan kesiapan. Teori situasional tetap menuntut gaya disesuaikan dengan kemampuan dan kemauan tiap anggota.",
+        "D": "Mengukur kesiapan dari kehadiran fisik sehingga timbul bias terhadap yang sering hadir. Kesiapan menurut teori situasional adalah kemampuan dan kemauan, bukan lokasi kerja."
+      },
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "e60ac1f1056463e5e96187b02a65c76cb337d1c488a5b6342aefd216c1552d2f",
+        "review": {
+          "batchId": "MSK-RV075",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-11-02T00:00:00+07:00",
+          "result": {
+            "reviewKey": "R01",
+            "contentHash": "e60ac1f1056463e5e96187b02a65c76cb337d1c488a5b6342aefd216c1552d2f",
+            "independentAnswer": "B. Prinsip dasar kepemimpinan situasional dan transformasional tetap relevan, tetapi penerapannya pada tim hibrida memerlukan komunikasi yang disengaja dan penilaian kinerja berdasarkan hasil, dengan tetap memperhatikan kesiapan masing-masing anggota.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sedang",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci B tepat dan soal menguji penerapan prinsip kepemimpinan pada konteks kerja hibrida, bukan sekadar menghafal teori. Namun, kompleksitas penalarannya lebih sesuai dengan tingkat sedang daripada sulit karena tiga distraktor mengandung kekeliruan yang cukup mudah dikenali."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-11-02T11:24:46.740Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:46:25.759Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV071 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T10:52:10.877Z",
+            "reason": "isi berubah lewat impor batch MSK-B71"
+          },
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:53:46.900Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV073 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T11:00:09.310Z",
+            "reason": "isi berubah lewat impor batch MSK-B71"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-11-02T11:01:45.769Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV075 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-11-02T11:24:46.740Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-11-02T11:24:57.584Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "Claude Sonnet 5.5",
+        "createdAt": "2026-11-02",
+        "revision": 3,
+        "notes": "Bentuk: teori; ragam: perkembangan teori (dipadukan dengan asumsi).\nLatar: tema 13 (perubahan pola kerja), hanya latar.\nRevisi 3: distraktor diganti dengan pertimbangan nyata tim hibrida (fleksibilitas tanpa konsistensi visi, penilaian hasil tanpa memperhatikan kesiapan, bias kehadiran); tidak ada distraktor yang menolak prinsip dasar teori secara langsung; panjang opsi diseimbangkan."
+      }
+    },
+    {
+      "id": "MSK-MCQ-269",
+      "type": "mcq",
+      "topicIds": [
+        "T11"
+      ],
+      "competencyIds": [
+        "K05",
+        "K04"
+      ],
+      "difficulty": "sulit",
+      "cognitiveLevel": "C4",
+      "estimatedMinutes": 2.5,
+      "maxScore": 1,
+      "stem": "Seorang direktur berargumen: “Perubahan besar sebaiknya diumumkan dan dijalankan sekaligus. Resistensi hanya muncul bila pegawai diberi waktu memikirkan perubahan, jadi tanpa waktu resistensi tidak ada.” Di mana letak kekeliruan utama argumen ini?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Argumen mengira resistensi muncul dari waktu berpikir, padahal sebabnya informasi yang kurang jelas; pengumuman searah yang sering dari direksi sudah cukup mengatasinya."
+        },
+        {
+          "key": "B",
+          "text": "Argumen mengira resistensi muncul dari waktu berpikir, padahal sebabnya ketidakmampuan pegawai beradaptasi; seleksi pegawai yang lentur sejak perekrutan sudah cukup mencegahnya."
+        },
+        {
+          "key": "C",
+          "text": "Argumen mengira resistensi muncul dari waktu berpikir, padahal sebabnya kekhawatiran kehilangan, ketidakpastian, dan rasa tidak adil; tanpa komunikasi, resistensi bertahan diam-diam."
+        },
+        {
+          "key": "D",
+          "text": "Argumen benar bahwa waktu berpikir memicu resistensi; kekeliruannya hanya pada cakupan, sebab perubahan sebaiknya dimulai dari satu unit agar resistensi mudah dikendalikan."
+        }
+      ],
+      "answerKey": "C",
+      "explanation": "Resistensi bersumber dari kekhawatiran pegawai tentang kehilangan, ketidakpastian, dan keadilan, bukan dari waktu berpikir. Menghilangkan waktu dan komunikasi tidak menghilangkan sebab itu, dan resistensi yang tersembunyi menghambat pelaksanaan. Informasi searah, seleksi pegawai, dan perubahan bertahap dapat membantu, tetapi tidak menjawab kekhawatiran pegawai lewat komunikasi dua arah.",
+      "distractorRationale": {
+        "A": "Menganggap komunikasi searah sudah cukup. Pengumuman tanpa partisipasi tidak menjawab kekhawatiran kehilangan, ketidakpastian, dan rasa tidak adil.",
+        "B": "Menganggap resistensi berasal dari ketidakmampuan pegawai beradaptasi. Resistensi umumnya berasal dari kekhawatiran terhadap dampak perubahan, bukan dari sifat pegawai.",
+        "D": "Membenarkan sebab yang keliru dari argumen direktur, yaitu waktu berpikir memicu resistensi, lalu hanya mempersoalkan cakupan perubahan."
+      },
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "b3677620503330118535f88e78c94491e1eb04fba40db3616cc5132db7665734",
+        "review": {
+          "batchId": "MSK-RV075",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-11-02T00:00:00+07:00",
+          "result": {
+            "reviewKey": "R03",
+            "contentHash": "b3677620503330118535f88e78c94491e1eb04fba40db3616cc5132db7665734",
+            "independentAnswer": "C. Resistensi dapat timbul dari kekhawatiran kehilangan, ketidakpastian, dan persepsi ketidakadilan. Menghilangkan waktu untuk berpikir atau komunikasi tidak menghilangkan sumber resistensi tersebut dan justru dapat membuatnya tidak terlihat.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 4,
+              "stemClarity": 5,
+              "distractorQuality": 3,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [
+              {
+                "severity": "minor",
+                "dimension": "distractorQuality",
+                "issue": "Distraktor A dan B menyebut sumber resistensi yang memang dapat terjadi dalam perubahan organisasi, yaitu ketidakjelasan informasi dan kesulitan beradaptasi. Keduanya menjadi kurang tepat terutama karena menganggap satu penyebab tersebut sebagai penjelasan utama dan menawarkan solusi yang tidak memadai. Akibatnya, peserta dapat memilih C melalui keluasan cakupan jawabannya, bukan melalui evaluasi yang mendalam.",
+                "suggestedFix": "Buat distraktor yang masing-masing memuat diagnosis dan tindakan yang lebih masuk akal, tetapi tetap keliru dalam menjelaskan hubungan antara waktu berpikir, komunikasi, partisipasi, dan sumber resistensi."
+              }
+            ],
+            "suggestedDifficulty": "sedang",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci C tepat dan soal menguji evaluasi kritis terhadap asumsi yang keliru mengenai resistensi perubahan. Distraktor A dan B masih memiliki dasar konseptual yang masuk akal, tetapi solusi yang ditawarkan terlalu menyederhanakan masalah; perbaikannya bersifat minor."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-11-02T11:24:46.740Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:46:25.759Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV071 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T10:52:10.877Z",
+            "reason": "isi berubah lewat impor batch MSK-B71"
+          },
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:53:46.900Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV073 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T11:00:09.310Z",
+            "reason": "isi berubah lewat impor batch MSK-B71"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-11-02T11:01:45.769Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV075 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-11-02T11:24:46.740Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-11-02T11:24:57.584Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "Claude Sonnet 5.5",
+        "createdAt": "2026-11-02",
+        "revision": 3,
+        "notes": "Bentuk: teori; ragam: menemukan kekeliruan.\nLatar: tema 8 (perubahan organisasi saat PHK dan otomasi), hanya latar.\nRevisi 3: competencyIds diubah dari K06 ke K05 dan K04 (kepemimpinan dan implementasi perubahan) karena soal tidak memuat dilema etis. Distraktor diganti dengan miskonsepsi realistis (komunikasi searah, pegawai tidak mampu beradaptasi, perubahan bertahap per unit); referensi model Lewin dihapus; panjang opsi diseimbangkan."
+      }
+    },
+    {
+      "id": "MSK-MCQ-270",
+      "type": "mcq",
+      "topicIds": [
+        "T12"
+      ],
+      "competencyIds": [
+        "K03"
+      ],
+      "difficulty": "sulit",
+      "cognitiveLevel": "C4",
+      "estimatedMinutes": 2.5,
+      "maxScore": 1,
+      "stem": "Dasbor Oktober sebuah jaringan klinik hewan di tiga kota menampilkan data berikut.\nCabang | Kunjungan | Keluhan | Hari stok obat habis\nA | 1.000 | 25 | 2\nB | 500 | 20 | 9\nC | 250 | 2 | 0\nDirektur ingin satu keputusan perbaikan segera. Keputusan manakah yang paling didukung data?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Menelusuri cabang B lebih dulu karena tingkat keluhannya tertinggi (4%) dan stok habis terlama, lalu menguji hubungan stok dan keluhan dengan membandingkan ketiga cabang pada Oktober."
+        },
+        {
+          "key": "B",
+          "text": "Menelusuri cabang C lebih dulu sebagai pembanding karena tingkat keluhannya 0,8% tanpa stok habis, lalu menguji apakah stok yang cukup menurunkan keluhan di cabang lain."
+        },
+        {
+          "key": "C",
+          "text": "Menelusuri cabang B lebih dulu karena tingkat keluhannya tertinggi (4%) dan stok habis terlama, lalu menguji penyebabnya lewat survei kepuasan umum tanpa memisahkan keluhan terkait obat."
+        },
+        {
+          "key": "D",
+          "text": "Menelusuri cabang B lebih dulu karena tingkat keluhannya tertinggi (4%) dan stok habis terlama, lalu mencocokkan tanggal dan isi keluhan dengan hari stok habis."
+        }
+      ],
+      "answerKey": "D",
+      "explanation": "Tingkat keluhan: A = 25/1.000 = 2,5%; B = 20/500 = 4%; C = 2/250 = 0,8%. Cabang B tertinggi dan stok habis terlama (9 hari), sehingga layak ditelusuri lebih dulu. Cara uji yang paling kuat adalah mencocokkan tanggal dan isi keluhan dengan hari stok habis di cabang yang sama. Bila keluhan menumpuk pada hari stok habis dan menyangkut obat, dugaan itu didukung. Perbandingan tiga cabang dalam satu bulan hanya memberi tiga titik data dan tercampur perbedaan lain antarcabang. Survei kepuasan umum tidak memisahkan keluhan yang terkait obat. Cabang C hanya punya 2 keluhan dan bukan cabang bermasalah.",
+      "distractorRationale": {
+        "A": "Prioritas cabang sudah tepat, tetapi cara ujinya lemah. Tiga titik data dalam satu bulan tidak dapat memisahkan pengaruh stok dari perbedaan lain antarcabang, seperti volume, petugas, atau kota.",
+        "B": "Memakai tingkat keluhan relatif, tetapi mendahulukan cabang yang tidak bermasalah dan hanya punya 2 keluhan. Data sekecil itu lemah sebagai pembanding, dan perbaikan segera seharusnya dimulai dari cabang B.",
+        "C": "Prioritas cabang sudah tepat, tetapi survei kepuasan umum tidak memisahkan keluhan terkait obat, sehingga hubungan stok dan keluhan tidak benar-benar diuji."
+      },
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "a9c67792a99b9e675722b707c74cfc8d359bc3e08594bea92da25cb6cfb354ed",
+        "review": {
+          "batchId": "MSK-RV077",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-11-02T12:00:00+07:00",
+          "result": {
+            "reviewKey": "R01",
+            "contentHash": "a9c67792a99b9e675722b707c74cfc8d359bc3e08594bea92da25cb6cfb354ed",
+            "independentAnswer": "D. Cabang B memiliki tingkat keluhan tertinggi, yaitu 20/500 = 4%, dan hari stok obat habis paling lama, yaitu 9 hari. Penelusuran sebaiknya mencocokkan tanggal serta isi keluhan dengan hari stok habis di cabang yang sama untuk menguji apakah keluhan berkaitan dengan ketersediaan obat.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": 5,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci D tepat dan seluruh tingkat keluhan benar: A 2,5%, B 4%, dan C 0,8%. Opsi A, B, dan C kini menawarkan pendekatan yang cukup masuk akal, tetapi D paling kuat karena menguji hubungan stok dan keluhan pada cabang serta periode yang sama dengan mencocokkan tanggal dan isi keluhan."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-11-02T11:24:46.740Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:46:25.759Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV071 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T10:52:10.877Z",
+            "reason": "isi berubah lewat impor batch MSK-B71"
+          },
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T10:53:46.900Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV073 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T11:00:09.310Z",
+            "reason": "isi berubah lewat impor batch MSK-B71"
+          },
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-11-02T11:01:45.769Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV075 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-11-02T11:13:31.431Z",
+            "reason": "isi berubah lewat impor batch MSK-B71"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-11-02T11:15:27.727Z",
+            "by": "GPT-6",
+            "reason": "review MSK-RV077 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-11-02T11:24:46.740Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-11-02T11:24:57.584Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "Claude Opus 5.5",
+        "createdAt": "2026-11-02",
+        "revision": 4,
+        "notes": "Bentuk: analisis; pembuka: data; entitas: jaringan klinik hewan.\nLatar: tema 9 (dasbor dan analisis data). Data fiktif.\nRevisi 4: semua opsi kini memakai tingkat keluhan relatif dan menyebut cara menguji hubungan stok dan keluhan. Opsi berbeda pada prioritas cabang (B) dan cara uji (A: perbandingan tiga cabang; C: survei umum; D: pencocokan tanggal dan isi keluhan). Angka tabel tidak berubah."
+      }
     }
   ],
   "changelog": [
@@ -33435,6 +35984,11 @@
       "version": "1.12.0",
       "date": "2026-10-31",
       "notes": "23 soal tayang: MSK-KAS-040, MSK-KAS-041, MSK-KAS-042, MSK-KAS-043, MSK-KAS-044, MSK-KAS-045, MSK-KAS-046, MSK-KAS-047, MSK-MCQ-241, MSK-MCQ-242, MSK-MCQ-243, MSK-MCQ-244, MSK-MCQ-245, MSK-MCQ-246, MSK-MCQ-247, MSK-MCQ-248, MSK-MCQ-249, MSK-MCQ-250, MSK-ESA-081, MSK-ESA-082, MSK-ESA-083, MSK-ESA-084, MSK-ESA-085."
+    },
+    {
+      "version": "1.13.0",
+      "date": "2026-11-02",
+      "notes": "20 soal tayang: MSK-MCQ-251, MSK-MCQ-252, MSK-MCQ-253, MSK-MCQ-254, MSK-MCQ-255, MSK-MCQ-256, MSK-MCQ-257, MSK-MCQ-258, MSK-MCQ-259, MSK-MCQ-260, MSK-MCQ-261, MSK-MCQ-262, MSK-MCQ-263, MSK-MCQ-264, MSK-MCQ-265, MSK-MCQ-266, MSK-MCQ-267, MSK-MCQ-268, MSK-MCQ-269, MSK-MCQ-270."
     }
   ]
 }
