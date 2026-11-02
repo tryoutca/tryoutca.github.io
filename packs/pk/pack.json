@@ -2,7 +2,7 @@
   "schemaVersion": "4.1",
   "subjectId": "pk",
   "subjectName": "Pelaporan Korporat",
-  "packVersion": "1.9.0",
+  "packVersion": "1.10.0",
   "language": "id",
   "passingGrade": 70,
   "topics": [
@@ -24935,6 +24935,3151 @@
         "revision": 2,
         "notes": "Bentuk: analisis\nTema 6 (normalisasi harga CPO); semua angka fiktif.\nRevisi 2: bagian pemulihan disederhanakan (batas jumlah tercatat hipotetis tidak lagi disyaratkan, dipindahkan ke explanation dan acceptableAlternatives); jawaban ideal diringkas menjadi sekitar 85 kata agar sesuai label sedang 10 menit; bobot rubrik disesuaikan."
       }
+    },
+    {
+      "id": "PK-MCQ-166",
+      "type": "mcq",
+      "topicIds": [
+        "T01"
+      ],
+      "competencyIds": [
+        "K01"
+      ],
+      "difficulty": "sangat_sulit",
+      "cognitiveLevel": "C5",
+      "estimatedMinutes": 3.5,
+      "maxScore": 1,
+      "stem": "Di tengah ketidakpastian ekonomi 2025-2026, seorang direktur berpendapat bahwa kehati-hatian membenarkan pengakuan provisi gugatan pada batas atas rentang estimasi agar laporan keuangan “lebih aman”. Penilaian manakah yang paling tepat tentang alasan Kerangka Konseptual Pelaporan Keuangan memaknai kehati-hatian dan akibatnya pada pengukuran provisi menurut PSAK 237 (57)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Kehati-hatian mendukung netralitas dengan mencegah aset dan penghasilan dilebihsajikan maupun liabilitas dan beban dikurangsajikan; provisi berlebih tetap bias dan akan berbalik menjadi penghasilan kemudian, sehingga provisi diukur pada estimasi terbaik."
+        },
+        {
+          "key": "B",
+          "text": "Kehati-hatian menuntut asimetri, yaitu kerugian diakui lebih awal dan lebih besar daripada keuntungan; netralitas dianggap terpenuhi bila asimetri itu diterapkan konsisten, sehingga provisi diukur pada batas atas rentang estimasi."
+        },
+        {
+          "key": "C",
+          "text": "Kehati-hatian tidak lagi dimuat dalam kerangka karena bertentangan dengan netralitas; ketidakpastian estimasi provisi cukup diungkapkan dalam catatan dan tidak memengaruhi jumlah yang diakui, yaitu nilai yang paling mungkin."
+        },
+        {
+          "key": "D",
+          "text": "Kehati-hatian dan netralitas bekerja pada tahap berbeda: netralitas mengatur penyajian, sedangkan kehati-hatian mengatur pengukuran, sehingga provisi boleh ditambah cadangan untuk ketidakpastian asalkan dasar penambahannya diungkapkan."
+        }
+      ],
+      "answerKey": "A",
+      "distractorRationale": {
+        "B": "Kerangka Konseptual menyatakan kehati-hatian tidak menyiratkan asimetri sistematis; asimetri hanya ada bila suatu standar secara khusus mengaturnya, dan pengukuran pada batas atas menimbulkan bias.",
+        "C": "Kehati-hatian dimuat kembali dalam Kerangka Konseptual sebagai pendukung netralitas; ketidakpastian juga memengaruhi estimasi terbaik provisi, bukan sekadar diungkapkan.",
+        "D": "Netralitas dan kehati-hatian sama-sama bagian dari representasi tepat; PSAK 237 (57) menegaskan ketidakpastian tidak membenarkan provisi berlebihan walaupun diungkapkan."
+      },
+      "explanation": "Langkah 1: Kerangka Konseptual memaknai kehati-hatian sebagai kewaspadaan saat membuat pertimbangan dalam kondisi tidak pasti, untuk mendukung netralitas, bukan untuk melebihsajikan liabilitas. Langkah 2: provisi yang sengaja dilebihkan juga bias; kelebihannya berbalik menjadi penghasilan di periode berikut sehingga laba antarperiode terdistorsi. Langkah 3: PSAK 237 (57) mengukur provisi pada estimasi terbaik dan menyatakan ketidakpastian tidak membenarkan provisi berlebihan. Jadi usulan direktur ditolak.",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "84f7e6d4eb1c9a42be4941be214abb62bd210f9726a4424cd9d87e171cec7e59",
+        "review": {
+          "batchId": "PK-RV034",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T07:32:00+07:00",
+          "result": {
+            "reviewKey": "R02",
+            "contentHash": "84f7e6d4eb1c9a42be4941be214abb62bd210f9726a4424cd9d87e171cec7e59",
+            "independentAnswer": "A. Kehati-hatian mendukung netralitas dengan memastikan aset dan penghasilan tidak dilebihsajikan serta liabilitas dan beban tidak dikurangsajikan. Kehati-hatian tidak membenarkan asimetri sistematis atau pembentukan provisi berlebihan. Menurut PSAK 237 (57), provisi diukur berdasarkan estimasi terbaik, bukan batas atas rentang estimasi semata-mata untuk menciptakan cadangan.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 5,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 4,
+              "originality": 4,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sangat_sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci A benar. Soal menguji hubungan konseptual antara kehati-hatian dan netralitas serta penerapannya pada pengukuran provisi, bukan sekadar menguji hafalan definisi."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T00:33:31.386Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV034 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 1,
+        "notes": "Bentuk: teori; ragam: alasan konseptual. Tema 1/umum (ketidakpastian ekonomi sebagai latar singkat); pembuka latar periode (1 dari maks 2 soal teori)."
+      }
+    },
+    {
+      "id": "PK-MCQ-167",
+      "type": "mcq",
+      "topicIds": [
+        "T03"
+      ],
+      "competencyIds": [
+        "K01"
+      ],
+      "difficulty": "sangat_sulit",
+      "cognitiveLevel": "C5",
+      "estimatedMinutes": 3.5,
+      "maxScore": 1,
+      "stem": "Memo auditor internal sebuah distributor farmasi milik keluarga, disusun setelah sorotan atas kasus salah saji emiten (Rp miliar):\n1. Gudang disewa dari CV yang dikendalikan istri pemegang saham pengendali; sewa 2026 sebesar 4,8, sedangkan penilai independen menaksir sewa pasar 3,6.\n2. Piutang 2,1 dari jaringan apotek milik putra direktur utama (bukan pemegang saham) telah lewat jatuh tempo 200 hari; penyisihan kerugian kredit ekspektasian 0,9.\n3. Draf catatan: “Seluruh transaksi pihak berelasi dilakukan dengan syarat setara transaksi wajar.”\nPengungkapan manakah yang paling tepat?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Hanya sewa gudang diungkapkan sebagai transaksi pihak berelasi, karena direktur utama bukan pemegang saham sehingga apotek putranya bukan pihak berelasi; kalimat syarat wajar dipertahankan."
+        },
+        {
+          "key": "B",
+          "text": "Kedua pihak diungkapkan sebagai pihak berelasi; kalimat syarat wajar dipertahankan karena sewa telah ditaksir penilai independen dan penyisihan piutang telah diukur sesuai PSAK 109 (71)."
+        },
+        {
+          "key": "C",
+          "text": "Beban sewa dikoreksi menjadi 3,6 dan selisih 1,2 dicatat sebagai distribusi kepada pemilik, sehingga yang diungkapkan sebagai transaksi pihak berelasi cukup piutang apotek beserta penyisihannya."
+        },
+        {
+          "key": "D",
+          "text": "Kedua pihak diungkapkan sebagai pihak berelasi beserta sifat hubungan, jumlah transaksi, saldo, persyaratan, dan penyisihan 0,9; kalimat syarat wajar dihapus karena tidak dapat dibuktikan."
+        }
+      ],
+      "answerKey": "D",
+      "distractorRationale": {
+        "A": "Direktur utama adalah personel manajemen kunci; entitas yang dikendalikan anggota keluarga dekatnya (putra) adalah pihak berelasi, terlepas dari kepemilikan saham.",
+        "B": "Penaksiran penilai justru menunjukkan sewa 1,2 di atas pasar, dan ketepatan penyisihan tidak membuktikan syarat wajar; pernyataan setara transaksi wajar hanya boleh dibuat bila dapat dibuktikan.",
+        "C": "Koreksi pengukuran tidak menghapus kewajiban pengungkapan; sewa dari entitas yang dikendalikan keluarga dekat pemegang saham pengendali tetap transaksi pihak berelasi."
+      },
+      "explanation": "Langkah 1 (identifikasi): CV milik istri pemegang saham pengendali dan apotek milik putra direktur utama (personel manajemen kunci) sama-sama pihak berelasi menurut PSAK 224 (7). Langkah 2 (isi pengungkapan): sifat hubungan, jumlah transaksi (sewa 4,8), saldo terutang beserta persyaratan (piutang 2,1 lewat jatuh tempo), dan penyisihan 0,9. Langkah 3 (pernyataan syarat wajar): sewa 4,8 dibanding pasar 3,6 menunjukkan syarat tidak setara, sehingga kalimat itu dihapus karena PSAK 224 (7) hanya mengizinkannya bila dapat dibuktikan.",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "8d5d7f5c464d8ef047c91a2f3ba8ee90d47eaaa735bef5dbc78c28d788c46c12",
+        "review": {
+          "batchId": "PK-RV034",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T07:32:00+07:00",
+          "result": {
+            "reviewKey": "R01",
+            "contentHash": "8d5d7f5c464d8ef047c91a2f3ba8ee90d47eaaa735bef5dbc78c28d788c46c12",
+            "independentAnswer": "D. CV milik istri pemegang saham pengendali dan apotek milik putra direktur utama merupakan pihak berelasi. Pengungkapan harus mencakup sifat hubungan, jumlah transaksi, saldo terutang, persyaratan, dan penyisihan kerugian kredit ekspektasian. Pernyataan bahwa transaksi dilakukan dengan syarat setara transaksi wajar harus dihapus karena tidak dapat dibuktikan, terutama mengingat sewa aktual 4,8 dibandingkan estimasi pasar 3,6.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 5,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 4,
+              "originality": 4,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sangat_sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci D tepat dan sesuai PSAK 224 (7). Soal menguji identifikasi pihak berelasi, kelengkapan pengungkapan, dan evaluasi klaim kewajaran transaksi melalui pertimbangan profesional."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T00:33:31.386Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV034 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 1,
+        "notes": "Bentuk: analisis; pembuka: dokumen (memo auditor internal); entitas: perusahaan keluarga distribusi farmasi. Tema 11 sebagai latar umum tanpa menyebut kasus nyata. Stem sengaja tidak menyebut nomor PSAK."
+      }
+    },
+    {
+      "id": "PK-MCQ-168",
+      "type": "mcq",
+      "topicIds": [
+        "T05"
+      ],
+      "competencyIds": [
+        "K04"
+      ],
+      "difficulty": "sangat_sulit",
+      "cognitiveLevel": "C5",
+      "estimatedMinutes": 3.5,
+      "maxScore": 1,
+      "stem": "Nilai pakai dan nilai wajar dikurangi biaya pelepasan sama-sama dipakai menentukan jumlah terpulihkan menurut PSAK 236 (48). Misalkan sebuah pabrik tekstil yang pesanannya turun berdiri di lahan yang kini diminati pengembang kawasan komersial. Pernyataan manakah yang paling tepat membandingkan asumsi kedua dasar itu dan kapan salah satunya menentukan jumlah terpulihkan?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Nilai pakai mencerminkan ekspektasi khusus entitas, sedangkan nilai wajar mencerminkan pelaku pasar; demi kehati-hatian jumlah terpulihkan adalah yang lebih rendah, sehingga nilai pakai dari produksi yang menurun lebih mungkin menentukan."
+        },
+        {
+          "key": "B",
+          "text": "Nilai pakai memasukkan rencana pengalihan fungsi lahan yang diusulkan manajemen karena mencerminkan ekspektasi entitas, sehingga nilai pakai selalu lebih tinggi daripada nilai wajar dan menentukan jumlah terpulihkan pabrik itu."
+        },
+        {
+          "key": "C",
+          "text": "Nilai pakai memakai arus kas khusus entitas dari pemakaian berjalan tanpa restrukturisasi atau peningkatan yang belum dikomitmenkan; nilai wajar memakai sudut pandang pelaku pasar, termasuk penggunaan tertinggi dan terbaik lahan; yang lebih tinggi menentukan."
+        },
+        {
+          "key": "D",
+          "text": "Nilai wajar dikurangi biaya pelepasan memerlukan harga kuotasian pasar aktif untuk pabrik sejenis; karena pasar itu tidak ada, entitas memakai nilai pakai, yang dapat memasukkan arus kas dari rencana pengalihan fungsi lahan."
+        }
+      ],
+      "answerKey": "C",
+      "distractorRationale": {
+        "A": "Jumlah terpulihkan adalah yang lebih tinggi di antara keduanya, karena entitas rasional akan memilih memakai atau menjual aset; kehati-hatian tidak mengubah aturan ini.",
+        "B": "Nilai pakai mengecualikan arus kas dari restrukturisasi yang belum dikomitmenkan dan peningkatan kinerja aset; tidak ada dasar yang selalu lebih tinggi.",
+        "D": "Nilai wajar dapat diukur dengan teknik penilaian tanpa pasar aktif (input level 2 atau 3), dan nilai pakai tetap tidak boleh memasukkan rencana pengalihan fungsi yang belum dikomitmenkan."
+      },
+      "explanation": "Langkah 1: nilai pakai bertumpu pada asumsi entitas terus memakai aset dalam kondisi kininya, dengan arus kas yang wajar dan didukung, tanpa restrukturisasi atau peningkatan yang belum dikomitmenkan. Langkah 2: nilai wajar dikurangi biaya pelepasan bertumpu pada asumsi pelaku pasar dan memperhitungkan penggunaan tertinggi dan terbaik (PSAK 113 (68)), termasuk alih fungsi lahan yang layak secara fisik, hukum, dan keuangan. Langkah 3: jumlah terpulihkan adalah yang lebih tinggi. Saat pesanan turun, nilai pakai merosot, sedangkan permintaan pengembang menopang nilai wajar, sehingga nilai wajar dikurangi biaya pelepasan lebih mungkin menentukan.",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "ade4e0cefc117c05d698ee94ece08f9cbf9eac97386ab9e894ea69dceb4520d6",
+        "review": {
+          "batchId": "PK-RV034",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T07:32:00+07:00",
+          "result": {
+            "reviewKey": "R09",
+            "contentHash": "ade4e0cefc117c05d698ee94ece08f9cbf9eac97386ab9e894ea69dceb4520d6",
+            "independentAnswer": "C. Nilai pakai menggunakan asumsi entitas mengenai penggunaan aset dalam kondisi saat ini dan mengecualikan arus kas dari restrukturisasi atau peningkatan kinerja yang belum dikomitmenkan. Nilai wajar dikurangi biaya pelepasan menggunakan perspektif pelaku pasar dan mempertimbangkan penggunaan tertinggi dan terbaik. Jumlah terpulihkan adalah nilai yang lebih tinggi di antara kedua dasar pengukuran tersebut. Dalam kasus pabrik, nilai wajar dikurangi biaya pelepasan lebih mungkin menentukan karena potensi penggunaan lahan untuk kawasan komersial.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 4,
+              "distractorQuality": 5,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 4,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sangat_sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci C benar. Perbandingan asumsi nilai pakai dan nilai wajar dikurangi biaya pelepasan sesuai PSAK 236 (48), termasuk konsep penggunaan tertinggi dan terbaik menurut PSAK 113 (68). Penjelasan memberikan penerapan yang memadai pada situasi pabrik."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T00:33:31.386Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV034 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 1,
+        "notes": "Bentuk: teori; ragam: banding-kontras. Ilustrasi dua kalimat terkait tema 4 (tekanan industri tekstil); dibuka langsung dengan konsep."
+      }
+    },
+    {
+      "id": "PK-MCQ-169",
+      "type": "mcq",
+      "topicIds": [
+        "T06"
+      ],
+      "competencyIds": [
+        "K01",
+        "K04"
+      ],
+      "difficulty": "sangat_sulit",
+      "cognitiveLevel": "C5",
+      "estimatedMinutes": 3.5,
+      "maxScore": 1,
+      "stem": "Data 1 Januari 2026 (Rp miliar): jumlah tercatat portofolio menara 600; harga jual kepada dana infrastruktur 1.000; nilai wajar menara 900; pembayaran sewa-balik 130 setiap akhir tahun selama 10 tahun; suku bunga pinjaman inkremental diasumsikan 10% setelah suku bunga acuan turun bertahap; faktor anuitas 10 tahun 10% = 6,1446. Operator menara Tbk sebagai penjual-penyewa menyimpulkan pengalihan memenuhi syarat penjualan menurut PSAK 115 (72). Berapa keuntungan yang diakui penjual-penyewa dan aset hak guna awalnya menurut PSAK 116 (73)? Bulatkan ke satu desimal Rp miliar.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Keuntungan 300,0 dan aset hak guna 698,8"
+        },
+        {
+          "key": "B",
+          "text": "Keuntungan 67,1 dan aset hak guna 465,9"
+        },
+        {
+          "key": "C",
+          "text": "Keuntungan 33,7 dan aset hak guna 532,5"
+        },
+        {
+          "key": "D",
+          "text": "Keuntungan 80,5 dan aset hak guna 479,3"
+        }
+      ],
+      "answerKey": "B",
+      "distractorRationale": {
+        "A": "Mengakui seluruh selisih nilai wajar dan jumlah tercatat seolah penjualan biasa, padahal penjual-penyewa hanya mengakui keuntungan atas hak yang dialihkan.",
+        "C": "Tidak memisahkan kelebihan harga jual 100 sebagai pendanaan tambahan, sehingga seluruh nilai kini pembayaran 798,8 dianggap pembayaran sewa.",
+        "D": "Memakai harga jual 1.000 sebagai dasar, padahal syarat di atas harga pasar harus disesuaikan ke nilai wajar 900."
+      },
+      "explanation": "Langkah 1: kelebihan harga jual di atas nilai wajar = 1.000 - 900 = 100 adalah pendanaan tambahan. Langkah 2: nilai kini pembayaran = 130 × 6,1446 = 798,80; bagian sewa = 798,80 - 100 = 698,80. Langkah 3: aset hak guna = 600 × 698,80/900 = 465,9. Langkah 4: keuntungan total = 900 - 600 = 300; keuntungan diakui = 300 × (900 - 698,80)/900 = 67,1. Jurnal: Kas 1.000 dan aset hak guna 465,9 didebit; menara 600, liabilitas sewa 698,8, liabilitas keuangan 100, dan keuntungan 67,1 dikredit (seimbang 1.465,9).",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "4d650d4933514f3047d94658563330c6033cbca4f31bfc912d0c9462597a9919",
+        "review": {
+          "batchId": "PK-RV034",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T07:32:00+07:00",
+          "result": {
+            "reviewKey": "R04",
+            "contentHash": "4d650d4933514f3047d94658563330c6033cbca4f31bfc912d0c9462597a9919",
+            "independentAnswer": "B. Nilai kini pembayaran sewa = Rp130 miliar × 6,1446 = Rp798,798 miliar. Pendanaan tambahan = Rp1.000 miliar − Rp900 miliar = Rp100 miliar. Liabilitas sewa = Rp698,798 miliar. Aset hak guna = Rp600 miliar × (Rp698,798 miliar/Rp900 miliar) = Rp465,9 miliar. Keuntungan yang diakui = Rp300 miliar × (Rp201,202 miliar/Rp900 miliar) = Rp67,1 miliar.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 5,
+              "rubricQuality": null,
+              "dataConsistency": 5,
+              "alignment": 5,
+              "timeEstimate": 4,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sangat_sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci B benar. Perhitungan pendanaan tambahan, liabilitas sewa, aset hak guna, dan keuntungan yang diakui konsisten dengan ketentuan transaksi jual dan sewa-balik PSAK 116 (73). Jurnal yang disajikan dalam penjelasan juga seimbang."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T00:33:31.386Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV034 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 1,
+        "notes": "Bentuk: analisis; pembuka: data; entitas: operator menara telekomunikasi Tbk. Tema 1; suku bunga adalah angka asumsi."
+      }
+    },
+    {
+      "id": "PK-MCQ-170",
+      "type": "mcq",
+      "topicIds": [
+        "T07"
+      ],
+      "competencyIds": [
+        "K01"
+      ],
+      "difficulty": "sangat_sulit",
+      "cognitiveLevel": "C5",
+      "estimatedMinutes": 3.5,
+      "maxScore": 1,
+      "stem": "Setelah survei menunjukkan daya beli kelas menengah melemah, perusahaan pembiayaan sepeda motor memperbarui informasi prospektif satu segmen per 30 September 2026 dengan tiga skenario PD sepanjang umur (diasumsikan): dasar 8% (bobot 50%), memburuk 16% (30%), membaik 5% (20%). PD sepanjang umur saat pengakuan awal 4%; PD 12 bulan tertimbang kini 3,5%. Jumlah tercatat bruto Rp500 miliar; LGD 40%; tunggakan rata-rata 20 hari; belum ada debitur gagal bayar. Asumsikan eksposur = jumlah tercatat bruto, LGD sudah mencerminkan nilai waktu uang, dan kerugian kredit ekspektasian = eksposur × PD × LGD. Kebijakan entitas: risiko kredit meningkat signifikan bila PD sepanjang umur naik lebih dari dua kali lipat. Tentukan tahap, penyisihan, dan dasar pendapatan bunganya.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Tahap 1; penyisihan Rp7,0 miliar (kerugian 12 bulan); bunga atas jumlah tercatat bruto, karena PD skenario dasar baru naik tepat dua kali lipat."
+        },
+        {
+          "key": "B",
+          "text": "Tahap 2; penyisihan Rp19,6 miliar (kerugian sepanjang umur tertimbang); bunga atas jumlah tercatat bruto, karena belum ada bukti penurunan nilai kredit."
+        },
+        {
+          "key": "C",
+          "text": "Tahap 2; penyisihan Rp16,0 miliar (kerugian sepanjang umur skenario dasar); bunga atas jumlah tercatat bruto, karena skenario dasar paling mungkin terjadi."
+        },
+        {
+          "key": "D",
+          "text": "Tahap 2; penyisihan Rp19,6 miliar (kerugian sepanjang umur tertimbang); bunga atas biaya perolehan diamortisasi neto, karena penyisihan sudah sepanjang umur."
+        }
+      ],
+      "answerKey": "B",
+      "distractorRationale": {
+        "A": "Kenaikan risiko kredit dinilai dengan PD tertimbang semua skenario (9,8%, naik 2,45 kali), bukan PD skenario dasar saja; skenario memburuk tidak boleh diabaikan.",
+        "C": "Kerugian kredit ekspektasian adalah jumlah tertimbang probabilitas dari beberapa kemungkinan hasil, bukan hasil skenario yang paling mungkin.",
+        "D": "Bunga atas biaya perolehan diamortisasi neto hanya berlaku untuk aset tahap 3; di tahap 2 bunga tetap dihitung atas jumlah tercatat bruto."
+      },
+      "explanation": "Langkah 1: PD sepanjang umur tertimbang = 50% × 8% + 30% × 16% + 20% × 5% = 4,0% + 4,8% + 1,0% = 9,8%. Langkah 2: 9,8% dibanding 4% saat pengakuan awal = 2,45 kali, lebih dari dua kali lipat, sehingga risiko kredit meningkat signifikan; tunggakan 20 hari tidak membantahnya karena informasi prospektif harus dipakai. Memakai skenario dasar saja (8%, tepat dua kali) keliru menempatkan segmen di tahap 1. Langkah 3: belum ada gagal bayar atau bukti penurunan nilai kredit, jadi tahap 2. Langkah 4: kerugian kredit ekspektasian sepanjang umur = 500 × 9,8% × 40% = Rp19,6 miliar (bandingkan skenario dasar 500 × 8% × 40% = Rp16,0 miliar; 12 bulan 500 × 3,5% × 40% = Rp7,0 miliar). Langkah 5: pendapatan bunga tahap 2 dihitung atas jumlah tercatat bruto menurut PSAK 109 (71).",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "54ef7301904d6478ce106a12a60a65f28c70a45b03cc618b10bd3522c9da17fb",
+        "review": {
+          "batchId": "PK-RV037",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T10:01:00+07:00",
+          "result": {
+            "reviewKey": "R01",
+            "contentHash": "54ef7301904d6478ce106a12a60a65f28c70a45b03cc618b10bd3522c9da17fb",
+            "independentAnswer": "B. PD sepanjang umur tertimbang = (50% × 8%) + (30% × 16%) + (20% × 5%) = 9,8%. Angka tersebut 2,45 kali PD awal 4%, sehingga memenuhi kebijakan entitas mengenai peningkatan risiko kredit signifikan. Karena belum ada bukti penurunan nilai kredit, aset berada di tahap 2. ECL sepanjang umur = Rp500 miliar × 9,8% × 40% = Rp19,6 miliar. Pendapatan bunga dihitung atas jumlah tercatat bruto.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 4,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": 5,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [
+              {
+                "severity": "minor",
+                "dimension": "stemClarity",
+                "issue": "PD 12 bulan tertimbang kini sebesar 3,5% dicantumkan bersama PD sepanjang umur awal dan tiga skenario PD sepanjang umur. Informasi ini relevan untuk membandingkan ECL 12 bulan, tetapi bukan dasar perbandingan utama dalam penentuan peningkatan risiko kredit signifikan. Peserta dapat kurang jelas membedakan fungsi masing-masing ukuran PD.",
+                "suggestedFix": "Tegaskan bahwa PD 12 bulan 3,5% disediakan sebagai pembanding ECL tahap 1, sedangkan pengujian peningkatan risiko kredit signifikan menggunakan PD sepanjang umur tertimbang yang dibandingkan dengan PD sepanjang umur saat pengakuan awal."
+              }
+            ],
+            "suggestedDifficulty": "sangat_sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci B benar. Pembobotan skenario menghasilkan PD sepanjang umur 9,8%, kenaikan 2,45 kali dari PD awal, dan ECL sepanjang umur Rp19,6 miliar; tahap 2 tetap menggunakan jumlah tercatat bruto sebagai dasar bunga. Perlu sedikit penegasan mengenai fungsi PD 12 bulan agar tidak tertukar dengan pengujian peningkatan risiko kredit signifikan."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-10-31T00:33:31.386Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV034 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-10-31T00:39:48.464Z",
+            "reason": "isi berubah lewat impor batch PK-B46"
+          },
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-10-31T00:43:06.987Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV036 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-10-31T02:59:02.890Z",
+            "reason": "isi berubah lewat impor batch PK-B46"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T03:03:10.480Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV037 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 4,
+        "notes": "Bentuk: analisis; pembuka: peristiwa; entitas: perusahaan pembiayaan (multifinance). Tema 10; semua angka asumsi. Stem tidak menyebut nomor PSAK. Revisi 2: menambahkan asumsi eksposur = jumlah tercatat bruto, LGD sudah mencerminkan nilai waktu uang, dan rumus ECL sederhana di stem dan explanation (temuan reviewer stemClarity). Revisi 3: tingkat sangat_sulit dipertahankan sesuai formulir; kompleksitas ditambah dengan tiga skenario makro tertimbang yang memengaruhi penilaian tahap dan pengukuran ECL (timeEstimate), sehingga konteks survei daya beli kini dipakai dalam penyelesaian (stemClarity). Revisi 4: stem dipadatkan agar ≤ 200 kata menurut hitungan aplikasi (lint standar waktu); isi, angka, dan kunci tidak berubah."
+      }
+    },
+    {
+      "id": "PK-MCQ-171",
+      "type": "mcq",
+      "topicIds": [
+        "T09"
+      ],
+      "competencyIds": [
+        "K01"
+      ],
+      "difficulty": "sangat_sulit",
+      "cognitiveLevel": "C5",
+      "estimatedMinutes": 3.5,
+      "maxScore": 1,
+      "stem": "Rapat tutup buku 2026 sebuah grup manufaktur Tbk membahas pengurangan royalti Rp80 miliar yang dibayar induk kepada anak usahanya di Malaysia, di tengah pengawasan transaksi afiliasi lintas negara yang makin ketat. Penasihat pajak menilai pengurangan itu akan diterima seluruhnya atau ditolak seluruhnya, dengan peluang diterima 40%. Kepala pajak: “Peluang diperiksa kecil, jadi tidak perlu dicatat apa pun.” Direktur keuangan: “Catat liabilitas sebesar nilai ekspektasian.” Tarif PPh badan 22%. Perlakuan manakah yang paling tepat? Angka dibulatkan ke dua desimal Rp miliar.",
+      "options": [
+        {
+          "key": "A",
+          "text": "Tidak mengakui liabilitas karena kemungkinan pemeriksaan rendah dan belum ada surat ketetapan pajak; posisi tersebut cukup diungkapkan sebagai ketidakpastian pajak dalam catatan."
+        },
+        {
+          "key": "B",
+          "text": "Mengakui liabilitas pajak kini Rp10,56 miliar dengan metode nilai ekspektasian sesuai usul direktur keuangan, karena metode itu menggabungkan seluruh kemungkinan hasil."
+        },
+        {
+          "key": "C",
+          "text": "Mengakui liabilitas pajak kini Rp17,60 miliar dengan metode jumlah paling mungkin, karena pengurangan tidak kemungkinan besar diterima, hasilnya hanya dua kemungkinan, dan pemeriksaan diasumsikan dengan pengetahuan penuh."
+        },
+        {
+          "key": "D",
+          "text": "Tidak mengakui liabilitas pajak kini, tetapi mengungkapkan liabilitas kontinjensi Rp17,60 miliar menurut PSAK 237 (57), karena hasilnya bergantung pada keputusan otoritas pajak kelak."
+        }
+      ],
+      "answerKey": "C",
+      "distractorRationale": {
+        "A": "ISAK 123 mengharuskan entitas mengasumsikan otoritas pajak memeriksa dengan pengetahuan penuh; risiko tidak terdeteksi tidak boleh dipertimbangkan.",
+        "B": "Nilai ekspektasian lebih tepat bila rentang hasilnya banyak; untuk hasil biner, jumlah paling mungkin lebih baik memprediksi penyelesaian.",
+        "D": "Ketidakpastian pajak penghasilan diukur dalam pajak kini menurut PSAK 212 (46) dan ISAK 123, bukan sebagai kontinjensi PSAK 237 (57) yang mengecualikan pajak penghasilan."
+      },
+      "explanation": "Langkah 1: ISAK 123 berlaku untuk ketidakpastian perlakuan PPh dan mengasumsikan pemeriksaan dengan pengetahuan penuh, sehingga argumen kepala pajak gugur. Langkah 2: peluang diterima 40% berarti tidak kemungkinan besar diterima, jadi dampak ketidakpastian harus dicerminkan. Langkah 3: hasilnya biner (diterima atau ditolak seluruhnya), sehingga jumlah paling mungkin lebih baik memprediksi: 80 × 22% = Rp17,60 miliar. Nilai ekspektasian 60% × 17,60 = Rp10,56 miliar tidak pernah menjadi hasil aktual.",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "89a6865582c83336597ca8cccc500cb6c7320f07475d3272d6002051d628d8e7",
+        "review": {
+          "batchId": "PK-RV034",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T07:32:00+07:00",
+          "result": {
+            "reviewKey": "R07",
+            "contentHash": "89a6865582c83336597ca8cccc500cb6c7320f07475d3272d6002051d628d8e7",
+            "independentAnswer": "C. Entitas harus mengasumsikan otoritas pajak memeriksa perlakuan pajak dengan pengetahuan penuh. Karena hanya terdapat dua kemungkinan hasil dan kemungkinan pengurangan royalti diterima hanya 40%, jumlah paling mungkin adalah penolakan pengurangan tersebut. Liabilitas pajak kini = Rp80 miliar × 22% = Rp17,60 miliar.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 5,
+              "rubricQuality": null,
+              "dataConsistency": 5,
+              "alignment": 5,
+              "timeEstimate": 4,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sangat_sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci C benar. Penerapan asumsi pemeriksaan otoritas pajak, pemilihan metode jumlah paling mungkin untuk dua kemungkinan hasil, dan perhitungan liabilitas pajak konsisten dengan PSAK 212 (46) dan ISAK 123."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T00:33:31.386Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV034 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 1,
+        "notes": "Bentuk: analisis; pembuka: perdebatan; entitas: grup manufaktur Tbk dengan anak usaha luar negeri. Tema 9 hanya sebagai latar (pengawasan transaksi lintas negara); tidak menguji Pilar Dua. Tarif PPh badan 22% (UU HPP) disebut di stem."
+      }
+    },
+    {
+      "id": "PK-MCQ-172",
+      "type": "mcq",
+      "topicIds": [
+        "T10"
+      ],
+      "competencyIds": [
+        "K02"
+      ],
+      "difficulty": "sangat_sulit",
+      "cognitiveLevel": "C5",
+      "estimatedMinutes": 3.5,
+      "maxScore": 1,
+      "stem": "Setelah peluncuran BPI Danantara (24 Februari 2025), sebuah holding BUMN menerima 70% saham anak usaha dari BUMN lain yang sama-sama dikendalikan negara; imbalannya ditetapkan berdasarkan penilaian independen. Seorang analis menulis: “Karena harganya nilai wajar dan pengendalian atas anak usaha berpindah ke holding, holding menerapkan PSAK 103 (22): aset neto diukur pada nilai wajar dan selisih imbalan diakui sebagai goodwill.” Di mana letak kekeliruan argumen tersebut?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Pengendalian tidak berpindah ke luar kelompok: pihak pengendali akhir sama sebelum dan sesudah transaksi dan bukan sementara; aset neto dicatat pada nilai tercatat dan selisihnya dengan imbalan diakui di ekuitas, tanpa goodwill."
+        },
+        {
+          "key": "B",
+          "text": "Argumen tepat karena penilaian independen membuktikan imbalan wajar; PSAK 338 (38) hanya berlaku bila imbalan menyimpang dari nilai wajar, dan selisih penyimpangan itu dicatat di ekuitas."
+        },
+        {
+          "key": "C",
+          "text": "Kekeliruan terletak pada dasar pengukuran: transaksi sepengendali tetap memakai metode akuisisi, tetapi aset neto diukur pada nilai tercatat dan selisih imbalan atasnya diakui sebagai goodwill."
+        },
+        {
+          "key": "D",
+          "text": "Kekeliruan terletak pada perlakuan goodwill: aset neto tetap diukur pada nilai wajar, tetapi selisih imbalan dibebankan ke laba rugi karena transaksi sepengendali tidak menghasilkan sinergi baru."
+        }
+      ],
+      "answerKey": "A",
+      "distractorRationale": {
+        "B": "Penerapan PSAK 338 (38) ditentukan oleh adanya pengendali akhir yang sama, bukan oleh wajar tidaknya harga.",
+        "C": "Kombinasi bisnis entitas sepengendali dikecualikan dari metode akuisisi; tidak ada goodwill yang diakui walaupun aset neto diukur pada nilai tercatat.",
+        "D": "Pengukuran nilai wajar tetap keliru, dan selisih imbalan dengan nilai tercatat diakui di ekuitas, bukan di laba rugi."
+      },
+      "explanation": "Langkah 1: identifikasi pengendali akhir sebelum dan sesudah transaksi; keduanya negara dan pengendalian itu tidak sementara, sehingga transaksi adalah kombinasi bisnis entitas sepengendali yang dikecualikan dari PSAK 103 (22). Langkah 2: menurut PSAK 338 (38) transaksi itu reorganisasi tanpa pertukaran substansi ekonomi, sehingga aset dan liabilitas dicatat pada nilai tercatat. Langkah 3: selisih imbalan dengan nilai tercatat diakui di ekuitas (tambahan modal disetor), tanpa goodwill atau keuntungan pembelian dengan diskon. Harga berdasarkan penilaian independen tidak mengubah kesimpulan ini.",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "4dd3b3848dde38935dd771d2f19385c29631afcfef4279a04c9f450d5406a09f",
+        "review": {
+          "batchId": "PK-RV034",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T07:32:00+07:00",
+          "result": {
+            "reviewKey": "R05",
+            "contentHash": "4dd3b3848dde38935dd771d2f19385c29631afcfef4279a04c9f450d5406a09f",
+            "independentAnswer": "A. Transaksi merupakan kombinasi bisnis entitas sepengendali karena negara sebagai pengendali akhir tetap sama sebelum dan sesudah transaksi dan pengendalian tersebut tidak bersifat sementara. PSAK 338 (38) mengharuskan penggunaan metode penyatuan kepemilikan, yaitu pengakuan aset dan liabilitas berdasarkan nilai tercatat. Selisih imbalan dengan nilai tercatat aset neto diakui dalam ekuitas, tanpa goodwill.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 5,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 4,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sangat_sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci A tepat. Harga berdasarkan penilaian independen tidak mengubah klasifikasi transaksi sepengendali. Soal menguji kemampuan membedakan metode akuisisi PSAK 103 (22) dari metode penyatuan kepemilikan PSAK 338 (38)."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T00:33:31.386Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV034 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 1,
+        "notes": "Bentuk: teori; ragam: menemukan kekeliruan. Tema 7; fakta: BPI Danantara diluncurkan 24 Februari 2025 (UU 1/2025, PP 10/2025); holding dan anak usaha fiktif tanpa nama. Pembuka latar periode (2 dari maks 2 soal teori)."
+      }
+    },
+    {
+      "id": "PK-MCQ-173",
+      "type": "mcq",
+      "topicIds": [
+        "T11"
+      ],
+      "competencyIds": [
+        "K02",
+        "K04"
+      ],
+      "difficulty": "sangat_sulit",
+      "cognitiveLevel": "C5",
+      "estimatedMinutes": 3.5,
+      "maxScore": 1,
+      "stem": "2023: anak usaha BUMN tambang memperoleh 30% saham entitas asosiasi pengolah nikel (smelter). 2025: menjual 5% dan tetap berpengaruh signifikan. 1 Juli 2026: menjual 10% senilai Rp560 miliar dan kehilangan kursi dewan komisaris sehingga pengaruh signifikan hilang; sisa 15% bernilai wajar Rp840 miliar. Sebelum penjualan 2026 (Rp miliar): jumlah tercatat investasi 25% sebesar 1.250; bagian penghasilan komprehensif lain (PKL) berupa selisih penjabaran 150 (kredit) dan surplus revaluasi aset tetap 40 (kredit). Bagaimana perlakuan pada 1 Juli 2026 menurut PSAK 228 (15)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Keuntungan Rp120 miliar di laba rugi: 560 dikurangi jumlah tercatat bagian dijual 500, ditambah reklasifikasi PKL proporsional 60; sisa 15% tetap pada jumlah tercatat 750."
+        },
+        {
+          "key": "B",
+          "text": "Keuntungan Rp150 miliar di laba rugi: 560 ditambah 840 dikurangi 1.250; selisih penjabaran dan surplus revaluasi tetap di ekuitas karena sisa 15% masih dimiliki."
+        },
+        {
+          "key": "C",
+          "text": "Keuntungan Rp340 miliar di laba rugi: 560 ditambah 840 dikurangi 1.250, ditambah reklasifikasi selisih penjabaran 150 dan surplus revaluasi 40 ke laba rugi."
+        },
+        {
+          "key": "D",
+          "text": "Keuntungan Rp300 miliar di laba rugi: 560 ditambah 840 dikurangi 1.250, ditambah reklasifikasi selisih penjabaran 150; surplus revaluasi 40 dipindahkan langsung ke saldo laba."
+        }
+      ],
+      "answerKey": "D",
+      "distractorRationale": {
+        "A": "Hilangnya pengaruh signifikan menghentikan metode ekuitas; sisa kepemilikan diukur ulang pada nilai wajar dan seluruh PKL diperlakukan seolah investee melepas aset terkait.",
+        "B": "Saat metode ekuitas dihentikan, PKL yang dapat direklasifikasi (selisih penjabaran) harus dipindahkan ke laba rugi walaupun sebagian investasi masih dimiliki.",
+        "C": "Surplus revaluasi aset tetap tidak pernah direklasifikasi ke laba rugi; surplus itu dipindahkan langsung ke saldo laba."
+      },
+      "explanation": "Langkah 1: kehilangan pengaruh signifikan menghentikan metode ekuitas; sisa 15% diukur pada nilai wajar 840 (selanjutnya menurut PSAK 109 (71)). Langkah 2: keuntungan = hasil penjualan 560 + nilai wajar sisa 840 - jumlah tercatat 1.250 = 150. Langkah 3: PKL diperlakukan seolah investee melepas aset terkait: selisih penjabaran 150 direklasifikasi ke laba rugi, sedangkan surplus revaluasi 40 dipindahkan ke saldo laba. Total keuntungan di laba rugi = 150 + 150 = Rp300 miliar.",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "57a03f996d47868fbfb84706dbb9b07483dc279fd18ac616a5d9b8690642973f",
+        "review": {
+          "batchId": "PK-RV034",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T07:32:00+07:00",
+          "result": {
+            "reviewKey": "R06",
+            "contentHash": "57a03f996d47868fbfb84706dbb9b07483dc279fd18ac616a5d9b8690642973f",
+            "independentAnswer": "D. Keuntungan awal penghentian metode ekuitas adalah Rp560 miliar + Rp840 miliar − Rp1.250 miliar = Rp150 miliar. Selisih penjabaran Rp150 miliar direklasifikasi ke laba rugi sehingga total keuntungan dalam laba rugi menjadi Rp300 miliar. Surplus revaluasi Rp40 miliar dipindahkan langsung ke saldo laba, bukan direklasifikasi ke laba rugi. Sisa kepemilikan diukur kembali pada nilai wajar Rp840 miliar.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 5,
+              "rubricQuality": null,
+              "dataConsistency": 5,
+              "alignment": 5,
+              "timeEstimate": 4,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sangat_sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci D benar. Penghitungan keuntungan penghentian metode ekuitas dan perlakuan berbeda atas selisih penjabaran serta surplus revaluasi sudah tepat sesuai PSAK 228 (15)."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T00:33:31.386Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV034 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 1,
+        "notes": "Bentuk: analisis; pembuka: kronologi; entitas: anak usaha BUMN tambang. Tema 5 (hilirisasi nikel); semua angka asumsi. Nilai wajar per 1% konsisten (560/10 = 840/15 = 56)."
+      }
+    },
+    {
+      "id": "PK-MCQ-174",
+      "type": "mcq",
+      "topicIds": [
+        "T12"
+      ],
+      "competencyIds": [
+        "K01",
+        "K04"
+      ],
+      "difficulty": "sangat_sulit",
+      "cognitiveLevel": "C5",
+      "estimatedMinutes": 3.5,
+      "maxScore": 1,
+      "stem": "“Imbalan variabel diestimasi dengan nilai ekspektasian atau jumlah paling mungkin, mana yang lebih baik memprediksi jumlah yang menjadi hak entitas. Karena estimasi itu bisa meleset, batasan estimasi mengharuskan seluruh imbalan variabel ditangguhkan sampai ketidakpastiannya selesai.” Pernyataan ini ditulis staf sebuah platform lokapasar yang memberi potongan komisi bertingkat kepada penjual mitra berdasarkan volume setahun. Penilaian manakah yang paling tepat menurut PSAK 115 (72)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Kalimat pertama tepat; kalimat kedua keliru karena batasan hanya membatasi imbalan variabel sampai jumlah yang sangat mungkin tidak menyebabkan pembalikan signifikan atas pendapatan kumulatif, dan penilaiannya diperbarui setiap akhir periode."
+        },
+        {
+          "key": "B",
+          "text": "Kedua kalimat tepat karena kehati-hatian menuntut pendapatan dari imbalan variabel ditangguhkan sampai ketidakpastian terselesaikan, sehingga batasan estimasi mencegah pembalikan signifikan atas pendapatan yang telah diakui."
+        },
+        {
+          "key": "C",
+          "text": "Kalimat pertama keliru karena entitas wajib memakai nilai ekspektasian untuk kontrak dengan banyak pelanggan; kalimat kedua tepat karena batasan estimasi menjaga pendapatan tetap netral sampai ketidakpastian selesai."
+        },
+        {
+          "key": "D",
+          "text": "Kalimat pertama tepat; kalimat kedua keliru karena batasan estimasi diterapkan sekali saat kontrak dimulai, dan imbalan yang dikecualikan baru diakui ketika risiko pembalikan berakhir pada akhir kontrak."
+        }
+      ],
+      "answerKey": "A",
+      "distractorRationale": {
+        "B": "Batasan tidak menangguhkan seluruh imbalan variabel; jumlah yang sangat mungkin tidak berbalik tetap dimasukkan ke harga transaksi.",
+        "C": "Pemilihan metode didasarkan pada mana yang lebih baik memprediksi, bukan kewajiban memakai nilai ekspektasian; kalimat kedua juga keliru karena tidak semua imbalan variabel ditangguhkan.",
+        "D": "Estimasi dan batasan dinilai ulang setiap akhir periode pelaporan, sehingga imbalan yang semula dibatasi dapat diakui lebih awal begitu ketidakpastiannya berkurang."
+      },
+      "explanation": "Langkah 1: kalimat pertama sesuai PSAK 115 (72): metode dipilih berdasarkan mana yang lebih baik memprediksi. Langkah 2: kalimat kedua keliru; batasan estimasi memasukkan imbalan variabel sepanjang sangat mungkin tidak terjadi pembalikan signifikan atas pendapatan kumulatif, sehingga sebagian imbalan tetap diakui. Langkah 3: harga transaksi dan batasan dinilai ulang setiap akhir periode, jadi pengakuan tidak menunggu ketidakpastian selesai seluruhnya.",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "1fcfa5e3eae0e524ccac4acbd86b432b5985192912c9880f21cad3459d27dd12",
+        "review": {
+          "batchId": "PK-RV034",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T07:32:00+07:00",
+          "result": {
+            "reviewKey": "R08",
+            "contentHash": "1fcfa5e3eae0e524ccac4acbd86b432b5985192912c9880f21cad3459d27dd12",
+            "independentAnswer": "A. Metode nilai ekspektasian atau jumlah paling mungkin dipilih berdasarkan metode yang lebih baik memprediksi imbalan yang menjadi hak entitas. Batasan estimasi imbalan variabel tidak mengharuskan seluruh imbalan ditangguhkan. Imbalan dimasukkan ke harga transaksi sepanjang sangat mungkin tidak terjadi pembalikan signifikan atas pendapatan kumulatif yang telah diakui. Estimasi diperbarui pada setiap akhir periode pelaporan.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 5,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 4,
+              "originality": 4,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sangat_sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci A tepat. Soal membedakan secara jelas metode estimasi imbalan variabel dari batasan pengakuannya serta menguji kewajiban penilaian ulang setiap akhir periode berdasarkan PSAK 115 (72)."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T00:33:31.386Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV034 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 1,
+        "notes": "Bentuk: teori; ragam: menilai pernyataan. Tema 8 (ekonomi digital) sebagai ilustrasi satu kalimat; dibuka dengan kutipan pernyataan."
+      }
+    },
+    {
+      "id": "PK-MCQ-175",
+      "type": "mcq",
+      "topicIds": [
+        "T13"
+      ],
+      "competencyIds": [
+        "K03"
+      ],
+      "difficulty": "sangat_sulit",
+      "cognitiveLevel": "C5",
+      "estimatedMinutes": 3.5,
+      "maxScore": 1,
+      "stem": "Anda analis investasi yang menilai perusahaan rintisan e-commerce menjelang IPO 2027. Data (Rp miliar):\nTahun | Pendapatan | Piutang usaha | Laba bersih | Arus kas operasi | Porsi kuartal IV\n2023 | 400 | 40 | (20) | (10) | 28%\n2024 | 640 | 96 | 15 | (35) | 30%\n2025 | 1.024 | 256 | 60 | (110) | 45%\nHari penagihan dihitung dengan 365 hari dan piutang akhir tahun, dibulatkan ke hari terdekat. Kesimpulan apa yang paling kuat untuk komite investasi?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Margin laba bersih naik dari -5,0% menjadi 5,9%; perbaikan profitabilitas secepat ini menjelang IPO adalah tanda rekayasa paling kuat, sedangkan pola piutang wajar bagi platform yang tumbuh."
+        },
+        {
+          "key": "B",
+          "text": "Hari penagihan naik dari 37 menjadi 91 hari, porsi kuartal IV melonjak ke 45%, dan selisih laba dengan arus kas operasi menjadi Rp170 miliar: indikasi kuat risiko pendapatan diakui terlalu dini."
+        },
+        {
+          "key": "C",
+          "text": "Arus kas operasi negatif tiga tahun lazim bagi perusahaan rintisan; tanda paling kuat justru pertumbuhan pendapatan yang tepat 60% setiap tahun dan terlalu stabil untuk bisnis yang berekspansi."
+        },
+        {
+          "key": "D",
+          "text": "Porsi kuartal IV 2025 sebesar 45% wajar karena musim belanja akhir tahun, sehingga kenaikan piutang akhir tahun mencerminkan pola musiman dan bukan indikasi rekayasa pendapatan."
+        }
+      ],
+      "answerKey": "B",
+      "distractorRationale": {
+        "A": "Kenaikan margin saja bukan tanda paling kuat; laba yang membaik justru mencurigakan karena tidak disertai kas, dan pola piutang diabaikan.",
+        "C": "Pertumbuhan yang stabil dapat menjadi isyarat perataan, tetapi tanpa dikaitkan dengan piutang, arus kas, dan pola kuartalan, indikasinya jauh lebih lemah.",
+        "D": "Musim belanja akhir tahun juga ada pada 2023 dan 2024, ketika porsi kuartal IV hanya 28-30%; lonjakan ke 45% bersama piutang dan kesenjangan kas tidak dijelaskan oleh pola musiman."
+      },
+      "explanation": "Langkah 1: hari penagihan = piutang/pendapatan × 365: 2023 = 37 hari, 2024 = 55 hari, 2025 = 91 hari; piutang 2025 naik 167% sedangkan pendapatan naik 60%. Langkah 2: porsi pendapatan kuartal IV melonjak dari 28-30% menjadi 45% (sekitar Rp461 miliar), padahal musim belanja akhir tahun sudah ada di tahun-tahun sebelumnya; pendapatan yang menumpuk di akhir tahun dan belum tertagih sejalan dengan kenaikan piutang. Langkah 3: selisih laba bersih dan arus kas operasi 2025 = 60 - (-110) = 170, melebar dari 10 (2023) dan 50 (2024). Langkah 4: ketiga tanda saling menguatkan sebagai indikasi kuat risiko pengakuan pendapatan terlalu dini, salah satu pola financial shenanigans paling umum. Pola ini belum membuktikan rekayasa; penjelasan lain seperti pelonggaran syarat kredit atau memburuknya kemampuan bayar pelanggan tetap perlu diuji. Rekomendasi: uji pisah batas pendapatan kuartal IV, umur piutang, dan penagihan setelah tanggal neraca sebelum menilai IPO.",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "769a3630959cc1cd3e42746aac7f09fb7764f05430efb27b5dcd55baf526d05b",
+        "review": {
+          "batchId": "PK-RV037",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T10:01:00+07:00",
+          "result": {
+            "reviewKey": "R02",
+            "contentHash": "769a3630959cc1cd3e42746aac7f09fb7764f05430efb27b5dcd55baf526d05b",
+            "independentAnswer": "B. Hari penagihan meningkat dari sekitar 37 hari pada 2023 menjadi 91 hari pada 2025. Porsi pendapatan kuartal IV meningkat menjadi 45%, sementara kesenjangan laba bersih dan arus kas operasi pada 2025 mencapai Rp170 miliar. Ketiga indikator tersebut secara bersama-sama menunjukkan risiko kualitas pendapatan dan kemungkinan pengakuan pendapatan terlalu dini. Indikasi tersebut bukan bukti final rekayasa; pengujian pisah batas pendapatan, umur piutang, dan penerimaan kas setelah tanggal pelaporan tetap diperlukan.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": 5,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sangat_sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci B merupakan kesimpulan paling kuat karena menggabungkan pelebaran hari penagihan, konsentrasi pendapatan pada kuartal IV, dan kesenjangan laba-kas. Perhitungan konsisten dan opsi D telah mengantisipasi penjelasan musiman dengan membandingkan pola kuartal IV tahun-tahun sebelumnya."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-10-31T00:33:31.386Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV034 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-10-31T00:39:48.464Z",
+            "reason": "isi berubah lewat impor batch PK-B46"
+          },
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-10-31T00:43:06.987Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV036 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-10-31T02:59:02.890Z",
+            "reason": "isi berubah lewat impor batch PK-B46"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T03:03:10.480Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV037 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 4,
+        "notes": "Bentuk: analisis; pembuka: peran; entitas: perusahaan rintisan e-commerce menjelang IPO. Tema 8; data fiktif, rencana IPO 2027 adalah skenario. Revisi 2: opsi B dan explanation memakai bahasa indikatif (red flag, bukan bukti fraud) sesuai temuan reviewer stemClarity. Revisi 3: pembanding rata-rata industri 25% dihapus dari opsi C (distractorQuality); tingkat sangat_sulit dipertahankan sesuai formulir dengan menambah data porsi pendapatan kuartal IV sebagai konsep ketiga yang harus dipadukan (timeEstimate). Revisi 4: stem dipadatkan agar ≤ 200 kata menurut hitungan aplikasi (lint standar waktu); data, opsi, dan kunci tidak berubah."
+      }
+    },
+    {
+      "id": "PK-KAS-032",
+      "type": "case",
+      "topicIds": [
+        "T04",
+        "T05"
+      ],
+      "competencyIds": [
+        "K01"
+      ],
+      "difficulty": "mudah",
+      "cognitiveLevel": "C3",
+      "estimatedMinutes": 15,
+      "maxScore": 20,
+      "stem": "Baca kasus berikut, lalu jawab kedua sub-pertanyaan. Angka dalam Rp juta tanpa pembulatan.",
+      "caseSize": "mini",
+      "caseNarrative": "Dua bulan setelah dua pembeli utama di luar negeri memangkas pesanan benang, direksi sebuah pabrik tekstil milik keluarga di Jawa Barat memutuskan menutup lini pemintalan lama pada 30 September 2026 dan mengurangi 120 pekerja. Pada tanggal yang sama, direksi menyetujui rencana menjual seluruh mesin pemintal lini itu, menunjuk pialang mesin bekas, dan menawarkan mesin pada harga yang sesuai dengan harga pasar mesin sejenis. Mesin dapat segera dijual dalam kondisinya sekarang; pembongkaran oleh pembeli adalah hal yang lazim dalam penjualan mesin sejenis. Pialang memperkirakan pembeli diperoleh paling lambat Maret 2027. Mesin disusutkan dengan metode garis lurus. Pabrik menerapkan SAK Indonesia dan menyusun laporan keuangan per 31 Desember. Sampai 31 Desember 2026 tidak ada perubahan taksiran nilai wajar maupun biaya untuk menjual.",
+      "caseData": [
+        {
+          "title": "Data mesin pemintal lini lama (Rp juta)",
+          "columns": [
+            "Keterangan",
+            "Jumlah"
+          ],
+          "rows": [
+            [
+              "Biaya perolehan",
+              12000
+            ],
+            [
+              "Akumulasi penyusutan 31 Desember 2025",
+              7200
+            ],
+            [
+              "Beban penyusutan per tahun",
+              1200
+            ],
+            [
+              "Nilai wajar 30 September 2026",
+              3400
+            ],
+            [
+              "Taksiran biaya untuk menjual",
+              150
+            ]
+          ]
+        }
+      ],
+      "subQuestions": [
+        {
+          "id": "a",
+          "prompt": "Apakah mesin pemintal memenuhi syarat diklasifikasikan sebagai aset dikuasai untuk dijual per 30 September 2026? Hitung jumlah tercatatnya pada tanggal itu dan pada 31 Desember 2026, serta rugi yang diakui.",
+          "maxScore": 12,
+          "modelAnswer": "Mesin memenuhi syarat aset dikuasai untuk dijual menurut PSAK 105 (58): tersedia untuk segera dijual dalam kondisi kini, direksi berkomitmen dan menunjuk pialang, harga wajar, dan penjualan diperkirakan dalam 12 bulan (Maret 2027). Sebelum reklasifikasi, mesin diukur menurut PSAK 216 (16): penyusutan Januari-September 2026 = 1.200 × 9/12 = 900; akumulasi 8.100; jumlah tercatat 12.000 - 8.100 = 3.900. Nilai wajar dikurangi biaya untuk menjual = 3.400 - 150 = 3.250. Mesin diukur pada yang lebih rendah, 3.250, dan rugi penurunan nilai 650 diakui di laba rugi. Penyusutan dihentikan sejak 30 September 2026, sehingga per 31 Desember 2026 mesin disajikan terpisah sebagai aset dikuasai untuk dijual sebesar 3.250.",
+          "rubric": [
+            {
+              "criterionId": "C1",
+              "description": "Menilai kriteria klasifikasi aset dikuasai untuk dijual dengan data kasus",
+              "maxScore": 4,
+              "full": "Menyimpulkan memenuhi syarat dan mengaitkan minimal tiga kriteria (segera dapat dijual, komitmen dan upaya aktif, harga wajar, penjualan dalam 12 bulan) dengan fakta kasus.",
+              "partial": "Kesimpulan benar, tetapi hanya satu atau dua kriteria dikaitkan dengan fakta, atau kriteria disebut tanpa data kasus.",
+              "zero": "Kesimpulan salah atau tidak ada analisis kriteria."
+            },
+            {
+              "criterionId": "C2",
+              "description": "Menghitung jumlah tercatat sesaat sebelum reklasifikasi",
+              "maxScore": 4,
+              "full": "Menyusutkan sampai 30 September 2026 (900) dan memperoleh jumlah tercatat 3.900.",
+              "partial": "Metode benar dengan kesalahan hitung, atau memakai jumlah tercatat 31 Desember 2025 (4.800) tanpa penyusutan 2026.",
+              "zero": "Tidak menghitung jumlah tercatat atau dasarnya keliru."
+            },
+            {
+              "criterionId": "C3",
+              "description": "Mengukur aset dan menentukan rugi serta perlakuan setelah klasifikasi",
+              "maxScore": 4,
+              "full": "Mengukur pada nilai lebih rendah 3.250, mengakui rugi 650 di laba rugi, menghentikan penyusutan, dan menyajikan 3.250 per 31 Desember 2026.",
+              "partial": "Dua atau tiga unsur benar, mis. rugi 650 benar tetapi penyusutan tetap dilanjutkan.",
+              "zero": "Memakai jumlah tercatat atau nilai wajar tanpa biaya untuk menjual, atau tidak mengakui rugi."
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "Mengapa aset yang diklasifikasikan sebagai dikuasai untuk dijual tidak lagi disusutkan, dan apa akibatnya bila mesin tetap disusutkan?",
+          "maxScore": 8,
+          "modelAnswer": "Penyusutan mengalokasikan biaya aset selama aset dipakai karena manfaat ekonomiknya dikonsumsi melalui pemakaian. Setelah diklasifikasikan dikuasai untuk dijual, jumlah tercatat dipulihkan terutama melalui penjualan, bukan pemakaian berlanjut, sehingga tidak ada lagi pola konsumsi yang perlu dialokasikan. Nilai aset kini tercermin pada nilai wajar dikurangi biaya untuk menjual, dan penurunannya diakui sebagai rugi penurunan nilai pada setiap tanggal pelaporan. Bila mesin tetap disusutkan, penurunan nilai dihitung dua kali bersama penyesuaian ke nilai wajar, dan laba rugi menyajikan seolah mesin masih dipakai untuk menghasilkan pendapatan.",
+          "rubric": [
+            {
+              "criterionId": "C1",
+              "description": "Menjelaskan dasar penyusutan sebagai alokasi biaya atas pemakaian",
+              "maxScore": 3,
+              "full": "Menjelaskan bahwa penyusutan mencerminkan konsumsi manfaat ekonomik melalui pemakaian aset.",
+              "partial": "Menyebut penyusutan sebagai alokasi biaya tanpa mengaitkannya dengan pemakaian.",
+              "zero": "Tidak menjelaskan dasar penyusutan atau keliru."
+            },
+            {
+              "criterionId": "C2",
+              "description": "Mengaitkan pemulihan melalui penjualan dengan dasar pengukuran yang baru",
+              "maxScore": 3,
+              "full": "Menjelaskan bahwa nilai dipulihkan melalui penjualan sehingga nilai wajar dikurangi biaya untuk menjual dan rugi penurunan nilai menggantikan penyusutan.",
+              "partial": "Menyebut aset akan dijual tanpa menjelaskan peran nilai wajar dikurangi biaya untuk menjual.",
+              "zero": "Tidak ada kaitan dengan pemulihan melalui penjualan."
+            },
+            {
+              "criterionId": "C3",
+              "description": "Menjelaskan akibat bila penyusutan dilanjutkan",
+              "maxScore": 2,
+              "full": "Menyebut beban ganda atau salah saji laba rugi dan jumlah tercatat yang tidak lagi mencerminkan nilai keluar.",
+              "partial": "Menyebut akibat secara umum tanpa alasan.",
+              "zero": "Tidak menjelaskan akibat."
+            }
+          ]
+        }
+      ],
+      "acceptableAlternatives": "(a) C1: peserta boleh menambahkan bahwa lini pemintalan tidak memenuhi definisi operasi dihentikan karena bukan lini usaha utama yang terpisah; tambahan ini tidak wajib untuk nilai penuh; (a) C3: rugi penurunan nilai boleh disajikan dalam pos rugi penurunan nilai aset atau beban lain-lain, asalkan diakui di laba rugi sebesar 650; (b) C1-C3: penjelasan berbasis Kerangka Konseptual, yaitu dasar pengukuran yang relevan bergeser dari biaya historis pemakaian ke nilai keluar, diterima penuh bila dikaitkan dengan pemulihan melalui penjualan; perbandingan dengan aset yang akan ditinggalkan (bukan dijual) yang tetap disusutkan diterima sebagai penguat.",
+      "explanation": "Kasus menguji dua langkah PSAK 105 (58): mengukur aset menurut standar asalnya sesaat sebelum reklasifikasi, lalu mengukur pada nilai lebih rendah antara jumlah tercatat dan nilai wajar dikurangi biaya untuk menjual. Pesangon 120 pekerja hanya latar dan tidak dihitung.",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "0ac3c8ed862210566053e15aa206be00a1cce4ef17092a43f9d9272b6400b6da",
+        "review": {
+          "batchId": "PK-RV035",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T07:32:00+07:00",
+          "result": {
+            "reviewKey": "R01",
+            "contentHash": "0ac3c8ed862210566053e15aa206be00a1cce4ef17092a43f9d9272b6400b6da",
+            "independentAnswer": "(a) Mesin memenuhi syarat diklasifikasikan sebagai aset dikuasai untuk dijual per 30 September 2026. Direksi telah berkomitmen menjual, menunjuk pialang, menawarkan pada harga wajar, dan penjualan diperkirakan selesai dalam 12 bulan. Mesin tersedia untuk segera dijual dalam kondisi sekarang karena pembongkaran oleh pembeli merupakan praktik lazim. Penyusutan Januari-September = 1.200 × 9/12 = 900. Jumlah tercatat sebelum reklasifikasi = 12.000 - 7.200 - 900 = 3.900. Nilai wajar dikurangi biaya untuk menjual = 3.400 - 150 = 3.250. Rugi penurunan nilai = 3.900 - 3.250 = 650. Setelah reklasifikasi, penyusutan dihentikan dan jumlah tercatat per 31 Desember 2026 tetap 3.250. (b) Penyusutan merupakan alokasi biaya selama aset digunakan dan manfaat ekonomiknya dikonsumsi melalui pemakaian. Setelah diklasifikasikan dikuasai untuk dijual, pemulihan jumlah tercatat terutama berasal dari penjualan, bukan penggunaan berkelanjutan. Jika penyusutan tetap dilakukan, beban penyusutan akan mengurangi jumlah tercatat meskipun aset sudah menggunakan dasar pengukuran aset dikuasai untuk dijual, sehingga perlakuan akuntansi tidak mencerminkan dasar pengukuran yang berlaku.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 4,
+              "distractorQuality": null,
+              "rubricQuality": 4,
+              "dataConsistency": 5,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 4
+            },
+            "findings": [
+              {
+                "severity": "minor",
+                "dimension": "stemClarity",
+                "issue": "Narasi menyebutkan rencana menjual seluruh mesin pemintal pada lini lama, sedangkan tabel menggunakan judul 'Data mesin pemintal lini lama' dan pertanyaan menggunakan bentuk tunggal 'mesin pemintal'. Belum jelas apakah angka merupakan nilai satu mesin atau agregat seluruh kelompok mesin yang dijual.",
+                "suggestedFix": "Tegaskan bahwa angka dalam tabel merupakan jumlah agregat seluruh mesin pemintal yang diklasifikasikan sebagai satu kelompok aset dikuasai untuk dijual, atau ubah narasi agar secara konsisten menyebut satu mesin."
+              },
+              {
+                "severity": "minor",
+                "dimension": "rubricQuality",
+                "issue": "Bagian acceptableAlternatives menyatakan peserta boleh menambahkan bahwa lini pemintalan tidak memenuhi definisi operasi dihentikan karena bukan lini usaha utama yang terpisah. Namun, fakta bahwa lini tersebut bukan lini usaha utama yang terpisah tidak diberikan secara eksplisit dalam kasus. Penutupan lini dan pengurangan 120 pekerja juga belum cukup untuk memastikan klasifikasi operasi dihentikan.",
+                "suggestedFix": "Hapus pernyataan tersebut dari acceptableAlternatives atau tambahkan fakta yang cukup untuk menyimpulkan bahwa lini pemintalan bukan lini usaha utama atau wilayah geografis operasi yang terpisah. Karena klasifikasi operasi dihentikan tidak ditanyakan, alternatif ini sebaiknya dinyatakan tidak diperlukan untuk penilaian."
+              }
+            ],
+            "suggestedDifficulty": "mudah",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Perhitungan jumlah tercatat, nilai wajar dikurangi biaya untuk menjual, dan rugi penurunan nilai sebesar Rp650 juta benar. Kriteria klasifikasi dan penghentian penyusutan sesuai PSAK 105 (58). Terdapat dua penyempurnaan minor terkait konsistensi unit aset dan asumsi tambahan dalam acceptableAlternatives."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T00:38:44.211Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV035 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 1,
+        "notes": "Bentuk: analisis; pembuka: peristiwa; entitas: perusahaan keluarga (pabrik tekstil); sub teori: (b). Tema 4 (tekanan industri tekstil dan PHK) sebagai latar; semua angka fiktif."
+      }
+    },
+    {
+      "id": "PK-KAS-033",
+      "type": "case",
+      "topicIds": [
+        "T08",
+        "T12"
+      ],
+      "competencyIds": [
+        "K01",
+        "K04"
+      ],
+      "difficulty": "sedang",
+      "cognitiveLevel": "C4",
+      "estimatedMinutes": 20,
+      "maxScore": 20,
+      "stem": "Baca notulen dan data berikut, lalu jawab ketiga sub-pertanyaan. Angka dalam Rp miliar, dibulatkan ke satu desimal.",
+      "caseSize": "mini",
+      "caseNarrative": "Ringkasan notulen rapat direksi sebuah anak usaha BUMN kontraktor EPC, 12 Januari 2027. Semua estimasi biaya, penolakan klaim, dan data kontrak yang dibahas mencerminkan kondisi per 31 Desember 2026; notulen hanya merangkumnya.\n1. Direktur operasi melaporkan proyek unit pengolahan air untuk sebuah kawasan industri di Jawa Tengah. Kontrak harga tetap ditandatangani Februari 2026 dan merupakan satu kewajiban pelaksanaan yang dipenuhi sepanjang waktu; kemajuan diukur dengan metode input biaya.\n2. Pompa dan panel kendali impor dibayar dalam dolar AS; semua unit yang dibeli sampai 31 Desember 2026 sudah terpasang. Anggaran awal disusun dengan kurs diasumsikan Rp15.500 per USD, sedangkan kurs pembelian sepanjang 2026 diasumsikan rata-rata Rp16.900. Estimasi total biaya naik dari Rp720 miliar menjadi Rp900 miliar; estimasi ini sudah mencakup biaya inkremental dan alokasi biaya lain yang berkaitan langsung dengan kontrak. Seluruh biaya yang telah terjadi menggambarkan pekerjaan yang sudah dialihkan kepada pemberi kerja, tanpa material belum terpasang atau pemborosan abnormal, dan tidak ada aset yang dipakai untuk memenuhi kontrak yang mengalami penurunan nilai.\n3. Perusahaan mengajukan klaim eskalasi kurs Rp40 miliar, tetapi pemberi kerja menolaknya secara tertulis karena kontrak tidak memuat klausul penyesuaian kurs.\n4. Direktur keuangan mengusulkan kerugian proyek dicatat saat proyek selesai pada 2027 “agar laba 2026 tidak tertekan”.",
+      "caseData": [
+        {
+          "title": "Data kontrak per 31 Desember 2026 (Rp miliar)",
+          "columns": [
+            "Keterangan",
+            "Jumlah"
+          ],
+          "rows": [
+            [
+              "Harga kontrak",
+              800
+            ],
+            [
+              "Biaya yang telah terjadi sampai 31 Desember 2026",
+              360
+            ],
+            [
+              "Estimasi biaya untuk menyelesaikan",
+              540
+            ],
+            [
+              "Estimasi total biaya",
+              900
+            ],
+            [
+              "Klaim eskalasi kurs yang diajukan",
+              40
+            ],
+            [
+              "Denda bila kontrak diputus perusahaan",
+              150
+            ]
+          ]
+        }
+      ],
+      "subQuestions": [
+        {
+          "id": "a",
+          "prompt": "Jelaskan hubungan antara pengakuan pendapatan sepanjang waktu berdasarkan kemajuan dan pengakuan kontrak memberatkan: mengapa metode kemajuan saja tidak menangkap seluruh kerugian yang diperkirakan, dan apa akibatnya pada usul direktur keuangan?",
+          "maxScore": 6,
+          "modelAnswer": "Metode kemajuan mengakui pendapatan dan biaya sebanding dengan pekerjaan yang telah dilaksanakan, sehingga kerugian hanya muncul sebatas porsi yang sudah selesai. PSAK 115 (72) tidak mengatur kerugian atas sisa kontrak; bagian itu ditangani PSAK 237 (57): bila biaya tak terhindarkan untuk memenuhi sisa kewajiban melebihi manfaat ekonomik yang diharapkan, kontrak memberatkan dan provisi diakui segera. Karena itu, kedua standar bersama-sama membuat seluruh kerugian yang diperkirakan diakui pada periode ketika kerugian teridentifikasi. Usul direktur keuangan ditolak karena menunda kerugian melebihsajikan laba 2026 dan mengurangsajikan liabilitas.",
+          "rubric": [
+            {
+              "criterionId": "C1",
+              "description": "Menjelaskan sebab metode kemajuan hanya menangkap kerugian porsi yang selesai",
+              "maxScore": 2,
+              "full": "Menjelaskan bahwa pendapatan dan biaya diakui sesuai kemajuan sehingga kerugian sisa kontrak belum tercermin.",
+              "partial": "Menyebut metode kemajuan tanpa menjelaskan mengapa kerugian sisa belum terakui.",
+              "zero": "Penjelasan keliru atau tidak ada."
+            },
+            {
+              "criterionId": "C2",
+              "description": "Mengaitkan sisa kerugian dengan kontrak memberatkan PSAK 237 (57)",
+              "maxScore": 2,
+              "full": "Menjelaskan biaya tak terhindarkan melebihi manfaat yang diharapkan sehingga provisi diakui untuk sisa kontrak.",
+              "partial": "Menyebut kontrak memberatkan tanpa kriteria biaya tak terhindarkan atau manfaat yang diharapkan.",
+              "zero": "Tidak menyebut kontrak memberatkan atau keliru."
+            },
+            {
+              "criterionId": "C3",
+              "description": "Menarik akibat pada usul direktur keuangan",
+              "maxScore": 2,
+              "full": "Menyimpulkan seluruh kerugian diakui pada 2026 dan menjelaskan salah saji bila ditunda.",
+              "partial": "Menolak usul tanpa alasan dampak pada laporan keuangan.",
+              "zero": "Menyetujui penundaan kerugian."
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "prompt": "Hitung pendapatan kontrak yang diakui pada 2026 dan jelaskan apakah klaim eskalasi kurs dimasukkan ke harga transaksi.",
+          "maxScore": 7,
+          "modelAnswer": "Kemajuan = 360/900 = 40%. Klaim 40 tidak dimasukkan ke harga transaksi karena pemberi kerja menolaknya secara tertulis dan kontrak tidak memuat klausul kurs, sehingga belum ada hak yang dapat dipaksakan; harga transaksi tetap 800. Pendapatan 2026 = 40% × 800 = 320,0. Beban kontrak 2026 = 360,0, sehingga rugi atas porsi yang selesai = 40,0.",
+          "rubric": [
+            {
+              "criterionId": "C1",
+              "description": "Menghitung tingkat kemajuan dengan estimasi biaya yang direvisi",
+              "maxScore": 2.5,
+              "full": "Menghitung 360/900 = 40%.",
+              "partial": "Memakai estimasi biaya lama (360/720 = 50%) atau rumus benar dengan kesalahan hitung.",
+              "zero": "Tidak menghitung kemajuan atau dasarnya keliru."
+            },
+            {
+              "criterionId": "C2",
+              "description": "Menilai perlakuan klaim eskalasi kurs",
+              "maxScore": 2.5,
+              "full": "Mengeluarkan klaim karena tidak ada hak yang dapat dipaksakan (ditolak tertulis, tanpa klausul kurs) dan menjaga harga transaksi 800.",
+              "partial": "Mengeluarkan klaim tanpa alasan, atau alasan hanya berdasarkan kehati-hatian.",
+              "zero": "Memasukkan klaim ke harga transaksi."
+            },
+            {
+              "criterionId": "C3",
+              "description": "Menghitung pendapatan, beban, dan rugi porsi selesai",
+              "maxScore": 2,
+              "full": "Pendapatan 320,0, beban 360,0, dan rugi porsi selesai 40,0.",
+              "partial": "Pendapatan benar tetapi beban atau rugi tidak disebut atau salah.",
+              "zero": "Pendapatan salah dan tidak konsisten dengan kemajuan yang dihitung."
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "prompt": "Tentukan provisi kontrak memberatkan dan total kerugian proyek yang diakui pada 2026, serta cara penyajiannya.",
+          "maxScore": 7,
+          "modelAnswer": "Sisa pendapatan = 800 - 320 = 480; sisa biaya untuk memenuhi = 540, sehingga biaya bersih memenuhi kontrak = 60. Biaya bersih keluar dari kontrak adalah denda 150, jadi biaya tak terhindarkan adalah yang lebih rendah, 60. Provisi kontrak memberatkan = 60,0. Total kerugian 2026 = 40,0 + 60,0 = 100,0, sama dengan 800 - 900. Provisi diakui sebagai liabilitas provisi menurut PSAK 237 (57), terpisah dari liabilitas kontrak PSAK 115 (72), dan dipakai seiring pekerjaan selesai; ungkapkan sifat provisi dan ketidakpastian estimasi kurs.",
+          "rubric": [
+            {
+              "criterionId": "C1",
+              "description": "Menghitung provisi dari sisa pendapatan dan sisa biaya",
+              "maxScore": 3,
+              "full": "Menghitung sisa pendapatan 480 dan sisa biaya 540 sehingga provisi 60,0.",
+              "partial": "Mengakui provisi sebesar seluruh kerugian 100 tanpa memperhitungkan rugi 40 di (b), atau kesalahan hitung kecil.",
+              "zero": "Tidak mengakui provisi atau dasarnya keliru."
+            },
+            {
+              "criterionId": "C2",
+              "description": "Membandingkan biaya memenuhi kontrak dengan denda pemutusan",
+              "maxScore": 2,
+              "full": "Membandingkan 60 dengan denda 150 dan memilih yang lebih rendah.",
+              "partial": "Menyebut denda tanpa membandingkan secara benar.",
+              "zero": "Tidak mempertimbangkan denda atau memilih denda 150."
+            },
+            {
+              "criterionId": "C3",
+              "description": "Menentukan total kerugian dan penyajian",
+              "maxScore": 2,
+              "full": "Total kerugian 100,0 pada 2026; provisi disajikan sebagai liabilitas provisi (bukan liabilitas kontrak) dan diungkapkan beserta ketidakpastian estimasi.",
+              "partial": "Total kerugian benar tanpa penyajian, atau penyajian benar dengan total keliru.",
+              "zero": "Total kerugian dan penyajian keliru."
+            }
+          ]
+        }
+      ],
+      "acceptableAlternatives": "(a) C1-C3: urutan penjelasan apa pun diterima, termasuk mulai dari kontrak memberatkan lalu metode kemajuan; menyebut kehati-hatian diterima bila dikaitkan dengan netralitas, bukan sebagai alasan melebihkan provisi; (b) C2: peserta yang memperlakukan klaim sebagai modifikasi kontrak yang belum disetujui (bukan imbalan variabel yang dibatasi) mendapat nilai penuh bila menyimpulkan klaim tidak dimasukkan; (b) C3 dan (c) C1: bila klaim dimasukkan di (b) C2, hitungan berikutnya yang konsisten dengan asumsi itu tetap dinilai pada metodenya; (c) C3: provisi kontrak memberatkan boleh disajikan dalam pos provisi tersendiri atau diagregasi dengan provisi atau liabilitas lain yang sesuai, sepanjang sifat dan jumlahnya tetap dapat diidentifikasi dan diungkapkan; menyamakannya dengan liabilitas kontrak PSAK 115 (72) tidak diterima untuk nilai penuh.",
+      "explanation": "Kasus menghubungkan PSAK 115 (72) dan PSAK 237 (57). Biaya untuk memenuhi kontrak mencakup biaya inkremental dan alokasi biaya lain yang berkaitan langsung, sesuai amendemen PSAK 237 (57) yang sudah efektif. Kurs adalah angka asumsi dan hanya menjelaskan kenaikan biaya; tidak ada perhitungan selisih kurs. Narasi menegaskan seluruh biaya yang terjadi menggambarkan kinerja (material impor sudah terpasang, tanpa pemborosan abnormal) dan tidak ada penurunan nilai aset terkait kontrak, sehingga rasio 360/900 dapat dipakai langsung dan provisi tidak perlu didahului pengakuan rugi penurunan nilai.",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "a109c3835fb73b7e3a250fbce4821dcc67fe9b6744a8e1fd091dff6bd3053eb7",
+        "review": {
+          "batchId": "PK-RV039",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T10:02:00+07:00",
+          "result": {
+            "reviewKey": "R01",
+            "contentHash": "a109c3835fb73b7e3a250fbce4821dcc67fe9b6744a8e1fd091dff6bd3053eb7",
+            "independentAnswer": "(a) Metode input biaya mengukur kemajuan berdasarkan biaya yang terjadi dibandingkan estimasi total biaya. Dengan asumsi seluruh biaya yang terjadi menggambarkan kinerja yang telah dialihkan, pendapatan dan biaya diakui sesuai kemajuan sehingga kerugian atas bagian pekerjaan yang telah dilakukan tercermin, tetapi kerugian atas sisa kontrak belum seluruhnya tercermin. Sisa kerugian harus dinilai berdasarkan ketentuan kontrak memberatkan PSAK 237. Jika biaya tak terhindarkan untuk memenuhi kontrak melebihi manfaat ekonomik yang diharapkan, provisi diakui ketika kewajiban tersebut teridentifikasi. Karena itu, usul menunda kerugian sampai 2027 tidak tepat dan akan melebihsajikan laba serta mengurangsajikan liabilitas 2026. (b) Kemajuan = 360/900 = 40%. Klaim eskalasi kurs Rp40 miliar tidak dimasukkan karena tidak ada klausul penyesuaian kurs dan klaim telah ditolak tertulis, sehingga tidak terdapat hak yang dapat dipaksakan. Harga transaksi tetap Rp800 miliar. Pendapatan 2026 = 40% × 800 = Rp320 miliar. Biaya yang telah terjadi Rp360 miliar, sehingga rugi atas pekerjaan yang telah dilakukan Rp40 miliar. (c) Sisa pendapatan = 800 − 320 = Rp480 miliar. Biaya untuk menyelesaikan = Rp540 miliar. Biaya bersih memenuhi kontrak = 540 − 480 = Rp60 miliar. Dibandingkan dengan denda pemutusan Rp150 miliar, biaya tak terhindarkan yang lebih rendah adalah Rp60 miliar. Provisi kontrak memberatkan Rp60 miliar. Total kerugian proyek yang diakui pada 2026 = 40 + 60 = Rp100 miliar, sama dengan selisih harga kontrak dan estimasi total biaya (900 − 800). Provisi disajikan sebagai liabilitas provisi, bukan disamakan dengan liabilitas kontrak, dengan pengungkapan sifat dan ketidakpastian estimasi yang relevan.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": null,
+              "stemClarity": 5,
+              "distractorQuality": null,
+              "rubricQuality": 5,
+              "dataConsistency": 5,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sedang",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Jawaban ideal dan perhitungan konsisten: kemajuan 40%, pendapatan Rp320 miliar, rugi pekerjaan yang telah dilakukan Rp40 miliar, provisi kontrak memberatkan Rp60 miliar, dan total kerugian Rp100 miliar. Revisi narasi telah memperjelas bahwa biaya yang terjadi menggambarkan kinerja, material impor telah terpasang, dan tidak ada penurunan nilai aset terkait; rubrik juga memiliki pembagian skor terukur serta alternatif penyajian yang dapat diterima."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-10-31T00:38:44.211Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV035 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-10-31T03:03:39.069Z",
+            "reason": "isi berubah lewat impor batch PK-B47"
+          },
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-10-31T03:04:47.673Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV038 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-10-31T03:06:32.245Z",
+            "reason": "isi berubah lewat impor batch PK-B47"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T03:08:41.896Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV039 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 3,
+        "notes": "Bentuk: analisis; pembuka: dokumen (notulen rapat direksi); entitas: anak usaha BUMN kontraktor EPC; sub teori: (a). Tema 2 (pelemahan rupiah); kurs Rp15.500 dan Rp16.900 per USD adalah angka asumsi. Revisi 2: (c) C3 dan acceptableAlternatives tidak lagi menyamakan provisi kontrak memberatkan dengan liabilitas kontrak (rubricQuality); narasi menegaskan semua informasi mencerminkan kondisi per 31 Desember 2026 (fairness). Revisi 3: narasi menambahkan asumsi bahwa pompa dan panel impor sudah terpasang, seluruh biaya yang terjadi menggambarkan kinerja tanpa material belum terpasang atau pemborosan abnormal, dan tidak ada penurunan nilai aset yang dipakai untuk memenuhi kontrak (stemClarity, fairness)."
+      }
+    },
+    {
+      "id": "PK-MCQ-177",
+      "type": "mcq",
+      "topicIds": [
+        "T02"
+      ],
+      "competencyIds": [
+        "K05"
+      ],
+      "difficulty": "mudah",
+      "cognitiveLevel": "C2",
+      "estimatedMinutes": 1,
+      "maxScore": 1,
+      "stem": "Saluran pelaporan pelanggaran sebuah emiten dikelola unit kepatuhan yang melapor ke komite audit dan memiliki prosedur investigasi, tetapi identitas pelapor dapat diketahui atasannya dan tidak ada larangan tindakan balasan. Apa penyebab utama saluran ini kurang efektif bagi tata kelola pelaporan keuangan?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Laporan anonim sulit diverifikasi, sehingga indikasi salah saji lambat ditindaklanjuti."
+        },
+        {
+          "key": "B",
+          "text": "Komite audit menerima laporan terlambat karena harus melalui unit kepatuhan."
+        },
+        {
+          "key": "C",
+          "text": "Karyawan enggan melapor karena takut dibalas, sehingga indikasi salah saji tidak terungkap."
+        },
+        {
+          "key": "D",
+          "text": "Unit kepatuhan kurang kompeten menginvestigasi kecurangan akuntansi yang bersifat teknis."
+        }
+      ],
+      "answerKey": "C",
+      "distractorRationale": {
+        "A": "Saluran dalam soal justru tidak anonim; masalahnya identitas pelapor dapat diketahui, bukan sulitnya verifikasi laporan anonim.",
+        "B": "Unit kepatuhan melapor ke komite audit dan memiliki prosedur investigasi; jalur ini bukan kelemahan utama yang digambarkan.",
+        "D": "Kompetensi investigasi bisa menjadi kelemahan umum, tetapi soal tidak memberi fakta tentang hal itu; fakta yang diberikan menyangkut kerahasiaan dan perlindungan pelapor."
+      },
+      "explanation": "Tata kelola saluran (pengelola, jalur ke komite audit, prosedur investigasi) sudah memadai menurut soal. Kelemahan utamanya adalah tidak adanya kerahasiaan identitas dan perlindungan dari tindakan balasan, sehingga karyawan memilih diam dan sumber deteksi dini kecurangan pelaporan keuangan hilang.",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "b7b634e3d1705a7a1a112fc3e1c53d34d298a876d638d72a3aeb53d04020b508",
+        "review": {
+          "batchId": "PK-RV042",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T12:00:00+07:00",
+          "result": {
+            "reviewKey": "R03",
+            "contentHash": "b7b634e3d1705a7a1a112fc3e1c53d34d298a876d638d72a3aeb53d04020b508",
+            "independentAnswer": "C. Kerahasiaan identitas pelapor dan perlindungan dari tindakan balasan merupakan unsur penting efektivitas saluran pelaporan. Jika identitas dapat diketahui atasan dan tidak ada perlindungan, karyawan dapat takut melapor sehingga indikasi salah saji tidak terungkap.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "mudah",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci C tepat karena langsung menjelaskan dampak kelemahan kerahasiaan dan perlindungan pelapor terhadap efektivitas deteksi dini. Distraktor lain masih dapat dipahami sebagai kelemahan umum, tetapi tidak didukung oleh fakta kasus sehingga bukan jawaban terbaik."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-10-31T03:19:58.086Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV040 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-10-31T03:25:48.774Z",
+            "reason": "isi berubah lewat impor batch PK-B48"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T03:30:53.474Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV042 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 2,
+        "notes": "Bentuk: teori; ragam: sebab-akibat. Ilustrasi satu kalimat; tema 11 sebagai latar umum. Revisi 2: stem menegaskan unsur tata kelola yang sudah memadai; distraktor diganti dengan kelemahan yang mungkin terjadi tetapi bukan penyebab utama dalam skenario (distractorQuality)."
+      }
+    },
+    {
+      "id": "PK-MCQ-178",
+      "type": "mcq",
+      "topicIds": [
+        "T03"
+      ],
+      "competencyIds": [
+        "K01"
+      ],
+      "difficulty": "mudah",
+      "cognitiveLevel": "C3",
+      "estimatedMinutes": 1,
+      "maxScore": 1,
+      "stem": "Sebuah perusahaan percetakan di Surabaya menutup buku per 31 Desember 2025. Pada 20 Februari 2026, sebelum laporan keuangan diotorisasi, gudangnya terbakar dan persediaan Rp3 miliar musnah. Bagaimana perlakuannya dalam laporan keuangan 2025?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Persediaan 2025 tidak disesuaikan; sifat peristiwa dan estimasi dampak keuangannya diungkapkan dalam catatan."
+        },
+        {
+          "key": "B",
+          "text": "Persediaan 2025 diturunkan Rp3 miliar karena kebakaran terjadi sebelum laporan keuangan diotorisasi."
+        },
+        {
+          "key": "C",
+          "text": "Provisi kerugian Rp3 miliar diakui pada 2025 karena kerugian sudah pasti sebelum laporan diterbitkan."
+        },
+        {
+          "key": "D",
+          "text": "Tidak ada perlakuan apa pun karena peristiwa sesudah tanggal pelaporan tidak relevan bagi periode itu."
+        }
+      ],
+      "answerKey": "A",
+      "distractorRationale": {
+        "B": "Kebakaran adalah kondisi yang timbul setelah tanggal pelaporan, sehingga merupakan peristiwa nonpenyesuai walaupun terjadi sebelum otorisasi.",
+        "C": "Pada 31 Desember 2025 tidak ada kewajiban atau kerugian; provisi tidak boleh diakui untuk peristiwa yang terjadi sesudahnya.",
+        "D": "Peristiwa nonpenyesuai yang material tetap wajib diungkapkan agar pengguna dapat menilai dampaknya."
+      },
+      "explanation": "Kebakaran terjadi setelah 31 Desember 2025 dan tidak memberi bukti atas kondisi yang ada pada tanggal pelaporan, sehingga merupakan peristiwa nonpenyesuai menurut PSAK 210 (8). Persediaan 2025 tidak disesuaikan, tetapi sifat peristiwa dan estimasi dampak keuangannya diungkapkan karena material.",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "50898c842a2d8f0b946beedf02949103dce01c4bec0df374f03e1a72407f20f3",
+        "review": {
+          "batchId": "PK-RV040",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T12:00:00+07:00",
+          "result": {
+            "reviewKey": "R10",
+            "contentHash": "50898c842a2d8f0b946beedf02949103dce01c4bec0df374f03e1a72407f20f3",
+            "independentAnswer": "A. Kebakaran pada 20 Februari 2026 merupakan peristiwa nonpenyesuai karena kondisi yang menyebabkan kebakaran timbul setelah tanggal pelaporan. Persediaan pada 31 Desember 2025 tidak disesuaikan, tetapi sifat peristiwa dan estimasi dampak keuangannya diungkapkan karena material.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "mudah",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci A benar karena kebakaran merupakan peristiwa nonpenyesuai yang material sehingga memerlukan pengungkapan, bukan penyesuaian saldo persediaan 2025. Panjang soal memenuhi batas PG mudah."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T03:19:58.086Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV040 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 1,
+        "notes": "Bentuk: analisis; pembuka: tanpa nama; entitas: perusahaan percetakan. Tema 3 (peristiwa setelah periode pelaporan) sebagai topik; angka fiktif."
+      }
+    },
+    {
+      "id": "PK-MCQ-179",
+      "type": "mcq",
+      "topicIds": [
+        "T04"
+      ],
+      "competencyIds": [
+        "K01"
+      ],
+      "difficulty": "mudah",
+      "cognitiveLevel": "C3",
+      "estimatedMinutes": 1,
+      "maxScore": 1,
+      "stem": "Data per unit televisi model lama per 31 Desember 2025: biaya Rp4,0 juta; harga jual turun menjadi Rp3,8 juta karena daya beli melemah; biaya untuk menjual Rp0,3 juta; biaya penggantian Rp3,6 juta. Pada dasar apa pengecer elektronik Tbk ini mengukur persediaannya?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Biaya perolehan, karena penurunan harga jual dianggap sementara selama persediaan belum terjual."
+        },
+        {
+          "key": "B",
+          "text": "Harga jual terbaru, karena itulah jumlah yang diharapkan diterima dari pelanggan."
+        },
+        {
+          "key": "C",
+          "text": "Biaya penggantian, karena mencerminkan harga pasar televisi sejenis pada tanggal pelaporan."
+        },
+        {
+          "key": "D",
+          "text": "Harga jual dikurangi biaya untuk menjual, karena nilai itu lebih rendah daripada biaya perolehan."
+        }
+      ],
+      "answerKey": "D",
+      "distractorRationale": {
+        "A": "Persediaan diukur pada yang lebih rendah antara biaya dan nilai realisasi neto; penurunan harga jual pada tanggal pelaporan harus dicerminkan.",
+        "B": "Nilai realisasi neto memperhitungkan biaya untuk menjual, bukan harga jual bruto.",
+        "C": "Biaya penggantian bukan dasar pengukuran persediaan menurut PSAK 202 (14)."
+      },
+      "explanation": "Nilai realisasi neto = harga jual estimasian dikurangi biaya untuk menjual (Rp3,5 juta), lebih rendah daripada biaya Rp4,0 juta. Menurut PSAK 202 (14), persediaan diukur pada yang lebih rendah di antara keduanya, sehingga diturunkan ke nilai realisasi neto.",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "a773f22860df640c1191e271fe9fe77616647f90e6bd3448d5d85c0a427bf9c7",
+        "review": {
+          "batchId": "PK-RV040",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T12:00:00+07:00",
+          "result": {
+            "reviewKey": "R02",
+            "contentHash": "a773f22860df640c1191e271fe9fe77616647f90e6bd3448d5d85c0a427bf9c7",
+            "independentAnswer": "D. Nilai realisasi neto adalah Rp3,8 juta dikurangi biaya untuk menjual Rp0,3 juta, yaitu Rp3,5 juta. Karena lebih rendah daripada biaya perolehan Rp4,0 juta, persediaan diukur pada Rp3,5 juta.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "mudah",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Perhitungan nilai realisasi neto Rp3,5 juta dan kunci D benar. Panjang soal memenuhi batas PG mudah dan estimasi waktu satu menit sesuai standar."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T03:19:58.086Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV040 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 1,
+        "notes": "Bentuk: analisis; pembuka: data; entitas: Tbk (pengecer elektronik). Tema 10; angka fiktif; tanpa hitungan wajib karena opsi memuat dasar pengukuran."
+      }
+    },
+    {
+      "id": "PK-MCQ-180",
+      "type": "mcq",
+      "topicIds": [
+        "T05"
+      ],
+      "competencyIds": [
+        "K01"
+      ],
+      "difficulty": "sedang",
+      "cognitiveLevel": "C3",
+      "estimatedMinutes": 1.5,
+      "maxScore": 1,
+      "stem": "Dua bulan setelah kawasan smelter di dekatnya beroperasi, BUMD pengelola pelabuhan menerima hibah Rp60 miliar dari pemerintah pusat, bukan pemiliknya, untuk membangun dermaga yang wajib melayani kawasan itu minimal 20 tahun. Dermaga selesai 1 Januari 2026, biaya Rp150 miliar, umur manfaat 30 tahun, garis lurus. Syarat hibah diyakini dipenuhi; hibah disajikan sebagai penghasilan tangguhan. Dampaknya pada laporan keuangan 2026 (Rp miliar, satu desimal)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Penghasilan hibah 60,0 di laba rugi 2026 karena kas telah diterima dan dermaga sudah selesai."
+        },
+        {
+          "key": "B",
+          "text": "Hibah 60,0 dikreditkan ke ekuitas sebagai tambahan modal karena berasal dari pemerintah."
+        },
+        {
+          "key": "C",
+          "text": "Penghasilan hibah 2,0 di laba rugi 2026 dan penghasilan tangguhan 58,0 per 31 Desember 2026."
+        },
+        {
+          "key": "D",
+          "text": "Penghasilan hibah 3,0 di laba rugi 2026 karena dialokasikan selama 20 tahun masa syarat pelayanan."
+        }
+      ],
+      "answerKey": "C",
+      "distractorRationale": {
+        "A": "Hibah terkait aset tidak diakui sekaligus; hibah diakui di laba rugi secara sistematis sejalan dengan beban terkait (penyusutan).",
+        "B": "Hibah dari pemerintah yang bukan pemilik bukan kontribusi modal; PSAK 220 (61) melarang pengkreditan langsung ke ekuitas.",
+        "D": "Masa syarat pelayanan bukan dasar alokasi; hibah mengikuti pola penyusutan dermaga selama 30 tahun."
+      },
+      "explanation": "Hibah terkait aset diakui di laba rugi secara sistematis selama periode entitas mengakui beban terkait, yaitu penyusutan dermaga 30 tahun: 60 ÷ 30 = 2,0 per tahun. Penghasilan tangguhan akhir 2026 = 60 - 2 = 58,0 (PSAK 220 (61)).",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "10a552e89b582b790f9ae26b9667ef9e7a72745425d5556ca7977439a92bbee5",
+        "review": {
+          "batchId": "PK-RV040",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T12:00:00+07:00",
+          "result": {
+            "reviewKey": "R09",
+            "contentHash": "10a552e89b582b790f9ae26b9667ef9e7a72745425d5556ca7977439a92bbee5",
+            "independentAnswer": "C. Hibah terkait aset diakui sebagai penghasilan secara sistematis selama periode pengakuan beban terkait. Dengan umur manfaat dermaga 30 tahun dan metode garis lurus, penghasilan hibah tahunan adalah Rp60 miliar dibagi 30, yaitu Rp2 miliar. Saldo penghasilan tangguhan pada akhir 2026 adalah Rp58 miliar.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sedang",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci C benar. Penghasilan hibah 2026 sebesar Rp2,0 miliar dan saldo penghasilan tangguhan Rp58,0 miliar; panjang soal memenuhi batas PG sedang."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T03:19:58.086Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV040 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 1,
+        "notes": "Bentuk: analisis; pembuka: peristiwa; entitas: BUMD (pengelola pelabuhan). Tema 5 (hilirisasi) sebagai latar; angka fiktif."
+      }
+    },
+    {
+      "id": "PK-MCQ-181",
+      "type": "mcq",
+      "topicIds": [
+        "T06"
+      ],
+      "competencyIds": [
+        "K01"
+      ],
+      "difficulty": "sedang",
+      "cognitiveLevel": "C3",
+      "estimatedMinutes": 1.5,
+      "maxScore": 1,
+      "stem": "Jaringan klinik kecantikan dengan 12 cabang memilih menyewa karena daya beli melemah. Kontrak 2026: (1) ruko 3 tahun, Rp400 juta setahun; (2) alat laser 10 bulan tanpa opsi beli atau perpanjangan; (3) 40 tablet 2 tahun, nilai baru Rp5 juta per unit. Entitas memakai kedua pengecualian PSAK 116 (73); batas aset bernilai rendah Rp70 juta per aset baru. Kontrak mana yang dibebankan tanpa aset hak guna?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Alat laser dan tablet; pembayaran keduanya dibebankan garis lurus selama masa sewa."
+        },
+        {
+          "key": "B",
+          "text": "Hanya alat laser, karena 40 tablet bernilai total Rp200 juta, melebihi batas aset bernilai rendah."
+        },
+        {
+          "key": "C",
+          "text": "Tablet saja, sedangkan alat laser tetap diakui sebagai aset hak guna karena nilainya tinggi."
+        },
+        {
+          "key": "D",
+          "text": "Ketiga kontrak, karena seluruh pembayarannya kecil dibandingkan pendapatan jaringan klinik."
+        }
+      ],
+      "answerKey": "A",
+      "distractorRationale": {
+        "B": "Batas aset bernilai rendah dinilai per aset, bukan secara agregat; tablet Rp5 juta per unit memenuhi kriteria.",
+        "C": "Pengecualian sewa jangka pendek (≤ 12 bulan tanpa opsi beli) tidak bergantung pada nilai aset.",
+        "D": "Ruko 3 tahun bukan sewa jangka pendek dan bukan aset bernilai rendah; materialitas pembayaran bukan dasar pengecualian."
+      },
+      "explanation": "Langkah 1: alat laser bermasa sewa 10 bulan tanpa opsi beli, sehingga memenuhi pengecualian sewa jangka pendek. Langkah 2: tablet dinilai per aset (Rp5 juta ≤ Rp70 juta), sehingga memenuhi pengecualian aset bernilai rendah. Langkah 3: ruko 3 tahun tidak memenuhi keduanya, sehingga diakui sebagai aset hak guna dan liabilitas sewa.",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "9dcd393a8032650817f6a6f93aa61667724714a0e2c10e4f693db1310d4c8394",
+        "review": {
+          "batchId": "PK-RV040",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T12:00:00+07:00",
+          "result": {
+            "reviewKey": "R05",
+            "contentHash": "9dcd393a8032650817f6a6f93aa61667724714a0e2c10e4f693db1310d4c8394",
+            "independentAnswer": "A. Alat laser memenuhi pengecualian sewa jangka pendek karena masa sewanya 10 bulan dan tidak ada opsi beli. Tablet memenuhi pengecualian aset bernilai rendah karena nilai setiap unit ketika baru Rp5 juta, di bawah batas Rp70 juta yang diberikan. Ruko tidak memenuhi kedua pengecualian.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 4,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [
+              {
+                "severity": "minor",
+                "dimension": "stemClarity",
+                "issue": "Frasa 'batas aset bernilai rendah Rp70 juta per aset baru' dapat ditafsirkan sebagai ambang nominal yang ditetapkan PSAK, padahal angka tersebut bukan batas universal dalam standar.",
+                "suggestedFix": "Tegaskan bahwa Rp70 juta merupakan batas penilaian yang digunakan entitas dalam skenario, bukan angka ambang yang ditetapkan PSAK 116."
+              }
+            ],
+            "suggestedDifficulty": "sedang",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci A benar. Alat laser memenuhi pengecualian sewa jangka pendek dan tablet memenuhi pengecualian aset bernilai rendah per unit; batas Rp70 juta hanya perlu diperjelas sebagai asumsi entitas."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T03:19:58.086Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV040 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 1,
+        "notes": "Bentuk: analisis; pembuka: profil; entitas: jaringan klinik kecantikan. Tema 10; batas aset bernilai rendah adalah kebijakan fiktif entitas."
+      }
+    },
+    {
+      "id": "PK-MCQ-182",
+      "type": "mcq",
+      "topicIds": [
+        "T08"
+      ],
+      "competencyIds": [
+        "K01"
+      ],
+      "difficulty": "sedang",
+      "cognitiveLevel": "C3",
+      "estimatedMinutes": 1.5,
+      "maxScore": 1,
+      "stem": "Diasumsikan imbal hasil pasar obligasi pemerintah yang menjadi acuan tingkat diskonto turun pada akhir periode pelaporan, sehingga entitas menurunkan tingkat diskonto program imbalan pasti. Pernyataan manakah yang paling tepat tentang asumsi ini dan dampaknya menurut PSAK 219 (24)?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Tingkat diskonto adalah asumsi demografis, sehingga perubahannya diakui di laba rugi sebagai biaya jasa lalu."
+        },
+        {
+          "key": "B",
+          "text": "Penurunan tingkat diskonto menurunkan kewajiban imbalan pasti karena beban bunga periode berikutnya lebih kecil."
+        },
+        {
+          "key": "C",
+          "text": "Tingkat diskonto mengikuti imbal hasil aset program yang diharapkan, sehingga perubahannya diakui di laba rugi."
+        },
+        {
+          "key": "D",
+          "text": "Tingkat diskonto adalah asumsi keuangan; penurunannya menaikkan nilai kini kewajiban, yang diakui sebagai kerugian aktuarial di PKL."
+        }
+      ],
+      "answerKey": "D",
+      "distractorRationale": {
+        "A": "Tingkat diskonto adalah asumsi keuangan, dan perubahan asumsi aktuarial bukan biaya jasa lalu.",
+        "B": "Tingkat diskonto lebih rendah menaikkan nilai kini arus kas imbalan masa depan, sehingga kewajiban naik.",
+        "C": "Tingkat diskonto ditentukan dari imbal hasil pasar obligasi berkualitas tinggi atau obligasi pemerintah, bukan imbal hasil aset program yang diharapkan."
+      },
+      "explanation": "Tingkat diskonto adalah asumsi aktuarial keuangan yang ditentukan dari imbal hasil pasar obligasi berkualitas tinggi atau obligasi pemerintah pada akhir periode. Penurunannya menaikkan nilai kini kewajiban imbalan pasti; kenaikan itu adalah kerugian aktuarial yang diakui sebagai pengukuran kembali di penghasilan komprehensif lain, bukan di laba rugi.",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "cf43528b903b36034268414b92fba2ed41d07053953a767b4d54fed4a0a9cd9d",
+        "review": {
+          "batchId": "PK-RV042",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T12:00:00+07:00",
+          "result": {
+            "reviewKey": "R01",
+            "contentHash": "cf43528b903b36034268414b92fba2ed41d07053953a767b4d54fed4a0a9cd9d",
+            "independentAnswer": "D. Tingkat diskonto merupakan asumsi aktuarial keuangan. Penurunannya meningkatkan nilai kini kewajiban imbalan pasti karena arus kas manfaat masa depan didiskontokan dengan tingkat yang lebih rendah. Kenaikan kewajiban tersebut merupakan kerugian pengukuran kembali yang diakui dalam penghasilan komprehensif lain.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sedang",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci D benar. Asumsi hipotetis pada stem telah memperjelas acuan perubahan imbal hasil obligasi, dan opsi menguji klasifikasi asumsi serta dampak pengukuran kembali secara tepat."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-10-31T03:19:58.086Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV040 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-10-31T03:25:48.774Z",
+            "reason": "isi berubah lewat impor batch PK-B48"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T03:30:53.474Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV042 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 2,
+        "notes": "Bentuk: teori; ragam: asumsi. Tema 1 dinyatakan sebagai asumsi hipotetis, bukan perkembangan faktual. Revisi 2: latar 'penurunan imbal hasil setelah 2024' diganti dengan asumsi hipotetis tentang imbal hasil acuan pada akhir periode (stemClarity)."
+      }
+    },
+    {
+      "id": "PK-MCQ-183",
+      "type": "mcq",
+      "topicIds": [
+        "T12"
+      ],
+      "competencyIds": [
+        "K01",
+        "K04"
+      ],
+      "difficulty": "sulit",
+      "cognitiveLevel": "C4",
+      "estimatedMinutes": 2.5,
+      "maxScore": 1,
+      "stem": "Tim penjualan dan tim akuntansi sebuah pengembang perangkat lunak berbeda pendapat. Pada 1 Juli 2026, pengembang menjual paket kepada distributor farmasi: lisensi permanen perangkat lunak akuntansi yang dipasang di server pelanggan (harga jual berdiri sendiri Rp600 juta) dan dukungan teknis serta pembaruan minor 36 bulan (Rp300 juta). Harga paket Rp900 juta; kunci lisensi diserahkan hari itu. Pembaruan tidak mengubah fungsi utama secara signifikan. Tim penjualan ingin mengakui Rp900 juta saat penandatanganan; tim akuntansi ingin mengakui seluruhnya merata 36 bulan karena produk dipasarkan sebagai langganan. Berapa pendapatan 2026 yang tepat?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Rp900 juta, karena lisensi sudah diserahkan dan dukungan hanya pelengkap paket."
+        },
+        {
+          "key": "B",
+          "text": "Rp650 juta: lisensi Rp600 juta diakui saat kunci diserahkan sebagai hak menggunakan, dukungan Rp50 juta sepanjang waktu."
+        },
+        {
+          "key": "C",
+          "text": "Rp150 juta, karena paket dipasarkan sebagai langganan sehingga seluruhnya diakui merata 36 bulan."
+        },
+        {
+          "key": "D",
+          "text": "Rp700 juta: lisensi Rp600 juta diakui saat kunci diserahkan dan dukungan tahun pertama Rp100 juta saat ditagih."
+        }
+      ],
+      "answerKey": "B",
+      "distractorRationale": {
+        "A": "Dukungan dan pembaruan adalah kewajiban pelaksanaan terpisah yang dipenuhi sepanjang waktu, sehingga tidak diakui saat penandatanganan.",
+        "C": "Label pemasaran tidak menentukan; lisensi dapat dibedakan dan memberi hak menggunakan kekayaan intelektual fungsional, sehingga diakui pada suatu titik waktu.",
+        "D": "Pendapatan dukungan mengikuti pola pemenuhan kewajiban (6 dari 36 bulan), bukan jadwal penagihan."
+      },
+      "explanation": "Langkah 1: lisensi dan dukungan dapat dibedakan (pelanggan dapat memakai perangkat lunak tanpa pembaruan minor), sehingga ada dua kewajiban pelaksanaan. Langkah 2: lisensi memberi hak menggunakan kekayaan intelektual fungsional yang tidak diubah signifikan oleh aktivitas pengembang, sehingga diakui pada titik waktu penyerahan kunci: Rp600 juta. Langkah 3: dukungan dipenuhi sepanjang waktu: 300 × 6/36 = Rp50 juta. Pendapatan 2026 = Rp650 juta (PSAK 115 (72)).",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "68384eef11612ac1d4cd2760fb40fdad8248d9cbdf82acb9a83b875a4ec87bb0",
+        "review": {
+          "batchId": "PK-RV040",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T12:00:00+07:00",
+          "result": {
+            "reviewKey": "R03",
+            "contentHash": "68384eef11612ac1d4cd2760fb40fdad8248d9cbdf82acb9a83b875a4ec87bb0",
+            "independentAnswer": "B. Lisensi merupakan kewajiban pelaksanaan yang dipenuhi pada suatu titik waktu karena pelanggan memperoleh hak menggunakan perangkat lunak fungsional yang tidak diubah secara signifikan oleh aktivitas pengembang. Pendapatan lisensi Rp600 juta diakui saat penyerahan kunci. Dukungan dipenuhi selama enam bulan pada 2026, sehingga pendapatannya Rp300 juta dikalikan 6/36, yaitu Rp50 juta. Total pendapatan 2026 adalah Rp650 juta.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci B benar. Pemisahan kewajiban pelaksanaan, pengakuan lisensi pada titik waktu, dan alokasi dukungan selama enam bulan menghasilkan pendapatan Rp650 juta."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T03:19:58.086Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV040 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 1,
+        "notes": "Bentuk: analisis; pembuka: perdebatan; entitas: pengembang perangkat lunak berlangganan. Tema 8 (ekonomi digital); angka fiktif; stem tidak menyebut nomor PSAK."
+      }
+    },
+    {
+      "id": "PK-MCQ-184",
+      "type": "mcq",
+      "topicIds": [
+        "T13"
+      ],
+      "competencyIds": [
+        "K03"
+      ],
+      "difficulty": "sulit",
+      "cognitiveLevel": "C4",
+      "estimatedMinutes": 2.5,
+      "maxScore": 1,
+      "stem": "Ringkasan laporan analis tentang sebuah perusahaan perkebunan sawit milik keluarga Tbk: laba bersih 2025 naik 35% menjadi Rp420 miliar, sedangkan arus kas operasi turun dari Rp510 miliar menjadi Rp260 miliar, padahal harga CPO 2025 diasumsikan turun 10%. Manajemen memberi empat penjelasan. Penjelasan manakah yang paling mengindikasikan kualitas laba rendah?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Belanja modal untuk peremajaan kebun naik Rp200 miliar sehingga kas dari operasi tertekan."
+        },
+        {
+          "key": "B",
+          "text": "Beban penyusutan tanaman menghasilkan naik karena banyak kebun muda mulai berproduksi."
+        },
+        {
+          "key": "C",
+          "text": "Keuntungan nilai wajar tandan buah segar yang belum dipanen dan lonjakan piutang kepada pedagang afiliasi keluarga mendorong laba."
+        },
+        {
+          "key": "D",
+          "text": "Pembayaran pajak penghasilan tahun lalu yang lebih besar mengurangi arus kas operasi tahun berjalan."
+        }
+      ],
+      "answerKey": "C",
+      "distractorRationale": {
+        "A": "Belanja modal masuk arus kas investasi, sehingga tidak menjelaskan penurunan arus kas operasi.",
+        "B": "Penyusutan adalah beban nonkas yang menurunkan laba; tidak menjelaskan laba naik sementara kas turun.",
+        "D": "Perbedaan waktu pembayaran pajak adalah penjelasan sah yang bersifat sementara, bukan indikasi laba berkualitas rendah."
+      },
+      "explanation": "Langkah 1: kesenjangan laba dan kas melebar (laba 420 vs arus kas operasi 260) saat harga CPO turun. Langkah 2: keuntungan nilai wajar produk agrikultur menurut PSAK 241 (69) bersifat nonkas dan bergantung pada estimasi. Langkah 3: piutang yang melonjak kepada afiliasi keluarga menunjukkan pendapatan yang belum tertagih dan berisiko pihak berelasi. Gabungan keduanya paling mengindikasikan kualitas laba rendah dan perlu diuji.",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "d076e11897fb91dc027e234806a67dbe49b60bd69c23f7964bbc3e9b15c7b702",
+        "review": {
+          "batchId": "PK-RV040",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T12:00:00+07:00",
+          "result": {
+            "reviewKey": "R04",
+            "contentHash": "d076e11897fb91dc027e234806a67dbe49b60bd69c23f7964bbc3e9b15c7b702",
+            "independentAnswer": "C. Keuntungan nilai wajar produk agrikultur yang belum dipanen dapat meningkatkan laba tanpa penerimaan kas langsung, sedangkan kenaikan piutang kepada pedagang afiliasi menunjukkan pendapatan yang belum tertagih dan risiko transaksi pihak berelasi. Kombinasi keduanya paling kuat mengindikasikan kualitas laba rendah.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 4,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [
+              {
+                "severity": "minor",
+                "dimension": "stemClarity",
+                "issue": "Opsi D menyebut pembayaran pajak penghasilan 'tahun lalu' sebagai penyebab penurunan arus kas operasi 'tahun berjalan'. Secara kronologis, pembayaran yang benar-benar dilakukan tahun lalu memengaruhi arus kas tahun lalu.",
+                "suggestedFix": "Ubah menjadi 'Pembayaran pajak penghasilan pada tahun berjalan atas kewajiban tahun sebelumnya lebih besar sehingga mengurangi arus kas operasi tahun berjalan'."
+              }
+            ],
+            "suggestedDifficulty": "sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci C paling tepat karena menggabungkan komponen laba nonkas berbasis estimasi dan kenaikan piutang pihak berelasi. Opsi D memerlukan penyempurnaan kronologi, tetapi kelemahannya tidak mengubah kunci."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T03:19:58.086Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV040 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 1,
+        "notes": "Bentuk: analisis; pembuka: dokumen (ringkasan laporan analis); entitas: perusahaan keluarga Tbk (perkebunan sawit). Tema 6; harga CPO angka asumsi."
+      }
+    },
+    {
+      "id": "PK-MCQ-185",
+      "type": "mcq",
+      "topicIds": [
+        "T14"
+      ],
+      "competencyIds": [
+        "K05"
+      ],
+      "difficulty": "sulit",
+      "cognitiveLevel": "C4",
+      "estimatedMinutes": 2.5,
+      "maxScore": 1,
+      "stem": "Banyak emiten menyusun laporan keberlanjutan dengan kerangka yang dipilih sendiri dan terpisah dari laporan keuangan. DSK IAI telah mengesahkan PSPK 1 dan PSPK 2 pada 1 Juli 2025, efektif 1 Januari 2027 dengan penerapan dini diperbolehkan. Pernyataan manakah yang paling tepat menggambarkan perluasan kerangka pelaporan ini dan keterbatasan pendekatan lama yang hendak diatasinya?",
+      "options": [
+        {
+          "key": "A",
+          "text": "Fokus bergeser ke risiko dan peluang keberlanjutan yang material bagi investor dan terhubung dengan laporan keuangan, mengatasi lemahnya keterbandingan; per 2026 penerapannya masih sukarela."
+        },
+        {
+          "key": "B",
+          "text": "Fokus bergeser ke dampak entitas terhadap lingkungan dan masyarakat, mengatasi kurangnya rincian dampak dalam laporan lama; per 2026 penerapannya masih sukarela."
+        },
+        {
+          "key": "C",
+          "text": "Fokus bergeser ke informasi yang material bagi investor, mengatasi keterpisahan dengan memasukkan angka keberlanjutan ke pos laporan keuangan; per 2026 penerapannya masih sukarela."
+        },
+        {
+          "key": "D",
+          "text": "Fokus bergeser ke informasi yang material bagi investor, mengatasi lemahnya keterbandingan; pada tahun pertama penerapan, entitas wajib menyajikan informasi komparatif periode sebelumnya."
+        }
+      ],
+      "answerKey": "A",
+      "distractorRationale": {
+        "B": "PSPK memakai materialitas bagi investor (pengguna laporan keuangan), bukan materialitas dampak bagi semua pemangku kepentingan seperti sebagian kerangka laporan keberlanjutan.",
+        "C": "Keterhubungan berarti informasi keberlanjutan dikaitkan dan konsisten dengan laporan keuangan, bukan memasukkan angka keberlanjutan ke pos laporan keuangan.",
+        "D": "Standar berbasis IFRS S1 memberi keringanan transisi; informasi komparatif tidak diwajibkan pada periode pelaporan tahunan pertama penerapan."
+      },
+      "explanation": "Langkah 1: pendekatan lama memakai kerangka beragam dan terpisah dari laporan keuangan, sehingga keterbandingan dan keterhubungan lemah. Langkah 2: PSPK 1 dan PSPK 2 (berbasis IFRS S1 dan S2) menuntut pengungkapan risiko dan peluang keberlanjutan yang material bagi investor dan terhubung dengan laporan keuangan; keterhubungan tidak berarti angka keberlanjutan dimasukkan ke pos laporan keuangan. Langkah 3: per 2026 PSPK belum efektif, sehingga penerapannya merupakan penerapan dini yang bersifat sukarela, dengan keringanan transisi seperti tidak wajib menyajikan informasi komparatif pada tahun pertama.",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "f3c7f324875c1dfd6654e51a697486875e14e4302d1ef613e7ded5892af5b3e9",
+        "review": {
+          "batchId": "PK-RV042",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T12:00:00+07:00",
+          "result": {
+            "reviewKey": "R02",
+            "contentHash": "f3c7f324875c1dfd6654e51a697486875e14e4302d1ef613e7ded5892af5b3e9",
+            "independentAnswer": "A. PSPK 1 dan PSPK 2 mengarahkan pengungkapan pada risiko dan peluang keberlanjutan yang material bagi investor serta keterhubungannya dengan laporan keuangan. Pendekatan ini meningkatkan konsistensi dan keterbandingan dibandingkan pendekatan lama yang menggunakan kerangka beragam dan terpisah. Pada 2026, standar belum efektif wajib sehingga penerapannya masih merupakan penerapan dini yang diperbolehkan.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": 5,
+              "stemClarity": 5,
+              "distractorQuality": 4,
+              "rubricQuality": null,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Kunci A benar dan membedakan materialitas bagi investor, keterhubungan informasi, serta status penerapan PSPK pada 2026. Distraktor menguji kesalahpahaman substantif yang relevan mengenai materialitas dampak, integrasi angka laporan keuangan, dan keringanan transisi komparatif."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-10-31T03:19:58.086Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV040 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-10-31T03:25:48.774Z",
+            "reason": "isi berubah lewat impor batch PK-B48"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T03:30:53.474Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV042 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 2,
+        "notes": "Bentuk: teori; ragam: perkembangan teori dan keterbatasan. Tema 12 dan 13; fakta: PSPK 1 dan 2 disahkan DSK IAI 1 Juli 2025, efektif 1 Januari 2027, penerapan dini diperbolehkan (formulir batch). Revisi 2: distraktor diganti dengan kesalahpahaman substantif (materialitas dampak vs bagi investor, keterhubungan vs integrasi angka, keringanan transisi), dan status sukarela per 2026 dipakai juga di distraktor agar tidak menjadi isyarat (distractorQuality). Keringanan informasi komparatif mengikuti IFRS S1 yang menjadi dasar PSPK 1."
+      }
+    },
+    {
+      "id": "PK-ESA-056",
+      "type": "essay",
+      "topicIds": [
+        "T02"
+      ],
+      "competencyIds": [
+        "K05"
+      ],
+      "difficulty": "mudah",
+      "cognitiveLevel": "C3",
+      "estimatedMinutes": 6,
+      "maxScore": 10,
+      "stem": "Anda akuntan senior di sebuah perusahaan pembiayaan kendaraan. Menjelang tutup buku 31 Desember 2026, direktur keuangan meminta Anda menunda pencatatan beban penyisihan kerugian kredit Rp35 miliar ke Januari 2027 agar rasio dalam perjanjian pinjaman bank tetap terpenuhi. Ia menegaskan bahwa bonus dan perpanjangan kontrak kerja Anda tahun depan bergantung pada kesediaan Anda \"bekerja sama\". Identifikasi dua ancaman terhadap prinsip etika dalam situasi ini beserta tindakan yang tepat.",
+      "explanation": "Menunda beban penyisihan menyalahi PSAK 109 (71) dan merupakan salah saji yang disengaja. Kode etik menuntut akuntan mengenali ancaman, menilai signifikansinya, dan menerapkan pengaman; bila pengaman tidak cukup, akuntan menolak terlibat.",
+      "modelAnswer": "Ancaman intimidasi: direktur menekan dengan mengaitkan bonus dan perpanjangan kontrak pada kepatuhan, sehingga integritas dan objektivitas terancam. Tindakan: menolak menunda pencatatan karena penyisihan wajib diakui pada periode terjadinya, lalu mendokumentasikan permintaan itu. Ancaman kepentingan pribadi: kepentingan Anda sendiri atas bonus dan kelangsungan kerja dapat mendorong Anda membenarkan salah saji. Tindakan: membahasnya dengan atasan direktur atau komite audit, memakai saluran pelaporan pelanggaran bila tekanan berlanjut, dan mempertimbangkan mundur bila masalah tidak terselesaikan.",
+      "rubric": [
+        {
+          "criterionId": "C1",
+          "description": "Mengidentifikasi ancaman intimidasi dari fakta kasus",
+          "maxScore": 3.5,
+          "full": "Menyebut ancaman intimidasi dan mengaitkannya dengan tekanan direktur atas bonus dan perpanjangan kontrak.",
+          "partial": "Menyebut tekanan atasan tanpa menamai ancaman atau tanpa kaitan dengan fakta.",
+          "zero": "Tidak mengidentifikasi ancaman ini."
+        },
+        {
+          "criterionId": "C2",
+          "description": "Mengidentifikasi ancaman kepentingan pribadi",
+          "maxScore": 3,
+          "full": "Menyebut ancaman kepentingan pribadi dari kepentingan akuntan atas bonus dan kelangsungan kerja, serta prinsip yang terancam.",
+          "partial": "Menyebut kepentingan pribadi tanpa kaitan dengan fakta, atau menyebut ancaman lain (advokasi, keakraban) dengan alasan yang masuk akal.",
+          "zero": "Tidak ada ancaman kedua yang relevan."
+        },
+        {
+          "criterionId": "C3",
+          "description": "Merumuskan tindakan yang tepat dan bertahap",
+          "maxScore": 3.5,
+          "full": "Menolak penundaan, mendokumentasikan, dan mengeskalasi ke pihak tata kelola atau saluran pelaporan pelanggaran.",
+          "partial": "Hanya satu atau dua tindakan, atau tanpa eskalasi.",
+          "zero": "Menyetujui penundaan atau tidak menyebut tindakan."
+        }
+      ],
+      "acceptableAlternatives": "C1-C2: urutan penyebutan ancaman boleh berbeda; ancaman kepentingan pribadi yang dirumuskan sebagai kepentingan atas penghasilan atau kelangsungan kerja diterima penuh; ancaman advokasi atau keakraban hanya mendapat nilai parsial karena tidak didukung fakta kasus; C3: urutan tindakan yang berbeda diterima bila memuat penolakan, dokumentasi, dan eskalasi ke pihak tata kelola; rujukan ke Kode Etik Profesi Akuntan atau ketentuan organisasi profesi lain yang setara diterima.",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "ea9bc931c4d14c08028627299e397ec7b39fe602b33d5623f0870519c1b61de3",
+        "review": {
+          "batchId": "PK-RV046",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T11:22:00+07:00",
+          "result": {
+            "reviewKey": "R03",
+            "contentHash": "ea9bc931c4d14c08028627299e397ec7b39fe602b33d5623f0870519c1b61de3",
+            "independentAnswer": "Ancaman intimidasi timbul karena direktur keuangan menekan akuntan dengan mengaitkan bonus dan perpanjangan kontrak kerja dengan kesediaan menunda pencatatan beban penyisihan. Ancaman kepentingan pribadi juga timbul karena akuntan memiliki kepentingan atas bonus dan kelangsungan pekerjaannya yang dapat memengaruhi objektivitas dan integritas. Tindakan yang tepat adalah menolak penundaan karena beban harus diakui pada periode yang tepat, mendokumentasikan permintaan, mengeskalasi masalah kepada atasan yang tepat atau komite audit, dan menggunakan saluran pelaporan pelanggaran jika tekanan berlanjut. Jika ancaman tidak dapat diatasi, akuntan perlu mempertimbangkan untuk mengundurkan diri dari penugasan atau hubungan kerja.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": null,
+              "stemClarity": 5,
+              "distractorQuality": null,
+              "rubricQuality": 5,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "mudah",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Dua ancaman yang diminta, yaitu intimidasi dan kepentingan pribadi, didukung secara eksplisit oleh fakta tekanan terhadap bonus dan perpanjangan kontrak kerja. Tindakan penolakan, dokumentasi, dan eskalasi tepat; rubrik berjumlah 10 dan alternatif ancaman lain secara proporsional hanya mendapat nilai parsial."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-10-31T03:32:27.502Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV043 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-10-31T04:28:03.079Z",
+            "reason": "isi berubah lewat impor batch PK-B49"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T04:29:33.361Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV046 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 2,
+        "notes": "Bentuk: analisis; pembuka: peran; entitas: perusahaan pembiayaan. Tema 11 (gagal bayar lembaga keuangan nonbank) sebagai latar; angka fiktif. Revisi 2: stem menegaskan bonus dan perpanjangan kontrak bergantung pada kepatuhan, sehingga kepentingan pribadi terpisah dari intimidasi (fairness); C2 dan acceptableAlternatives kini memprioritaskan kepentingan pribadi, dan advokasi atau keakraban hanya bernilai parsial (rubricQuality)."
+      }
+    },
+    {
+      "id": "PK-ESA-057",
+      "type": "essay",
+      "topicIds": [
+        "T07"
+      ],
+      "competencyIds": [
+        "K01",
+        "K04"
+      ],
+      "difficulty": "sedang",
+      "cognitiveLevel": "C3",
+      "estimatedMinutes": 10,
+      "maxScore": 10,
+      "stem": "(a) Bandingkan pengujian pengalihan risiko dan manfaat dengan pengujian pengendalian dalam penghentian pengakuan aset keuangan menurut PSAK 109 (71), termasuk urutan penerapannya. (b) Terapkan keduanya pada dua transaksi anjak piutang: (1) tanpa regres, dengan asumsi perusahaan anjak menanggung seluruh risiko gagal bayar dan keterlambatan bayar, serta penjual tidak memberi jaminan atau opsi membeli kembali; dan (2) dengan regres penuh atas piutang yang gagal bayar.",
+      "explanation": "Inti perbandingan: pengujian risiko dan manfaat menilai siapa yang menanggung variabilitas arus kas, sedangkan pengujian pengendalian menilai siapa yang secara praktis dapat menjual aset. Ketiadaan regres tidak otomatis berarti penghentian pengakuan; asumsi di soal menyatakan seluruh risiko utama (gagal bayar dan keterlambatan) beralih tanpa jaminan atau opsi beli kembali.",
+      "modelAnswer": "(a) Setelah hak atas arus kas dialihkan, entitas lebih dulu menguji risiko dan manfaat. Bila secara substansial seluruh risiko dan manfaat dialihkan, aset dihentikan pengakuannya; bila secara substansial dipertahankan, aset tetap diakui. Pengujian pengendalian baru dipakai bila risiko dan manfaat tidak dialihkan maupun dipertahankan secara substansial: bila penerima dapat menjual aset secara bebas kepada pihak ketiga, pengendalian beralih dan aset dihentikan pengakuannya; bila tidak, aset tetap diakui sebatas keterlibatan berkelanjutan. Pengujian pertama melihat eksposur ekonomi, pengujian kedua melihat kemampuan praktis menjual. (b)(1) Ketiadaan regres saja belum cukup; tetapi karena perusahaan anjak menanggung risiko gagal bayar dan keterlambatan, dan penjual tidak memberi jaminan atau opsi membeli kembali, secara substansial seluruh risiko dan manfaat dialihkan. Piutang dihentikan pengakuannya dan selisih harga diakui di laba rugi. (2) Dengan regres penuh, risiko kredit secara substansial tetap pada penjual, sehingga piutang tetap diakui dan kas yang diterima dicatat sebagai liabilitas; pengujian pengendalian tidak perlu diterapkan.",
+      "rubric": [
+        {
+          "criterionId": "C1",
+          "description": "Menjelaskan pengujian risiko dan manfaat beserta urutannya",
+          "maxScore": 3,
+          "full": "Menjelaskan tiga kemungkinan hasil pengujian risiko dan manfaat dan bahwa pengujian ini didahulukan.",
+          "partial": "Menjelaskan pengujian tanpa urutan atau tanpa hasil 'tidak dialihkan maupun dipertahankan'.",
+          "zero": "Penjelasan keliru atau tidak ada."
+        },
+        {
+          "criterionId": "C2",
+          "description": "Menjelaskan pengujian pengendalian dan keterlibatan berkelanjutan",
+          "maxScore": 2.5,
+          "full": "Menjelaskan kemampuan praktis menjual sebagai ukuran pengendalian dan akibat keterlibatan berkelanjutan.",
+          "partial": "Menyebut pengendalian tanpa kriteria kemampuan menjual atau tanpa keterlibatan berkelanjutan.",
+          "zero": "Tidak membahas pengujian pengendalian."
+        },
+        {
+          "criterionId": "C3",
+          "description": "Menerapkan pada anjak piutang tanpa regres",
+          "maxScore": 2,
+          "full": "Menilai bahwa secara substansial seluruh risiko dan manfaat dialihkan berdasarkan asumsi soal (risiko gagal bayar dan keterlambatan, tanpa jaminan atau opsi beli kembali), lalu menyimpulkan penghentian pengakuan dan pengakuan selisih di laba rugi.",
+          "partial": "Menyimpulkan penghentian pengakuan hanya karena tidak ada regres, tanpa menilai seluruh risiko dan manfaat.",
+          "zero": "Kesimpulan keliru atau tidak ada."
+        },
+        {
+          "criterionId": "C4",
+          "description": "Menerapkan pada anjak piutang dengan regres penuh",
+          "maxScore": 2.5,
+          "full": "Menyimpulkan piutang tetap diakui dan kas dicatat sebagai liabilitas karena risiko kredit dipertahankan.",
+          "partial": "Menyimpulkan piutang tetap diakui tanpa perlakuan kas atau tanpa alasan.",
+          "zero": "Menghentikan pengakuan piutang."
+        }
+      ],
+      "acceptableAlternatives": "C1-C2: penjelasan dalam bentuk alur keputusan (diagram lisan) diterima; menyebut syarat pengalihan hak atas arus kas atau pengaturan 'pass-through' sebagai langkah awal diterima sebagai tambahan; C3: jawaban bersyarat yang menyatakan penghentian pengakuan hanya bila secara substansial seluruh risiko dan manfaat dialihkan, lalu menerapkan asumsi soal untuk menyimpulkan bahwa syarat itu terpenuhi, mendapat nilai penuh; C4: istilah 'pinjaman beragun piutang' atau 'transaksi pembiayaan' setara dengan liabilitas.",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "1276486002d126cfeb7d4a6fe12ee6fb95edd3885f6e02a76000da8cbc7389e0",
+        "review": {
+          "batchId": "PK-RV046",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T11:22:00+07:00",
+          "result": {
+            "reviewKey": "R02",
+            "contentHash": "1276486002d126cfeb7d4a6fe12ee6fb95edd3885f6e02a76000da8cbc7389e0",
+            "independentAnswer": "(a) Setelah hak kontraktual atas arus kas dialihkan atau pengaturan pass-through memenuhi persyaratan, entitas terlebih dahulu menilai apakah secara substansial seluruh risiko dan manfaat kepemilikan aset keuangan telah dialihkan atau dipertahankan. Jika seluruhnya dialihkan, aset dihentikan pengakuannya; jika seluruhnya dipertahankan, aset tetap diakui. Jika tidak keduanya, entitas menilai pengendalian berdasarkan kemampuan praktis penerima untuk menjual aset secara keseluruhan kepada pihak ketiga tanpa pembatasan tambahan. Jika pengendalian beralih, aset dihentikan pengakuannya; jika tidak, aset tetap diakui sebatas keterlibatan berkelanjutan. (b)(1) Dalam transaksi tanpa regres, perusahaan anjak menanggung seluruh risiko gagal bayar dan keterlambatan bayar serta tidak terdapat jaminan atau opsi membeli kembali. Berdasarkan asumsi tersebut, secara substansial seluruh risiko dan manfaat dialihkan sehingga piutang dihentikan pengakuannya dan selisih harga diakui dalam laba rugi. (2) Dalam transaksi dengan regres penuh, risiko kredit secara substansial tetap ditanggung penjual. Piutang tetap diakui dan kas yang diterima dicatat sebagai liabilitas pembiayaan.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": null,
+              "stemClarity": 5,
+              "distractorQuality": null,
+              "rubricQuality": 5,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sedang",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Urutan pengujian risiko dan manfaat sebelum pengujian pengendalian dijelaskan dengan benar. Fakta tambahan mengenai pengalihan risiko gagal bayar dan keterlambatan serta ketiadaan jaminan atau opsi beli kembali mendukung kesimpulan penghentian pengakuan untuk transaksi tanpa regres; rubrik berjumlah tepat 10 dan menguji penerapan kedua transaksi secara terukur."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-10-31T03:32:27.502Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV043 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-10-31T04:28:03.079Z",
+            "reason": "isi berubah lewat impor batch PK-B49"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T04:29:33.361Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV046 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 2,
+        "notes": "Bentuk: teori; ragam: banding-kontras. Tanpa entitas; dibuka langsung dengan perintah perbandingan. Revisi 2: kalimat latar makro dihapus (stemClarity); asumsi eksplisit untuk anjak piutang tanpa regres ditambahkan, dan model answer serta C3 kini mensyaratkan penilaian seluruh risiko dan manfaat, bukan hanya ketiadaan regres (keyCorrectness, rubricQuality, fairness)."
+      }
+    },
+    {
+      "id": "PK-ESA-058",
+      "type": "essay",
+      "topicIds": [
+        "T09"
+      ],
+      "competencyIds": [
+        "K01"
+      ],
+      "difficulty": "sedang",
+      "cognitiveLevel": "C3",
+      "estimatedMinutes": 10,
+      "maxScore": 10,
+      "stem": "Data produsen alas kaki Tbk per 31 Desember 2026 (Rp miliar, satu desimal): rugi fiskal 2026 sebesar 180 akibat pesangon program PHK dan turunnya pesanan ekspor; rugi fiskal juga terjadi pada 2025; perbedaan temporer kena pajak atas aset tetap 50, berbalik 2027-2028; proyeksi laba fiskal dari kontrak ekspor yang sudah ditandatangani 40 (2027-2028); proyeksi laba fiskal tambahan 90 (2029-2031) dari pasar baru yang belum ada kesepakatan. Tarif PPh badan 22%; rugi fiskal dapat dikompensasikan lima tahun. Manajemen ingin mengakui aset pajak tangguhan atas seluruh rugi fiskal. (a) Tentukan aset pajak tangguhan yang dapat diakui beserta alasannya. (b) Jelaskan pengungkapan yang diperlukan.",
+      "explanation": "PSAK 212 (46) membatasi pengakuan aset pajak tangguhan atas rugi fiskal yang belum dikompensasikan bila entitas memiliki riwayat rugi, kecuali ada perbedaan temporer kena pajak yang cukup atau bukti meyakinkan lain. Pengungkapan bukti dan rugi fiskal yang tidak diakui membantu pengguna menilai risiko estimasi.",
+      "modelAnswer": "(a) Karena entitas merugi dua tahun berturut-turut, aset pajak tangguhan atas rugi fiskal hanya diakui sepanjang ada perbedaan temporer kena pajak yang cukup atau bukti meyakinkan tentang laba fiskal masa depan. Perbedaan temporer kena pajak 50 berbalik dalam masa kompensasi, dan laba dari kontrak yang sudah ditandatangani 40 merupakan bukti meyakinkan. Proyeksi 90 dari pasar baru tanpa kesepakatan belum meyakinkan. Aset pajak tangguhan yang diakui = (50 + 40) × 22% = 19,8; sisanya 90 × 22% = 19,8 tidak diakui, sehingga usul manajemen ditolak. (b) Ungkapkan jumlah aset pajak tangguhan 19,8 dan bukti pendukung pengakuannya karena entitas merugi, jumlah rugi fiskal yang tidak diakui (90) beserta batas waktu kompensasinya (2031), serta pertimbangan dan ketidakpastian estimasi proyeksi laba fiskal.",
+      "rubric": [
+        {
+          "criterionId": "C1",
+          "description": "Menilai bukti keterpulihan dengan memperhatikan riwayat rugi",
+          "maxScore": 3,
+          "full": "Menjelaskan bahwa riwayat rugi menuntut bukti meyakinkan dan menilai setiap sumber laba fiskal.",
+          "partial": "Menyebut keterpulihan tanpa mengaitkan dengan riwayat rugi.",
+          "zero": "Menerima usul manajemen tanpa analisis."
+        },
+        {
+          "criterionId": "C2",
+          "description": "Memilah sumber laba fiskal yang dapat dipakai",
+          "maxScore": 3,
+          "full": "Menerima perbedaan temporer 50 dan kontrak 40, menolak proyeksi pasar baru 90 dengan alasan.",
+          "partial": "Memilah dengan benar tanpa alasan, atau satu sumber keliru.",
+          "zero": "Memakai seluruh 180 atau menolak seluruhnya tanpa dasar."
+        },
+        {
+          "criterionId": "C3",
+          "description": "Menghitung aset pajak tangguhan yang diakui",
+          "maxScore": 2,
+          "full": "Menghitung 19,8 dan jumlah yang tidak diakui 19,8.",
+          "partial": "Metode benar dengan kesalahan hitung.",
+          "zero": "Perhitungan keliru atau tidak ada."
+        },
+        {
+          "criterionId": "C4",
+          "description": "Menjelaskan pengungkapan yang diperlukan",
+          "maxScore": 2,
+          "full": "Menyebut bukti pendukung pengakuan, rugi fiskal yang tidak diakui beserta batas waktunya, dan ketidakpastian estimasi.",
+          "partial": "Menyebut satu atau dua unsur pengungkapan.",
+          "zero": "Tidak membahas pengungkapan."
+        }
+      ],
+      "acceptableAlternatives": "C2: peserta yang memasukkan sebagian proyeksi pasar baru hanya mendapat nilai parsial, kecuali menyatakan bukti tambahan yang meyakinkan sebagai asumsi tertulis; C3: penyajian aset pajak tangguhan 19,8 yang disalinghapuskan dengan liabilitas pajak tangguhan aset tetap (50 × 22% = 11,0) diterima bila syarat saling hapus dinyatakan; C4: urutan pengungkapan berbeda diterima.",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "7166bcc16285b63cb1da89c9923a7f85cdba9a0d96368d663da26e036d0c2a1f",
+        "review": {
+          "batchId": "PK-RV043",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T12:00:00+07:00",
+          "result": {
+            "reviewKey": "R05",
+            "contentHash": "7166bcc16285b63cb1da89c9923a7f85cdba9a0d96368d663da26e036d0c2a1f",
+            "independentAnswer": "(a) Riwayat rugi fiskal dua tahun berturut-turut merupakan bukti negatif sehingga pengakuan aset pajak tangguhan memerlukan bukti meyakinkan atas ketersediaan laba fiskal masa depan. Perbedaan temporer kena pajak Rp50 miliar yang berbalik pada 2027-2028 dapat mendukung pemulihan rugi fiskal dalam periode kompensasi. Laba fiskal Rp40 miliar dari kontrak ekspor yang telah ditandatangani dapat menjadi bukti tambahan. Proyeksi Rp90 miliar dari pasar baru tanpa kesepakatan belum merupakan bukti meyakinkan. Dasar pengakuan adalah Rp50 miliar + Rp40 miliar = Rp90 miliar, sehingga aset pajak tangguhan yang diakui Rp90 miliar × 22% = Rp19,8 miliar. Dari rugi fiskal 2026 sebesar Rp180 miliar, sisa Rp90 miliar menghasilkan potensi aset pajak tangguhan Rp19,8 miliar yang tidak diakui. (b) Ungkapkan jumlah aset pajak tangguhan yang diakui, sifat bukti yang mendukung pengakuan meskipun terdapat riwayat rugi, jumlah rugi fiskal yang tidak diakui beserta batas waktu kompensasinya, serta pertimbangan dan ketidakpastian proyeksi laba fiskal.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": null,
+              "stemClarity": 4,
+              "distractorQuality": null,
+              "rubricQuality": 4,
+              "dataConsistency": 5,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 4
+            },
+            "findings": [
+              {
+                "severity": "minor",
+                "dimension": "stemClarity",
+                "issue": "Stem menyebut rugi fiskal 2026 sebesar Rp180 miliar dan juga menyatakan terdapat rugi fiskal pada 2025, tetapi tidak memberikan jumlah rugi 2025. Model answer menghitung aset pajak tangguhan hanya atas rugi fiskal 2026. Walaupun riwayat rugi 2025 relevan sebagai bukti negatif, objek perhitungan sebaiknya dinyatakan eksplisit.",
+                "suggestedFix": "Tambahkan bahwa perhitungan aset pajak tangguhan dalam pertanyaan hanya berkenaan dengan rugi fiskal 2026 sebesar Rp180 miliar, sedangkan rugi 2025 digunakan sebagai informasi riwayat kerugian."
+              },
+              {
+                "severity": "minor",
+                "dimension": "rubricQuality",
+                "issue": "Perhitungan menggabungkan pembalikan perbedaan temporer kena pajak Rp50 miliar dan laba fiskal kontrak Rp40 miliar sebagai sumber pemulihan rugi fiskal. Rubrik belum secara eksplisit meminta peserta memastikan bahwa kedua sumber tersedia dalam periode kompensasi dan tidak dihitung ganda.",
+                "suggestedFix": "Tambahkan pada C1 atau C2 bahwa sumber laba fiskal harus tersedia dalam periode kompensasi dan tidak tumpang tindih. Terima jawaban yang menunjukkan dasar penilaian tersebut."
+              }
+            ],
+            "suggestedDifficulty": "sedang",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Perhitungan aset pajak tangguhan yang diakui Rp19,8 miliar dan potensi aset yang tidak diakui Rp19,8 miliar konsisten dengan data dan asumsi soal. Objek rugi fiskal yang dihitung serta pengujian agar sumber laba fiskal tidak dihitung ganda dapat diperjelas."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T03:32:27.502Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV043 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 1,
+        "notes": "Bentuk: analisis; pembuka: data; entitas: Tbk (produsen alas kaki). Tema 4 (PHK industri padat karya); tarif PPh badan 22% dan masa kompensasi rugi fiskal lima tahun (UU PPh) disebut di stem; angka fiktif."
+      }
+    },
+    {
+      "id": "PK-ESA-059",
+      "type": "essay",
+      "topicIds": [
+        "T10"
+      ],
+      "competencyIds": [
+        "K02"
+      ],
+      "difficulty": "sulit",
+      "cognitiveLevel": "C4",
+      "estimatedMinutes": 15,
+      "maxScore": 10,
+      "stem": "2024: grup ritel milik keluarga membeli 30% saham jaringan minimarket pesaing seharga Rp150 miliar dan mencatatnya dengan metode ekuitas. 2025-2026: pesaing melemah karena daya beli kelas menengah turun. 30 Juni 2026: uji penurunan nilai investasi tidak menghasilkan rugi karena nilai pakainya lebih tinggi; jumlah tercatat investasi Rp165 miliar. 1 Juli 2026: grup membeli tambahan 40% seharga Rp200 miliar tunai dan memperoleh pengendalian. Pada tanggal itu, nilai wajar kepentingan 30% Rp150 miliar dan nilai wajar aset neto teridentifikasi 100% Rp420 miliar. Grup mengukur kepentingan nonpengendali pada bagian proporsional aset neto teridentifikasi. (a) Hitung keuntungan atau kerugian pengukuran ulang kepentingan sebelumnya dan goodwill per 1 Juli 2026. (b) Analisis kewajaran goodwill itu mengingat pesaing melemah. (c) Rekomendasikan pengungkapan utama yang perlu disajikan.",
+      "explanation": "Kombinasi bisnis bertahap memperlakukan kepentingan sebelumnya seolah dilepas dan dibeli kembali pada nilai wajar, sehingga selisih dengan jumlah tercatat diakui di laba rugi dan nilai wajar itu masuk perhitungan goodwill (PSAK 103 (22)).",
+      "modelAnswer": "(a) Pada 1 Juli 2026 grup memperoleh pengendalian (70%), sehingga terjadi kombinasi bisnis bertahap. Kepentingan 30% diukur ulang ke nilai wajar 150; kerugian 150 - 165 = 15 diakui di laba rugi. Kepentingan nonpengendali = 30% × 420 = 126. Goodwill = imbalan 200 + nilai wajar kepentingan sebelumnya 150 + kepentingan nonpengendali 126 - aset neto teridentifikasi 420 = 56. (b) Goodwill 56 mencerminkan sinergi yang diharapkan, seperti jaringan toko dan daya tawar kepada pemasok, tetapi pelemahan pesaing adalah indikasi risiko. Grup perlu memastikan seluruh aset teridentifikasi, seperti hak sewa toko, merek, dan hubungan pelanggan, sudah diukur pada nilai wajar agar goodwill tidak menampung aset yang belum diidentifikasi. Unit penghasil kas yang menerima goodwill wajib diuji penurunan nilai sebelum akhir 2026 dan setiap tahun. (c) Ungkapkan tanggal akuisisi dan persentase kepemilikan; alasan akuisisi dan faktor pembentuk goodwill; imbalan yang dialihkan; nilai wajar kepentingan sebelumnya serta kerugian 15 dan pos laba rugi tempat diakui; dasar pengukuran kepentingan nonpengendali; jumlah aset dan liabilitas teridentifikasi; serta pendapatan dan laba entitas yang diakuisisi sejak tanggal akuisisi.",
+      "rubric": [
+        {
+          "criterionId": "C1",
+          "description": "Mengidentifikasi kombinasi bisnis bertahap dan pengukuran ulang",
+          "maxScore": 2,
+          "full": "Menyatakan pengendalian diperoleh dan kepentingan sebelumnya diukur ulang ke nilai wajar.",
+          "partial": "Menyebut pengendalian tanpa pengukuran ulang.",
+          "zero": "Tidak mengidentifikasi kombinasi bisnis bertahap."
+        },
+        {
+          "criterionId": "C2",
+          "description": "Menghitung kerugian pengukuran ulang",
+          "maxScore": 2,
+          "full": "Menghitung kerugian 15 dan mengakuinya di laba rugi.",
+          "partial": "Jumlah benar tetapi diakui di PKL, atau tanda keliru.",
+          "zero": "Tidak menghitung atau keliru."
+        },
+        {
+          "criterionId": "C3",
+          "description": "Menghitung goodwill",
+          "maxScore": 2.5,
+          "full": "Menghitung kepentingan nonpengendali 126 dan goodwill 56.",
+          "partial": "Metode benar dengan satu komponen keliru.",
+          "zero": "Mengabaikan kepentingan sebelumnya atau kepentingan nonpengendali."
+        },
+        {
+          "criterionId": "C4",
+          "description": "Menganalisis kewajaran goodwill",
+          "maxScore": 1.5,
+          "full": "Mengaitkan pelemahan pesaing dengan kelengkapan identifikasi aset dan uji penurunan nilai goodwill.",
+          "partial": "Menyebut uji penurunan nilai tanpa kaitan dengan fakta.",
+          "zero": "Tidak menganalisis."
+        },
+        {
+          "criterionId": "C5",
+          "description": "Merekomendasikan pengungkapan utama",
+          "maxScore": 2,
+          "full": "Menyebut minimal lima unsur pengungkapan yang relevan, termasuk kerugian pengukuran ulang dan faktor goodwill.",
+          "partial": "Menyebut dua sampai empat unsur.",
+          "zero": "Tidak menyebut pengungkapan."
+        }
+      ],
+      "acceptableAlternatives": "C2: peserta yang membahas perlakuan bagian PKL entitas asosiasi mendapat nilai penuh bila menyatakan bahwa jumlahnya tidak dapat ditentukan dari data soal dan bahwa saldo itu, jika ada, diperlakukan seolah kepentingan sebelumnya dilepas langsung (direklasifikasi ke laba rugi atau dipindahkan ke saldo laba sesuai sifatnya); C4: analisis yang juga menguji kemungkinan pembelian dengan diskon (dan menyimpulkan tidak terjadi karena goodwill positif) diterima sebagai penguat; C5: rujukan ke PSAK 103 (22) atau daftar pengungkapan setara dalam urutan berbeda diterima.",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "0d59192994d1a9d05f4b5e8c8c3b854f9e6cbe2ab550cc4f70af8e9a2b843454",
+        "review": {
+          "batchId": "PK-RV046",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T11:22:00+07:00",
+          "result": {
+            "reviewKey": "R01",
+            "contentHash": "0d59192994d1a9d05f4b5e8c8c3b854f9e6cbe2ab550cc4f70af8e9a2b843454",
+            "independentAnswer": "(a) Akuisisi tambahan 40% pada 1 Juli 2026 menyebabkan grup memperoleh pengendalian dan merupakan kombinasi bisnis bertahap. Kepentingan sebelumnya diukur ulang dari jumlah tercatat Rp165 miliar menjadi nilai wajar Rp150 miliar, sehingga timbul kerugian pengukuran ulang Rp15 miliar yang diakui dalam laba rugi. Kepentingan nonpengendali diukur pada bagian proporsional aset neto teridentifikasi, yaitu 30% × Rp420 miliar = Rp126 miliar. Goodwill = imbalan Rp200 miliar + nilai wajar kepentingan sebelumnya Rp150 miliar + KNP Rp126 miliar − aset neto teridentifikasi Rp420 miliar = Rp56 miliar. (b) Goodwill positif dapat mencerminkan sinergi yang diharapkan, tetapi pelemahan pesaing menuntut evaluasi atas asumsi proyeksi arus kas, kelengkapan identifikasi aset takberwujud, dan pengujian penurunan nilai goodwill. (c) Pengungkapan utama meliputi tanggal dan persentase akuisisi, alasan akuisisi, imbalan yang dialihkan, nilai wajar kepentingan sebelumnya dan kerugian pengukuran ulang, dasar pengukuran KNP, aset dan liabilitas teridentifikasi, faktor pembentuk goodwill, serta pendapatan dan laba entitas yang diakuisisi sejak tanggal akuisisi.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": null,
+              "stemClarity": 5,
+              "distractorQuality": null,
+              "rubricQuality": 5,
+              "dataConsistency": 5,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Perhitungan kerugian pengukuran ulang Rp15 miliar, KNP Rp126 miliar, dan goodwill Rp56 miliar benar. Analisis goodwill dan pengungkapan utama relevan dengan fakta kasus, sedangkan rubrik berjumlah tepat 10 dan mengakomodasi alternatif perlakuan saldo PKL yang tepat."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "NEEDS_REVISION",
+            "at": "2026-10-31T03:32:27.502Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV043 oleh GPT-6: REVISE"
+          },
+          {
+            "from": "NEEDS_REVISION",
+            "to": "DRAFT",
+            "at": "2026-10-31T04:28:03.079Z",
+            "reason": "isi berubah lewat impor batch PK-B49"
+          },
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T04:29:33.361Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV046 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 2,
+        "notes": "Bentuk: analisis; pembuka: kronologi; entitas: perusahaan keluarga (grup ritel). Tema 10; angka fiktif; stem tidak menyebut nomor PSAK. Revisi 2: acceptableAlternatives C2 tidak lagi menganggap saldo PKL nihil; jawaban penuh menyatakan jumlahnya tidak dapat ditentukan dan perlakuannya bergantung pada sifat saldo (rubricQuality)."
+      }
+    },
+    {
+      "id": "PK-ESA-060",
+      "type": "essay",
+      "topicIds": [
+        "T14"
+      ],
+      "competencyIds": [
+        "K05"
+      ],
+      "difficulty": "sangat_sulit",
+      "cognitiveLevel": "C6",
+      "estimatedMinutes": 20,
+      "maxScore": 10,
+      "stem": "Sebagai ilustrasi, sebuah pembangkit listrik tenaga uap dengan sisa umur manfaat 25 tahun dicatat pada biaya dikurangi akumulasi penyusutan, padahal diasumsikan kebijakan transisi energi dapat memaksa penghentiannya sebelum 2040. (a) Analisis keterbatasan laporan keuangan berbasis biaya historis dalam menggambarkan risiko iklim seperti ini, dan sejauh mana SAK yang berlaku sudah menampungnya melalui estimasi. (b) Evaluasi peran pelaporan terintegrasi dan standar pengungkapan keberlanjutan (PSPK 1 dan PSPK 2, efektif 1 Januari 2027 dengan penerapan dini diperbolehkan) dalam menutup keterbatasan itu, termasuk kekurangan masing-masing. (c) Usulkan cara menghubungkan pengungkapan keberlanjutan dengan laporan keuangan agar asumsi yang dipakai konsisten.",
+      "explanation": "Soal memadukan keterbatasan kerangka biaya historis dengan perkembangan pelaporan keberlanjutan. Kunci memakai SAK yang efektif per 1 Januari 2026; PSPK dibahas sebagai standar yang telah disahkan dan boleh diterapkan dini.",
+      "modelAnswer": "(a) Biaya historis mencatat aset pada harga transaksi masa lalu dan mengalokasikannya secara sistematis, sehingga risiko iklim yang belum terjadi tidak tampak langsung; dampaknya baru muncul bila memengaruhi estimasi. SAK menampung sebagian: umur manfaat dan nilai residu ditelaah setiap tahun (PSAK 216 (16)), indikasi penurunan nilai dan proyeksi arus kas dinilai (PSAK 236 (48)), dan provisi restorasi diakui (PSAK 237 (57)). Keterbatasannya, asumsi iklim jangka panjang sering di luar horizon proyeksi, berupa skenario, dan tidak diungkapkan secara terstruktur, sehingga pengguna sulit menilai sensitivitasnya. (b) Pelaporan terintegrasi menjelaskan bagaimana strategi, tata kelola, dan berbagai modal menciptakan nilai jangka panjang; kekuatannya pada narasi, tetapi berbasis prinsip sehingga kurang terbanding. PSPK 1 dan PSPK 2 menuntut pengungkapan risiko dan peluang keberlanjutan yang material bagi investor, termasuk analisis skenario iklim, emisi, serta dampak keuangan kini dan yang diantisipasi, sehingga lebih terbanding; kekurangannya, fokus pada materialitas keuangan, membutuhkan data yang belum matang, dan baru efektif 2027. Keduanya melengkapi, bukan menggantikan, laporan keuangan. (c) Usulan: memakai satu set asumsi iklim (harga karbon, tanggal penghentian, skenario) untuk uji penurunan nilai, umur manfaat, dan pengungkapan PSPK; mengungkapkan dalam catatan atas laporan keuangan pertimbangan dan sensitivitas estimasi terhadap asumsi iklim; menyajikan rujukan silang antara pengungkapan keberlanjutan dan pos laporan keuangan terkait; melibatkan komite audit untuk mengawasi konsistensi; serta mempertimbangkan penerapan dini PSPK sebelum 2027.",
+      "rubric": [
+        {
+          "criterionId": "C1",
+          "description": "Menganalisis keterbatasan biaya historis atas risiko iklim",
+          "maxScore": 2,
+          "full": "Menjelaskan mengapa risiko iklim yang belum terjadi tidak tampak dalam pengukuran biaya historis.",
+          "partial": "Menyebut keterbatasan secara umum tanpa kaitan dengan risiko iklim.",
+          "zero": "Tidak menganalisis keterbatasan."
+        },
+        {
+          "criterionId": "C2",
+          "description": "Menjelaskan mekanisme SAK yang sudah menampung risiko iklim dan batasnya",
+          "maxScore": 2,
+          "full": "Menyebut minimal dua estimasi (umur manfaat, penurunan nilai, provisi) dan batas penggunaannya.",
+          "partial": "Menyebut satu mekanisme atau tanpa batasnya.",
+          "zero": "Tidak membahas atau keliru."
+        },
+        {
+          "criterionId": "C3",
+          "description": "Mengevaluasi pelaporan terintegrasi",
+          "maxScore": 1.5,
+          "full": "Menjelaskan kekuatan dan kekurangan pelaporan terintegrasi dalam menutup keterbatasan.",
+          "partial": "Menyebut peran tanpa kekurangan.",
+          "zero": "Tidak membahas."
+        },
+        {
+          "criterionId": "C4",
+          "description": "Mengevaluasi PSPK 1 dan PSPK 2 secara tepat",
+          "maxScore": 2,
+          "full": "Menjelaskan fokus, kekuatan, dan kekurangan PSPK, serta status efektif 2027 dengan penerapan dini diperbolehkan.",
+          "partial": "Evaluasi parsial atau status efektif tidak disebut.",
+          "zero": "Menganggap PSPK sudah wajib atau dilarang diterapkan dini."
+        },
+        {
+          "criterionId": "C5",
+          "description": "Mengusulkan cara menghubungkan pengungkapan keberlanjutan dan laporan keuangan",
+          "maxScore": 2.5,
+          "full": "Mengusulkan minimal tiga langkah konkret yang menjamin konsistensi asumsi.",
+          "partial": "Mengusulkan satu atau dua langkah, atau langkah tanpa kaitan dengan konsistensi asumsi.",
+          "zero": "Tidak ada usulan."
+        }
+      ],
+      "acceptableAlternatives": "(a) C1-C2: peserta yang memakai nilai wajar atau nilai kini sebagai pembanding keterbatasan biaya historis diterima; (b) C3-C4: menyebut kerangka lain seperti TCFD atau GRI diterima bila dibedakan fokusnya (materialitas keuangan versus dampak), dan jawaban tidak boleh menganggap PSPK sudah wajib per 2026; (c) C5: usulan lain seperti laporan tahunan terpadu, asurans atas pengungkapan iklim, atau analitik data untuk menjaga konsistensi asumsi diterima bila langkahnya konkret.",
+      "lifecycle": {
+        "status": "LIVE",
+        "contentHash": "6bf0d9e76fc791a471e6a2e2ba16c0cfd01576527b37fe50ab1c800d83f560be",
+        "review": {
+          "batchId": "PK-RV043",
+          "reviewerModel": "GPT-6",
+          "reviewedAt": "2026-10-31T12:00:00+07:00",
+          "result": {
+            "reviewKey": "R02",
+            "contentHash": "6bf0d9e76fc791a471e6a2e2ba16c0cfd01576527b37fe50ab1c800d83f560be",
+            "independentAnswer": "(a) Biaya historis mencatat aset berdasarkan transaksi masa lalu dan mengalokasikan biaya selama umur manfaat. Karena itu, risiko penghentian operasi akibat transisi energi tidak langsung tercermin dalam jumlah tercatat, kecuali risiko tersebut memengaruhi estimasi akuntansi. SAK telah menampung sebagian dampaknya melalui penelaahan umur manfaat dan nilai residu, pengujian penurunan nilai berdasarkan estimasi arus kas, serta pengakuan provisi apabila terdapat kewajiban kini untuk pembongkaran atau restorasi. Keterbatasannya adalah proyeksi iklim jangka panjang mengandung ketidakpastian dan tidak selalu tercermin secara terstruktur dalam laporan keuangan. (b) Pelaporan terintegrasi menghubungkan strategi, tata kelola, dan penciptaan nilai jangka panjang, tetapi pendekatan berbasis prinsip dapat membatasi keterbandingan. PSPK 1 dan PSPK 2 meningkatkan konsistensi pengungkapan risiko dan peluang keberlanjutan yang material bagi investor, tetapi implementasinya membutuhkan kesiapan data dan estimasi, serta standar baru efektif 1 Januari 2027 dengan penerapan dini diperbolehkan. (c) Entitas dapat menggunakan asumsi iklim yang konsisten dalam pengujian penurunan nilai dan penetapan umur manfaat, mengungkapkan sensitivitas estimasi, menghubungkan pengungkapan keberlanjutan dengan pos laporan keuangan melalui rujukan silang, dan mengawasi konsistensi melalui tata kelola serta proses audit.",
+            "keyAgreement": "setuju",
+            "dimensionScores": {
+              "keyCorrectness": 5,
+              "singleBestAnswer": null,
+              "stemClarity": 5,
+              "distractorQuality": null,
+              "rubricQuality": 4,
+              "dataConsistency": null,
+              "alignment": 5,
+              "timeEstimate": 5,
+              "originality": 5,
+              "fairness": 5
+            },
+            "findings": [],
+            "suggestedDifficulty": "sangat_sulit",
+            "verdict": "APPROVE",
+            "confidence": "tinggi",
+            "summary": "Jawaban menghubungkan keterbatasan biaya historis dengan mekanisme estimasi dalam SAK, peran dan keterbatasan pelaporan terintegrasi serta PSPK, dan langkah konkret menjaga konsistensi asumsi. Rubrik berjumlah 10, cukup terukur, dan menerima alternatif kerangka pelaporan yang relevan."
+          }
+        },
+        "approvedBy": "mal",
+        "approvedAt": "2026-10-31T04:32:16.872Z",
+        "history": [
+          {
+            "from": "DRAFT",
+            "to": "AI_REVIEWED",
+            "at": "2026-10-31T03:32:27.502Z",
+            "by": "GPT-6",
+            "reason": "review PK-RV043 oleh GPT-6: APPROVE"
+          },
+          {
+            "from": "AI_REVIEWED",
+            "to": "APPROVED",
+            "at": "2026-10-31T04:32:16.872Z",
+            "by": "mal"
+          },
+          {
+            "from": "APPROVED",
+            "to": "LIVE",
+            "at": "2026-10-31T04:32:31.118Z",
+            "by": "mal",
+            "reason": "dipublikasikan"
+          }
+        ]
+      },
+      "authoring": {
+        "createdBy": "AI",
+        "model": "claude-opus-5-5",
+        "createdAt": "2026-10-31",
+        "revision": 1,
+        "notes": "Bentuk: teori; ragam: keterbatasan dan perkembangan teori. Tema 12 dan 13; fakta: PSPK 1 dan 2 disahkan DSK IAI 1 Juli 2025, efektif 1 Januari 2027, penerapan dini diperbolehkan (formulir batch); ilustrasi dua kalimat tanpa entitas bernama."
+      }
     }
   ],
   "changelog": [
@@ -25002,6 +28147,11 @@
       "version": "1.9.0",
       "date": "2026-10-24",
       "notes": "2 soal tayang: PK-KAS-028, PK-KAS-029; 2 soal tidak lagi tayang: PK-KAS-028, PK-KAS-029."
+    },
+    {
+      "version": "1.10.0",
+      "date": "2026-10-31",
+      "notes": "26 soal tayang: PK-MCQ-166, PK-MCQ-167, PK-MCQ-168, PK-MCQ-169, PK-MCQ-170, PK-MCQ-171, PK-MCQ-172, PK-MCQ-173, PK-MCQ-174, PK-MCQ-175, PK-KAS-032, PK-KAS-033, PK-MCQ-177, PK-MCQ-178, PK-MCQ-179, PK-MCQ-180, PK-MCQ-181, PK-MCQ-182, PK-MCQ-183, PK-MCQ-184, PK-MCQ-185, PK-ESA-056, PK-ESA-057, PK-ESA-058, PK-ESA-059, PK-ESA-060."
     }
   ]
 }
